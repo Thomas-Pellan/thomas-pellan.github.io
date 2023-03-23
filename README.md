@@ -1,4 +1,4 @@
-#IBF Equicoaching frontend site
+# IBF Equicoaching frontend site
 
 ### Goals
 
