@@ -4,8 +4,6 @@
 
 .m-submenu {
   display: flex;
-  flex-direction: row;
-  align-items: center;
 
   li {
     text-transform: none !important;
@@ -29,7 +27,6 @@
 
   &-arrow {
     margin-left: $space-Ae;
-    margin-bottom: $space-Ab;
 
     &-active {
       transform: rotate(-0.25turn);
@@ -39,11 +36,42 @@
 
   &-content {
     font-weight: 500;
+
+    &-link {
+      margin: $space-Ah;
+      a:hover {
+        color: $color-primary;
+      }
+    }
   }
 }
 
 @include tablet-and-mobile {
+  .m-submenu {
+    flex-direction: column;
+    align-items: start;
+    margin: $space-B $space-B $space-B $space-A;
 
+    &-action {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-title {
+      color: $color-white;
+    }
+
+    &-content {
+      padding: $space-Af;
+      background: $color-default;
+      margin-left: $space-A;
+
+      &-hidden {
+        display: none;
+        transition: display 0.5s linear;
+      }
+    }
+  }
 }
 
 @include desktop {
@@ -54,14 +82,6 @@
       background: $color-white;
       top: 8rem;
       margin-left: $space-A;
-
-      &-link {
-        a:hover {
-          color: $color-primary;
-        }
-
-        margin: $space-Ah;
-      }
 
       &-hidden {
         visibility: hidden;

@@ -1,16 +1,24 @@
 
-document.querySelector('.m-header-menu-mobile-cross').classList.toggle('hidden');
-document.querySelector('.m-header-menu-mobile-burger').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('expanded');
-    toggleIcons()
+const icons = document.querySelectorAll('.m-header-icon')
+
+icons.forEach((icon) => {
+    if(!icon){
+        return
+    }
+    icon.addEventListener('click', () => {
+        toggleMobileMenu()
+    });
+})
+
+document.querySelector('.m-header-mobile-overlay').addEventListener('click', () => {
+    toggleMobileMenu()
 });
 
-document.querySelector('.m-header-menu-mobile-cross').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('expanded');
-    toggleIcons()
-});
-
-function toggleIcons() {
-    document.querySelector('.m-header-menu-mobile-burger').classList.toggle('hidden');
-    document.querySelector('.m-header-menu-mobile-cross').classList.toggle('hidden');
+function toggleMobileMenu (){
+    document.querySelectorAll('.m-header-icon').forEach((item) => {
+        item.classList.toggle('hidden')
+    })
+    document.querySelector('.m-header-menu').classList.toggle('show')
+    document.querySelector('.m-header-mobile-overlay').classList.toggle('hidden')
 }
+

@@ -6,7 +6,6 @@
   font-weight: 600;
 
   li {
-    margin: $space-B;
     text-transform: uppercase;
 
     a:hover {
@@ -20,6 +19,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    li {
+      margin: $space-B $space-B $space-B 0;
+    }
   }
 }
 
@@ -28,5 +31,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    li {
+      margin: $space-B;
+    }
   }
 }
