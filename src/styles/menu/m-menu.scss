@@ -1,0 +1,32 @@
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+
+.m-menu-items {
+  font-weight: 600;
+
+  li {
+    margin: $space-B;
+    text-transform: uppercase;
+
+    a:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+@include tablet-and-mobile {
+  .m-menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@include desktop {
+  .m-menu-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

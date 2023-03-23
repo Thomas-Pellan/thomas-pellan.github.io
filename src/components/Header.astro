@@ -1,0 +1,34 @@
+---
+import { Image } from '@astrojs/image/components';
+import Menu from '../components/Menu.astro';
+import '../styles/menu/m-header.scss';
+
+const { title } = Astro.props;
+---
+<head class="m-header">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <a href="/" class="m-header-title">
+       <Image
+         src="img/logo.webp"
+         format="webp"
+         width="50"
+         height="50"
+         alt="logo-ibf-equicoaching"
+       />
+       <p class="m-header-title-text">IBF Equicoaching</p>
+    </a>
+    <div class="m-header-line" />
+    <nav class="m-header-menu-mobile">
+       <Image class="m-header-menu-mobile-cross" alt="" src="/svg/lnr-cross.svg" format="svg" width="25" height="25"/>
+       <Image class="m-header-menu-mobile-burger" alt="" src="/svg/lnr-menu.svg" format="svg" width="25" height="25"/>
+       <Menu/>
+    </nav>
+    <nav class="m-header-menu-desktop">
+        <Menu/>
+    </nav>
+</head>

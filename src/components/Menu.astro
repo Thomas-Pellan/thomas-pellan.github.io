@@ -1,0 +1,76 @@
+---
+import SubMenu from "./SubMenu.astro";
+import '../styles/menu/m-menu.scss';
+const items = [
+    {
+        title: 'Home',
+        link: '/'
+    },
+    {
+        title: 'A propos',
+        link: '/about'
+    },
+    {
+      title: 'Prestations',
+      link: '/service'
+    },
+    {
+      title: 'Entreprises',
+      clickableLink: '/company',
+      links: [{
+              title: 'Formations',
+              link: '/pricing-traing'
+            }]
+    },
+    {
+      title: 'Partenaires',
+      link: '/partners/index'
+    },
+    {
+      title: 'Evenements',
+      link: '/events'
+    },
+    {
+      title: 'Tarifs',
+      links: [{
+        title: 'Equicoaching',
+        link: '/pricing-equicoaching'
+      },
+      {
+        title: 'Equitation',
+        link: '/pricing-equitation'
+      },
+      {
+        title: 'Formations',
+        link: '/pricing-traning'
+      },
+      {
+        title: 'Chèques cadeaux',
+        link: '/bons'
+      }]
+    },
+    {
+      title: 'Faq',
+      link: '/faq/index'
+    },
+    {
+      title: 'Contact',
+      link: '/contact'
+    },
+];
+---
+<ul class="m-menu-items">
+    {items.map((item) => {
+            if(item.link) {
+                return (
+                <li>
+                    <a href={item.link}>
+                          {item.title}
+                    </a>
+                </li>)
+            } else {
+                return <SubMenu title={item.title} links={item.links} clickableLink={item.clickableLink} />
+            }
+       })
+    }
+</ul>
