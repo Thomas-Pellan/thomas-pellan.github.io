@@ -1,0 +1,47 @@
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+
+.m-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: $space-C $space-A;
+  font-weight: 300;
+
+  &-text, &-picture {
+    margin: $space-B;
+    max-width: 30rem;
+  }
+
+  h2 {
+    margin-bottom: $space-Af;
+  }
+
+  &-subtitle {
+    font-weight: 600;
+  }
+
+  &-content {
+    margin: $space-A;
+  }
+
+  &-picture {
+    width: 30rem;
+    height: 16rem;
+  }
+}
+
+@include mobile {
+  .m-section {
+    flex-direction: column;
+    align-items: center;
+    padding: $space-B $space-A;
+
+    &-picture {
+      margin-top: $space-C;
+      width: 20rem;
+      height: 10rem;
+    }
+  }
+}

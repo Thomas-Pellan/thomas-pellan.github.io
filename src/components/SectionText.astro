@@ -1,0 +1,10 @@
+---
+import '../styles/m-section.scss';
+
+const { title, subTitle, content } = Astro.props;
+---
+<div class="m-section-text">
+   <Fragment set:html={title} />
+   {subTitle && (<span class="m-section-subtitle">{subTitle}</span>)}
+   <div class="m-section-content" set:html={content} />
+</div>

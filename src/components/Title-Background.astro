@@ -1,9 +1,15 @@
 ---
 import '../styles/m-title.scss';
+import { Image } from '@astrojs/image/components';
+import { BackgroundImage, ImageSupportDetection } from "astro-imagetools/components";
 
 const { title, returnLink, returnLinkTitle } = Astro.props;
 ---
-<section>
+<BackgroundImage
+  src="/public/img/header-main.webp"
+  preload="webp"
+>
+    <div class="m-title-overlay"/>
     <div class="m-title">
         {!returnLink && (
             <span class="m-title-motto">Osez le coaching autrement</span>
@@ -18,4 +24,4 @@ const { title, returnLink, returnLinkTitle } = Astro.props;
             </p>
         )}
     </div>
-</section>
+</BackgroundImage>

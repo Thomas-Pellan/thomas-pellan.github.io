@@ -1,0 +1,16 @@
+---
+import '../styles/m-section.scss';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import { Image } from '@astrojs/image/components';
+import SectionText from '../components/SectionText.astro';
+
+const { title, subTitle, content, imgContent, ytbLink, txtLeft } = Astro.props;
+---
+<section class="m-section">
+    {txtLeft && (<SectionText title={title} subTitle={subTitle} content={content}/>)}
+    <div class="m-section-picture">
+        {imgContent && (<Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp"/>)}
+        {ytbLink && (<YouTube id={ytbLink} params="webp=true" />)}
+    </div>
+    {!txtLeft && (<SectionText title={title} subTitle={subTitle} content={content}/>)}
+</section>

@@ -17,6 +17,7 @@
   align-items: center;
   text-align: center;
   color: $color-white;
+  background-color: $color-primary;
   height: 15rem;
   z-index: 100;
   position: inherit;
@@ -34,7 +35,7 @@
 
   &-separator {
     height: 1px;
-    background-color: $color-primary;
+    background-color: $color-white;
     width: 30%;
     display: block;
     text-align: center;
