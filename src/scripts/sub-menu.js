@@ -1,4 +1,4 @@
-const submenus = document.querySelectorAll('div.m-submenu')
+const submenus = document.querySelectorAll('li.m-submenu')
 
 function toggleContent(content, arrow) {
     content.classList.toggle('m-submenu-content-hidden')

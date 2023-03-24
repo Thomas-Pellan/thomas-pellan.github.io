@@ -3,7 +3,7 @@ const { title, links, clickableLink } = Astro.props;
 import { Image } from '@astrojs/image/components';
 import '../styles/menu/m-submenu.scss';
 ---
-<div class="m-submenu">
+<li class="m-submenu">
     <div class="m-submenu-action">
         {clickableLink && (
             <a class="m-submenu-link" href={clickableLink}>
@@ -24,4 +24,4 @@ import '../styles/menu/m-submenu.scss';
           </li>
        ))}
     </ul>
-</div>
+</li>
