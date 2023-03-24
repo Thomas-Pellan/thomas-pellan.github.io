@@ -80,8 +80,9 @@
       position: absolute;
       padding: $space-Af;
       background: $color-white;
-      top: 8rem;
+      top: 7.5rem;
       margin-left: $space-A;
+      z-index: 999;
 
       &-hidden {
         visibility: hidden;

@@ -1,0 +1,49 @@
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+
+.m-title-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.7);
+}
+
+.m-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $color-white;
+  height: 15rem;
+  z-index: 100;
+  position: inherit;
+
+  &-motto {
+    margin-top: $space-F;
+    text-transform: uppercase;
+  }
+
+  @include mobile {
+    &-motto {
+      margin-top: $space-B;
+    }
+  }
+
+  &-separator {
+    height: 1px;
+    background-color: $color-primary;
+    width: 30%;
+    display: block;
+    text-align: center;
+    margin: $space-B;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    margin-top: $space-A;
+  }
+}

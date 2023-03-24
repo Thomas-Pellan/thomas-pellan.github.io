@@ -12,6 +12,7 @@ const { title } = Astro.props;
 <html lang="en">
 	<Header title={title} />
 	<body class="body">
+	    <slot />
 		<script>
            import '../scripts/menu-mobile.js';
            import '../scripts/sub-menu.js';

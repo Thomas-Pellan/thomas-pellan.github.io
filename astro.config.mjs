@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
 import image from '@astrojs/image';
+import { astroImageTools } from "astro-imagetools";
 
-// https://astro.build/config
 export default defineConfig({
-    integrations: [vue(), image()],
+    integrations: [vue(), image(), astroImageTools],
 });
