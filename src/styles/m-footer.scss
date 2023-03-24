@@ -1,0 +1,65 @@
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+
+.m-footer-separator {
+  background-color: $color-primary;
+  height: $space-F;
+}
+
+.m-footer {
+  display: flex;
+  flex-direction: row;
+  padding: $space-F $space-C;
+  background-color: $color-white;
+
+  &-content {
+    margin: $space-B;
+  }
+
+  &-seo {
+    max-width: 30rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-default;
+  }
+
+  a:hover {
+    color: $color-primary;
+  }
+
+  &-links, &-pages {
+    padding-left: $space-A;
+  }
+
+  &-links > li {
+    margin: $space-B;
+  }
+
+  &-pages > li {
+    margin: $space-B $space-A;
+    list-style-type: none;
+  }
+
+  &-title {
+    font-weight: 600;
+  }
+
+  &-info {
+    color: $color-primary;
+
+    &-highlight {
+      font-weight: 400;
+      margin: $space-Ac;
+    }
+  }
+}
+
+@include mobile {
+  .m-footer {
+    flex-direction: column-reverse;
+    padding: $space-D $space-Ae;
+  }
+}
