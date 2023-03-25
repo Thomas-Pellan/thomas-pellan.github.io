@@ -37,7 +37,7 @@
 
 @include tablet {
   .m-header-icon {
-    top: $space-C;
+    top: $space-Be !important;
   }
 }
 
@@ -46,8 +46,9 @@
     &-icon {
       width: 2rem;
       height: 2rem;
-      position: fixed;
+      position: absolute;
       right: $space-B;
+      top: $space-Ah;
       color: $color-primary;
       z-index: 998;
       cursor: pointer;

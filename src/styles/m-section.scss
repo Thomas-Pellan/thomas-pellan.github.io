@@ -26,7 +26,7 @@
     margin: $space-A;
   }
 
-  &-picture {
+  &-picture, &-video {
     width: 30rem;
     height: 16rem;
   }
@@ -38,10 +38,21 @@
     align-items: center;
     padding: $space-B $space-A;
 
-    &-picture {
+    &-picture, &-video {
       margin-top: $space-C;
       width: 20rem;
+    }
+
+    &-picture {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 20rem;
+    }
+
+    &-video {
       height: 10rem;
+      margin: $space-C;
     }
   }
 }

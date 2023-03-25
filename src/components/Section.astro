@@ -8,9 +8,15 @@ const { title, subTitle, content, imgContent, ytbLink, txtLeft } = Astro.props;
 ---
 <section class="m-section">
     {txtLeft && (<SectionText title={title} subTitle={subTitle} content={content}/>)}
-    <div class="m-section-picture">
-        {imgContent && (<Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp"/>)}
-        {ytbLink && (<YouTube id={ytbLink} params="webp=true" />)}
-    </div>
+    {imgContent && (
+        <div class="m-section-picture">
+            <Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp"/>
+        </div>
+    )}
+    {ytbLink && (
+        <div class="m-section-video">
+            <YouTube id={ytbLink} params="webp=true" />
+         </div>
+    )}
     {!txtLeft && (<SectionText title={title} subTitle={subTitle} content={content}/>)}
 </section>
