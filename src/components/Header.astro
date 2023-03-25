@@ -8,11 +8,11 @@ import '../styles/m-header.scss';
 const {title} = Astro.props;
 ---
 <head class="m-header">
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width"/>
-
-    <Icons/>
-    <meta name="generator" content={Astro.generator}/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <Icons />
+    <link rel="sitemap" href="/sitemap.xml">
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
     <a href="/" class="m-header-title">
