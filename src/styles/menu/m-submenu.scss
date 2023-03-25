@@ -15,6 +15,9 @@
 
   &-action {
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   &-link, &-title {
@@ -27,6 +30,8 @@
 
   &-arrow {
     margin-left: $space-Ae;
+    height: 2rem;
+    width: 2rem;
 
     &-active {
       transform: rotate(-0.25turn);

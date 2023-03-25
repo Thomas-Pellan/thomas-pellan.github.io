@@ -1,7 +1,8 @@
 ---
-const { title, links, clickableLink } = Astro.props;
-import { Image } from '@astrojs/image/components';
+import { Icon } from 'astro-icon'
 import '../styles/menu/m-submenu.scss';
+
+const { title, links, clickableLink } = Astro.props;
 ---
 <li class="m-submenu">
     <div class="m-submenu-action">
@@ -13,7 +14,7 @@ import '../styles/menu/m-submenu.scss';
         {!clickableLink && (
             <span class="m-submenu-title">{title}</span>
         )}
-        <Image class="m-submenu-arrow" alt="" src="/svg/lnr-chevron-down.svg" format="svg" width="15" height="15"/>
+        <Icon class="m-submenu-arrow" name="ic:baseline-keyboard-arrow-down" />
     </div>
     <ul class="m-submenu-content m-submenu-content-hidden">
        {links.map((item) => (

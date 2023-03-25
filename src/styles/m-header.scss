@@ -44,9 +44,11 @@
 @include tablet-and-mobile {
   .m-header {
     &-icon {
-      color: $color-primary;
+      width: 2rem;
+      height: 2rem;
       position: fixed;
       right: $space-B;
+      color: $color-primary;
       z-index: 998;
       cursor: pointer;
     }

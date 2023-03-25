@@ -2,6 +2,7 @@
 import { Image } from '@astrojs/image/components';
 import Menu from '../components/Menu.astro';
 import Icons from '../components/Icons.astro';
+import { Icon } from 'astro-icon'
 import '../styles/m-header.scss';
 
 const { title } = Astro.props;
@@ -24,8 +25,8 @@ const { title } = Astro.props;
        <p class="m-header-title-text">IBF Equicoaching</p>
     </a>
     <div class="m-header-line" />
-    <Image class="m-header-icon hidden" alt="" src="/svg/lnr-cross.svg" format="svg" width="25" height="25"/>
-    <Image class="m-header-icon" alt="" src="/svg/lnr-menu.svg" format="svg" width="25" height="25"/>
+    <Icon class="m-header-icon hidden" name="radix-icons:cross-2" />
+    <Icon class="m-header-icon" name="ic:round-menu" />
     <nav class="m-header-menu">
        <Menu />
     </nav>

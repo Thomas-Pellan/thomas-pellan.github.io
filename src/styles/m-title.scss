@@ -27,6 +27,11 @@
     text-transform: uppercase;
   }
 
+  &-arrow {
+    width: 2rem;
+    height: 2rem;
+  }
+
   @include mobile {
     &-motto {
       margin-top: $space-B;

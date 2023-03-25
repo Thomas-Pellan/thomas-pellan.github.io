@@ -1,6 +1,6 @@
 ---
 import '../styles/m-title.scss';
-import { Image } from '@astrojs/image/components';
+import { Icon } from 'astro-icon'
 import { BackgroundImage, ImageSupportDetection } from "astro-imagetools/components";
 
 const { title, returnLink, returnLinkTitle } = Astro.props;
@@ -19,7 +19,7 @@ const { title, returnLink, returnLinkTitle } = Astro.props;
         {returnLink && (
             <p>
                 <a href="/">Home</a>
-                <Image src="/svg/lnr-arrow-right.svg" type="svg" width="15" length="15" />
+                <Icon class="m-title-arrow" name="material-symbols:arrow-right-alt" />
                 <a href={returnLink}>{returnLinkTitle}</a>
             </p>
         )}
