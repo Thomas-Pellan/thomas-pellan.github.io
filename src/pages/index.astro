@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
+import SeparatorValues from '../components/SeparatorValues.astro';
 
 const title = '<h2>Qu\'est ce que l\'équicoaching ?</h2>'
 const firstContent = '<p>L\’equicoaching se base sur un <strong>processus de coaching</strong>, c’est à dire d\’accompagnement au changement vers un objectif défini.</p><p> Le cheval est intégré à ce processus en tant que partenaire et médiateur.</p><p> Doté d’une grande intelligence émotionnelle et étant un excellent révélateur de nos comportements, le cheval va jouer le rôle de catalyseur lors des séances de coaching.</p>'
@@ -13,9 +14,9 @@ const secondImage = {src:'/img/what-is-equicoaching.webp', alt:'A qui s\adresse 
 
 <Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry">
 	<main>
-	    <Title title="IBF Equicoaching" returnLink="" />
+	    <Title title="Equicoaching et Formations" returnLink="" />
         <Section title={title} content={firstContent} ytbLink="https://youtu.be/pgN6-mk2y4A" txtLeft="true"/>
-        <section class="m-footer-separator"></section>
+        <SeparatorValues />
         <Section title={secondTitle} subTitle={secondSubTitle} content={secondContent} imgContent={secondImage}/>
 	</main>
 </Layout>

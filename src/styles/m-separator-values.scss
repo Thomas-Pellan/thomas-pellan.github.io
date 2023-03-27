@@ -1,0 +1,45 @@
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+
+.m-separator-values {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-default;
+  width: auto;
+  overflow: hidden;
+  font-size: 1.2rem;
+
+  &-bg {
+    position: relative;
+    opacity: 0.5;
+  }
+
+  &-content {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  p {
+    margin: $space-C;
+    color: $color-white;
+  }
+
+  @include mobile {
+    p {
+      margin: $space-B;
+      font-size: 1rem;
+    }
+  }
+
+  .m-separator-feature {
+    font-weight: 600;
+  }
+
+  .m-separator-feature:hover {
+    color: $color-primary;
+  }
+}
