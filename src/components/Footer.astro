@@ -1,5 +1,7 @@
 ---
 import '../styles/m-footer.scss';
+import { Icon } from 'astro-icon'
+
 ---
 <section class="m-footer-separator"></section>
 <footer class="m-footer">
@@ -29,6 +31,17 @@ import '../styles/m-footer.scss';
        ibf.equicoaching@gmail.com<br/>
        (+33)6 10 83 37 88
       <p>
+      <div class="m-footer-social">
+           <a target="_blank" href="https://www.facebook.com/ibfequicoaching" aria-label="Instagram">
+                <Icon class="m-footer-social-icon" name="mdi:facebook">
+           </a>
+           <a target="_blank" href="https://www.instagram.com/ibf_equicoaching/" aria-label="Facebook">
+                <Icon class="m-footer-social-icon" name="mdi:instagram" />
+           </a>
+            <a target="_blank" href="https://www.linkedin.com/company/ibf-equicoaching/" aria-label="Linkedin">
+                <Icon class="m-footer-social-icon" name="mdi:linkedin" />
+            </a>
+      </div>
       <span class="m-footer-title">
           Autres pages
       </span>
@@ -41,6 +54,9 @@ import '../styles/m-footer.scss';
         </li>
         <li>
             <a href="/cookies">Politique de gestion des données personnelles</a>
+        </li>
+        <li>
+            <a href="/charte-accessibilite">Charte pour l'accueil en formation de personnes en situation de handicap</a>
         </li>
         <li>
             <a href="/map">Plan du site</a>

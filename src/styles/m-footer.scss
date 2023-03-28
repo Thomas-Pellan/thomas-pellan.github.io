@@ -56,6 +56,19 @@
       margin: $space-Ac;
     }
   }
+
+  &-social {
+    &-icon {
+      margin: $space-Ac;
+      width: 2rem;
+      color: $color-primary;
+      cursor: pointer;
+    }
+
+    &-icon:hover {
+      color: $color-gray-light;
+    }
+  }
 }
 
 @include mobile {
