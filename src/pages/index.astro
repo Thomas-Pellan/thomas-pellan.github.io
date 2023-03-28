@@ -10,13 +10,25 @@ const secondTitle = '<h3>A qui s\'adresse l\'équicoaching ?</h3>'
 const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
 const secondContent = '<p>Vous voulez aller de l’avant ? Avoir plus confiance en vous ? Mieux gérer vos émotions ? Mieux communiquer ? Développer votre puissance personnelle ? Vous lancer dans un nouveau projet ? Ou tout simplement prendre un temps pour vous ? </p><p>Entreprises, vous souhaitez développer la cohésion dans votre équipe ? Mieux communiquer ? Développer votre leadership ? </p>'
 const secondImage = {src:'/img/what-is-equicoaching.webp', alt:'A qui s\adresse l\'équicoaching'}
+const actionsFirst = [{
+    link: '/about',
+    text: 'En savoir plus'
+}]
+const actionsSecond = [{
+    link: '/company',
+    text: 'Entreprises'
+  },
+  {
+    link: '/pricing-equicoaching',
+    text: 'Particuliers'
+  }]
 ---
 
 <Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry">
 	<main>
 	    <Title title="Equicoaching et Formations" returnLink="" />
-        <Section title={title} content={firstContent} ytbLink="https://youtu.be/pgN6-mk2y4A" txtLeft="true"/>
+        <Section title={title} content={firstContent} ytbLink="https://youtu.be/pgN6-mk2y4A" txtLeft="true" actions={actionsFirst}/>
         <SeparatorValues />
-        <Section title={secondTitle} subTitle={secondSubTitle} content={secondContent} imgContent={secondImage}/>
+        <Section title={secondTitle} subTitle={secondSubTitle} content={secondContent} imgContent={secondImage} actions={actionsSecond}/>
 	</main>
 </Layout>
