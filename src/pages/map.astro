@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+
+const returnValues = {link: '/map', title:'Plan du site'}
+const actions = [{
+    link: '/',
+    text: 'Retour à l\'accueil'
+},
+{
+    link: '/contact',
+    text: 'Me contacter'
+}]
+---
+<Layout title="IBF Equicoaching | Plan du site">
+	<main>
+	    <Title title="Plan du site" returnValues={returnValues} />
+        <Section actions={actions}>
+            <h2 slot="section-title">Pages de présentation</h2>
+            <Fragment slot="section-content">
+                <p>
+                    <a href="/">Homepage</a><br>
+                    <a href="about">A propos</a><br>
+                    <a href="service">Prestations</a><br>
+                    <a href="company">Prestations pour entreprises</a><br>
+                    <a href="events">Evènements</a><br>
+                    <a href="pricing-equitation">Tarifs équitation</a><br>
+                    <a href="pricing-training">Tarifs des formations pour entreprises et particuliers</a><br>
+                    <a href="pricing-equicoaching">Tarifs équicoaching</a><br>
+                    <a href="bons">Chèques cadeaux</a><br>
+                    <a href="avis">Avis et retours d'expérience</a><br>
+                    <h3>Me retrouver</h3>
+                    <a href="equicoaching-grenoble">Grenoble et bassin Grenoblois</a><br>
+                    <a href="equicoaching-chambery">Chambéry et bassin Chambérien</a><br>
+                    <a href="equicoaching-aix-les-bains">Aix Les Bains</a><br>
+                    <a href="equicoaching-albertville">Albertville</a><br>
+                    <a href="equicoaching-annecy">Annecy</a><br>
+                    <a href="equicoaching-switzerland">Switzerland</a>/<a href="equicoaching-suisse">Suisse</a><br>
+                </p>
+                <h4>
+                    Le blog / Faq
+                </h4>
+                <p>
+                    <a href="blog/index">Index</a><br>
+                    <a href="blog/etre-coach-26-ans">Etre coach à 26 ans, c'est possible ?</a><br>
+                    <a href="blog/deroulement-atelier-decouverte">Comment se déroule un atelier découverte collectif en
+                    equicoaching ?</a><br>
+                    <a href="blog/deroulement-seminaire">Comment se déroule un séminaire / team building
+                    Equicoaching&nbsp;?</a><br>
+                    <a href="blog/deroulement-seance-individuelle">Comment se déroule une séance d’equicoaching
+                    individuelle&nbsp;?</a><br>
+                    <a href="blog/equicoaching-quest-ce-que-cest">L’equicoaching, qu’est-ce que c’est&nbsp;?</a><br>
+                    <a href="blog/intelligence-emotionnelle">L’intelligence émotionnelle et l'équicoaching</a><br>
+                    <a href="blog/objectifs-resolutions">Comment atteindre ses objectifs ?</a><br>
+                </p>
+                <h5>
+                    Partenaires
+                </h5>
+                <p>
+                    <a href="https://www.coachingrhe.fr/">Coaching RHE</a><br>
+                </p>
+                <h6>
+                    Légal
+                </h6>
+                <p>
+                    <a href="contact">Contact</a><br>
+                    <a href="mentions-legales">Mentions légales</a><br>
+                    <a href="charte-accessibilite">Charte pour l'accueil en formation de personnes en situation de handicap </a><br>
+                    <a href="cookies">Gestion des données personnelles</a><br>
+                    <a href="map">Plan du site</a>
+                </p>
+            </Fragment>
+        </Section>
+	</main>
+</Layout>
