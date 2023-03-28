@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import Separator from '../components/Separator.astro';
+
+const returnValues = {link: '/company', title:'Entreprises'}
+const firstImage = {src:'/img/company-400x320.webp', alt:'Camille Marzec fondatrice', width: 400, height: 320}
+const secondImage = {src:'/img/company-mouz-320x320.webp', alt:'Camille Marzec fondatrice'}
+const firstSubTitle = 'Pour vous permettre de :'
+const secondSubTitle = ' Définissez vos leviers d\'actions'
+const actions = [
+  {
+    link: '/pricing-training',
+    text: 'Formations'
+  },
+  {
+    link: '/contact',
+    text: 'Demandez votre devis gratuit'
+}]
+---
+
+<Layout title="IBF Equicoaching | A propos">
+	<main>
+	    <Title title="A propos" returnValues={returnValues}/>
+        <Section subTitle={firstSubTitle} displayTextLeft="true" imgContent={firstImage}>
+            <h2 slot="section-title">Une approche innovante</h2>
+            <ul slot="section-content">
+                <li>Développer vos Soft Skills</li>
+                <li>Renforcer / Developper la cohésion de groupe</li>
+                <li>Intégrer de nouveaux collaborateurs</li>
+                <li>Expérimenter de nouvelles stratégies de vente</li>
+                <li>Developper votre leadership</li>
+                <li>Developper votre intelligence émotionnelle</li>
+                <li>Trouver votre place au sein d'une équipe, de votre entreprise</li>
+                <li>Expérimenter différents types de communications</li>
+                <li>Prendre conscience de vos points forts et vos points faibles, et mettre en place des stratégies pour atteindre vos objectifs</li>
+            </ul>
+        </Section>
+        <Separator />
+        <Section subTitle={secondSubTitle} imgContent={secondImage} actions={actions} >
+            <h3 slot="section-title">Actions possibles </h3>
+            <ul slot="section-content">
+                <li>Suivi individuel du collaborateur</li>
+                <li>Groupes de 2 à 6 personnes à la journée ou demi journée</li>
+                <li>Groupes de 10 personnes et plus, à la journée ou sur deux jours</li>
+            </ul>
+        </Section>
+	</main>
+</Layout>
