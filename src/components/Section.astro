@@ -4,19 +4,31 @@ import { YouTube } from '@astro-community/astro-embed-youtube';
 import { Image } from '@astrojs/image/components';
 import SectionText from '../components/SectionText.astro';
 
-const { title, subTitle, content, imgContent, ytbLink, txtLeft, actions } = Astro.props;
+const { subTitle, displayTextLeft, imgContent, ytbLink, actions } = Astro.props;
 ---
 <section class="m-section">
-    {txtLeft && (<SectionText title={title} subTitle={subTitle} content={content} actions={actions} alone={imgContent || ytbLink}/>)}
-    {imgContent && (
+    {imgContent && !displayTextLeft && (
         <div class="m-section-picture">
             <Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp" />
         </div>
     )}
-    {ytbLink && (
+    {ytbLink && !displayTextLeft &&  (
         <div class="m-section-video">
             <YouTube id={ytbLink} params="webp=true" />
         </div>
     )}
-    {!txtLeft && (<SectionText title={title} subTitle={subTitle} content={content} actions={actions} alone={imgContent || ytbLink} />)}
+    <SectionText subTitle={subTitle} actions={actions} alone={imgContent || ytbLink}>
+        <slot name="section-title" slot="section-title"/>
+        <slot name="section-content" slot="section-content"/>
+    </SectionText>
+    {imgContent && displayTextLeft && (
+            <div class="m-section-picture">
+                <Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp" />
+            </div>
+    )}
+    {ytbLink && displayTextLeft &&  (
+        <div class="m-section-video">
+            <YouTube id={ytbLink} params="webp=true" />
+        </div>
+    )}
 </section>

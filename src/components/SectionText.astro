@@ -1,12 +1,14 @@
 ---
 import '../styles/m-section.scss';
 
-const { title, subTitle, content, actions, alone } = Astro.props;
+const { subTitle, actions, alone } = Astro.props;
 ---
 <div class={alone ? 'm-section-text' : 'm-section-text m-section-text-full'}">
-   <Fragment set:html={title} />
+   <slot name="section-title"/>
    {subTitle && (<span class="m-section-subtitle">{subTitle}</span>)}
-   <div class="m-section-content" set:html={content} />
+   <div class="m-section-content">
+        <slot name="section-content"/>
+   </div>
    <div class="m-section-actions">
     {actions && actions.map((action) => (
          <a href={action.link}>{action.text}</a>

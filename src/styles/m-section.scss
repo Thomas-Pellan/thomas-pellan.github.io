@@ -14,7 +14,7 @@
     max-width: 30rem;
 
     &-full {
-      max-width: 100%;
+      max-width: 80%;
     }
   }
 
@@ -43,20 +43,20 @@
   &-actions {
     display: flex;
     align-items: center;
-  }
 
-  a {
-   background-color: $color-primary;
-    color: $color-white;
-    text-decoration: none;
-    padding: $space-Ah;
-    margin-right: $space-Af;
-  }
+    a {
+      background-color: $color-primary;
+      color: $color-white;
+      text-decoration: none;
+      padding: $space-Ah;
+      margin-right: $space-Af;
+    }
 
-  a:hover {
-    background-color: $color-white;
-    color: $color-primary;
-    outline: 0.1rem solid $color-primary;
+    a:hover {
+      background-color: $color-white;
+      color: $color-primary;
+      outline: 0.1rem solid $color-primary;
+    }
   }
 }
 
