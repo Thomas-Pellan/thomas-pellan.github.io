@@ -18,7 +18,7 @@
   text-align: center;
   color: $color-white;
   background-color: $color-primary;
-  height: 15rem;
+  height: auto;
   z-index: 100;
   position: inherit;
 
@@ -51,5 +51,23 @@
     font-weight: 600;
     font-size: 3rem;
     margin-top: $space-A;
+  }
+
+  &-alone {
+    margin-top: $space-D !important;
+    margin-bottom: $space-A;
+  }
+
+  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $color-white;
+      font-weight: 600;
+    }
   }
 }

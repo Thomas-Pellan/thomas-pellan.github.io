@@ -2,20 +2,20 @@
 import '../styles/m-title.scss';
 import { Icon } from 'astro-icon'
 
-const { title, returnLink, returnLinkTitle } = Astro.props;
+const { title, returnValues } = Astro.props;
 ---
 <section>
     <div class="m-title">
-        {!returnLink && (
+        {!returnValues && (
             <span class="m-title-motto">Osez le coaching autrement</span>
             <span class="m-title-separator"></span>
         )}
-        <h1>{title}</h1>
-        {returnLink && (
+        <h1 class={returnValues ? 'm-title-alone' : ''}>{title}</h1>
+        {returnValues && (
             <p>
                 <a href="/">Home</a>
-                <Icon class="m-title-arrow" name="material-symbols:arrow-right-alt" />
-                <a href={returnLink}>{returnLinkTitle}</a>
+                <Icon class="m-title-arrow" name="mdi:arrow-right" />
+                <a href={returnValues.link}>{returnValues.title}</a>
             </p>
         )}
     </div>

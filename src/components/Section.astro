@@ -7,7 +7,7 @@ import SectionText from '../components/SectionText.astro';
 const { title, subTitle, content, imgContent, ytbLink, txtLeft, actions } = Astro.props;
 ---
 <section class="m-section">
-    {txtLeft && (<SectionText title={title} subTitle={subTitle} content={content} actions={actions}/>)}
+    {txtLeft && (<SectionText title={title} subTitle={subTitle} content={content} actions={actions} alone={imgContent || ytbLink}/>)}
     {imgContent && (
         <div class="m-section-picture">
             <Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp" />
@@ -18,5 +18,5 @@ const { title, subTitle, content, imgContent, ytbLink, txtLeft, actions } = Astr
             <YouTube id={ytbLink} params="webp=true" />
         </div>
     )}
-    {!txtLeft && (<SectionText title={title} subTitle={subTitle} content={content} actions={actions} />)}
+    {!txtLeft && (<SectionText title={title} subTitle={subTitle} content={content} actions={actions} alone={imgContent || ytbLink} />)}
 </section>

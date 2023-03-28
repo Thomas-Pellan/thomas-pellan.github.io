@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import SeparatorValues from '../components/SeparatorValues.astro';
+
+const title = '<h2>Pourquoi cette charte ?</h2>'
+const returnValues = {link: '/charte-accessibilite', title:'Charte Accessibilite'}
+const content = '<p></p>'
+---
+
+<Layout title="IBF Equicoaching | Charte Accessibilite">
+	<main>
+	    <Title title="Charte pour l'accueil en formation de personnes en situation de handicap " returnValues={returnValues} />
+        <Section title={title} content={content}/>
+	</main>
+</Layout>

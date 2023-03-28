@@ -12,6 +12,10 @@
   &-text, &-picture {
     margin: $space-B;
     max-width: 30rem;
+
+    &-full {
+      max-width: 100%;
+    }
   }
 
   h2 {

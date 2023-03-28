@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import SeparatorValues from '../components/SeparatorValues.astro';
+
+const title = '<h2>Page non trouvée</h2>'
+const content = '<p>La page demandée n\'a pas été trouvée ou n\'existe pas. En cas de problème, utilisez le formulaire de contact pour m\'écrire.</p>'
+const returnValues = {link: '/', title:'Erreur'}
+const actions = [{
+    link: '/',
+    text: 'Retour à l\'accueil'
+},
+{
+    link: '/contact',
+    text: 'Me contacter'
+}]
+---
+
+<Layout title="IBF Equicoaching | Erreur 404">
+	<main>
+	    <Title title="Erreur 404" returnValues={returnValues} />
+        <Section title={title} content={content} actions={actions}/>
+	</main>
+</Layout>
