@@ -1,0 +1,17 @@
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_colors';
+
+.m-blog-title {
+  margin: $space-B;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.m-blog-link {
+  text-decoration: none;
+  color: $color-default;
+}
+
+.m-blog-link:hover {
+  color: $color-primary;
+}
