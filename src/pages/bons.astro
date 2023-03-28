@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import Separator from '../components/Separator.astro';
+
+const returnValues = {link: '/bons', title:'Bons cadeaux'}
+const image = {src:'/img/bons-320x320.webp', alt:'bons cadeaux equicoaching'}
+const secondSubTitle = 'Ce sont des séances encadrées par une déontologie.'
+const actions = [
+  {
+    link: '/contact',
+    text: 'Offrez de l\'équicoaching'
+  }]
+---
+
+<Layout title="IBF Equicoaching | Chèques cadeaux">
+	<main>
+	    <Title title="Bons Cadeaux" returnValues={returnValues}/>
+        <Section displayTextLeft="true" subTitle="Chèques cadeaux IBF équicoaching" imgContent={image} actions={actions}>
+            <h2 slot="section-title">Faites vous plaisir, faites plaisir à vos proches</h2>
+            <Fragment slot="section-content">
+                <p>
+                 Envie d'une idée cadeau originale ? Offrez de l'équicoaching !
+                </p>
+                <p>
+                    A la séance, en forfait ou pour un atelier, c'est vous qui choisissez !
+                </p>
+                <p>
+                    Paiement par virement ou par chèque, Remise en main propre ou par voie postale.
+                </p>
+            </Fragment>
+        </Section>
+	</main>
+</Layout>

@@ -5,6 +5,8 @@ import { Image } from '@astrojs/image/components';
 import SectionText from '../components/SectionText.astro';
 
 const { subTitle, displayTextLeft, imgContent, ytbLink, actions, wide } = Astro.props;
+const width = imgContent && imgContent.width ? imgContent.width : 320
+const height = imgContent && imgContent.height ? imgContent.height : 320
 ---
 <section class="m-section">
     {imgContent && !displayTextLeft && (
@@ -15,6 +17,7 @@ const { subTitle, displayTextLeft, imgContent, ytbLink, actions, wide } = Astro.
     {ytbLink && !displayTextLeft &&  (
         <div class="m-section-video">
             <YouTube id={ytbLink} params="webp=true" />
+            <slot name="section-content-extra" />
         </div>
     )}
     <SectionText subTitle={subTitle} actions={actions} alone={imgContent || ytbLink} wide={wide}>
@@ -23,12 +26,13 @@ const { subTitle, displayTextLeft, imgContent, ytbLink, actions, wide } = Astro.
     </SectionText>
     {imgContent && displayTextLeft && (
             <div class="m-section-picture">
-                <Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp" />
+                <Image src={imgContent.src} alt={imgContent.alt} width={width} height={height} format="webp" />
             </div>
     )}
     {ytbLink && displayTextLeft &&  (
         <div class="m-section-video">
             <YouTube id={ytbLink} params="webp=true" />
+            <slot name="section-content-extra" />
         </div>
     )}
 </section>
