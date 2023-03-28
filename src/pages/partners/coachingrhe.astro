@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Title from '../../components/Title.astro';
+import Section from '../../components/Section.astro';
+
+const returnValues = {link: '/partners/index', title:'Nos partenaires'}
+const image = {src:'/img/coaching-rhe-320x320.webp', alt:'coaching rhe entreprise'}
+const actions = [{
+    link: 'https://www.coachingrhe.fr/',
+    text: 'Pour plus d\'informations, contactez moi 👍'
+}]
+---
+
+<Layout title="IBF Equicoaching | Coaching RHE">
+	<main>
+	    <Title title="Coaching RHE" returnValues={returnValues} />
+        <Section displayTextLeft="true" imgContent={image} actions={actions} >
+            <h2 slot="section-title">Qu'est ce que Coaching RHE ? </h2>
+            <Fragment slot="section-content">
+                <p>
+                    Coaching RHE est un coaching sportif dont l'originalité et la
+                    spécifité est l'alliance de la science de l'ostéopathie animale
+                    aux connaissances de la pratique équestre, mettant ainsi le
+                    physique du cheval et celui du cavalier au centre de notre
+                    réflexion rendant notre concept unique en son genre.
+                </p>
+                <p>
+                    Nous évaluons, au cours de différents tests à pied et monté, vos
+                    équilibres et observons les problèmes quotidiens que vous
+                    rencontrez.
+                </p>
+                <p>
+                    Dans un deuxième temps, nous étudions ensemble un
+                    programme d'entraînement adapté à chacun, à suivre sur minimum 3
+                    mois, avec 1 évaluation à la fin de chaque mois.
+                </p>
+                <p>
+                    Notre coaching
+                    innovant vous permettra de corriger vos défauts, d'améliorer vos
+                    performances, de mieux vous connaître vous et votre cheval, ...
+                </p>
+                <p>
+                    "C'est en se connaissant en conscience et en prenant le temps, que
+                    les pas vers nos objectifs deviennent plus grands et plus
+                    faciles."
+                </p>
+            </Fragment>
+        </Section>
+    </main>
+</Layout>

@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import PlaceEn from '../components/places/PlaceEn.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {placeen: 'switzerland'}, props: {name: 'Switzerland'}},
+    {params: {placeen: 'geneva'}, props: {name: 'Geneva'}},
+  ];
+}
+
+const { placeen } = Astro.params;
+const { name } = Astro.props;
+const returnValues = {link: '/', title:'Find Me'}
+const actions = [{
+     link: '/contact',
+     text: 'Contact me'
+  }]
+const titleStr = `Equicoaching ${name} | Horse Coaching`
+const h1Str = `Equicoaching ${name}`
+---
+<Layout title={titleStr} lang="en">
+	<main>
+	    <Title title={h1Str} returnValues={returnValues} />
+        <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actions} wide="true">
+            <h2 slot="section-title">Equicoaching : Our services in France near {name}</h2>
+            <Fragment slot="section-content">
+                <PlaceEn place={name}/>
+            </Fragment>
+        </Section>
+	</main>
+</Layout>

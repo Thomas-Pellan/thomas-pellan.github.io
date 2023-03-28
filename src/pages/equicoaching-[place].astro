@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import Place1 from '../components/places/Place1.astro';
+import Place2 from '../components/places/Place2.astro';
+import Place3 from '../components/places/Place3.astro';
+import Place4 from '../components/places/Place4.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {place: 'grenoble'}, props: {name: 'à Grenoble', template: 1, region: 'Grenobloise'}},
+    {params: {place: 'lyon'}, props: {name: 'à Lyon', template: 1, region: 'Lyonnaise'}},
+    {params: {place: 'chambery'}, props: {name: 'à Chambéry', template: 2, bassin: 'Chambérien'}},
+    {params: {place: 'annecy'}, props: {name: 'à Annecy', template: 2, bassin: 'Annécien'}},
+    {params: {place: 'albertville'}, props: {name: 'à Albertville', template: 3}},
+    {params: {place: 'aix-les-bains'}, props: {name: 'à Aix les bains', template: 4, region: 'Savoie'}},
+    {params: {place: 'isère'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
+    {params: {place: 'isere'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
+    {params: {place: 'suisse'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}},
+    {params: {place: 'geneve'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}}
+  ];
+}
+
+const { place } = Astro.params;
+const { name, template, region, bassin, pays } = Astro.props;
+const returnValues = {link: '/', title:'Me retrouver'}
+const actions = [{
+    link: '/company',
+    text: 'Entreprises'
+  },
+  {
+    link: '/pricing-equicoaching',
+    text: 'Particuliers'
+  },
+  {
+     link: '/about',
+     text: 'En savoir plus'
+  }]
+const titleStr = `Equicoaching ${name} | Coaching Par Le Cheval`
+const h1Str = `Equicoaching ${name}`
+---
+<Layout title={titleStr}>
+	<main>
+	    <Title title={h1Str} returnValues={returnValues} />
+        <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actions} wide="true">
+            <h2 slot="section-title">Equicoaching : Nos prestations {name}</h2>
+            <Fragment slot="section-content">
+                {template === 1 && (<Place1 ville={name} region={region}/>)}
+                {template === 2 && (<Place2 ville={name} bassin={bassin} />)}
+                {template === 3 && (<Place3 ville={name} pays={pays}/>)}
+                {template === 4 && (<Place4 ville={name} region={region}/>)}
+            </Fragment>
+        </Section>
+	</main>
+</Layout>

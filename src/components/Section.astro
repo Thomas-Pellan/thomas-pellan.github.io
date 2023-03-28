@@ -4,7 +4,7 @@ import { YouTube } from '@astro-community/astro-embed-youtube';
 import { Image } from '@astrojs/image/components';
 import SectionText from '../components/SectionText.astro';
 
-const { subTitle, displayTextLeft, imgContent, ytbLink, actions } = Astro.props;
+const { subTitle, displayTextLeft, imgContent, ytbLink, actions, wide } = Astro.props;
 ---
 <section class="m-section">
     {imgContent && !displayTextLeft && (
@@ -17,7 +17,7 @@ const { subTitle, displayTextLeft, imgContent, ytbLink, actions } = Astro.props;
             <YouTube id={ytbLink} params="webp=true" />
         </div>
     )}
-    <SectionText subTitle={subTitle} actions={actions} alone={imgContent || ytbLink}>
+    <SectionText subTitle={subTitle} actions={actions} alone={imgContent || ytbLink} wide={wide}>
         <slot name="section-title" slot="section-title"/>
         <slot name="section-content" slot="section-content"/>
     </SectionText>

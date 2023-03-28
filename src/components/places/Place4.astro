@@ -1,0 +1,33 @@
+---
+const { ville, region } = Astro.props;
+---
+<h3>
+    Entreprises, particuliers, associations...
+</h3>
+<p>
+    Nous organisons des prestations sur mesure pour avancer vers vos objectifs {ville ? `${ville}` : ''}{ville && region ? ',' : ''} {region ? `en région ${region}` : ''}.
+</p>
+<ul>
+    <li>séances individuelles</li>
+    <li>formations</li>
+    <li>team-building et séminaires</li>
+    <li>ateliers découverte collectifs</li>
+    <li>coaching d’équipe</li>
+</ul>
+<p>
+    Les séances se déroulent à pied et ne demandent aucune connaissance équestre.
+</p>
+<p>
+    Venez découvrir une nouvelle approche du coaching avec la
+    médiation du cheval comme révélateur de comportements et
+    d’émotions.
+</p>
+<p>
+    IBF Equicoaching, ce sont des séances encadrées par une
+    ou des Equicoachs formées et certifiées.
+</p>
+<p>
+    Les séances de coaching sont encadrées
+    par une déontologie et des contrats pour que vous puissiez avancer
+    vers vos objectifs en toute confiance et en sécurité.
+</p>
