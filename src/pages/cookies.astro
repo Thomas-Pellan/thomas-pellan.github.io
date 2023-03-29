@@ -3,19 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 
-const returnValues = {link: '/cookies', title:'Gestion des données'}
+const returnValues = {link: '/cookies', title: 'Gestion des données'}
 const actions = [{
     link: '/',
     text: 'Retour à l\'accueil'
 },
-{
-    link: '/contact',
-    text: 'Me contacter'
-}]
+    {
+        link: '/contact',
+        text: 'Me contacter'
+    }]
 ---
 <Layout title="IBF Equicoaching | Cookies">
-	<main>
-	    <Title title="Cookies" returnValues={returnValues} />
+    <main>
+        <Title title="Cookies" returnValues={returnValues}/>
         <Section actions={actions}>
             <h2 slot="section-title">Politique de gestion des données</h2>
             <Fragment slot="section-content">
@@ -23,12 +23,12 @@ const actions = [{
                     Ce site internet ne récolte aucune de vos informations via des
                     cookies. <br/>Vos données sont traitées par les prestataires utilisés
                     par ce site à savoir :
-                    <ul>
-                        <li>l'hébergeur OVH </li>
-                        <li>la billetterie en ligne Yurplan</li>
-                        <li>les divers widgets implémentés sur le site (elfsight...)</li>
-                    </ul>
                 </p>
+                <ul>
+                    <li>l'hébergeur OVH</li>
+                    <li>la billetterie en ligne Yurplan</li>
+                    <li>les divers widgets implémentés sur le site (elfsight...)</li>
+                </ul>
                 <p>
                     Les informations éventuellement transmises ne sont pas stockées en
                     adéquation avec le règlement général sur la protection des données
@@ -40,5 +40,5 @@ const actions = [{
                 </p>
             </Fragment>
         </Section>
-	</main>
+    </main>
 </Layout>

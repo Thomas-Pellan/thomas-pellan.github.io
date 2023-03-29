@@ -1,11 +1,12 @@
 ---
-const { ville, region } = Astro.props;
+const {ville, region} = Astro.props;
 ---
 <h3>
     Entreprises, particuliers, associations...
 </h3>
 <p>
-    Nous organisons des prestations sur mesure pour avancer vers vos objectifs {ville ? `${ville}` : ''}{ville && region ? ',' : ''} {region ? `en région ${region}` : ''}.
+    Nous organisons des prestations sur mesure pour avancer vers vos
+    objectifs {ville ? `${ville}` : ''}{ville && region ? ',' : ''} {region ? `en région ${region}` : ''}.
 </p>
 <ul>
     <li>séances individuelles</li>

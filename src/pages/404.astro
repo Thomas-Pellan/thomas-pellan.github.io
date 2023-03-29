@@ -3,25 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 
-const returnValues = {link: '/', title:'Erreur'}
+const returnValues = {link: '/', title: 'Erreur'}
 const actions = [{
     link: '/',
     text: 'Retour à l\'accueil'
 },
-{
-    link: '/contact',
-    text: 'Me contacter'
-}]
+    {
+        link: '/contact',
+        text: 'Me contacter'
+    }]
 ---
 
 <Layout title="IBF Equicoaching | Erreur 404">
-	<main>
-	    <Title title="Erreur 404" returnValues={returnValues} />
+    <main>
+        <Title title="Erreur 404" returnValues={returnValues}/>
         <Section actions={actions}>
             <h2 slot="section-title">Page non trouvée</h2>
             <p slot="section-content">
-                La page demandée n'a pas été trouvée ou n'existe pas. En cas de problème, utilisez le formulaire de contact pour m'écrire.
+                La page demandée n'a pas été trouvée ou n'existe pas. En cas de problème, utilisez le formulaire de
+                contact pour m'écrire.
             </p>
         </Section>
-	</main>
+    </main>
 </Layout>

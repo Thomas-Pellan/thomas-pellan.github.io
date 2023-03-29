@@ -4,25 +4,23 @@ import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 import Separator from '../components/Separator.astro';
 
-const returnValues = {link: '/company', title:'Entreprises'}
-const firstImage = {src:'/img/company-400x320.webp', alt:'Camille Marzec fondatrice', width: 400, height: 320}
-const secondImage = {src:'/img/company-mouz-320x320.webp', alt:'Camille Marzec fondatrice'}
+const returnValues = {link: '/company', title: 'Entreprises'}
+const firstImage = {src: '/img/company-400x320.webp', alt: 'Camille Marzec fondatrice', width: 400, height: 320}
+const secondImage = {src: '/img/company-mouz-320x320.webp', alt: 'Camille Marzec fondatrice'}
 const firstSubTitle = 'Pour vous permettre de :'
 const secondSubTitle = ' Définissez vos leviers d\'actions'
-const actions = [
-  {
+const actions = [{
     link: '/pricing-training',
     text: 'Formations'
-  },
-  {
-    link: '/contact',
-    text: 'Demandez votre devis gratuit'
-}]
+},
+    {
+        link: '/contact',
+        text: 'Demandez votre devis gratuit'
+    }]
 ---
-
 <Layout title="IBF Equicoaching | Entreprise">
-	<main>
-	    <Title title="L\'équicoaching en entreprise" returnValues={returnValues}/>
+    <main>
+        <Title title="L\'équicoaching en entreprise" returnValues={returnValues}/>
         <Section subTitle={firstSubTitle} displayTextLeft="true" imgContent={firstImage}>
             <h2 slot="section-title">Une approche innovante</h2>
             <ul slot="section-content">
@@ -34,11 +32,13 @@ const actions = [
                 <li>Developper votre intelligence émotionnelle</li>
                 <li>Trouver votre place au sein d'une équipe, de votre entreprise</li>
                 <li>Expérimenter différents types de communications</li>
-                <li>Prendre conscience de vos points forts et vos points faibles, et mettre en place des stratégies pour atteindre vos objectifs</li>
+                <li>Prendre conscience de vos points forts et vos points faibles, et mettre en place des stratégies pour
+                    atteindre vos objectifs
+                </li>
             </ul>
         </Section>
-        <Separator />
-        <Section subTitle={secondSubTitle} imgContent={secondImage} actions={actions} >
+        <Separator/>
+        <Section subTitle={secondSubTitle} imgContent={secondImage} actions={actions}>
             <h3 slot="section-title">Actions possibles </h3>
             <ul slot="section-content">
                 <li>Suivi individuel du collaborateur</li>
@@ -46,5 +46,5 @@ const actions = [
                 <li>Groupes de 10 personnes et plus, à la journée ou sur deux jours</li>
             </ul>
         </Section>
-	</main>
+    </main>
 </Layout>

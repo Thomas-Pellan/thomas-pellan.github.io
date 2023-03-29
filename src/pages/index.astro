@@ -5,7 +5,7 @@ import Section from '../components/Section.astro';
 import SeparatorValues from '../components/SeparatorValues.astro';
 
 const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
-const secondImage = {src:'/img/what-is-equicoaching-550x550.webp', alt:'A qui s\adresse l\'équicoaching'}
+const secondImage = {src: '/img/what-is-equicoaching-550x550.webp', alt: 'A qui s\adresse l\'équicoaching'}
 const actionsFirst = [{
     link: '/about',
     text: 'En savoir plus'
@@ -13,32 +13,36 @@ const actionsFirst = [{
 const actionsSecond = [{
     link: '/company',
     text: 'Entreprises'
-  },
-  {
-    link: '/pricing-equicoaching',
-    text: 'Particuliers'
-  }]
+},
+    {
+        link: '/pricing-equicoaching',
+        text: 'Particuliers'
+    }]
 ---
 
 <Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry">
-	<main>
-	    <Title title="Equicoaching et Formations" />
+    <main>
+        <Title title="Equicoaching et Formations"/>
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actionsFirst}>
             <h2 slot="section-title">Qu'est ce que l'équicoaching ?</h2>
             <Fragment slot="section-content">
-                <p>L’equicoaching se base sur un <strong>processus de coaching</strong>, c’est à dire d’accompagnement au changement vers un objectif défini.</p>
+                <p>L’equicoaching se base sur un <strong>processus de coaching</strong>, c’est à dire d’accompagnement
+                    au changement vers un objectif défini.</p>
                 <p> Le cheval est intégré à ce processus en tant que partenaire et médiateur.</p>
-                <p> Doté d’une grande intelligence émotionnelle et étant un excellent révélateur de nos comportements, le cheval va jouer le rôle de catalyseur lors des séances de coaching.</p>
+                <p> Doté d’une grande intelligence émotionnelle et étant un excellent révélateur de nos comportements,
+                    le cheval va jouer le rôle de catalyseur lors des séances de coaching.</p>
             </Fragment>
         </Section>
-        <SeparatorValues />
+        <SeparatorValues/>
         <Section subTitle={secondSubTitle} imgContent={secondImage} actions={actionsSecond}>
             <h3 slot="section-title">A qui s'adresse l'équicoaching ?</h3>
             <Fragment slot="section-content">
-                <p>Vous voulez aller de l’avant ? Avoir plus confiance en vous ? Mieux gérer vos émotions ? Mieux communiquer ? Développer votre puissance personnelle ?
-                Vous lancer dans un nouveau projet ? Ou tout simplement prendre un temps pour vous ? </p>
-                <p>Entreprises, vous souhaitez développer la cohésion dans votre équipe ? Mieux communiquer ? Développer votre leadership ? </p>
+                <p>Vous voulez aller de l’avant ? Avoir plus confiance en vous ? Mieux gérer vos émotions ? Mieux
+                    communiquer ? Développer votre puissance personnelle ?
+                    Vous lancer dans un nouveau projet ? Ou tout simplement prendre un temps pour vous ? </p>
+                <p>Entreprises, vous souhaitez développer la cohésion dans votre équipe ? Mieux communiquer ? Développer
+                    votre leadership ? </p>
             </Fragment>
         </Section>
-	</main>
+    </main>
 </Layout>

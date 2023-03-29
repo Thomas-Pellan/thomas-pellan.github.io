@@ -1,34 +1,34 @@
 ---
-import { Image } from '@astrojs/image/components';
+import {Image} from '@astrojs/image/components';
 import Menu from '../components/Menu.astro';
 import Icons from '../components/Icons.astro';
-import { Icon } from 'astro-icon'
+import {Icon} from 'astro-icon'
 import '../styles/m-header.scss';
 
-const { title } = Astro.props;
+const {title} = Astro.props;
 ---
 <head class="m-header">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <Icons />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <Icons/>
+    <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
 
     <a href="/" class="m-header-title">
-       <Image
-         src="img/logo.webp"
-         format="webp"
-         width="50"
-         height="50"
-         alt="logo-ibf-equicoaching"
-       />
-       <p class="m-header-title-text">IBF Equicoaching</p>
+        <Image
+                src="img/logo.webp"
+                format="webp"
+                width="50"
+                height="50"
+                alt="logo-ibf-equicoaching"
+        />
+        <p class="m-header-title-text">IBF Equicoaching</p>
     </a>
-    <div class="m-header-line" />
-    <Icon class="m-header-icon hidden" name="radix-icons:cross-2" />
-    <Icon class="m-header-icon" name="ic:round-menu" />
+    <div class="m-header-line"/>
+    <Icon class="m-header-icon hidden" name="radix-icons:cross-2"/>
+    <Icon class="m-header-icon" name="ic:round-menu"/>
     <nav class="m-header-menu">
-       <Menu />
+        <Menu/>
     </nav>
-    <div class="m-header-mobile-overlay hidden" />
+    <div class="m-header-mobile-overlay hidden"/>
 </head>

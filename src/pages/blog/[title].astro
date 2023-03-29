@@ -4,36 +4,79 @@ import Title from '../../components/Title.astro';
 import Section from '../../components/Section.astro';
 
 export function getStaticPaths() {
-  return [
-    {params: {title: 'intelligence-emotionnelle'}, props: {name: 'L\’intelligence émotionnelle et l\'equicoaching', subTitle: 'Qu\’est-ce que l\’on appelle intelligence émotionnelle ?', blogComponentName: 'intelligenceEmotionnelle'}},
-    {params: {title: 'equicoaching-quest-ce-que-cest'}, props: {name: 'L\’equicoaching, qu\’est-ce que c’est ?', subTitle: 'L\’equicoaching se base sur un processus de coaching. ', blogComponentName: 'equicoachingWhatIsIt'}},
-    {params: {title: 'objectifs-resolutions'}, props: {name: 'Objectifs et résolutions, comment les atteindre ?', subTitle: 'Ça y est, une nouvelle année vient de commencer. Et avec elle, le traditionnel florilège de bonnes résolutions. ', blogComponentName: 'objectifsResolutions'}},
-    {params: {title: 'deroulement-atelier-decouverte'}, props: {name: 'Comment se déroule un atelier découverte collectif en equicoaching ?', subTitle: 'Ces ateliers se déroulent sur 3h par petits groupes jusqu’à 6 personnes.', blogComponentName: 'atelierDecouverte'}},
-    {params: {title: 'deroulement-seminaire'}, props: {name: 'Comment se déroule un séminaire / team building Equicoaching ?', subTitle: '', blogComponentName: 'seminaire'}},
-    {params: {title: 'deroulement-seance-individuelle'}, props: {name: 'Comment se déroule une séance d’equicoaching individuelle ? ', subTitle: 'La première chose à savoir, c’est que l\’equicoaching se base sur un processus de coaching. ', blogComponentName: 'seanceIndividuelle'}},
-    {params: {title: 'etre-coach-26-ans'}, props: {name: 'Coach à 26 ans, C\'est possible ?', subTitle: 'Voilà une question que vous êtes en droit de vous poser ! ', blogComponentName: 'etreCoach'}},
-  ];
+    return [
+        {params: {title: 'intelligence-emotionnelle'},
+            props: {
+                name: 'L\’intelligence émotionnelle et l\'equicoaching',
+                subTitle: 'Qu\’est-ce que l\’on appelle intelligence émotionnelle ?',
+                blogComponentName: 'intelligenceEmotionnelle'
+            }
+        },
+        {params: {title: 'equicoaching-quest-ce-que-cest'},
+            props: {
+                name: 'L\’equicoaching, qu\’est-ce que c’est ?',
+                subTitle: 'L\’equicoaching se base sur un processus de coaching. ',
+                blogComponentName: 'equicoachingWhatIsIt'
+            }
+        },
+        {params: {title: 'objectifs-resolutions'},
+            props: {
+                name: 'Objectifs et résolutions, comment les atteindre ?',
+                subTitle: 'Ça y est, une nouvelle année vient de commencer. Et avec elle, le traditionnel florilège de bonnes résolutions. ',
+                blogComponentName: 'objectifsResolutions'
+            }
+        },
+        {params: {title: 'deroulement-atelier-decouverte'},
+            props: {
+                name: 'Comment se déroule un atelier découverte collectif en equicoaching ?',
+                subTitle: 'Ces ateliers se déroulent sur 3h par petits groupes jusqu’à 6 personnes.',
+                blogComponentName: 'atelierDecouverte'
+            }
+        },
+        {params: {title: 'deroulement-seminaire'},
+            props: {
+                name: 'Comment se déroule un séminaire / team building Equicoaching ?',
+                subTitle: '',
+                blogComponentName: 'seminaire'
+            }
+        },
+        {params: {title: 'deroulement-seance-individuelle'},
+            props: {
+                name: 'Comment se déroule une séance d’equicoaching individuelle ? ',
+                subTitle: 'La première chose à savoir, c’est que l\’equicoaching se base sur un processus de coaching. ',
+                blogComponentName: 'seanceIndividuelle'
+            }
+        },
+        {params: {title: 'etre-coach-26-ans'},
+            props: {
+                name: 'Coach à 26 ans, C\'est possible ?',
+                subTitle: 'Voilà une question que vous êtes en droit de vous poser ! ',
+                blogComponentName: 'etreCoach'
+            }
+        },
+    ];
 }
 
-const { title } = Astro.params;
-const { name, subTitle, blogComponentName } = Astro.props;
-const returnValues = {link: '/blog/index', title:'Faq'}
+const {title} = Astro.params;
+const {name, subTitle, blogComponentName} = Astro.props;
+const returnValues = {link: '/blog/index', title: 'Faq'}
 const actions = [{
-     link: '/contact',
-     text: 'Une question ? Contactez moi !'
-  }]
+    link: '/contact',
+    text: 'Une question ? Contactez moi !'
+}]
 //@todo : watch for issue with dynamic glob behavior here : https://github.com/withastro/astro/issues/3418
 const blogs = await Astro.glob('../../components/blog/*.astro')
 const blog = blogs.filter((blog) => blog.file.includes(blogComponentName))
 ---
 <Layout title={name}>
-	<main>
-	    <Title title={name} returnValues={returnValues} />
+    <main>
+        <Title title={name} returnValues={returnValues}/>
         <Section actions={actions} wide="true">
             <h2 slot="section-title">{subTitle}</h2>
             <Fragment slot="section-content">
-                {blog && blog[0] && (<blog[0].default />)}
+                {blog && blog[0] && (
+                        <blog[0].default/>)}
             </Fragment>
         </Section>
-	</main>
+    </main>
 </Layout>

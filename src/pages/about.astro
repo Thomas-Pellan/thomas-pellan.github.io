@@ -4,39 +4,47 @@ import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 import Separator from '../components/Separator.astro';
 
-const returnValues = {link: '/about', title:'A propos'}
-const image = {src:'/img/about-img-camille-450x450.webp', alt:'Camille Marzec fondatrice', width: 450, height: 450}
+const returnValues = {link: '/about', title: 'A propos'}
+const image = {src: '/img/about-img-camille-450x450.webp', alt: 'Camille Marzec fondatrice', width: 450, height: 450}
 const secondSubTitle = 'Ce sont des séances encadrées par une déontologie.'
 const actions = [
-  {
-    link: '/services',
-    text: 'Prestations'
-  }]
+    {
+        link: '/services',
+        text: 'Prestations'
+    }]
 ---
 
 <Layout title="IBF Equicoaching | A propos">
-	<main>
-	    <Title title="A propos" returnValues={returnValues}/>
+    <main>
+        <Title title="A propos" returnValues={returnValues}/>
         <Section displayTextLeft="true" imgContent={image}>
             <h2 slot="section-title">Qui suis-je en tant que fondatrice d’IBF Equicoaching ?</h2>
             <Fragment slot="section-content">
                 <p>
-                    Je m’appelle Camille et je suis <strong>passionnée par les chevaux depuis toujours</strong>. Cavalière depuis plus de 20ans, j’ai démarré ma carrière en réalisant mon rêve de petite fille, devenir monitrice d’équitation.
+                    Je m’appelle Camille et je suis <strong>passionnée par les chevaux depuis toujours</strong>.
+                    Cavalière depuis plus de 20ans, j’ai démarré ma carrière en réalisant mon rêve de petite fille,
+                    devenir monitrice d’équitation.
                 </p>
                 <p>
-                    J’ai beaucoup aimé transmettre ma passion et voir évoluer mes élèves. Mais il me manquait quelque chose dans le rapport à l’humain et au cheval.
-                    Je voulais aller plus loin. Ne trouvant pas chaussure à mon pied dans le monde équestre classique, je suis allée explorer d’autres univers professionnels.
+                    J’ai beaucoup aimé transmettre ma passion et voir évoluer mes élèves. Mais il me manquait quelque
+                    chose dans le rapport à l’humain et au cheval.
+                    Je voulais aller plus loin. Ne trouvant pas chaussure à mon pied dans le monde équestre classique,
+                    je suis allée explorer d’autres univers professionnels.
                 </p>
                 <p>
-                    J’ai exercé en tant qu’aide enseignante en école alternative, puis dans le domaine administratif et plus récemment en qualité de responsable commerciale.
-                    Durant toutes ces expériences je suis restée persuadée que le cheval pouvait apporter beaucoup de choses à l’humain dans sa façon de communiquer et d’appréhender son environnement.
+                    J’ai exercé en tant qu’aide enseignante en école alternative, puis dans le domaine administratif et
+                    plus récemment en qualité de responsable commerciale.
+                    Durant toutes ces expériences je suis restée persuadée que le cheval pouvait apporter beaucoup de
+                    choses à l’humain dans sa façon de communiquer et d’appréhender son environnement.
                 </p>
                 <p>
-                    C’est pour cela qu’aujourd’hui je me lance dans l’aventure IBF Equicoaching, afin que <strong>chacun puisse prendre conscience de son potentiel et l’exploiter à travers la relation Homme/ cheval</strong>.
+                    C’est pour cela qu’aujourd’hui je me lance dans l’aventure IBF Equicoaching, afin que <strong>chacun
+                    puisse prendre conscience de son potentiel et l’exploiter à travers la relation Homme/
+                    cheval</strong>.
                 </p>
             </Fragment>
         </Section>
-        <Separator />
+        <Separator/>
         <Section subTitle={secondSubTitle} ytbLink="https://youtu.be/qZ4Y1D2HMi4?t=23" actions={actions}>
             <h3 slot="section-title">IBF Equicoaching, qu’est-ce que c’est ? </h3>
             <ul slot="section-content">
@@ -46,10 +54,15 @@ const actions = [
                 <li>Les séances s’effectuent dans un cadre légal (assurances, formation, diplômes…)</li>
                 <li>Je veille au respect du bien-être des chevaux avec lesquels je travaille.</li>
                 <li>Le respect de l’humain dans son intégralité est au cœur de mes séances.</li>
-                <li>Je me dois d’être neutre, objective et transparente quand à mes intention afin qu’il n’y ai pas de manipulation du client.</li>
+                <li>Je me dois d’être neutre, objective et transparente quand à mes intention afin qu’il n’y ai pas de
+                    manipulation du client.
+                </li>
             </ul>
-            <iframe slot="section-content-extra" style="border-radius:12px; margin-top: 2rem;" src="https://open.spotify.com/embed/episode/60SwiKOBZPY27tB1acW4By?utm_source=generator"
-            allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" width="100%" height="100" frameborder="0"></iframe>
+            <iframe slot="section-content-extra" style="border-radius:12px; margin-top: 2rem;"
+                    src="https://open.spotify.com/embed/episode/60SwiKOBZPY27tB1acW4By?utm_source=generator"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+                    width="100%" height="100" frameborder="0"></iframe>
         </Section>
-	</main>
+    </main>
 </Layout>

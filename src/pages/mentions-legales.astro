@@ -3,19 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 
-const returnValues = {link: '/mentions-legales', title:'Mentions légales'}
+const returnValues = {link: '/mentions-legales', title: 'Mentions légales'}
 const actions = [{
     link: '/',
     text: 'Retour à l\'accueil'
 },
-{
-    link: '/contact',
-    text: 'Me contacter'
-}]
+    {
+        link: '/contact',
+        text: 'Me contacter'
+    }]
 ---
 <Layout title="IBF Equicoaching | Mentions légales">
-	<main>
-	    <Title title="Mentions légales" returnValues={returnValues} />
+    <main>
+        <Title title="Mentions légales" returnValues={returnValues}/>
         <Section actions={actions}>
             <h2 slot="section-title">Mention légales du site web</h2>
             <Fragment slot="section-content">
@@ -28,7 +28,7 @@ const actions = [{
                 </p>
                 <p>Le directeur de la publication du site est Thomas Pellan.</p>
                 <p>
-                    Vous pouvez me contacter : <br />Par téléphone du lundi au vendredi de
+                    Vous pouvez me contacter : <br/>Par téléphone du lundi au vendredi de
                     8H30 à 18H sauf jours fériés : (+33)6 10 83 37 88
                 </p>
                 <p>
@@ -37,5 +37,5 @@ const actions = [{
                 </p>
             </Fragment>
         </Section>
-	</main>
+    </main>
 </Layout>

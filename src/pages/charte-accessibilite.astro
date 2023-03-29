@@ -3,12 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 
-const returnValues = {link: '/charte-accessibilite', title:'Charte Accessibilite'}
+const returnValues = {link: '/charte-accessibilite', title: 'Charte Accessibilite'}
 ---
 
 <Layout title="IBF Equicoaching | Charte Accessibilite">
-	<main>
-	    <Title title="Charte pour l'accueil en formation de personnes en situation de handicap " returnValues={returnValues} />
+    <main>
+        <Title title="Charte pour l'accueil en formation de personnes en situation de handicap "
+               returnValues={returnValues}/>
         <Section>
             <h2 slot="section-title">Pourquoi cette charte ?</h2>
             <Fragment slot="section-content">
@@ -42,38 +43,47 @@ const returnValues = {link: '/charte-accessibilite', title:'Charte Accessibilite
                 <h3>Nos engagements :</h3>
                 <ul>
                     <li>Accueillir tous les publics sans discrimination ;</li>
-                    <li>Informer et sensibiliser le public sur les conditions d’accessibilité et d’intégration auxactions de formation ;</li>
-                    <li>Disposer d’un(e) référent(e) handicap, qui en coordination avec les équipespédagogiques, facilite
-                    l’intégration des personnes en situation de handicap dans nos formations ;
+                    <li>Informer et sensibiliser le public sur les conditions d’accessibilité et d’intégration
+                        auxactions de formation ;
+                    </li>
+                    <li>Disposer d’un(e) référent(e) handicap, qui en coordination avec les équipespédagogiques,
+                        facilite
+                        l’intégration des personnes en situation de handicap dans nos formations ;
                     </li>
                     <li>Mettre en œuvre, en fonction des besoins des personnes en situation de handicap, les adaptations
-                    pédagogiques, matérielles et organisationnelles ;
+                        pédagogiques, matérielles et organisationnelles ;
                     </li>
                     <li>
-                    Mobiliser l’ensemble des équipes pédagogiques, techniques et/ou administratives surles questions relatives
-                    à l’accueil des personnes en situation de handicap ;
+                        Mobiliser l’ensemble des équipes pédagogiques, techniques et/ou administratives surles questions
+                        relatives
+                        à l’accueil des personnes en situation de handicap ;
                     </li>
                     <li>
-                    Communiquer sous différents supports, pour informer le public, les stagiaires et les personnels des
-                    engagements pris.
+                        Communiquer sous différents supports, pour informer le public, les stagiaires et les personnels
+                        des
+                        engagements pris.
                     </li>
                 </ul>
                 <h3>Etape de la prise en charge de la demande par le ou les référents handicap :</h3>
                 <ul>
-                        <li>
+                    <li>
                         Recenser le besoin en formation et les attendus du bénéficiaire ;
-                        </li>
-                        <li>
-                        Etudier les mesures à adapter pour compenser la situation d’handicap en lien avec le bénéficiaire et les
+                    </li>
+                    <li>
+                        Etudier les mesures à adapter pour compenser la situation d’handicap en lien avec le
+                        bénéficiaire et les
                         équipes pédagogiques :
                         <ul>
                             <li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si l’accès à la formation est faisable : mise en œuvre de la formation et le bénéficiaire prend contact
-                                avec un des organismes ci-dessous si celui-ci a besoin d’un financement particulier (cout de la
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si l’accès à la formation est faisable : mise
+                                en œuvre de la formation et le bénéficiaire prend contact
+                                avec un des organismes ci-dessous si celui-ci a besoin d’un financement particulier
+                                (cout de la
                                 formation ou ressources matériels),
                             </li>
                             <li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Si l’accès à la formation n’est pas faisable : nous réorienterons le bénéficiaire vers notre liste de
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Si l’accès à la formation n’est pas faisable
+                                : nous réorienterons le bénéficiaire vers notre liste de
                                 partenaires.
                             </li>
                         </ul>
@@ -81,5 +91,5 @@ const returnValues = {link: '/charte-accessibilite', title:'Charte Accessibilite
                 </ul>
             </Fragment>
         </Section>
-	</main>
+    </main>
 </Layout>
