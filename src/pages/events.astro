@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+
+const returnValues = {link: '/events', title: 'Nos évènements'}
+---
+
+<Layout title="IBF Equicoaching | A propos">
+    <main>
+        <Title title="Evenements" returnValues={returnValues}/>
+        <h2>Inscrivez vous à mes prochains évenements</h2>
+    </main>
+</Layout>

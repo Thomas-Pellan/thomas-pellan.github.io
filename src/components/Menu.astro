@@ -69,8 +69,7 @@ const items = [
                         </a>
                     </li>)
         } else {
-            return
-                    <SubMenu title={item.title} links={item.links} clickableLink={item.clickableLink}/>
+            return (<SubMenu info={item} />)
         }
     })
     }
