@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Tile from '../components/Tile.astro';
+import '../styles/m-main.scss';
+
+const returnValues = {link: '/partners', title: 'Partenaires'}
+const tileContent = [
+    {
+        title: 'Coaching RHE',
+        link: '/coachingrhe',
+        html: '<p>Coaching RHE, c\'est un coaching sportif basé sur vos' +
+            'capacités physiques individuelles en binôme avec votre' +
+            'cheval, pour vous amener vers l\'équilibre et l\'harmonie !</p>',
+        imgSrc: '/img/coaching-rhe-320x320.webp',
+    },
+]
+---
+
+<Layout title="IBF Equicoaching | Partenaires">
+    <main>
+        <Title title="Prestations" returnValues={returnValues}/>
+        <div class="m-main">
+            <h2 class="m-main-title">Retrouvez nos partenaires</h2>
+            <div class="m-main-wrapper">
+                {tileContent.map((tile) => (
+                    <Tile tileData={tile}>
+                        <Fragment set:html={tile.html} slot="tile-content"/>
+                    </Tile>
+                ))}
+            </div>
+        </div>
+    </main>
+</Layout>
