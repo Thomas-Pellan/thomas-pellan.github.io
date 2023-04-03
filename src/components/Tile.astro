@@ -1,0 +1,13 @@
+---
+import '../styles/m-tile.scss';
+import {Image} from '@astrojs/image/components';
+
+const {tileData} = Astro.props;
+---
+<div class="m-tile">
+    <Image src={tileData.imgSrc} alt={tileData.title} width="320" height="320" format="webp"/>
+    <div class="m-tile-content">
+        <a href={tileData.link}>{tileData.title}</a>
+        <slot name="tile-content"/>
+    </div>
+</div>

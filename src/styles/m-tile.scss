@@ -1,0 +1,27 @@
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+@import 'src/styles/common/_colors';
+
+.m-tile {
+  width: 20rem;
+  background-color: $color-gray-light-light;
+  margin: $space-B;
+
+  a {
+    text-decoration: none;
+    color: $color-default;
+    font-weight: 600;
+  }
+
+  a:hover {
+    color: $color-primary;
+  }
+
+  &-content {
+    margin: $space-B;
+  }
+}
+
+.m-tile:hover {
+  box-shadow: -14.142px 14.142px 20px 0 rgba(157, 157, 157, .3);
+}

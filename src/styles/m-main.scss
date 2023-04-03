@@ -10,4 +10,11 @@
   &-title, &-empty {
     text-align: center;
   }
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80%;
+  }
 }
