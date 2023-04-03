@@ -1,4 +1,5 @@
 @import 'src/styles/common/_spaces';
+@import 'src/styles/common/_colors';
 
 .m-main {
   display: flex;
@@ -6,6 +7,10 @@
   justify-content: center;
   align-items: center;
   margin-bottom: $space-B;
+
+  &-sub-title {
+    color: $color-primary
+  }
 
   &-title, &-empty {
     text-align: center;

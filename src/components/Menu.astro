@@ -17,10 +17,16 @@ const items = [
     {
         title: 'Entreprises',
         clickableLink: '/company',
-        links: [{
-            title: 'Formations',
-            link: '/pricing-traing'
-        }]
+        links: [
+            {
+                title: 'Formations',
+                link: '/pricing-training'
+            },
+            {
+                title: 'Team Building',
+                link: '/pricing-team-building'
+            }
+        ]
     },
     {
         title: 'Partenaires',
@@ -39,10 +45,6 @@ const items = [
             {
                 title: 'Equitation',
                 link: '/pricing-equitation'
-            },
-            {
-                title: 'Formations',
-                link: '/pricing-traning'
             },
             {
                 title: 'Chèques cadeaux',
@@ -69,7 +71,8 @@ const items = [
                         </a>
                     </li>)
         } else {
-            return (<SubMenu info={item} />)
+            return (
+                    <SubMenu info={item}/>)
         }
     })
     }

@@ -1,0 +1,79 @@
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+@import 'src/styles/common/_colors';
+
+.m-price-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  background-color: $color-white;
+  margin: $space-B;
+  border-radius: 1rem;
+  transition: .3s;
+
+  &-number {
+    margin: $space-B;
+    display: grid;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-primary;
+    color: $color-white;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 5rem;
+    border: 2rem solid $color-gray-light-light;
+  }
+
+  &-title {
+    max-width: 80%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    max-width: 80%;
+    list-style: none;
+    padding: 0;
+
+    li {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: $space-B;
+      border-top: solid $color-gray-light 1px;
+    }
+
+    li:last-child {
+      border-bottom: solid $color-gray-light 1px;
+    }
+  }
+
+  &-price {
+    margin: $space-C 0;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  a {
+    width: 70%;
+    text-align: center;
+    padding: $space-B $space-C;
+    margin-bottom: $space-B;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: $color-default;
+    background-color: $color-gray-light-light;
+    border-radius: 1rem;
+  }
+}
+
+.m-price-tile:hover {
+  box-shadow: -14.142px 14.142px 20px 0 rgba(157, 157, 157, .3);
+  background-image: url('/img/bg-price-320x620.webp');
+  background-position: center;
+  color: $color-white !important;
+}

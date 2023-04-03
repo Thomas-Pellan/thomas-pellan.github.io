@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import PriceTile from '../components/PriceTile.astro';
+import '../styles/m-main.scss';
+
+export function getStaticPaths() {
+    return [
+        {
+            params: {name: 'training'},
+            props: {
+                title: 'Formations',
+                subTitle: 'Réservez votre solution clé en main pour votre entreprise, vos équipes ou en individuel !',
+                descriptions: [
+                    {
+                        number: 1,
+                        title: 'Posture Managériale et Leadership',
+                        points: ['Managers et responsables', 'Seniors, Juniors ou en formation', 'Equipes ou inter entreprises'],
+                        actions: [{link: '/program/manager-leadership', title: 'En savoir plus'}, {
+                            link: '/contact',
+                            title: 'Reservez'
+                        }]
+                    },
+                    {
+                        number: 2,
+                        title: 'Cohésion et Communication',
+                        points: ['Equipes', 'Apprenez à communiquer autrement', 'Developpez la cohésion de vos équipes'],
+                        actions: [{link: '/program/cohesion-communication', title: 'En savoir plus'}, {
+                            link: '/contact',
+                            title: 'Reservez'
+                        }]
+                    },
+                    {
+                        number: 3,
+                        title: 'Developper ses Soft Skills',
+                        points: ['Equipes ou en individuel', 'Intelligence émotionnelle', 'Gestion des émotions'],
+                        actions: [{link: '/program/soft-skills', title: 'En savoir plus'}, {
+                            link: '/contact',
+                            title: 'Reservez'
+                        }]
+                    },
+                ],
+            }
+        },
+        {
+            params: {name: 'team-building'},
+            props: {
+                title: 'Team Building',
+                subTitle: 'Réservez votre team building et découvrez la puissance de l\'équicoaching pour votre équipe.',
+                descriptions: [
+                    {
+                        number: 1,
+                        title: 'Team Building Equicoaching',
+                        points: ['Solution sur mesure', '1/2 journée, journée, week end', 'Programmes à la carte'],
+                        price: 'Devis gratuit',
+                        actions: [{link: '/contact', title: 'Contactez moi'}]
+                    },
+                ],
+            }
+        },
+        {
+            params: {name: 'equicoaching'},
+            props: {
+                title: 'Tarifs Equicoaching',
+                subTitle: 'Trouvez la solution à vos attentes',
+                descriptions: [
+                    {
+                        number: 1,
+                        title: 'Atelier découverte Equicoaching',
+                        points: ['Demi journée', 'De 4 à 6 personnes', 'Suivant organisation'],
+                        price: '56 €/pers',
+                        actions: [{link: '/events', title: 'Inscrivez vous'}]
+                    },
+                    {
+                        number: 2,
+                        title: 'Séance Individuelle Equicoaching\n',
+                        points: ['1h30m', 'Idéal découverte', 'Personnalisée'],
+                        price: '80 €',
+                        actions: [{link: '/contact', title: 'Contactez Moi'}]
+                    },
+                    {
+                        number: 3,
+                        title: 'Forfait 5 séances Equicoaching',
+                        points: ['5 X 1h30m', 'Suivi personnalisé et complet', 'Première séance (définition objectif) par visioconférence'],
+                        price: '350 €',
+                        actions: [{link: '/contact', title: 'Contactez Moi'}]
+                    }
+                ],
+            }
+        },
+        {
+            params: {name: 'equitation'},
+            props: {
+                title: 'Tarifs Equitation',
+                subTitle: 'Trouvez la solution à vos attentes',
+                descriptions: [
+                    {
+                        number: 1,
+                        title: 'Cours Collectif Equitation',
+                        points: ['Gestion des Emotions', '4 personnes max', 'Objectif loisir ou compétition'],
+                        price: '35 €/pers',
+                        actions: [{link: '/contact', title: 'Contactez moi'}]
+                    },
+                    {
+                        number: 2,
+                        title: 'Cours Particulier Equitation',
+                        points: ['Personnalisé', 'Remise en confiance', 'Gestion des émotions'],
+                        price: '50 €',
+                        actions: [{link: '/contact', title: 'Contactez moi'}]
+                    },
+                ],
+            }
+        },
+    ];
+}
+
+const {name} = Astro.params;
+const {title, subTitle, descriptions} = Astro.props;
+const returnValues = {link: `/pricing-${name}`, title: title}
+const titleStr = `Equicoaching | ${title}`
+
+const test = {
+    number: 1,
+    title: 'Cours particulier equitation',
+    points: ['point numero 1', 'point numero 2'],
+    price: '50 € /pers',
+    actions: [{link: '/', title: 'Contactez moi'}]
+}
+---
+<Layout title={titleStr}>
+    <main>
+        <Title title={title} returnValues={returnValues}/>
+        <div class="m-main">
+            <h2 class="m-main-title">{subTitle}</h2>
+            <span class="m-main-sub-title">Quels que soit vos objectifs et vos besoins.</span>
+            <div class="m-main-wrapper">
+                {descriptions && descriptions.map(description => (
+                        <PriceTile data={description}/>))}
+            </div>
+        </div>
+    </main>
+</Layout>

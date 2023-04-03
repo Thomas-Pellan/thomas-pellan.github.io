@@ -1,0 +1,14 @@
+---
+import '../styles/m-price-tile.scss';
+
+const {data} = Astro.props;
+---
+<div class="m-price-tile">
+    <span class="m-price-tile-number">{data.number}</span>
+    <span class="m-price-tile-title">{data.title}</span>
+    <ul class="m-price-tile-points">
+        {data.points.map((point) => (<li>{point}</li>))}
+    </ul>
+    {data.price && <span class="m-price-tile-price">{data.price}</span>}
+    {data.actions && data.actions.map((action) => (<a href={action.link}>{action.title}</>))}
+</div>
