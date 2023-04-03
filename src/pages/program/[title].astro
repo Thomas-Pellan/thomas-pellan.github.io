@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Title from '../../components/Title.astro';
+import Section from '../../components/Section.astro';
+
+export function getStaticPaths() {
+    return [
+        {
+            params: {title: 'cohesion-communication'},
+            props: {
+                name: 'Cohésion et Communication',
+                subTitle: 'Programme de Formation Cohésion et Communication :',
+                blogComponentName: 'cohesionCommunication'
+            }
+        },
+        {
+            params: {title: 'manager-leadership'},
+            props: {
+                name: 'Posture Managériale et Leadership',
+                subTitle: 'Programme de Formation Posture managériale et leadership :',
+                blogComponentName: 'managerLeadership'
+            }
+        },
+        {
+            params: {title: 'soft-skills'},
+            props: {
+                name: 'Developper ses Soft Skills',
+                subTitle: 'Programme de Formation Developper ses Soft Skills :',
+                blogComponentName: 'softSkills'
+            }
+        },
+    ];
+}
+
+const {title} = Astro.params;
+const {name, subTitle, blogComponentName} = Astro.props;
+const returnValues = {link: '/pricing-training', title: 'Formations'}
+const actions = [{
+    link: '/contact',
+    text: 'Une question ? Contactez moi !'
+}, {
+    link: '/pricing-training',
+    text: 'Retour aux formations'
+}]
+//@todo : watch for issue with dynamic glob behavior here : https://github.com/withastro/astro/issues/3418
+const programs = await Astro.glob('../../components/program/*.astro')
+const program = programs.filter((program) => program.file.includes(blogComponentName))
+---
+<Layout title={name}>
+    <main>
+        <Title title={name} returnValues={returnValues}/>
+        <Section actions={actions} wide="true">
+            <h2 slot="section-title">{subTitle}</h2>
+            <Fragment slot="section-content">
+                {program && program[0] && (<program[0].default/>)}
+            </Fragment>
+        </Section>
+    </main>
+</Layout>
