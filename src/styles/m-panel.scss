@@ -1,0 +1,44 @@
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+@import 'src/styles/common/_colors';
+
+.m-panel {
+  width: 80%;
+  margin-bottom: $space-B;
+
+  &-title {
+    border: solid 1px $color-gray-light;
+    background-color: $color-gray-light-light;
+
+    p {
+      margin: $space-B;
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    border: solid 1px $color-gray-light;
+    background-color: $color-white;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+
+    &-slot {
+      margin: $space-B;
+    }
+  }
+
+  .show {
+    position: inherit;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+@include mobile {
+  .m-panel {
+    width: 90%;
+  }
+}

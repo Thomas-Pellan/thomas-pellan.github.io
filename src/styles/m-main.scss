@@ -1,0 +1,13 @@
+@import 'src/styles/common/_spaces';
+
+.m-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $space-B;
+
+  &-title, &-empty {
+    text-align: center;
+  }
+}
