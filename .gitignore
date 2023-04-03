@@ -8,6 +8,8 @@ dist/
 .vscode
 .iml
 *.iml
+*/idea
+*.idea
 
 # dependencies
 node_modules/
