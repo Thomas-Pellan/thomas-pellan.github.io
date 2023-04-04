@@ -2,7 +2,7 @@
 import {Image} from '@astrojs/image/components';
 import Menu from '../components/Menu.astro';
 import Icons from '../components/Icons.astro';
-import {Icon} from 'astro-icon'
+import Icon from '../components/Icon.astro'
 import '../styles/m-header.scss';
 
 const {title} = Astro.props;
@@ -10,8 +10,6 @@ const {title} = Astro.props;
 <head class="m-header">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-
-    <Icons/>
     <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
 
@@ -26,8 +24,8 @@ const {title} = Astro.props;
         <p class="m-header-title-text">IBF Equicoaching</p>
     </a>
     <div class="m-header-line"/>
-    <Icon class="m-header-icon hidden" name="radix-icons:cross-2"/>
-    <Icon class="m-header-icon" name="ic:round-menu"/>
+    <Icon className="m-header-icon hidden" name="baseline-close"/>
+    <Icon className="m-header-icon" name="round-menu"/>
     <nav class="m-header-menu">
         <Menu/>
     </nav>
