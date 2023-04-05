@@ -1,6 +1,6 @@
 ---
 import '../styles/m-title.scss';
-import Icon from 'astro-icon'
+import Icon from '../components/Icon.astro'
 
 const {title, returnValues} = Astro.props;
 ---
@@ -14,7 +14,7 @@ const {title, returnValues} = Astro.props;
         {returnValues && (
                 <p>
                     <a href="/">Home</a>
-                    <Icon class="m-title-arrow" name="mdi:arrow-right"/>
+                    <Icon className="m-title-arrow" name="arrow-right"/>
                     <a href={returnValues.link}>{returnValues.title}</a>
                 </p>
         )}

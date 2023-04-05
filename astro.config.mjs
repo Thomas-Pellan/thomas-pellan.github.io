@@ -3,6 +3,7 @@ import vue from '@astrojs/vue';
 import image from '@astrojs/image';
 import { astroImageTools } from "astro-imagetools";
 import compress from "astro-compress";
+import sitemap from '@astrojs/sitemap';
 
 import sitemap from "@astrojs/sitemap";
 
@@ -25,5 +26,5 @@ export default defineConfig({
       }
       return item;
     },
-  })],
+  })]
 });
