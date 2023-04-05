@@ -5,8 +5,26 @@ import { astroImageTools } from "astro-imagetools";
 import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
-  site: 'https://www.ibf-equicoqching.com',
-  integrations: [vue(), image(), astroImageTools, compress(), sitemap()],
+  site: 'https://www.ibf-equicoaching.com',
+  integrations: [vue(), image(), astroImageTools, compress(), sitemap({
+    serialize(item) {
+      item.changefreq = 'weekly';
+      item.lastmod = new Date();
+      item.priority = 0.9;
+      if (/blog/.test(item.url)) {
+        item.changefreq = 'weekly';
+        item.lastmod = new Date();
+        item.priority = 0.7;
+      }
+      if (/partners/.test(item.url) ) {
+        item.changefreq = 'monthly';
+        item.lastmod = new Date();
+        item.priority = 0.7;
+      }
+      return item;
+    },
+  })]
 });
