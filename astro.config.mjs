@@ -5,8 +5,6 @@ import { astroImageTools } from "astro-imagetools";
 import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
 
-import sitemap from "@astrojs/sitemap";
-
 export default defineConfig({
   site: 'https://www.ibf-equicoaching.com',
   integrations: [vue(), image(), astroImageTools, compress(), sitemap({
