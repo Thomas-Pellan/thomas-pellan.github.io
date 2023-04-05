@@ -1,6 +1,6 @@
 ---
 import '../styles/m-footer.scss';
-import {Icon} from 'astro-icon'
+import Icon from '../components/Icon.astro'
 ---
 <section class="m-footer-separator"></section>
 <footer class="m-footer">
@@ -34,13 +34,13 @@ import {Icon} from 'astro-icon'
         <p>
         <div class="m-footer-social">
             <a target="_blank" href="https://www.facebook.com/ibfequicoaching" aria-label="Instagram">
-                <Icon class="m-footer-social-icon" name="mdi:facebook"/>
+                <Icon className="m-footer-social-icon" name="facebook"/>
             </a>
             <a target="_blank" href="https://www.instagram.com/ibf_equicoaching/" aria-label="Facebook">
-                <Icon class="m-footer-social-icon" name="mdi:instagram"/>
+                <Icon className="m-footer-social-icon" name="instagram"/>
             </a>
             <a target="_blank" href="https://www.linkedin.com/company/ibf-equicoaching/" aria-label="Linkedin">
-                <Icon class="m-footer-social-icon" name="mdi:linkedin"/>
+                <Icon className="m-footer-social-icon" name="linkedin"/>
             </a>
         </div>
         <span class="m-footer-title">
