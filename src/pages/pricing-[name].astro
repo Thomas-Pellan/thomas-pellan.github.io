@@ -119,15 +119,18 @@ const {title, subTitle, descriptions} = Astro.props;
 const returnValues = {link: `/pricing-${name}`, title: title}
 const titleStr = `Equicoaching | ${title}`
 
-const test = {
-    number: 1,
-    title: 'Cours particulier equitation',
-    points: ['point numero 1', 'point numero 2'],
-    price: '50 € /pers',
-    actions: [{link: '/', title: 'Contactez moi'}]
+let seoDescription = 'Découvrez nos tarifs'
+if(descriptions) {
+    descriptions.forEach((desc) => seoDescription += `| ${desc.title} `)
+}
+
+const seoData = {
+    title: titleStr,
+    description: seoDescription,
+    noindex: false
 }
 ---
-<Layout title={titleStr}>
+<Layout title={titleStr} seoData={seoData}>
     <main>
         <Title title={title} returnValues={returnValues}/>
         <div class="m-main">

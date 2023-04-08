@@ -12,8 +12,13 @@ const actions = [{
         link: '/contact',
         text: 'Me contacter'
     }]
+const seoData = {
+    title: 'IBF Equicoaching | Plan du site',
+    description: 'Plan du site et liens divers',
+    noindex: false
+}
 ---
-<Layout title="IBF Equicoaching | Plan du site">
+<Layout title="IBF Equicoaching | Plan du site" seoData={seoData}>
     <main>
         <Title title="Plan du site" returnValues={returnValues}/>
         <Section actions={actions}>

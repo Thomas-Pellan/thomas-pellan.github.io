@@ -48,9 +48,14 @@ const tileContent = [
         imgSrc: '/img/freedom-320x320.webp',
     },
 ]
+const seoData = {
+    title: 'IBF Equicoaching | Services et prestations',
+    description: 'Découvrez nos différents services et leurs tarifs, pour entreprises, particuliers et associations',
+    noindex: false
+}
 ---
 
-<Layout title="IBF Equicoaching | Prestations">
+<Layout title="IBF Equicoaching | Prestations" seoData={seoData}>
     <main>
         <Title title="Prestations" returnValues={returnValues}/>
         <div class="m-main">

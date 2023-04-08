@@ -18,9 +18,14 @@ const actionsSecond: ({ link: string; text: string })[] = [{
         link: '/pricing-equicoaching',
         text: 'Particuliers'
     }]
+const seoData = {
+    title: 'IBF Equicoaching | Coaching et Formations',
+    description: 'Découvrez le développement personnel autrement. Envie d\'une relation différente avec le cheval ? Séances proches de Grenoble et Chambéry',
+    noindex: false
+}
 ---
 
-<Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry">
+<Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry" seoData={seoData}>
     <main>
         <Title title="Equicoaching et Formations"/>
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actionsFirst}>

@@ -20,8 +20,13 @@ const actions = [{
 }]
 const titleStr = `Equicoaching ${name} | Horse Coaching`
 const h1Str = `Equicoaching ${name}`
+const seoData = {
+    title: titleStr,
+    description: `${name} | Horse Coaching, training for managers, teams and individuals`,
+    noindex: false
+}
 ---
-<Layout title={titleStr} lang="en">
+<Layout title={titleStr} lang="en" seoData={seoData}>
     <main>
         <Title title={h1Str} returnValues={returnValues}/>
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actions} wide="true">

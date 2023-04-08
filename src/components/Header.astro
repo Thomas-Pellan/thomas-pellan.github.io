@@ -3,16 +3,22 @@ import {Image} from '@astrojs/image/components';//Do not Remove that !
 import Menu from '../components/Menu.astro';
 import Icons from '../components/Icons.astro';
 import Icon from 'astro-icon'
+import {SEO} from "astro-seo";
 import '../styles/m-header.scss';
 
-const {title} = Astro.props;
+const {title, seoData} = Astro.props;
 ---
 <head class="m-header">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <Icons />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <Icons/>
+    {seoData && (
+            <SEO
+                    title={seoData.title}
+                    description={seoData.description}
+                    noindex={seoData.noindex}/>)}
     <link rel="sitemap" href="/sitemap.xml">
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
 
     <a href="/" class="m-header-title">

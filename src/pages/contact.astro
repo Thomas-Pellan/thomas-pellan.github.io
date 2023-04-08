@@ -4,9 +4,14 @@ import Title from '../components/Title.astro';
 import '../styles/m-main.scss';
 
 const returnValues = {link: '/contact', title: 'Contact'}
+const seoData = {
+    title: 'IBF Equicoaching | Me contacter',
+    description: 'Me contacter pour toute question sur l\'équicoaching, pour réserver une séance ou pour un devis.',
+    noindex: false
+}
 ---
 
-<Layout title="IBF Equicoaching | Contact">
+<Layout title="IBF Equicoaching | Contact" seoData={seoData}>
     <main>
         <Title title="Contact" returnValues={returnValues}/>
         <div class="m-main">

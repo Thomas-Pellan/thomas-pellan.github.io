@@ -2,12 +2,12 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, lang } = Astro.props;
+const { title, lang, seoData } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang={lang ? lang : 'fr'}>
-	<Header title={title} />
+	<Header title={title} seoData={seoData} />
 	<body class="body">
 	    <slot />
 		<script>

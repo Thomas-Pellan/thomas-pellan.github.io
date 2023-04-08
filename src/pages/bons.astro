@@ -11,9 +11,14 @@ const actions = [
         link: '/contact',
         text: 'Offrez de l\'équicoaching'
     }]
+const seoData = {
+    title: 'IBF Equicoaching | Chèques cadeaux',
+    description: 'Offrez de l\'équicoaching en cadeau, pour une occasion ou pour les fêtes. Osez le cadeau bien être !',
+    noindex: false
+}
 ---
 
-<Layout title="IBF Equicoaching | Chèques cadeaux">
+<Layout title="IBF Equicoaching | Chèques cadeaux" seoData={seoData}>
     <main>
         <Title title="Bons Cadeaux" returnValues={returnValues}/>
         <Section displayTextLeft="true" subTitle="Chèques cadeaux IBF équicoaching" imgContent={image}

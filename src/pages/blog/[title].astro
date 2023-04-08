@@ -67,8 +67,13 @@ const actions = [{
 //@todo : watch for issue with dynamic glob behavior here : https://github.com/withastro/astro/issues/3418
 const blogs = await Astro.glob('../../components/blog/*.astro')
 const blog = blogs.filter((blog) => blog.file.includes(blogComponentName))
+const seoData = {
+    title: name,
+    description: subTitle,
+    noindex: false
+}
 ---
-<Layout title={name}>
+<Layout title={name} seoData={seoData}>
     <main>
         <Title title={name} returnValues={returnValues}/>
         <Section actions={actions} wide="true">

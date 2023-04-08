@@ -12,9 +12,14 @@ const actions = [
         link: '/services',
         text: 'Prestations'
     }]
+const seoData = {
+    title: 'IBF Equicoaching | A propos de moi',
+    description: 'IBF équicoaching, qui suis je et quel est mon projet ?',
+    noindex: false
+}
 ---
 
-<Layout title="IBF Equicoaching | A propos">
+<Layout title="IBF Equicoaching | A propos" seoData={seoData}>
     <main>
         <Title title="A propos" returnValues={returnValues}/>
         <Section displayTextLeft="true" imgContent={image}>

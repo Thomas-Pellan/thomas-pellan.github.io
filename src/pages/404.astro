@@ -12,9 +12,14 @@ const actions = [{
         link: '/contact',
         text: 'Me contacter'
     }]
+const seoData = {
+    title: 'error 404',
+    description: 'Not found',
+    noindex: true
+}
 ---
 
-<Layout title="IBF Equicoaching | Erreur 404">
+<Layout title="IBF Equicoaching | Erreur 404" seoData={seoData}>
     <main>
         <Title title="Erreur 404" returnValues={returnValues}/>
         <Section actions={actions}>

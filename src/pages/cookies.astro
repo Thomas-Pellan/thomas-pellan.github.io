@@ -12,8 +12,13 @@ const actions = [{
         link: '/contact',
         text: 'Me contacter'
     }]
+const seoData = {
+    title: 'IBF Equicoaching | Cookies',
+    description: 'Politique de gestion de vos données personnelles',
+    noindex: false
+}
 ---
-<Layout title="IBF Equicoaching | Cookies">
+<Layout title="IBF Equicoaching | Cookies" seoData={seoData}>
     <main>
         <Title title="Cookies" returnValues={returnValues}/>
         <Section actions={actions}>

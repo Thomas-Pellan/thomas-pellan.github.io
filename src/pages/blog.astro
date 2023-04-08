@@ -51,9 +51,14 @@ const tileContent = [
         imgSrc: '/img/img-camille-320x320.webp',
     },
 ]
+const seoData = {
+    title: 'IBF Equicoaching | Foire aux questions et Blog',
+    description: 'Faq, Foire aux questions sur coaching et la médiation du cheval',
+    noindex: false
+}
 ---
 
-<Layout title="IBF Equicoaching | Faq">
+<Layout title="IBF Equicoaching | Faq" seoData={seoData}>
     <main>
         <Title title="Foire aux questions" returnValues={returnValues}/>
         <div class="m-main">
