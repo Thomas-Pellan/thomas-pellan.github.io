@@ -17,18 +17,18 @@ const {title, seoData} = Astro.props;
                     title={seoData.title}
                     description={seoData.description}
                     noindex={seoData.noindex}/>)}
-    <link rel="sitemap" href="/sitemap.xml">
+    <link rel="sitemap" href="/sitemap-index.xml">
     <meta name="generator" content={Astro.generator}/>
     <title>{title}</title>
 
     <a href="/" class="m-header-title">
-        <Image
-                src="img/logo.webp"
+        <!--<Image
+                src="img/logo-50x50.webp"
                 format="webp"
                 width="50"
                 height="50"
                 alt="logo-ibf-equicoaching"
-        />
+        />-->
         <p class="m-header-title-text">IBF Equicoaching</p>
     </a>
     <div class="m-header-line"/>
