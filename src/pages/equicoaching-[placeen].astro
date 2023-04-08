@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 import PlaceEn from '../components/places/PlaceEn.astro';
+import Seo from '../class/Seo';
 
 export function getStaticPaths() {
     return [
@@ -18,13 +19,9 @@ const actions = [{
     link: '/contact',
     text: 'Contact me'
 }]
-const titleStr = `Equicoaching ${name} | Horse Coaching`
-const h1Str = `Equicoaching ${name}`
-const seoData = {
-    title: titleStr,
-    description: `${name} | Horse Coaching, training for managers, teams and individuals`,
-    noindex: false
-}
+const titleStr: string = `Equicoaching ${name} | Horse Coaching`
+const h1Str: string = `Equicoaching ${name}`
+const seoData : Seo = new Seo(titleStr,  `${name} | Horse Coaching, training for managers, teams and individuals`, false);
 ---
 <Layout title={titleStr} lang="en" seoData={seoData}>
     <main>

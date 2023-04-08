@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/Title.astro';
 import Section from '../../components/Section.astro';
+import Seo from '../../class/Seo';
 
 const returnValues = {link: '/partners', title: 'Nos partenaires'}
 const image = {src: '/img/coaching-rhe-320x320.webp', alt: 'coaching rhe entreprise'}
@@ -9,11 +10,7 @@ const actions = [{
     link: 'https://www.coachingrhe.fr/',
     text: 'Pour plus d\'informations, contactez moi 👍'
 }]
-const seoData = {
-    title: 'Coaching RHE',
-    description: 'Coaching RHE, notre partenaire coaching et physiothérapie.',
-    noindex: false
-}
+const seoData : Seo = new Seo('Coaching RHE', 'Coaching RHE, notre partenaire coaching et physiothérapie.', false);
 ---
 
 <Layout title="IBF Equicoaching | Coaching RHE" seoData={seoData}>

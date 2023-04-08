@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 import Separator from '../components/Separator.astro';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/about', title: 'A propos'}
 const image = {src: '/img/about-img-camille-450x450.webp', alt: 'Camille Marzec fondatrice', width: 450, height: 450}
@@ -12,11 +13,8 @@ const actions = [
         link: '/services',
         text: 'Prestations'
     }]
-const seoData = {
-    title: 'IBF Equicoaching | A propos de moi',
-    description: 'IBF équicoaching, qui suis je et quel est mon projet ?',
-    noindex: false
-}
+
+const seoData : Seo = new Seo('IBF Equicoaching | A propos de moi', 'IBF équicoaching, qui suis je et quel est mon projet ?', false);
 ---
 
 <Layout title="IBF Equicoaching | A propos" seoData={seoData}>

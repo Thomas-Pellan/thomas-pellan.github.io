@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Tile from '../components/Tile.astro';
 import '../styles/m-main.scss';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/service', title: 'Prestations'}
 const tileContent = [
@@ -48,11 +49,8 @@ const tileContent = [
         imgSrc: '/img/freedom-320x320.webp',
     },
 ]
-const seoData = {
-    title: 'IBF Equicoaching | Services et prestations',
-    description: 'Découvrez nos différents services et leurs tarifs, pour entreprises, particuliers et associations',
-    noindex: false
-}
+
+const seoData : Seo = new Seo('IBF Equicoaching | Services et prestations', 'Découvrez nos différents services et leurs tarifs, pour entreprises, particuliers et associations', false);
 ---
 
 <Layout title="IBF Equicoaching | Prestations" seoData={seoData}>

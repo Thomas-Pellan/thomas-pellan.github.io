@@ -2,13 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/charte-accessibilite', title: 'Charte Accessibilite'}
-const seoData = {
-    title: 'IBF Equicoaching | Charte Accéssibilité Handicap',
-    description: 'Notre charte pour l\'accéssibilité handicap aux formations en équicoaching',
-    noindex: false
-}
+const seoData: Seo = new Seo('IBF Equicoaching | Charte Accéssibilité Handicap', 'Notre charte pour l\'accéssibilité handicap aux formations en équicoaching', false);
 ---
 
 <Layout title="IBF Equicoaching | Charte Accessibilite" seoData={seoData}>

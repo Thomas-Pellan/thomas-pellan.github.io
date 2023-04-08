@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/', title: 'Erreur'}
 const actions = [{
@@ -12,11 +13,7 @@ const actions = [{
         link: '/contact',
         text: 'Me contacter'
     }]
-const seoData = {
-    title: 'error 404',
-    description: 'Not found',
-    noindex: true
-}
+const seoData : Seo = new Seo('Error 404', 'Not Found', false);
 ---
 
 <Layout title="IBF Equicoaching | Erreur 404" seoData={seoData}>

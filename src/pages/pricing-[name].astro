@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import PriceTile from '../components/PriceTile.astro';
 import '../styles/m-main.scss';
-
+import Seo from '../class/Seo';
 export function getStaticPaths() {
     return [
         {
@@ -124,11 +124,7 @@ if(descriptions) {
     descriptions.forEach((desc) => seoDescription += `| ${desc.title} `)
 }
 
-const seoData = {
-    title: titleStr,
-    description: seoDescription,
-    noindex: false
-}
+const seoData : Seo = new Seo(titleStr, seoDescription, false);
 ---
 <Layout title={titleStr} seoData={seoData}>
     <main>

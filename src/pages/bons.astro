@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/bons', title: 'Bons cadeaux'}
 const image = {src: '/img/bons-320x320.webp', alt: 'bons cadeaux equicoaching'}
@@ -11,11 +12,7 @@ const actions = [
         link: '/contact',
         text: 'Offrez de l\'équicoaching'
     }]
-const seoData = {
-    title: 'IBF Equicoaching | Chèques cadeaux',
-    description: 'Offrez de l\'équicoaching en cadeau, pour une occasion ou pour les fêtes. Osez le cadeau bien être !',
-    noindex: false
-}
+const seoData: Seo = new Seo('IBF Equicoaching | Chèques cadeaux', 'Offrez de l\'équicoaching en cadeau, pour une occasion ou pour les fêtes. Osez le cadeau bien être !', false);
 ---
 
 <Layout title="IBF Equicoaching | Chèques cadeaux" seoData={seoData}>

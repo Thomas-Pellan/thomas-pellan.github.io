@@ -2,6 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/Title.astro';
 import Section from '../../components/Section.astro';
+import Seo from '../../class/Seo';
+import {AstroInstance} from "astro";
+import ButtonAction from '../../class/ButtonAction';
+import ReturnAction from '../../class/ReturnAction';
 
 export function getStaticPaths() {
     return [
@@ -59,19 +63,12 @@ export function getStaticPaths() {
 
 const {title} = Astro.params;
 const {name, subTitle, blogComponentName} = Astro.props;
-const returnValues = {link: '/blog', title: 'Faq'}
-const actions = [{
-    link: '/contact',
-    text: 'Une question ? Contactez moi !'
-}]
+const returnValues: ReturnAction = new ReturnAction('/blog', 'Faq')
+const actions: ButtonAction[] = [new ButtonAction('/contact', 'Une question ? Contactez moi !')]
 //@todo : watch for issue with dynamic glob behavior here : https://github.com/withastro/astro/issues/3418
-const blogs = await Astro.glob('../../components/blog/*.astro')
-const blog = blogs.filter((blog) => blog.file.includes(blogComponentName))
-const seoData = {
-    title: name,
-    description: subTitle,
-    noindex: false
-}
+const blogs: AstroInstance[] = await Astro.glob('../../components/blog/*.astro')
+const blog: AstroInstance[] = blogs.filter((blog) => blog.file.includes(blogComponentName))
+const seoData : Seo = new Seo(name, subTitle, false);
 ---
 <Layout title={name} seoData={seoData}>
     <main>

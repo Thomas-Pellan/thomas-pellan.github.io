@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Tile from '../components/Tile.astro';
 import '../styles/m-main.scss';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/blog', title: 'Faq'}
 const tileContent = [
@@ -51,11 +52,8 @@ const tileContent = [
         imgSrc: '/img/img-camille-320x320.webp',
     },
 ]
-const seoData = {
-    title: 'IBF Equicoaching | Foire aux questions et Blog',
-    description: 'Faq, Foire aux questions sur coaching et la médiation du cheval',
-    noindex: false
-}
+
+const seoData : Seo = new Seo('IBF Equicoaching | Foire aux questions et Blog', 'Faq, Foire aux questions sur coaching et la médiation du cheval', false);
 ---
 
 <Layout title="IBF Equicoaching | Faq" seoData={seoData}>

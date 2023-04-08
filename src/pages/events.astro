@@ -3,13 +3,10 @@ import LayoutPanels from '../layouts/LayoutPanels.astro';
 import Title from '../components/Title.astro';
 import Panel from '../components/Panel.astro';
 import '../styles/m-main.scss';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/events', title: 'Nos évènements'}
-const seoData = {
-    title: 'IBF Equicoaching | Nos Evenements et Ateliers',
-    description: 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.',
-    noindex: false
-}
+const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false);
 ---
 
 <LayoutPanels title="IBF Equicoaching | Evenements" seoData={seoData}>

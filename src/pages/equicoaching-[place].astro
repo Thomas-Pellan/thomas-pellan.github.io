@@ -6,6 +6,7 @@ import Place1 from '../components/places/Place1.astro';
 import Place2 from '../components/places/Place2.astro';
 import Place3 from '../components/places/Place3.astro';
 import Place4 from '../components/places/Place4.astro';
+import Seo from '../class/Seo';
 
 export function getStaticPaths() {
     return [
@@ -37,13 +38,9 @@ const actions = [{
         link: '/about',
         text: 'En savoir plus'
     }]
-const titleStr = `Equicoaching ${name} | Coaching Par Le Cheval`
-const h1Str = `Equicoaching ${name}`
-const seoData = {
-    title: titleStr,
-    description: `${name} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`,
-    noindex: false
-}
+const titleStr: string = `Equicoaching ${name} | Coaching Par Le Cheval`
+const h1Str: string = `Equicoaching ${name}`
+const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false);
 ---
 <Layout title={titleStr} seoData={seoData}>
     <main>

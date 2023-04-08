@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Tile from '../components/Tile.astro';
 import '../styles/m-main.scss';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/partners', title: 'Partenaires'}
 const tileContent = [
@@ -15,11 +16,7 @@ const tileContent = [
         imgSrc: '/img/coaching-rhe-320x320.webp',
     },
 ]
-const seoData = {
-    title: 'IBF Equicoaching | Partenaires',
-    description: 'IBf Equicoaching, ils nous font confiance, découvrez nos partenaires !',
-    noindex: false
-}
+const seoData : Seo = new Seo('IBF Equicoaching | Partenaires', 'IBF Equicoaching, ils nous font confiance, découvrez nos partenaires !', false);
 ---
 
 <Layout title="IBF Equicoaching | Partenaires" seoData={seoData}>

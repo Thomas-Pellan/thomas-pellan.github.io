@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
+import Seo from '../class/Seo';
 
 const returnValues = {link: '/cookies', title: 'Gestion des données'}
 const actions = [{
@@ -12,11 +13,7 @@ const actions = [{
         link: '/contact',
         text: 'Me contacter'
     }]
-const seoData = {
-    title: 'IBF Equicoaching | Cookies',
-    description: 'Politique de gestion de vos données personnelles',
-    noindex: false
-}
+const seoData : Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion de vos données personnelles', false);
 ---
 <Layout title="IBF Equicoaching | Cookies" seoData={seoData}>
     <main>

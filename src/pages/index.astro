@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 import SeparatorValues from '../components/SeparatorValues.astro';
+import Seo from '../class/Seo';
 
 const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
 const secondImage = {src: '/img/what-is-equicoaching-550x550.webp', alt: 'A qui s\adresse l\'équicoaching'}
@@ -18,11 +19,7 @@ const actionsSecond: ({ link: string; text: string })[] = [{
         link: '/pricing-equicoaching',
         text: 'Particuliers'
     }]
-const seoData = {
-    title: 'IBF Equicoaching | Coaching et Formations',
-    description: 'Découvrez le développement personnel autrement. Envie d\'une relation différente avec le cheval ? Séances proches de Grenoble et Chambéry',
-    noindex: false
-}
+const seoData : Seo = new Seo('IBF Equicoaching | Coaching et Formations', 'Découvrez le développement personnel autrement. Envie d\'une relation différente avec le cheval ? Séances proches de Grenoble et Chambéry.', false);
 ---
 
 <Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry" seoData={seoData}>
