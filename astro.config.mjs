@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://thomas-pellan.github.io',
+  base: '/ibf-front',
   integrations: [vue(), image(), astroImageTools, compress(), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
