@@ -66,7 +66,7 @@ const items = [
         if (item.link) {
             return (
                     <li>
-                        <a href={item.link}>
+                        <a href={import.meta.env.BASE_URL + item.link}>
                             {item.title}
                         </a>
                     </li>)
