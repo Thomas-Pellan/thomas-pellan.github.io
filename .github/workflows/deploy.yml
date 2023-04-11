@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ feat/deploy-test ]
+    branches: [ master ]
   workflow_dispatch:
 permissions:
   contents: read
