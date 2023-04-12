@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "ibf-front",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint"
+    "lint": "eslint --ext .js,.astro src"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.2.2",
@@ -24,10 +24,9 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.57.0",
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-astro": "^0.26.1",
-    "eslint-plugin-vue": "^9.10.0",
     "sass": "^1.59.3"
   }
 }

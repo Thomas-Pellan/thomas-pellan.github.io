@@ -1,7 +1,7 @@
 ---
 import LayoutPanels from '../layouts/LayoutPanels.astro';
 import Title from '../components/Title.astro';
-import Panel from '../components/Panel.astro';
+import PanelEvent from '../components/PanelEvent.astro';
 import '../styles/m-main.scss';
 import Seo from '../class/Seo';
 
@@ -19,19 +19,19 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                 sur les suivants !</a>
             <p>
             <h3>Evenements passes</h3>
-            <Panel title="Atelier Découverte Equicoaching #9 - Reconnexion à soi - Samedi 24 septembre. 2022 - 09h00 - 12h00 - Annulé !"
+            <PanelEvent title="Atelier Découverte Equicoaching #9 - Reconnexion à soi - Samedi 24 septembre. 2022 - 09h00 - 12h00 - Annulé !"
+                        date={new Date('2022-09-24')}
                    id="2">
                 <Fragment slot="panel-content">
                     En raison des conditions météo, l'évenement est annulé. Toutes nos excuses pour le désagrément.
                 </Fragment>
-            </Panel>
-            <Panel title="Atelier Découverte Equicoaching #8 - Confiance en soi - Samedi 10 septembre. 2022 - 09h00 - 12h00"
+            </PanelEvent>
+            <PanelEvent title="Atelier Découverte Equicoaching #8 - Confiance en soi - Samedi 10 septembre. 2022 - 09h00 - 12h00"
+                        date={new Date('2020-09-10')}
                    id="3">
-                <Fragment slot="panel-content">
-                    Il n'est plus possible de s'inscrire pour cet évènement.
-                </Fragment>
-            </Panel>
-            <Panel title="Atelier Découverte Equicoaching #7 - Confiance en soi - Samedi 30 juillet. 2022 - 09h00 - 12h00"
+            </PanelEvent>
+            <PanelEvent title="Atelier Découverte Equicoaching #7 - Confiance en soi - Samedi 30 juillet. 2022 - 09h00 - 12h00"
+                        date={new Date('2020-07-30')}
                    id="4">
                 <Fragment slot="panel-content">
                     <p>
@@ -39,8 +39,9 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                             style="color: #86071f;" href="/contact">formulaire de contact</a>
                     </p>
                 </Fragment>
-            </Panel>
-            <Panel title="Festival Minuscule Theys - Venez me rencontrer ! - Samedi 21 mai. 2022 - à partir de 14h"
+            </PanelEvent>
+            <PanelEvent title="Festival Minuscule Theys - Venez me rencontrer ! - Samedi 21 mai. 2022 - à partir de 14h"
+                        date={new Date('2020-05-21')}
                    id="5">
                 <Fragment slot="panel-content">
                     <p>
@@ -52,8 +53,9 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                            target="_blank">Lien de l'évènement</a>
                     </p>
                 </Fragment>
-            </Panel>
-            <Panel title="Atelier Découverte Equicoaching #6 - Prendre conscience de sa puissance personnelle - Vendredi 27 mai. 2022 - 09h00 - 12h00"
+            </PanelEvent>
+            <PanelEvent title="Atelier Découverte Equicoaching #6 - Prendre conscience de sa puissance personnelle - Vendredi 27 mai. 2022 - 09h00 - 12h00"
+                        date={new Date('2020-05-27')}
                    id="6">
                 <Fragment slot="panel-content">
                     <p>
@@ -75,13 +77,11 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                            target="_blank">Lien de l'évènement</a>
                     </p>
                 </Fragment>
-            </Panel>
-            <Panel title="Atelier Découverte Equicoaching #5 - Confiance en soi - Samedi 19 mars. 2022 - 09h00 - 12h00"
+            </PanelEvent>
+            <PanelEvent title="Atelier Découverte Equicoaching #5 - Confiance en soi - Samedi 19 mars. 2022 - 09h00 - 12h00"
+                        date={new Date('2022-03-19')}
                    id="7">
-                <Fragment slot="panel-content">
-                    Il n'est plus possible de s'inscrire pour cet évènement.
-                </Fragment>
-            </Panel>
+            </PanelEvent>
         </div>
     </main>
 </LayoutPanels>

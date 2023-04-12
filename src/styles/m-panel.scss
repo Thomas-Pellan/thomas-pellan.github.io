@@ -36,6 +36,16 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
 
+    &-event {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div {
+        max-width: 50rem;
+      }
+    }
+
     &-slot {
       margin: $space-B;
     }
