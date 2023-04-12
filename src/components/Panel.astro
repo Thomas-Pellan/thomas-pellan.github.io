@@ -1,4 +1,5 @@
 ---
+import Icon from 'astro-icon'
 import '../styles/m-panel.scss';
 
 const {id, title} = Astro.props;
@@ -8,6 +9,7 @@ const {id, title} = Astro.props;
         <p class="m-panel-title-text">
             {title}
         </p>
+        <Icon class="m-panel-title-icon" name="ic:baseline-keyboard-arrow-down"/>
     </div>
     <div class="m-panel-content" id=`panel-content${id ? '-' + id : ''}`>
         <div class="m-panel-content-slot">

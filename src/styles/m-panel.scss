@@ -7,13 +7,24 @@
   margin-bottom: $space-B;
 
   &-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
     border: solid 1px $color-gray-light;
     background-color: $color-gray-light-light;
 
     p {
       margin: $space-B;
       color: $color-primary;
-      cursor: pointer;
+    }
+
+    svg {
+      margin-right: $space-B;
+      color: $color-primary;
+      height: 2rem;
+      width: 2rem;
     }
   }
 
@@ -28,6 +39,11 @@
     &-slot {
       margin: $space-B;
     }
+  }
+
+  .active svg {
+    transform: rotate(-0.25turn);
+    transition: all 300ms;
   }
 
   .show {

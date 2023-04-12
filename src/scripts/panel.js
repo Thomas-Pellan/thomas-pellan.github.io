@@ -12,8 +12,11 @@ panels.forEach((panel) => {
 
 function togglePanelContent (panelId) {
   const content = document.querySelector('#panel-content' + (panelId ? '-' + panelId : ''))
-  if(!content){
-    return
+  if(content){
+    content.classList.toggle('show')
   }
-  content.classList.toggle('show')
+  const title = document.querySelector('#panel-header' + (panelId ? '-' + panelId : ''))
+  if(title){
+    title.classList.toggle('active')
+  }
 }
