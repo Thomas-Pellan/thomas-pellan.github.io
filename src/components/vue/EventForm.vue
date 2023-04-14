@@ -3,13 +3,26 @@
             class="m-event-form"
             aria-label="S'inscrire à un évènement"
     >
-        <div v-if="isFinished">
-            Il n'est plus possible de s'inscrire pour cet évènement.
-        </div>
-        <form v-else-if="!isCompleted">
+        <form v-if="!isCompleted">
             <p>
-                Je souhaite m'inscrire à cet évènement :
+                Je souhaite m'inscrire :
             </p>
+            <label>Date de l'évènement *
+                <select name="date" v-model="selectDate">
+                    <option v-for="date in eventDates">
+                        {{ date.toLocaleDateString('fr-FR') }}
+                    </option>
+                </select>
+            </label>
+            <label>Nombre d'inscrits *
+                <input
+                        name="nombre"
+                        min="1"
+                        max="10"
+                        v-model="subNumber"
+                        type="number"
+                />
+            </label>
             <label>Nom et Prénom *
                 <input
                         name="name"
@@ -62,45 +75,63 @@
     </div>
 </template>
 <script>
+import EventSubscription from '../../class/EventSubscription'
+import Prospect from '../../class/Prospect'
+import {isSendingSubscription, prospect} from '../../store/event-subscription'
+import {useStore} from '@nanostores/vue'
+
 export default {
     name: 'EventForm',
     props: {
-        date: {
-            type: Date,
+        dates: {
+            type: [],
             required: true,
-        }
-    },
-    computed: {
-        isFinished() {
-            //@todo : use moment for dates
-            return new Date(this.date) > new Date() - 1
         }
     },
     data() {
         return {
-            prospect: {
-                name: null,
-                phone: null,
-                mail: null,
-                consent: false,
-            },
+            prospect: {},
             msg: '',
             isCompleted: false,
             isValidationForm: false,
+            eventDates: [],
+            selectDate: null,
+            subNumber: 1,
         }
     },
     created() {
-        console.log(this.$route)
+        this.filterDates()
+        this.selectDate = this.eventDates[0]
+        const test = useStore(isSendingSubscription);
+        const test2 = useStore(prospect);
+        console.log('test')
+        console.log(test)
+        console.log('test2')
+        console.log(test2)
     },
     methods: {
         validateForm() {
             this.msg = ''
-            if (!this.prospect.name || !this.prospect.phone || !this.prospect.mail || !this.prospect.consent) {
+            if (!this.selectDate) {
+                this.msg = 'Merci de renseigner une date d\'évènement qui vous intéresse.'
+                return
+            }
+            const prospect = new Prospect(this.prospect.name, this.prospect.mail, this.prospect.phone, this.prospect.consent)
+            if (prospect.isInvalid()) {
                 this.msg = 'Un champ du fomulaire n\'a pas été rempli, merci d\'entrer vos coordonnées et de cocher la case de consentement.'
                 return
             }
+            const eventData = new EventSubscription(this.selectDate, this.subNumber)
             this.isCompleted = true
         },
+        filterDates() {
+            const currentDate = new Date()
+            this.dates.forEach((date) => {
+                if (date > currentDate) {
+                    this.eventDates.push(date)
+                }
+            })
+        }
     }
 }
 </script>
@@ -109,7 +140,7 @@ export default {
 @import '../../styles/common/_colors.scss';
 
 .m-event-form {
-  width: inherit;
+  max-width: 80%;
   margin: $space-B;
   padding: $space-B;
   border: solid 0.1rem $color-gray-light;
@@ -118,7 +149,7 @@ export default {
     width: 90%;
   }
 
-  input {
+  input, select {
     width: 100%;
     margin: $space-Ae;
     padding: $space-B;

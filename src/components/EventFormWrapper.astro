@@ -1,0 +1,6 @@
+---
+import EventForm from '../components/vue/EventForm.vue';
+
+const {dates} = Astro.props;
+---
+<EventForm client:only="vue" dates={dates}/>

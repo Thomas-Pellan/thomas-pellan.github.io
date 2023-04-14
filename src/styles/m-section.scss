@@ -86,3 +86,12 @@
     }
   }
 }
+
+@include tablet-and-mobile {
+  .m-section-picture {
+    img {
+      width: 320px;
+      height: 320px;
+    }
+  }
+}
