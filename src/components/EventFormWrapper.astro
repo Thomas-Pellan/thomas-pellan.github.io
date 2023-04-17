@@ -1,13 +1,11 @@
 ---
 import EventForm from '../components/vue/EventForm.vue';
+import Spinner from '../components/Spinner.astro';
+import '../styles/m-form.scss';
 
-const {dates} = Astro.props;
-let filtredDates: Date[] = []
-const currentDate: Date = new Date()
-dates.forEach((date):void => {
-    if (date > currentDate) {
-        filtredDates.push(date)
-    }
-})
+const {events} = Astro.props;
 ---
-<EventForm client:only="vue" dates={filtredDates}/>
+<div class="m-from-wrapper">
+    <Spinner text="Chargement du formulaire d'inscription..." listenerSelector="contact-form"/>
+    <EventForm client:only="vue" events={events}/>
+</div>

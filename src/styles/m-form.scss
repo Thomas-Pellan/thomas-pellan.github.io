@@ -1,0 +1,101 @@
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/media';
+
+.m-from-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38rem;
+  width: 80%;
+  margin: $space-B;
+  padding: $space-B;
+  border: solid 0.1rem $color-gray-light;
+}
+
+@include mobile {
+  .m-from-wrapper {
+    width: 90%;
+    height: 42rem;
+  }
+}
+
+.m-event-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    max-width: 90%;
+  }
+
+  input, select {
+    margin: $space-Ae;
+    padding: $space-B;
+    font-size: 1rem;
+    border: solid lightgray 0.1rem;
+    border-radius: 0.3rem;
+  }
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-consent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    accent-color: $color-primary;
+    cursor: pointer;
+
+    input {
+      height: 2rem;
+      width: 2rem;
+      margin: $space-B;
+    }
+
+    input:checked {
+      background-color: $color-primary;
+    }
+  }
+
+  &-error {
+    margin: $space-Ae;
+    color: $color-primary;
+    font-weight: 700;
+  }
+
+  &-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 15rem;
+    }
+
+    &-msg {
+      margin: $space-Ae;
+      color: $color-success;
+      font-weight: 700;
+    }
+  }
+
+  button {
+    margin: $space-Ae;
+    padding: $space-B;
+    font-size: 1rem;
+    font-weight: 600;
+    background: $color-primary;
+    color: $color-white;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: $color-white;
+    color: $color-primary;
+    border: solid $color-primary 0.1rem;
+  }
+}
