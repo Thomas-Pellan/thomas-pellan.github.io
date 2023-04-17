@@ -43,10 +43,6 @@ class Prospect {
     set phone(value: string) {
         this._phone = value;
     }
-
-    isInvalid() : boolean {
-        return !this._name || !this._mail || !this._phone || !this._dataConsent
-    }
 }
 
 export default Prospect;
