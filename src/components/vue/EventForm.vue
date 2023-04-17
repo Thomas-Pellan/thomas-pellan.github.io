@@ -17,11 +17,11 @@
                         required
                 >
                     <option
-                            v-for="date in dates"
-                            v-bind:value="date"
-                            :selected="date === selectDate"
+                            v-for="event in events"
+                            v-bind:value="event._date"
+                            :selected="event._date === selectDate"
                     >
-                        {{ date.toLocaleDateString('fr-FR') }}
+                        {{ event._date.toLocaleDateString('fr-FR') }} - {{ event._name }}
                     </option>
                 </select>
             </label>
@@ -101,7 +101,12 @@ import {event, prospect, errorMsg, subscribe} from '../../store/event-subscripti
 
 export default {
     name: 'EventForm',
-    props: ['dates'],
+    props: {
+        events: {
+            type: [],
+            required: true,
+        }
+    },
     setup() {
         return {
             ...mapStores({prospect, event})
@@ -121,9 +126,12 @@ export default {
         errorMsgs() {
             return this.msg || errorMsg.value
         },
+        eventDates() {
+            return this.events.map(event => event._date)
+        }
     },
     created() {
-        this.selectDate = this.dates[0]
+        this.selectDate = this.events[0]._date
         this.prospectData = this.prospect.value ? this.prospect.value : {}
     },
     methods: {
