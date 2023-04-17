@@ -10,7 +10,7 @@ import Event from '../class/Event'
 
 const returnValues : ReturnAction = new ReturnAction('/events', 'Nos évènements')
 const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false)
-const dates: Date[] = [new Date('2023-02-01'), new Date('2023-09-24'), new Date('2023-09-25')]
+
 const events: Event[] = [
     new Event(12, 'Reconnexion à soi', true, new Date('2023-05-18')),
     new Event(11, 'Mon projet professionnel', true, new Date('2023-05-15')),
@@ -21,11 +21,7 @@ const events: Event[] = [
 const pastEvents: Event[] = []
 const futureEvents: Event[] = []
 events.forEach((event: Event): void => {
-    if(event.date > new Date()){
-        futureEvents.push(event)
-    } else {
-        pastEvents.push(event)
-    }
+    event.date > new Date() ? futureEvents.push(event) : pastEvents.push(event)
 })
 ---
 
