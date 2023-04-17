@@ -1,0 +1,41 @@
+@import 'src/styles/common/_colors';
+
+.m-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-icon {
+    color: $color-primary;
+    width: 5rem;
+    height: 5rem;
+    animation-name: ckw;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+
+    @keyframes ckw {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  p {
+    opacity: 1;
+    animation: fade 2s linear;
+    animation-iteration-count: infinite;
+
+    @keyframes fade {
+      0%,100% { opacity: 0 }
+      50% { opacity: 1 }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

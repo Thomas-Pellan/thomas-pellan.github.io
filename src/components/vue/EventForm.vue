@@ -11,69 +11,80 @@
             <p>
                 Je souhaite m'inscrire :
             </p>
-            <label>Date de l'évènement *
+            <div class="m-event-form-field">
+                <label for="date">Date de l'évènement *</label>
                 <select name="date"
+                        id="date"
                         v-model="selectDate"
                         required
                 >
                     <option
-                            v-for="event in events"
-                            v-bind:value="event._date"
-                            :selected="event._date === selectDate"
+                        v-for="event in events"
+                        v-bind:value="event._date"
+                        :selected="event._date === selectDate"
                     >
                         {{ event._date.toLocaleDateString('fr-FR') }} - {{ event._name }}
                     </option>
                 </select>
-            </label>
-            <label>Nombre d'inscrits *
+            </div>
+            <div class="m-event-form-field">
+                <label for="nb">Nombre d'inscrits *</label>
                 <input
-                        name="nombre"
-                        min="1"
-                        max="10"
-                        v-model="subNumber"
-                        type="number"
-                        required
+                    name="nombre"
+                    id="nb"
+                    min="1"
+                    max="10"
+                    v-model="subNumber"
+                    type="number"
+                    required
                 />
-            </label>
-            <label>Nom et Prénom *
+            </div>
+            <div class="m-event-form-field">
+                <label for="name">Nom et Prénom *</label>
                 <input
-                        name="name"
-                        v-model="prospectData.name"
-                        maxlength="50"
-                        required
+                    name="name"
+                    id="name"
+                    v-model="prospectData.name"
+                    maxlength="50"
+                    required
                 />
-            </label>
-            <label>Adresse Email *
+            </div>
+            <div class="m-event-form-field">
+                <label for="mail">Adresse Email *</label>
                 <input
-                        type="email"
-                        name="mail"
-                        v-model="prospectData.mail"
-                        maxlength="60"
-                        required
+                    type="email"
+                    name="mail"
+                    id="mail"
+                    v-model="prospectData.mail"
+                    maxlength="60"
+                    required
                 />
-            </label>
-            <label>Téléphone *
+            </div>
+            <div class="m-event-form-field">
+                <label for="phone">Téléphone *</label>
                 <input
-                        type="tel"
-                        name="phone"
-                        v-model="prospectData.phone"
-                        maxlength="60"
-                        required
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    v-model="prospectData.phone"
+                    maxlength="60"
+                    required
                 />
-            </label>
-            <label class="m-event-form-consent">
+            </div>
+            <div class="m-event-form-consent">
                 <input
-                        type="checkbox"
-                        name="consent"
-                        v-model="prospectData.consent"
-                        maxlength="60"
-                        required
+                    type="checkbox"
+                    name="consent"
+                    id="consent"
+                    v-model="prospectData.consent"
+                    maxlength="60"
+                    required
                 />
-                <p>
+                <label for="consent">
                     En cochant cette case, j'accepte que IBF-Equicoaching conserve mes données personnelles remplies
                     ci-dessus pour me recontacter. <a href="/mentions-legales">Mentions légales</a>
-                </p>
-            </label>
+                </label>
+            </div>
             <p class="m-event-form-error" v-if="errorMsgs">
                 {{ errorMsgs }}
             </p>
@@ -150,85 +161,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-@import '../../styles/common/_spaces.scss';
-@import '../../styles/common/_colors.scss';
-
-.m-event-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  margin: $space-B;
-  padding: $space-B;
-  border: solid 0.1rem $color-gray-light;
-
-  form {
-    max-width: 80%;
-  }
-
-  input, select {
-    width: 100%;
-    margin: $space-Ae;
-    padding: $space-B;
-    font-size: 1rem;
-    border: solid lightgray 0.1rem;
-    border-radius: 0.3rem;
-  }
-
-  &-consent {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    accent-color: $color-primary;
-
-    input {
-      height: 2rem;
-      width: 2rem;
-      margin: $space-B;
-    }
-
-    input:checked {
-      background-color: $color-primary;
-    }
-  }
-
-  &-error {
-    margin: $space-Ae;
-    color: $color-primary;
-    font-weight: 700;
-  }
-
-  &-success {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    button {
-      width: 15rem;
-    }
-
-    &-msg {
-      margin: $space-Ae;
-      color: $color-success;
-      font-weight: 700;
-    }
-  }
-
-  button {
-    margin: $space-Ae;
-    padding: $space-B;
-    font-size: 1rem;
-    font-weight: 600;
-    background: $color-primary;
-    color: $color-white;
-    border-radius: 0.3rem;
-  }
-
-  button:hover {
-    background: $color-white;
-    color: $color-primary;
-    border: $color-primary;
-  }
-}
-</style>

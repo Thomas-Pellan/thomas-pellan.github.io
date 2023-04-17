@@ -1,0 +1,38 @@
+---
+import Icon from 'astro-icon'
+import '../styles/m-spinner.scss';
+
+const {text, listenerSelector} = Astro.props;
+---
+<div class="m-spinner">
+    <Icon class="m-spinner-icon" name="icomoon-free:spinner2"/>
+    <p>
+        {text}
+    </p>
+</div>
+<script define:vars={{ listenerSelector }}>
+    function waitForElm(selector)
+    {
+        return new Promise((resolve) => {
+            if (document.querySelector(selector)) {
+                return resolve(document.querySelector(selector));
+            }
+
+            const observer = new MutationObserver((mutations) => {
+                if (document.querySelector(selector)) {
+                    resolve(document.querySelector(selector));
+                    observer.disconnect();
+                }
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+            });
+        });
+    }
+
+    waitForElm(`#${listenerSelector}`).then((elm) => {
+        document.querySelector('.m-spinner').classList.toggle('hidden')
+    });
+</script>

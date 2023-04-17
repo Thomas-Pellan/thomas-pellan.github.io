@@ -1,6 +1,11 @@
 ---
 import EventForm from '../components/vue/EventForm.vue';
+import Spinner from '../components/Spinner.astro';
+import '../styles/m-form.scss';
 
 const {events} = Astro.props;
 ---
-<EventForm client:only="vue" events={events}/>
+<div class="m-from-wrapper">
+    <Spinner text="Chargement du formulaire d'inscription..." listenerSelector="contact-form"/>
+    <EventForm client:only="vue" events={events}/>
+</div>
