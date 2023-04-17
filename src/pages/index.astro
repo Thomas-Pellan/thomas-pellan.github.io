@@ -1,25 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import SeparatorValues from '../components/SeparatorValues.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import SeparatorValues from '../components/SeparatorValues.astro'
+import Seo from '../class/Seo'
+import ButtonAction from '../class/ButtonAction'
+import Image from '../class/Image'
 
-const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
-const secondImage = {src: '/img/what-is-equicoaching-550x550.webp', alt: 'A qui s\adresse l\'équicoaching'}
-const actionsFirst = [{
-    link: '/about',
-    text: 'En savoir plus'
-}]
-const actionsSecond: ({ link: string; text: string })[] = [{
-    link: '/company',
-    text: 'Entreprises'
-},
-    {
-        link: '/pricing-equicoaching',
-        text: 'Particuliers'
-    }]
-const seoData : Seo = new Seo('IBF Equicoaching | Coaching et Formations', 'Découvrez le développement personnel autrement. Envie d\'une relation différente avec le cheval ? Séances proches de Grenoble et Chambéry.', false);
+const secondSubTitle: string = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
+const image: Image = new Image('/img/what-is-equicoaching-550x550.webp', 'A qui s\adresse l\'équicoaching')
+const actionsFirst: ButtonAction[] = [new ButtonAction('/about', 'En savoir plus')]
+const actionsSecond: ButtonAction[] = [
+    new ButtonAction('/company', 'Entreprises'),
+    new ButtonAction('/pricing-equicoaching', 'Particuliers')
+]
+const seoData : Seo = new Seo('IBF Equicoaching | Coaching et Formations', 'Découvrez le développement personnel autrement. Envie d\'une relation différente avec le cheval ? Séances proches de Grenoble et Chambéry.', false)
 ---
 
 <Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry" seoData={seoData}>
@@ -36,7 +31,7 @@ const seoData : Seo = new Seo('IBF Equicoaching | Coaching et Formations', 'Déc
             </Fragment>
         </Section>
         <SeparatorValues/>
-        <Section subTitle={secondSubTitle} imgContent={secondImage} actions={actionsSecond}>
+        <Section subTitle={secondSubTitle} imgContent={image} actions={actionsSecond}>
             <h3 slot="section-title">A qui s'adresse l'équicoaching ?</h3>
             <Fragment slot="section-content">
                 <p>Vous voulez aller de l’avant ? Avoir plus confiance en vous ? Mieux gérer vos émotions ? Mieux

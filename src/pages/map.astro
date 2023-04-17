@@ -1,19 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import Seo from '../class/Seo'
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
 
-const returnValues = {link: '/map', title: 'Plan du site'}
-const actions = [{
-    link: '/',
-    text: 'Retour à l\'accueil'
-},
-    {
-        link: '/contact',
-        text: 'Me contacter'
-    }]
-const seoData : Seo = new Seo('IBF Equicoaching | Plan du site', 'Plan du site et liens divers', false);
+const returnValues!: ReturnAction = new ReturnAction('/map', 'Plan du site')
+const actions: ButtonAction[] = [
+    new ButtonAction('/','Retour à l\'accueil'),
+    new ButtonAction('/contact', 'Me contacter')
+]
+const seoData : Seo = new Seo('IBF Equicoaching | Plan du site', 'Plan du site et liens divers', false)
 ---
 <Layout title="IBF Equicoaching | Plan du site" seoData={seoData}>
     <main>

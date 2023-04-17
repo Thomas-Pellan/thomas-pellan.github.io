@@ -137,9 +137,6 @@ export default {
         errorMsgs() {
             return this.msg || errorMsg.value
         },
-        eventDates() {
-            return this.events.map(event => event._date)
-        }
     },
     created() {
         this.selectDate = this.events[0]._date

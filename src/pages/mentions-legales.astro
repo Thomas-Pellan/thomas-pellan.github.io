@@ -1,25 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import Seo from '../class/Seo'
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
 
-const returnValues = {link: '/mentions-legales', title: 'Mentions légales'}
-const actions = [{
-    link: '/',
-    text: 'Retour à l\'accueil'
-},
-    {
-        link: '/contact',
-        text: 'Me contacter'
-    }]
-const seoData : Seo = new Seo('IBF Equicoaching | Mentions Légale', 'Mentions légales du site IBF équicoaching.', false);
+const returnValues: ReturnAction = new ReturnAction('/mentions-legales', 'Mentions légales')
+const actions: ButtonAction[] = [new ButtonAction('/', 'Retour à l\'accueil'), new ButtonAction('/contact', 'Me contacter')]
+const seoData: Seo = new Seo('IBF Equicoaching | Mentions Légale', 'Mentions légales du site IBF équicoaching.', false)
 ---
 <Layout title="IBF Equicoaching | Mentions légales" seoData={seoData}>
     <main>
         <Title title="Mentions légales" returnValues={returnValues}/>
         <Section actions={actions}>
-            <h2 slot="section-title">Mention légales du site web</h2>
+            <h2 slot="section-title">Mentions légales du site web</h2>
             <Fragment slot="section-content">
                 <p>
                     Ce site internet est édité par IBF-equicoaching représenté par Mme
