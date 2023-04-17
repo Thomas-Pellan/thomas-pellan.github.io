@@ -2,5 +2,12 @@
 import EventForm from '../components/vue/EventForm.vue';
 
 const {dates} = Astro.props;
+let filtredDates: Date[] = []
+const currentDate: Date = new Date()
+dates.forEach((date):void => {
+    if (date > currentDate) {
+        filtredDates.push(date)
+    }
+})
 ---
-<EventForm client:only="vue" dates={dates}/>
+<EventForm client:only="vue" dates={filtredDates}/>

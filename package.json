@@ -15,6 +15,7 @@
     "@astrojs/image": "^0.16.1",
     "@astrojs/sitemap": "^1.2.1",
     "@astrojs/vue": "^2.1.0",
+    "@emailjs/browser": "^3.11.0",
     "@nanostores/vue": "^0.7.0",
     "astro": "^2.0.18",
     "astro-compress": "^1.1.35",

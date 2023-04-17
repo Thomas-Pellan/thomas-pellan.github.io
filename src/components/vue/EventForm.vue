@@ -1,15 +1,23 @@
 <template>
     <div
             class="m-event-form"
+            ref="form"
             aria-label="S'inscrire à un évènement"
+            @submit="validateForm"
     >
         <form v-if="!isCompleted">
             <p>
                 Je souhaite m'inscrire :
             </p>
             <label>Date de l'évènement *
-                <select name="date" v-model="selectDate">
-                    <option v-for="date in eventDates">
+                <select name="date"
+                        v-model="selectDate"
+                >
+                    <option
+                            v-for="date in dates"
+                            v-bind:value="date"
+                            :selected="date === selectDate"
+                    >
                         {{ date.toLocaleDateString('fr-FR') }}
                     </option>
                 </select>
@@ -26,7 +34,7 @@
             <label>Nom et Prénom *
                 <input
                         name="name"
-                        v-model="prospect.name"
+                        v-model="prospectData.name"
                         maxlength="50"
                 />
             </label>
@@ -34,7 +42,7 @@
                 <input
                         type="email"
                         name="mail"
-                        v-model="prospect.mail"
+                        v-model="prospectData.mail"
                         maxlength="60"
                 />
             </label>
@@ -42,7 +50,7 @@
                 <input
                         type="tel"
                         name="phone"
-                        v-model="prospect.phone"
+                        v-model="prospectData.phone"
                         maxlength="60"
                 />
             </label>
@@ -50,7 +58,7 @@
                 <input
                         type="checkbox"
                         name="consent"
-                        v-model="prospect.consent"
+                        v-model="prospectData.consent"
                         maxlength="60"
                 />
                 <p>
@@ -75,62 +83,53 @@
     </div>
 </template>
 <script>
+import { mapStores } from '@nanostores/vue'
 import EventSubscription from '../../class/EventSubscription'
 import Prospect from '../../class/Prospect'
-import {isSendingSubscription, prospect} from '../../store/event-subscription'
-import {useStore} from '@nanostores/vue'
+import {event, isSendingSubscription, prospect, subscribe} from '../../store/event-subscription'
 
 export default {
     name: 'EventForm',
-    props: {
-        dates: {
-            type: [],
-            required: true,
+    props: ['dates'],
+    setup() {
+        return {
+            ...mapStores({ isSendingSubscription, prospect, event })
         }
     },
     data() {
         return {
-            prospect: {},
+            prospectData: {},
             msg: '',
             isCompleted: false,
             isValidationForm: false,
-            eventDates: [],
             selectDate: null,
             subNumber: 1,
         }
     },
     created() {
-        this.filterDates()
-        this.selectDate = this.eventDates[0]
-        const test = useStore(isSendingSubscription);
-        const test2 = useStore(prospect);
-        console.log('test')
-        console.log(test)
-        console.log('test2')
-        console.log(test2)
+        this.selectDate = this.dates[0]
+        this.prospectData = this.prospect.value ? this.prospect.value : {}
     },
     methods: {
-        validateForm() {
+        validateForm(e) {
+            e.preventDefault()
             this.msg = ''
             if (!this.selectDate) {
                 this.msg = 'Merci de renseigner une date d\'évènement qui vous intéresse.'
                 return
             }
-            const prospect = new Prospect(this.prospect.name, this.prospect.mail, this.prospect.phone, this.prospect.consent)
-            if (prospect.isInvalid()) {
+            const data = new Prospect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent)
+            if (data.isInvalid()) {
                 this.msg = 'Un champ du fomulaire n\'a pas été rempli, merci d\'entrer vos coordonnées et de cocher la case de consentement.'
                 return
             }
+            prospect.set(data)
             const eventData = new EventSubscription(this.selectDate, this.subNumber)
-            this.isCompleted = true
+            event.set(eventData)
+            this.sendSubscription()
         },
-        filterDates() {
-            const currentDate = new Date()
-            this.dates.forEach((date) => {
-                if (date > currentDate) {
-                    this.eventDates.push(date)
-                }
-            })
+        async sendSubscription(){
+            await subscribe()
         }
     }
 }
