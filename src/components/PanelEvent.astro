@@ -1,9 +1,8 @@
 ---
-import Icon from 'astro-icon'
-import EventForm from '../components/vue/EventForm.vue'
+import Icon from 'astro-icon';
 import '../styles/m-panel.scss';
 
-const {id, title, date} = Astro.props;
+const {id, title} = Astro.props;
 ---
 <div class="m-panel">
     <div class="m-panel-title" id=`panel-header${id ? '-' + id : ''}`>
@@ -17,7 +16,6 @@ const {id, title, date} = Astro.props;
             <div class="m-panel-content-slot">
                 <slot name="panel-content" />
             </div>
-            <EventForm client:only="vue" date={date}/>
         </div>
     </div>
 </div>

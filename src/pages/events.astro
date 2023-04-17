@@ -2,11 +2,13 @@
 import LayoutPanels from '../layouts/LayoutPanels.astro';
 import Title from '../components/Title.astro';
 import PanelEvent from '../components/PanelEvent.astro';
+import EventFormWrapper from '../components/EventFormWrapper.astro';
 import '../styles/m-main.scss';
 import Seo from '../class/Seo';
 
 const returnValues = {link: '/events', title: 'Nos évènements'}
-const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false);
+const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false)
+const dates: Date[] = [new Date('2023-02-01'), new Date('2023-09-24'), new Date('2023-09-25')]
 ---
 
 <LayoutPanels title="IBF Equicoaching | Evenements" seoData={seoData}>
@@ -17,21 +19,19 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
             <p class="m-main-empty">
                 Aucun évènenement n'est prévu pour le moment. <a href="/contact">Contactez moi pour plus d'informations
                 sur les suivants !</a>
-            <p>
-            <h3>Evenements passes</h3>
+            </p>
+            <EventFormWrapper dates={dates} />
+            <h3>Evenements passés</h3>
             <PanelEvent title="Atelier Découverte Equicoaching #9 - Reconnexion à soi - Samedi 24 septembre. 2022 - 09h00 - 12h00 - Annulé !"
-                        date={new Date('2022-09-24')}
                    id="2">
                 <Fragment slot="panel-content">
                     En raison des conditions météo, l'évenement est annulé. Toutes nos excuses pour le désagrément.
                 </Fragment>
             </PanelEvent>
             <PanelEvent title="Atelier Découverte Equicoaching #8 - Confiance en soi - Samedi 10 septembre. 2022 - 09h00 - 12h00"
-                        date={new Date('2020-09-10')}
                    id="3">
             </PanelEvent>
             <PanelEvent title="Atelier Découverte Equicoaching #7 - Confiance en soi - Samedi 30 juillet. 2022 - 09h00 - 12h00"
-                        date={new Date('2020-07-30')}
                    id="4">
                 <Fragment slot="panel-content">
                     <p>
@@ -41,7 +41,6 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                 </Fragment>
             </PanelEvent>
             <PanelEvent title="Festival Minuscule Theys - Venez me rencontrer ! - Samedi 21 mai. 2022 - à partir de 14h"
-                        date={new Date('2020-05-21')}
                    id="5">
                 <Fragment slot="panel-content">
                     <p>
@@ -55,7 +54,6 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                 </Fragment>
             </PanelEvent>
             <PanelEvent title="Atelier Découverte Equicoaching #6 - Prendre conscience de sa puissance personnelle - Vendredi 27 mai. 2022 - 09h00 - 12h00"
-                        date={new Date('2020-05-27')}
                    id="6">
                 <Fragment slot="panel-content">
                     <p>
@@ -79,7 +77,6 @@ const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', '
                 </Fragment>
             </PanelEvent>
             <PanelEvent title="Atelier Découverte Equicoaching #5 - Confiance en soi - Samedi 19 mars. 2022 - 09h00 - 12h00"
-                        date={new Date('2022-03-19')}
                    id="7">
             </PanelEvent>
         </div>

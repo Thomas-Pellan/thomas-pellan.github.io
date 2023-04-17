@@ -11,7 +11,7 @@ const height = imgContent && imgContent.height ? imgContent.height : 320
 <section class="m-section">
     {imgContent && !displayTextLeft && (
             <div class="m-section-picture">
-                <Image src={imgContent.src} alt={imgContent.alt} width="320" height="320" format="webp"/>
+                <Image src={imgContent.src} alt={imgContent.alt} width={width} height={height} format="webp"/>
             </div>
     )}
     {ytbLink && !displayTextLeft && (
