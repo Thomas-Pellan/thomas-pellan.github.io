@@ -1,22 +1,23 @@
 ---
-import LayoutSpinner from '../layouts/LayoutSpinner.astro';
-import Title from '../components/Title.astro';
-import '../styles/m-main.scss';
-import {Image} from '@astrojs/image/components';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import '../styles/m-main.scss'
+import Seo from '../class/Seo'
+import Spinner from '../components/Spinner.astro'
+import ReturnAction from '../class/ReturnAction'
 
-const returnValues = {link: '/contact', title: 'Contact'}
+const returnValues: ReturnAction = new ReturnAction('/contact', 'Contact')
 const seoData : Seo = new Seo('IBF Equicoaching | Me contacter', 'Me contacter pour toute question sur l\'équicoaching, pour réserver une séance ou pour un devis.', false);
 ---
 
-<LayoutSpinner title="IBF Equicoaching | Contact" seoData={seoData}>
+<Layout title="IBF Equicoaching | Contact" seoData={seoData}>
     <main>
         <Title title="Contact" returnValues={returnValues}/>
         <div class="m-main">
             <h2 class="m-main-title">Pour toute question ou prise de rendez vous :</h2>
-            <Image src="img/waiting-spinner.svg" alt="chargement" class="waiting-info" width="150" height="150" format="svg"/>
+            <Spinner text="Chargement du formulaire de contact..." listenerSelector="eapps-contact-form"/>
             <script src="https://apps.elfsight.com/p/platform.js" defer></script>
             <div class="elfsight-app-88c0db22-6e74-434a-a116-e3ae17bcbb2f"></div>
         </div>
     </main>
-</LayoutSpinner>
+</Layout>

@@ -32,7 +32,7 @@ const {text, listenerSelector} = Astro.props;
         });
     }
 
-    waitForElm(`#${listenerSelector}`).then((elm) => {
+    waitForElm(`div[id^=${listenerSelector}]`).then((elm) => {
         document.querySelector('.m-spinner').classList.toggle('hidden')
     });
 </script>
