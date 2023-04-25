@@ -77,7 +77,6 @@
                     name="consent"
                     id="consent"
                     v-model="prospectData.consent"
-                    maxlength="60"
                     required
                 />
                 <label for="consent">

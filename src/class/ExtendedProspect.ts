@@ -1,4 +1,4 @@
-import Prospect from "./Prospect";
+import Prospect from './Prospect';
 
 class ExtendedProspect extends Prospect {
 
