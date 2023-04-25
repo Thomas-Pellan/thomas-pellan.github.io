@@ -1,0 +1,112 @@
+<template>
+    <form @submit="validate">
+        <p>
+            Vous contacter :
+        </p>
+        <div class="m-form-field">
+            <label for="name">Nom et Prénom *</label>
+            <input
+                name="name"
+                id="name"
+                v-model="prospectData.name"
+                maxlength="50"
+                required
+            />
+        </div>
+        <div class="m-form-field">
+            <label for="mail">Adresse Email *</label>
+            <input
+                type="email"
+                name="mail"
+                id="mail"
+                v-model="prospectData.mail"
+                maxlength="60"
+                required
+            />
+        </div>
+        <div class="m-form-field">
+            <label for="phone">Téléphone *</label>
+            <input
+                type="tel"
+                name="phone"
+                id="phone"
+                v-model="prospectData.phone"
+                maxlength="60"
+                required
+            />
+        </div>
+        <div v-if="isCompany">
+            <div class="m-form-field">
+                <label for="phone">Nom de l'entreprise *</label>
+                <input
+                    name="company"
+                    id="company"
+                    v-model="prospectData.companyName"
+                    maxlength="60"
+                    required
+                />
+            </div>
+            <div class="m-form-field">
+                <label for="phone">Poste Occupé</label>
+                <input
+                    name="poste"
+                    id="poste"
+                    v-model="prospectData.title"
+                    maxlength="60"
+                />
+            </div>
+        </div>
+        <div class="m-form-consent">
+            <input
+                type="checkbox"
+                name="consent"
+                id="consent"
+                v-model="prospectData.consent"
+                required
+            />
+            <label for="consent">
+                En cochant cette case, j'accepte que IBF-Equicoaching conserve mes données personnelles remplies
+                ci-dessus pour me recontacter. <a href="/mentions-legales">Mentions légales</a>
+            </label>
+        </div>
+        <button>
+            Suivant
+        </button>
+        <button type="button" @click="$emit('step-back')">
+            Retour
+        </button>
+    </form>
+</template>
+<script>
+
+import {mapStores} from '@nanostores/vue'
+import {clientType, prospect, sendProspectData} from '../../store/contact-form'
+import ExtendedProspect from '../../class/ExtendedProspect'
+
+export default {
+    name: 'ClientInfoStep',
+    setup() {
+        return {
+            ...mapStores({clientType, prospect})
+        }
+    },
+    data() {
+        return {
+            prospectData: {},
+        }
+    },
+    computed: {
+        isCompany() {
+            return clientType.get() === 'company'
+        }
+    },
+    methods: {
+        async validate(e){
+            e.preventDefault()
+            //We save the data in the store and pre send the contact info for prospection purposes
+            prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title))
+            await sendProspectData().then(() => this.$emit('step-valid'))
+        },
+    }
+}
+</script>
