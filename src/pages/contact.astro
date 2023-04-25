@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
 import '../styles/m-main.scss'
 import Seo from '../class/Seo'
-import Spinner from '../components/Spinner.astro'
+import ContactFormWrapper from '../components/ContactFormWrapper.astro'
 import ReturnAction from '../class/ReturnAction'
 
 const returnValues: ReturnAction = new ReturnAction('/contact', 'Contact')
@@ -15,9 +15,10 @@ const seoData : Seo = new Seo('IBF Equicoaching | Me contacter', 'Me contacter p
         <Title title="Contact" returnValues={returnValues}/>
         <div class="m-main">
             <h2 class="m-main-title">Pour toute question ou prise de rendez vous :</h2>
-            <Spinner text="Chargement du formulaire de contact..." listenerSelector="eapps-contact-form"/>
+            <ContactFormWrapper />
+            <!--<Spinner text="Chargement du formulaire de contact..." listenerSelector="eapps-contact-form"/>
             <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-            <div class="elfsight-app-88c0db22-6e74-434a-a116-e3ae17bcbb2f"></div>
+            <div class="elfsight-app-88c0db22-6e74-434a-a116-e3ae17bcbb2f"></div>-->
         </div>
     </main>
 </Layout>
