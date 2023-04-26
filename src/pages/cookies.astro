@@ -13,7 +13,7 @@ const actions = [{
         link: '/contact',
         text: 'Me contacter'
     }]
-const seoData : Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion de vos données personnelles', false);
+const seoData: Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion de vos données personnelles', false);
 ---
 <Layout title="IBF Equicoaching | Cookies" seoData={seoData}>
     <main>
@@ -29,16 +29,36 @@ const seoData : Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestio
                 <ul>
                     <li>l'hébergeur OVH</li>
                     <li>la billetterie en ligne Yurplan</li>
-                    <li>les divers widgets implémentés sur le site (elfsight...)</li>
+                    <li>les divers widgets implémentés sur le site</li>
+                </ul>
+                <h3>Stockage des données par des applications tierces</h3>
+                <p>
+                    Ce site web utilise des widget tiers pour envoyer vos informations à IBF Equicoaching, ci dessosu
+                    des informations sur le stockage pour ces widgets :
+                </p>
+                <ul>
+                    <li>Jotform : utilisé par le formulaire de contact, les données sont effacées automatiquement au
+                        bout d'une heure, <a href="https://www.jotform.com/privacy/">gestion des données
+                            jotform</a><br/>
+                        Les données peuvent faire l'objet d'un stockage hors EU, IBF Equicoaching et Jotform ont signé
+                        un avenant respectant la RGPD.
+                    </li>
+                    <li>
+                        EmailJS : utilisé sur la page évènement comme intermédiaire de l'envoi de votre demande à IBF
+                        Equicoaching, les données sont conservées en adéquation avec le reglement RGPD et sont
+                        suppprimées automatiquement sous 30 jours, <a
+                            href="https://www.emailjs.com/legal/privacy-policy/">gestion des données emailjs</a>
+                    </li>
+                    <li>
+                        Yurplan : le widget yurplan vous permet de réserver des billets pour un évènement équicoaching.
+                        Ces données sont traitées en accord avec le reglement RGPD et via des cookies séparés.
+                        <a href="https://yurplan.com/politique-confidentialite">gestion des données yurplan</a>
+                    </li>
                 </ul>
                 <p>
-                    Les informations éventuellement transmises ne sont pas stockées en
-                    adéquation avec le règlement général sur la protection des données
-                    (RGPD)
-                </p>
-                <p>
-                    Il vous est possible de demander l'effacement de vos coordonées en
-                    nous contactant via le formulaire dédié.
+                    Il vous est possible de demander la modification ou l'effacement de vos coordonnées et de toute
+                    donnée vous concernant en
+                    nous contactant via le formulaire de contact, par mail ou par téléphone.
                 </p>
             </Fragment>
         </Section>

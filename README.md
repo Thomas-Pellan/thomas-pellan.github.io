@@ -15,6 +15,11 @@
 - astroJs : https://astro.build/
 - VueJs islands
 
+### Versions 
+
+- 0.0.x : project start, minimal version with external scripts
+- 1.0.0 : first functionnal version
+
 ### Local installation and startup
 
 Clone the repo and run the following commands in theproject directory
@@ -23,6 +28,6 @@ npm install
 npm run dev
 ```
 
-The website should be visible at http://localhost:3000
+The website should be visible at http://localhost:3000 
 
 
