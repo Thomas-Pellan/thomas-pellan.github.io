@@ -4,7 +4,9 @@ import image from '@astrojs/image';
 import { astroImageTools } from "astro-imagetools";
 import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
+import webmanifest from "astro-webmanifest";
 
+// https://astro.build/config
 export default defineConfig({
   site: 'https://thomas-pellan.github.io',
   base: '/ibf-front',
@@ -18,12 +20,21 @@ export default defineConfig({
         item.lastmod = new Date();
         item.priority = 0.7;
       }
-      if (/partners/.test(item.url) ) {
+      if (/partners/.test(item.url)) {
         item.changefreq = 'monthly';
         item.lastmod = new Date();
         item.priority = 0.7;
       }
       return item;
-    },
+    }
+  }), webmanifest({
+    name: 'IBf Equicoaching',
+    icon: 'img/logo-50x50.webp',
+    short_name: 'IBF',
+    description: 'Equicoaching et Horse Coaching, Formations',
+    start_url: '/',
+    theme_color: '#fff',
+    background_color: '#86071f',
+    display: 'standalone',
   })]
 });
