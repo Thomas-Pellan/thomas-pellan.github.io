@@ -2,7 +2,7 @@
     <div id="contact-form">
         <ClientTypeStep v-if="isCurrentStep(ContactFormSteps.CLIENT_TYPE)" @stepValid="nextStep" />
         <ClientInfoStep v-if="isCurrentStep(ContactFormSteps.CLIENT_INFO)" @stepValid="nextStep" @stepBack="previousStep"/>
-        <ClientProjectStep v-if="isCurrentStep(ContactFormSteps.PROJECT)" @stepValid="nextStep" @stepBack="previousStep"/>
+        <ClientProjectStep v-if="isCurrentStep(ContactFormSteps.PROJECT)" @stepValid="sendData" @stepBack="previousStep"/>
     </div>
 </template>
 <script>
@@ -32,7 +32,7 @@ export default {
         }
     },
     created() {
-        currentStep.set(2)
+
     },
     methods: {
         nextStep(){
@@ -43,6 +43,9 @@ export default {
         },
         isCurrentStep(value){
             return currentStep.get() === value
+        },
+        sendData(){
+
         }
     }
 }
