@@ -71,7 +71,7 @@
                     required
                 />
             </div>
-            <div class="m-form-consent">
+            <div class="m-form-checkbox">
                 <input
                     type="checkbox"
                     name="consent"

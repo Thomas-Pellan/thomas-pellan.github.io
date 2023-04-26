@@ -6,12 +6,21 @@ class Project {
     private _attendees: string;
     private _budget: Budget;
     private _isPresent: boolean;
-
-    constructor(services: string[], attendees: string, budget: Budget, isPresent: boolean) {
+    private _comment: string;
+    constructor(services: string[], attendees: string, budget: Budget, isPresent: boolean, comment: string) {
         this._services = services;
         this._attendees = attendees;
         this._budget = budget;
         this._isPresent = isPresent;
+        this._comment = comment;
+    }
+
+    get comment(): string {
+        return this._comment;
+    }
+
+    set comment(value: string) {
+        this._comment = value;
     }
 
     get services(): string[] {

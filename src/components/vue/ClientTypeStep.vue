@@ -1,9 +1,9 @@
 <template>
-    <fieldset>
-        <legend>
+    <div class="m-form">
+        <p class="m-form-title">
             Je suis :
-        </legend>
-        <div>
+        </p>
+        <div class="m-form-checkbox">
             <input
                 type="radio"
                 name="company"
@@ -15,7 +15,7 @@
                 Une entreprise
             </label>
         </div>
-        <div>
+        <div class="m-form-checkbox">
             <input
                 type="radio"
                 name="customer"
@@ -27,30 +27,23 @@
                 Un particulier
             </label>
         </div>
-        <p v-if="showError">
-            Merci de cliquer sur une des deux options avant de valider
-        </p>
-        <button @click="validate">
-            Suivant
-        </button>
-    </fieldset>
+    </div>
 </template>
 <script>
 
 import {mapStores} from '@nanostores/vue'
-import {clientType} from '../../store/contact-form'
+import {clientType, errorMsg} from '../../store/contact-form'
 
 export default {
     name: 'ClientTypeStep',
     setup() {
         return {
-            ...mapStores({clientType})
+            ...mapStores({clientType, errorMsg})
         }
     },
     data() {
         return {
             type: null,
-            showError: false,
         }
     },
     created() {
@@ -58,14 +51,14 @@ export default {
             this.type = clientType.get()
         }
     },
-    methods: {
-        validate(){
-            this.showError = false
-            if(!this.type){
-                this.showError = true
+    watch: {
+        type(value){
+            errorMsg.set(null)
+            if(!value){
+                errorMsg.set('Merci de cocher une case du formulaire')
                 return
             }
-            clientType.set(this.type)
+            clientType.set(value)
             this.$emit('step-valid')
         }
     }

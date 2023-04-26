@@ -56,7 +56,7 @@
                 />
             </div>
         </div>
-        <div class="m-form-consent">
+        <div class="m-form-checkbox">
             <input
                 type="checkbox"
                 name="consent"
@@ -72,7 +72,7 @@
         <button>
             Suivant
         </button>
-        <button type="button" @click="$emit('step-back')">
+        <button type="button" @click="backToType">
             Retour
         </button>
     </form>
@@ -101,6 +101,10 @@ export default {
         }
     },
     methods: {
+        backToType() {
+            clientType.set(null)
+            this.$emit('step-back')
+        },
         async validate(e){
             e.preventDefault()
             //We save the data in the store and pre send the contact info for prospection purposes

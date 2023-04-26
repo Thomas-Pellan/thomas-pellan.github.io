@@ -4,6 +4,8 @@ import emailjs, {EmailJSResponseStatus} from '@emailjs/browser'
 import {EmailJsServices, EmailJsTemplates} from '../class/EmailJsServices'
 import type Project from '../class/Project'
 
+export const errorMsg: WritableAtom<unknown> & {} = atom(null);
+
 export const clientType: WritableAtom<unknown> & {} = atom(null);
 export const currentStep: WritableAtom<unknown> & {} = atom(0);
 
