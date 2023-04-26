@@ -4,6 +4,7 @@ import Title from '../components/Title.astro';
 import PriceTile from '../components/PriceTile.astro';
 import '../styles/m-main.scss';
 import Seo from '../class/Seo';
+import ReturnAction from '../class/ReturnAction';
 export function getStaticPaths() {
     return [
         {
@@ -116,12 +117,12 @@ export function getStaticPaths() {
 
 const {name} = Astro.params;
 const {title, subTitle, descriptions} = Astro.props;
-const returnValues = {link: `/pricing-${name}`, title: title}
-const titleStr = `Equicoaching | ${title}`
+const returnValues: ReturnAction = new ReturnAction(`/pricing-${name}`, title)
+const titleStr: string = `Equicoaching | ${title}`
 
-let seoDescription = 'Découvrez nos tarifs'
+let seoDescription: string = 'Découvrez nos tarifs'
 if(descriptions) {
-    descriptions.forEach((desc) => seoDescription += `| ${desc.title} `)
+    descriptions.forEach((desc : any) => seoDescription += `| ${desc.title} `)
 }
 
 const seoData : Seo = new Seo(titleStr, seoDescription, false);
@@ -136,6 +137,19 @@ const seoData : Seo = new Seo(titleStr, seoDescription, false);
                 {descriptions && descriptions.map(description => (
                         <PriceTile data={description}/>))}
             </div>
+            {title === 'Formations' && (
+                <div class="m-main-footer">
+                    <div>
+                        <p><strong>...... % de taux de réussite</strong></p>
+                        <p><strong>...... % de clients satisfaits</strong></p>
+                        <p><strong>...... % de nos clients recommandent nos formations</strong></p>
+                    </div>
+                    <p>
+                        Pour .... stagiaires sur une période de .....
+                        <small>(Patience ! ces chiffres arrivent bientôt)</small>
+                    </p>
+                </div>
+            )}
         </div>
     </main>
 </Layout>

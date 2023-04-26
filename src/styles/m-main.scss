@@ -22,4 +22,22 @@
     justify-content: center;
     max-width: 90%;
   }
+
+  &-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      p {
+        margin: $space-B $space-D;
+        text-align: center;
+        width: 15rem;
+      }
+    }
+  }
 }

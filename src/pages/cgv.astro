@@ -1,0 +1,303 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import Seo from '../class/Seo';
+import ReturnAction from "../class/ReturnAction";
+
+const returnValues: ReturnAction = new ReturnAction('/cgv', 'Conditions générales de vente')
+const seoData: Seo = new Seo('IBF Equicoaching | CGV', 'Conditions générales de vente de nos formations', false);
+---
+
+<Layout title="IBF Equicoaching | Condition générales de vente" seoData={seoData}>
+    <main>
+        <Title title="CGV"
+               returnValues={returnValues}/>
+        <Section>
+            <h2 slot="section-title">Applicables à la Formation professionnelle continue</h2>
+            <Fragment slot="section-content">
+                <p>
+                    <strong>Objet et champ d'application</strong>
+                </p>
+                <p>
+                    Suite à la commande d'une formation le client accepte sans
+                    réserve les présentes conditions générales de vente qui prévalent
+                    sur tout autre document de l'acheteur, en particulier ses
+                    conditions générales d'achat.
+                </p>
+                <p>
+                    <strong>Documents contractuels</strong>
+                </p>
+                <p>
+                    A la demande du Client, Camille Marzec - IBF Equicoaching lui fait
+                    parvenir en double exemplaire une convention de formation
+                    professionnelle continue telle que prévue par la loi. Le client
+                    engage Camille Marzec - IBF Equicoaching en lui retournant dans
+                    les plus brefs délais un exemplaire signé et portant son cachet
+                    commercial. Une inscription est définitivement validée lorsque le
+                    présent document est signé. A l’issue de cette formation, une
+                    attestation de présence est adressée au Service Formation du
+                    Client.
+                </p>
+                <p>
+                    <strong>Prix, facturation et règlement</strong>
+                </p>
+                <p>
+                    Tous nos prix sont indiqués hors taxes. Toute formation commencée
+                    est due en totalité. Sauf mention contraire, ils comprennent les
+                    frais de déplacement et de bouche du formateur. Les factures sont
+                    payables, sans escompte et à l'ordre de la société Camille
+                    Marzec - IBF Equicoaching à réception de facture. Un acompte de
+                    30% vous sera demandé à la signature du contrat une fois le délai
+                    de rétractation passé. Une fois le contrat signé, la formation est
+                    dûe en totalité à Camille Marzec - IBF Equicoaching.
+                </p>
+                <p>
+                    <strong>Règlement par un OPCO</strong>
+                </p>
+                <p>
+                    En cas de règlement de la prestation pris en charge par
+                    l’Opérateur de compétences dont il dépend, il appartient au Client
+                    de :
+                </p>
+                <ul>
+                    <li>- faire une demande de prise en charge avant le début de la
+                        formation et de s'assurer l'acceptation de sa demande ;
+                    </li>
+                    <li>- indiquer explicitement sur la convention et de joindre à Camille
+                        Marzec - IBF Equicoaching une copie de l’accord de prise en charge
+                        ;
+                    </li>
+                    <li>- s'assurer de la bonne fin du paiement par l'organisme
+                        qu'il aura désigné. En cas de paiement partiel du montant de
+                        la formation par l'OPCO, le solde sera facturé au Client. Si
+                        Camille Marzec - IBF Equicoaching n’a pas reçu la prise en charge
+                        de l'OPCO au 1er jour de la formation, le Client sera facturé
+                        de l'intégralité du coût de la formation. Le cas échéant, le
+                        remboursement des avoirs par Camille Marzec - IBF Equicoaching est
+                        effectué sur demande écrite du Client accompagné d'un relevé
+                        d'identité bancaire original.
+                    </li>
+                </ul>
+                <p></p>
+                <p>
+                    <strong>Pénalités de retard</strong>
+                </p>
+                <p>
+                    En cas de retard de paiement, seront exigibles, conformément à l'article L 441-6 du code de
+                    commerce, une
+                    indemnité calculée sur la base de trois fois le taux de l'intérêt légal en vigueur ainsi qu'une
+                    indemnité
+                    forfaitaire pour frais de recouvrement de 40 euros. Ces pénalités sont exigibles de plein droit, dès
+                    réception de
+                    l’avis informant le Client qu’elles ont été portées à son débit.
+                </p>
+                <p>
+                    <strong>Refus de commande</strong>
+                </p>
+                <p>
+                    Dans le cas où un Client s’inscrirait à une formation Camille Marzec - IBF Equicoaching, sans avoir
+                    procédé au
+                    paiement des formations précédentes, Camille Marzec - IBF Equicoaching pourra refuser d’honorer la
+                    commande et lui refuser sa participation à la formation, sans que le Client puisse prétendre à une
+                    quelconque indemnité,
+                    pour quelque raison que ce soit.
+                </p>
+                <p>
+                    <strong>Conditions d’annulation et de report de l’action de formation</strong>
+                </p>
+                <p>
+                    Toute annulation par le Client doit être communiquée par écrit. Pour toute annulation, fût-ce en cas
+                    de force
+                    majeure. Si une annulation intervient avant le début de la prestation et que l'action de formation
+                    est reportée dans un
+                    délai de 6 mois à compter de la date de la commande, la totalité du règlement du client sera portée
+                    au crédit
+                    du Client sous forme d'avoir imputable sur une formation future. Si aucun report n'a été effectué
+                    dans ce délai
+                    de 6 mois le règlement restera acquis à Camille Marzec - IBF Equicoaching à titre d'indemnité
+                    forfaitaire.
+                    Si le client ne souhaite pas reporter la formation, celle-ci reste dûe à Camille Marzec - IBF
+                    Equicoaching selon
+                    les conditions suivantes :
+                </p>
+                <ul>
+                    <li>si une annulation intervient 1 mois et plus avant la formation, 30% est dû.</li>
+                    <li>si une annulation intervient entre 1 mois et 14 jours avant la formation, 50% est dû.</li>
+                    <li>si une annulation intervient moins de 14 jours ouvrés avant la formation, 100% est dû.</li>
+                    <li>si une annulation intervient pendant la formation, le règlement reste acquis à Camille Marzec
+                        - IBF
+                        Equicoaching à titre d'indemnité forfaitaire.
+                    </li>
+                </ul>
+                En cas de subrogation, le Client s’engage à payer les montants non pris en charge par l’OPCO.
+                <p></p>
+                <p>
+                    En cas d’annulation par le formateur (plus de places disponibles, ou incapacité du formateur à
+                    dispenser la
+                    formation pour des raisons physiques, morales ou matérielles) , celle-ci pourra être reportée ou
+                    remboursée si
+                    le report n’est pas possible.
+                </p>
+                <p>
+                    <strong>Médiation de la consommation&nbsp;:</strong>
+                </p>
+                <p>
+                    Les litiges nationaux ou transfrontaliers qui viendraient à se produire à propos de la validité, de
+                    l’interprétation,
+                    de l’exécution ou de l’inexécution, de l’interruption ou de la résiliation de la présente
+                    convention, peuvent être
+                    soumis à la médiation de la consommation à la demande du consommateur.
+                </p>
+                <p>
+                    La médiation de la consommation désigne un processus de règlement extrajudiciaire des litiges, par
+                    lequel un
+                    consommateur et un professionnel tentent de parvenir à un accord pour résoudre à l’amiable un litige
+                    qui les
+                    oppose, avec l’aide d’un tiers, le médiateur. A défaut d'accord amiable entre les parties, le
+                    médiateur leur
+                    propose une solution pour régler le litige.
+                    Le consommateur ne peut toutefois saisir le médiateur qu’à la condition d’avoir préalablement fait
+                    une
+                    démarche par écrit directement auprès du professionnel concerné ou de son service client pour tenter
+                    de
+                    résoudre son litige. Si cette démarche n’est pas effectuée, la demande de médiation sera
+                    irrecevable.
+                    La liste de l’ensemble des médiateurs agréés par la Commission d’évaluation et de contrôle de la
+                    médiation de
+                    la consommation (CECMC) est accessible sur son site internet&nbsp;:
+                    https://www.economie.gouv.fr/mediation-conso/liste-des-mediateurs-references
+                    Le litige ne peut notamment être examiné par le médiateur si :
+                </p>
+                <ul>
+                    <li>- le client ne justifie pas avoir tenté, au préalable, de résoudre son litige directement auprès
+                        de Camille Marzec -
+                        IBF Equicoaching par une réclamation écrite,
+                    </li>
+                    <li>- la demande est manifestement infondée ou abusive,</li>
+                    <li>- le litige a été précédemment examiné ou est en cours d’examen par un autre médiateur ou par un
+                        tribunal,
+                    </li>
+                    <li>- le consommateur a introduit sa demande auprès du médiateur dans un délai supérieur à un an à
+                        compter de
+                        sa réclamation écrite auprès de Camille Marzec - IBF Equicoaching
+                    </li>
+                    <li>- le litige n’entre pas dans son champ de compétence.</li>
+                </ul>
+                <p></p>
+                <p>
+                    La médiation est gratuite pour le client (sauf si celui-ci a volontairement recours à un avocat, un
+                    tiers de son
+                    choix ou un expert).
+                    Le médiateur ne pourra recevoir aucune instruction des parties ni être rémunéré en fonction du
+                    résultat.
+                    La médiation des litiges de consommation est soumise à l’obligation de confidentialité prévue par
+                    l’article 21-3
+                    de la loi n° 95-125 du 8 février 1995 relative à l’organisation des juridictions et de la procédure
+                    civile, pénale et
+                    administrative.<br>
+                    Les parties demeurent libres de soumettre leur litige à un juge dans le cadre des dispositions
+                    légales
+                    applicables.
+                </p>
+                <p>
+                    <strong>Conformité des lieux</strong>
+                </p>
+                <p>
+                    Pour les formations prestées dans les locaux des stagiaires, les entreprises devront respecter la&nbsp;conformité
+                    des
+                    lieux devant accueillir des formations en matière de sécurité, d'hygiène, d'accessibilité,&nbsp;de
+                    disponibilité des
+                    moyens.
+                </p>
+                <p>
+                    <strong>Protection des données à caractère personnel</strong>
+                </p>
+                <p>
+                    Les informations à caractère personnel qui sont communiquées par le Client à Camille Marzec - IBF
+                    Equicoaching
+                    en application et dans l’exécution des formations pourront être communiquées aux partenaires de
+                    Camille
+                    Marzec - IBF Equicoaching pour les seuls besoins des dits stages. Les données sont sécurisées et
+                    conservées
+                    pendant la relation client. Conformément aux dispositions de la loi 2018-493 du 20 juin 2018
+                    relative à la
+                    protection des données personnelles, le Client peut exercer son droit d’accès, de rectification,
+                    d’opposition, de
+                    limitation et de portabilité en s’adressant à ibf.equicoaching@gmail.com ou par courrier postal
+                    adressé à Camille
+                    Marzec - IBF Equicoaching, 358 Route d’Hurtières 38570 THEYS.
+                </p>
+                <p>
+                    <strong>Renonciation</strong>
+                </p>
+                <p>
+                    Le fait, pour Camille Marzec - IBF Equicoaching de ne pas se prévaloir à un moment donné de l'une
+                    quelconque
+                    des clauses présentes ne peut valoir renonciation à se prévaloir ultérieurement de ces mêmes
+                    clauses.
+                </p>
+                <p>
+                    <strong>Réclamation</strong>
+                </p>
+                <p>
+                    Pour toute réclamation, veuillez envoyer un courrier par A/R au plus tard 3 jours après la formation
+                    à Camille
+                    Marzec - IBF Equicoaching 358 Route d’Hurtières 38570 THEYS.
+                </p>
+                <p>
+                    <strong>Obligation de non-sollicitation de personnel</strong>
+                </p>
+                <p>
+                    Le Client s'engage à ne pas débaucher ou embaucher le personnel de Camille Marzec - IBF Equicoaching
+                    ayant
+                    participé à l'exécution du contrat, pendant toute la durée de celui-ci et pendant les deux années
+                    civiles qui
+                    suivront la cessation des relations contractuelles. En cas de non-respect de la présente obligation,
+                    le client
+                    devra verser à Camille Marzec - IBF Equicoaching à titre de clause pénale une indemnité égale à
+                    douze fois le
+                    dernier salaire, charges patronales en sus, du salarié indûment débauché.
+                </p>
+                <p>
+                    <strong>Loi applicable</strong>
+                </p>
+                <p>
+                    La loi française est applicable en ce qui concerne ces Conditions Générales de Ventes et les
+                    relations
+                    contractuelles entre Camille Marzec - IBF Equicoaching et ses Clients.
+                </p>
+                <p>
+                    <strong>Attribution de compétence</strong>
+                </p>
+                <p>
+                    Tous litiges qui ne pourraient être réglés à l’amiable seront de la compétence exclusive du Tribunal
+                    judiciaire de
+                    Grenoble, quel que soit le siège ou la résidence du Client, nonobstant pluralité de défendeurs ou
+                    appel en
+                    garantie. Cette clause attributive de compétence ne s’appliquera pas au cas de litige avec un Client
+                    non
+                    Camille Marzec - IBF Equicoaching – 358 Route d’Hurtières 38570 THEYS – N° SIRET 887 607 646 00023&nbsp;
+                    NDA en cours d’enregistrement - Contact&nbsp;: ibf.equicoaching@gmail.com 06.10.83.37.88
+                    Version 01 du 17/03/2023 4
+                    professionnel pour lequel les règles légales de compétence matérielle et géographique
+                    s’appliqueront. La
+                    présente clause est stipulée dans l'intérêt de Camille Marzec - IBF Equicoaching qui se réserve le
+                    droit d'y
+                    renoncer si bon lui semble.
+                </p>
+                <p>
+                    <strong>Election de domicile</strong>
+                </p>
+                <p>
+                    L'élection de domicile est faite par Camille Marzec - IBF Equicoaching a son siège social à 358
+                    Route d’Hurtières
+                    38570 THEYS.
+                </p>
+                <p>
+                    <i>v1.0 - dernière modification le 17/03/2023</i>
+                </p>
+            </Fragment>
+        </Section>
+    </main>
+</Layout>
