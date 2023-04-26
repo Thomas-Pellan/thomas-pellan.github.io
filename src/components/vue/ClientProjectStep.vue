@@ -117,7 +117,7 @@ export default {
     },
     methods: {
         validate(){
-
+            this.$emit('step-valid')
         },
     }
 }
