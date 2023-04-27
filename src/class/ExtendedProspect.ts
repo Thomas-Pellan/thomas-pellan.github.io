@@ -5,8 +5,8 @@ class ExtendedProspect extends Prospect {
     private _companyName: string;
     private _title: string;
 
-    constructor(name: string, mail: string, phone: string, dataConsent: boolean, companyName: string, title: string) {
-        super(name, mail, phone, dataConsent);
+    constructor(name: string, mail: string, phone: string, dataConsent: boolean, companyName: string, title: string, newsletterConsent : boolean) {
+        super(name, mail, phone, dataConsent, newsletterConsent);
         this._companyName = companyName;
         this._title = title;
     }

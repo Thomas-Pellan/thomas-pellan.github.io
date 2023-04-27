@@ -93,7 +93,7 @@
 <script>
 
 import {mapStores} from '@nanostores/vue'
-import {clientType, prospect, sendProspectData} from '../../store/contact-form'
+import {clientType, prospect} from '../../store/contact-form'
 import ExtendedProspect from '../../class/ExtendedProspect'
 
 export default {
@@ -125,10 +125,8 @@ export default {
         },
         async validate(e){
             e.preventDefault()
-            //We save the data in the store and pre send the contact info for prospection purposes
+            prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title, this.prospectData.news))
             this.$emit('step-valid')
-            /*prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title))
-            await sendProspectData().then(() => this.$emit('step-valid'))*/
         },
     }
 }
