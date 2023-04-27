@@ -112,7 +112,7 @@ export default {
             //We save the data in the store and pre send the contact info for prospection purposes
             this.$emit('step-valid')
             /*prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title))
-            await sendProspectData().then(() => this.$emit('step-valid'))/*
+            await sendProspectData().then(() => this.$emit('step-valid'))*/
         },
     }
 }
