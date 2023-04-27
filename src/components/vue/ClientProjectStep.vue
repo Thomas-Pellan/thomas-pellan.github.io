@@ -1,9 +1,9 @@
 <template>
-    <form @submit="validate">
-        <p>
+    <form @submit="validate" class="m-form">
+        <p class="m-form-title">
             Votre projet :
         </p>
-        <div>
+        <div class="m-form-checkbox">
             <input
                 type="radio"
                 name="buying"
@@ -12,6 +12,8 @@
                 value="buying"
             />
             <label for="company">Je suis intéréssé par une prestation</label>
+        </div>
+        <div class="m-form-checkbox">
             <input
                 type="radio"
                 name="other"
@@ -21,10 +23,10 @@
             />
             <label for="company">J'ai une autre demande</label>
         </div>
-        <p>
-            Dites m'en plus sur votre souhait :
+        <p v-if="serviceChoice" class="m-form-title">
+            Par quelle(s) prestation(s) etes vous intéréssés :
         </p>
-        <div v-if="serviceChoice === buying">
+        <div v-if="serviceChoice === 'buying'">
             <div v-for="service in serviceList" :key="service" class="m-form-checkbox">
                 <input
                     type="checkbox"
@@ -93,7 +95,7 @@
                 </label>
             </div>
         </div>
-        <div v-else-if="serviceChoice === 'other'">
+        <div v-else-if="serviceChoice === 'other'" class="m-form-field">
             <label for="otherText">
                 Ecrivez moi un message *<small>({{comment.length}}/500 caractères)</small>
             </label>
@@ -105,25 +107,27 @@
                 maxlength="500"
             />
         </div>
-        <button type="button" @click="validate">
-            Sauvegarder et Envoyer
-        </button>
-        <button type="button" @click="$emit('step-back')">
-            Retour
-        </button>
+        <div>
+            <button type="button" @click="validate" v-if="serviceChoice">
+                Sauvegarder et Envoyer
+            </button>
+            <button type="button" @click="$emit('step-back')">
+                Retour
+            </button>
+        </div>
     </form>
 </template>
 <script>
 
 import {mapStores} from '@nanostores/vue'
-import {clientType, project} from '../../store/contact-form'
+import {clientType, project, errorMsg} from '../../store/contact-form'
 import {CompanyServices, CustomerServices} from '../../class/ServicesList'
 
 export default {
     name: 'ClientInfoStep',
     setup() {
         return {
-            ...mapStores({clientType, project})
+            ...mapStores({clientType, project, errorMsg})
         }
     },
     data() {
@@ -152,7 +156,30 @@ export default {
     },
     methods: {
         validate(){
+            errorMsg.set(null)
+            if(this.serviceChoice !== 'other' && (!this.servicesSelected || this.servicesSelected.length <= 0)){
+                errorMsg.set('Merci de cocher au moins un service, ou de passer par la case \'autre demande\'.')
+                return
+            }
+            if(this.clientType === 'company' && !this.validateCompanyProject()){
+                return
+            }
+            if(this.serviceChoice === 'other' && (!this.comment || this.comment.length <= 0)){
+                errorMsg.set('Merci d\'ecrire un message dans le champ.')
+                return
+            }
             this.$emit('step-valid')
+        },
+        validateCompanyProject() {
+            if(!this.budgetData.min || !this.budgetData.max || this.budgetData.min > this.budgetData.max){
+                errorMsg.set('Merci d\'indiquer votre budget, pour un devis au plus proche de vos attentes.')
+                return false
+            }
+            if(!this.attendees){
+                errorMsg.set('Merci d\'indiquer un nombre de participants approximatif.')
+                return false
+            }
+            return true
         },
     }
 }

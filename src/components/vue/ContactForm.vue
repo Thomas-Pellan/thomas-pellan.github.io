@@ -1,6 +1,5 @@
 <template>
     <div id="contact-form">
-        etape {{currentStep}}
         <ClientTypeStep v-if="currentStep === ContactFormSteps.CLIENT_TYPE" @stepValid="nextStep" />
         <ClientInfoStep v-if="currentStep === ContactFormSteps.CLIENT_INFO" @stepValid="nextStep" @stepBack="previousStep"/>
         <ClientProjectStep v-if="currentStep === ContactFormSteps.PROJECT" @stepValid="sendData" @stepBack="previousStep"/>

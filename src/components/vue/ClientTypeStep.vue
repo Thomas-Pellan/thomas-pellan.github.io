@@ -33,7 +33,6 @@
 
 import {mapStores} from '@nanostores/vue'
 import {clientType, errorMsg} from '../../store/contact-form'
-
 export default {
     name: 'ClientTypeStep',
     setup() {

@@ -1,6 +1,6 @@
 <template>
-    <form @submit="validate">
-        <p>
+    <form @submit="validate" class="m-form">
+        <p  class="m-form-title">
             Vous contacter :
         </p>
         <div class="m-form-field">
@@ -69,12 +69,14 @@
                 ci-dessus pour me recontacter. <a href="/mentions-legales">Mentions légales</a>
             </label>
         </div>
-        <button>
-            Suivant
-        </button>
-        <button type="button" @click="backToType">
-            Retour
-        </button>
+        <div>
+            <button>
+                Suivant
+            </button>
+            <button type="button" @click="backToType">
+                Retour
+            </button>
+        </div>
     </form>
 </template>
 <script>
@@ -108,8 +110,9 @@ export default {
         async validate(e){
             e.preventDefault()
             //We save the data in the store and pre send the contact info for prospection purposes
-            prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title))
-            await sendProspectData().then(() => this.$emit('step-valid'))
+            this.$emit('step-valid')
+            /*prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title))
+            await sendProspectData().then(() => this.$emit('step-valid'))/*
         },
     }
 }
