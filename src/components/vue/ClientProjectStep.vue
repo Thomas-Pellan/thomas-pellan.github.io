@@ -23,7 +23,7 @@
             />
             <label for="company">J'ai une autre demande</label>
         </div>
-        <p v-if="serviceChoice" class="m-form-title">
+        <p v-if="serviceChoice === 'buying'" class="m-form-title">
             Par quelle(s) prestation(s) etes vous intéréssés :
         </p>
         <div v-if="serviceChoice === 'buying'">
@@ -96,13 +96,14 @@
             </div>
         </div>
         <div v-else-if="serviceChoice === 'other'" class="m-form-field">
-            <label for="otherText">
+            <label for="otherText" class="m-form-title">
                 Ecrivez moi un message *<small>({{comment.length}}/500 caractères)</small>
             </label>
-            <input
-                type="text"
+            <textarea
                 name="otherText"
                 id="otherText"
+                rows="5"
+                cols="50"
                 v-model="comment"
                 maxlength="500"
             />
@@ -164,13 +165,17 @@ export default {
             if(this.clientType === 'company' && !this.validateCompanyProject()){
                 return
             }
-            if(this.serviceChoice === 'other' && (!this.comment || this.comment.length <= 0)){
+            if(this.serviceChoice === 'other' && (!this.comment || this.comment.trim().length <= 0)){
                 errorMsg.set('Merci d\'ecrire un message dans le champ.')
                 return
             }
             this.$emit('step-valid')
         },
         validateCompanyProject() {
+            //Only validate for services, not for other
+            if(this.serviceChoice === 'other'){
+                return true
+            }
             if(!this.budgetData.min || !this.budgetData.max || this.budgetData.min > this.budgetData.max){
                 errorMsg.set('Merci d\'indiquer votre budget, pour un devis au plus proche de vos attentes.')
                 return false

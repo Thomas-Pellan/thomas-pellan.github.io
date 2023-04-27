@@ -3,12 +3,23 @@ class Prospect {
     private _mail: string;
     private _phone: string;
     private _dataConsent: boolean;
-    constructor(name: string, mail: string, phone: string, dataConsent: boolean) {
+    private _newsletterConsent: boolean;
+    constructor(name: string, mail: string, phone: string, dataConsent: boolean, newsletterConsent: boolean) {
         this._name = name;
         this._mail = mail;
         this._phone = phone;
         this._dataConsent = dataConsent;
+        this._newsletterConsent = newsletterConsent;
     }
+
+    get newsletterConsent(): boolean {
+        return this._newsletterConsent;
+    }
+
+    set newsletterConsent(value: boolean) {
+        this._newsletterConsent = value;
+    }
+
     get dataConsent(): boolean {
         return this._dataConsent;
     }
