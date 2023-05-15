@@ -1,17 +1,17 @@
 <template>
     <div
-            id="contact-form"
-            class="m-event-form"
+            id="event-form"
+            class="m-form"
             aria-label="S'inscrire à un évènement"
     >
-        <div v-if="isValidating" class="m-event-form-wait">
+        <div v-if="isValidating" class="m-form-wait">
             Envoi du formulaire, Veuillez patienter...
         </div>
         <form v-if="!isCompleted && !isValidating" @submit="validateForm">
-            <p>
+            <p class="m-form-title">
                 Je souhaite m'inscrire :
             </p>
-            <div class="m-event-form-field">
+            <div class="m-form-field">
                 <label for="date">Date de l'évènement *</label>
                 <select name="date"
                         id="date"
@@ -27,7 +27,7 @@
                     </option>
                 </select>
             </div>
-            <div class="m-event-form-field">
+            <div class="m-form-field">
                 <label for="nb">Nombre d'inscrits *</label>
                 <input
                     name="nombre"
@@ -39,7 +39,7 @@
                     required
                 />
             </div>
-            <div class="m-event-form-field">
+            <div class="m-form-field">
                 <label for="name">Nom et Prénom *</label>
                 <input
                     name="name"
@@ -49,7 +49,7 @@
                     required
                 />
             </div>
-            <div class="m-event-form-field">
+            <div class="m-form-field">
                 <label for="mail">Adresse Email *</label>
                 <input
                     type="email"
@@ -60,7 +60,7 @@
                     required
                 />
             </div>
-            <div class="m-event-form-field">
+            <div class="m-form-field">
                 <label for="phone">Téléphone *</label>
                 <input
                     type="tel"
@@ -71,13 +71,12 @@
                     required
                 />
             </div>
-            <div class="m-event-form-consent">
+            <div class="m-form-checkbox">
                 <input
                     type="checkbox"
                     name="consent"
                     id="consent"
                     v-model="prospectData.consent"
-                    maxlength="60"
                     required
                 />
                 <label for="consent">
@@ -85,15 +84,15 @@
                     ci-dessus pour me recontacter. <a href="/mentions-legales">Mentions légales</a>
                 </label>
             </div>
-            <p class="m-event-form-error" v-if="errorMsgs">
+            <p class="m-form-error" v-if="errorMsgs">
                 {{ errorMsgs }}
             </p>
             <button>
                 Je m'inscris !
             </button>
         </form>
-        <div v-else-if="isCompleted" class="m-event-form-success">
-            <p class="m-event-form-success-msg">
+        <div v-else-if="isCompleted" class="m-form-success">
+            <p class="m-form-success-msg">
                 Merci, Votre pré inscription a bien été prise en compte, je vous contacterai prochainement pour
                 confirmer
                 votre participation !

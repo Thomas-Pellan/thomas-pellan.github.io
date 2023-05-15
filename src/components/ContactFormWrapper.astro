@@ -1,0 +1,9 @@
+---
+import ContactForm from '../components/vue/ContactForm.vue';
+import Spinner from '../components/Spinner.astro';
+import '../styles/m-form.scss';
+---
+<div class="m-from-wrapper">
+    <Spinner text="Chargement du formulaire de contact..." listenerSelector="contact-form"/>
+    <ContactForm client:only="vue" />
+</div>

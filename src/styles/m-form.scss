@@ -3,10 +3,8 @@
 @import 'src/styles/common/media';
 
 .m-from-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 38rem;
+  height: max-content;
+  min-height: 15rem;
   width: 50%;
   margin: $space-B;
   padding: $space-B;
@@ -22,20 +20,49 @@
 @include mobile {
   .m-from-wrapper {
     width: 90%;
-    height: 42rem;
+  }
+
+  m-form-line {
+    flex-direction: column;
   }
 }
 
-.m-event-form {
+@include tablet-and-desktop {
+  .m-from-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .m-form-checkbox {
+    input {
+      height: 2rem;
+      width: 2rem;
+      margin: $space-Ae;
+    }
+  }
+}
+
+.m-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow: auto;
 
   form {
     max-width: 90%;
   }
 
-  input, select {
+  &-line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    input {
+      width: 25%;
+    }
+  }
+
+  input, select, textarea {
     margin: $space-Ae;
     padding: $space-B;
     font-size: 1rem;
@@ -43,23 +70,24 @@
     border-radius: 0.3rem;
   }
 
+  &-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: $color-primary;
+  }
+
   &-field {
     display: flex;
     flex-direction: column;
+    margin-top: $space-B;
   }
 
-  &-consent {
+  &-checkbox {
     display: flex;
     flex-direction: row;
     align-items: center;
     accent-color: $color-primary;
     cursor: pointer;
-
-    input {
-      height: 2rem;
-      width: 2rem;
-      margin: $space-B;
-    }
 
     input:checked {
       background-color: $color-primary;
@@ -103,5 +131,10 @@
     background: $color-white;
     color: $color-primary;
     border: solid $color-primary 0.1rem;
+  }
+
+  button:disabled {
+    background-color: $color-gray !important;
+    cursor: not-allowed;
   }
 }

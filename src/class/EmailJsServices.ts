@@ -1,6 +1,6 @@
 export enum EmailJsTemplates {
     EVENT = 'template_tvro2n8',
-    CONTACT = '',
+    CONTACT = 'template_q4h6y9e',
 }
 
 export enum EmailJsServices {
