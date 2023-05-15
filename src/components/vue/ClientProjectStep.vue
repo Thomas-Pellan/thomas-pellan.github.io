@@ -40,10 +40,10 @@
                 </label>
             </div>
             <div v-if="isCompany">
-                <p>
+                <p class="m-form-title">
                     Votre Evènement :
                 </p>
-                <div>
+                <div class="m-form-line">
                     <label for="phone">Nombre de participants *</label>
                     <input
                         name="attendees"
@@ -53,10 +53,10 @@
                         required
                     />
                 </div>
-                <p>
-                    Votre budget
+                <p class="m-form-title">
+                    Votre budget :
                 </p>
-                <div>
+                <div class="m-form-line">
                     <label for="budgetMin">Min *</label>
                     <input
                         type="number"
@@ -66,8 +66,6 @@
                         maxlength="5"
                         required
                     />
-                </div>
-                <div>
                     <label for="budgetMax">Max *</label>
                     <input
                         type="number"
@@ -95,9 +93,15 @@
                 </label>
             </div>
         </div>
-        <div v-else-if="serviceChoice === 'other'" class="m-form-field">
+        <div v-if="serviceChoice" class="m-form-field">
             <label for="otherText" class="m-form-title">
-                Ecrivez moi un message *<small>({{comment.length}}/500 caractères)</small>
+                <span v-if="isOtherDemand">
+                    Ecrivez moi un message *
+                </span>
+                <span v-else>
+                    Commentaire ou question
+                </span>
+                <small>({{comment.length}}/500 caractères)</small>
             </label>
             <textarea
                 name="otherText"
@@ -105,6 +109,7 @@
                 rows="5"
                 cols="50"
                 v-model="comment"
+                :required="isOtherDemand"
                 maxlength="500"
             />
         </div>
@@ -154,6 +159,9 @@ export default {
             }
             return CustomerServices
         },
+        isOtherDemand() {
+            return this.serviceChoice === 'other'
+        }
     },
     methods: {
         validate(){
@@ -166,7 +174,7 @@ export default {
                 return
             }
             if(this.serviceChoice === 'other' && (!this.comment || this.comment.trim().length <= 0)){
-                errorMsg.set('Merci d\'ecrire un message dans le champ.')
+                errorMsg.set('Merci d\'ecrire un message.')
                 return
             }
             this.$emit('step-valid')

@@ -6,7 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 38rem;
+  height: max-content;
+  min-height: 15rem;
   width: 50%;
   margin: $space-B;
   padding: $space-B;
@@ -22,16 +23,30 @@
 @include mobile {
   .m-from-wrapper {
     width: 90%;
-    height: 42rem;
+  }
+
+  m-form-line {
+    flex-direction: column;
   }
 }
 
 .m-form {
   display: flex;
   flex-direction: column;
+  overflow: auto;
 
   form {
     max-width: 90%;
+  }
+
+  &-line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    input {
+      width: 25%;
+    }
   }
 
   input, select, textarea {
@@ -51,6 +66,7 @@
   &-field {
     display: flex;
     flex-direction: column;
+    margin-top: $space-B;
   }
 
   &-checkbox {

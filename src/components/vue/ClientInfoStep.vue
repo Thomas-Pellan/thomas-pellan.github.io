@@ -59,12 +59,12 @@
         <div class="m-form-checkbox">
             <input
                 type="checkbox"
-                name="consent"
-                id="consent"
+                name="news"
+                id="news"
                 v-model="prospectData.news"
             />
-            <label for="consent">
-                Je coche cette case pour recevoir des informations promotionnelles de la part d'IBF Equicoaching concernant les nouveautes ou les evenements a venir.
+            <label for="news">
+                Je coche cette case pour recevoir des informations promotionnelles de la part d'IBF Equicoaching concernant les nouveautés ou les évènements à venir.
             </label>
         </div>
         <div class="m-form-checkbox">
