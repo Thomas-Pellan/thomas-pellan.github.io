@@ -112,6 +112,7 @@ export default {
       if(prospect.get()){
           this.prospectData = prospect.get()
       }
+      window.scrollTo(0,0)
     },
     computed: {
         isCompany() {

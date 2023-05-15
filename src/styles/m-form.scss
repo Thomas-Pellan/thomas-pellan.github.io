@@ -3,10 +3,6 @@
 @import 'src/styles/common/media';
 
 .m-from-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
   height: max-content;
   min-height: 15rem;
   width: 50%;
@@ -32,7 +28,13 @@
 }
 
 @include tablet-and-desktop {
-  m-form-checkbox {
+  .m-from-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .m-form-checkbox {
     input {
       height: 2rem;
       width: 2rem;

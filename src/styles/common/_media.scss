@@ -15,5 +15,5 @@
 }
 
 @mixin tablet-and-desktop {
-  @media screen and (max-width: calc(565em/16)) {@content}
+  @media screen and (min-width: calc(565em/16)) {@content}
 }

@@ -49,6 +49,7 @@ export default {
         if(clientType.get()){
             this.type = clientType.get()
         }
+        window.scrollTo(0,0)
     },
     watch: {
         type(value){
