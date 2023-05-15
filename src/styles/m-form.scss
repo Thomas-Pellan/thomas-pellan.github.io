@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
   height: max-content;
   min-height: 15rem;
   width: 50%;
@@ -27,6 +28,16 @@
 
   m-form-line {
     flex-direction: column;
+  }
+}
+
+@include tablet-and-desktop {
+  m-form-checkbox {
+    input {
+      height: 2rem;
+      width: 2rem;
+      margin: $space-Ae;
+    }
   }
 }
 
@@ -75,12 +86,6 @@
     align-items: center;
     accent-color: $color-primary;
     cursor: pointer;
-
-    input {
-      height: 2rem;
-      width: 2rem;
-      margin: $space-Ae;
-    }
 
     input:checked {
       background-color: $color-primary;

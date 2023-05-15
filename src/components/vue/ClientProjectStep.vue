@@ -11,7 +11,7 @@
                 v-model="serviceChoice"
                 value="buying"
             />
-            <label for="company">Je suis intéréssé par une prestation</label>
+            <label for="buying">Je suis intéréssé par une prestation</label>
         </div>
         <div class="m-form-checkbox">
             <input
@@ -21,21 +21,21 @@
                 v-model="serviceChoice"
                 value="other"
             />
-            <label for="company">J'ai une autre demande</label>
+            <label for="other">J'ai une autre demande</label>
         </div>
         <p v-if="serviceChoice === 'buying'" class="m-form-title">
             Par quelle(s) prestation(s) etes vous intéréssés :
         </p>
         <div v-if="serviceChoice === 'buying'">
-            <div v-for="service in serviceList" :key="service" class="m-form-checkbox">
+            <div v-for="(service, index) in serviceList" :key="index" class="m-form-checkbox">
                 <input
                     type="checkbox"
-                    name="services"
-                    id="services"
+                    :name="`service-${index}`"
+                    :id="`service-${index}`"
                     v-model="servicesSelected"
                     :value="service"
                 />
-                <label for="consent">
+                <label :for="`service-${index}`">
                     {{service}}
                 </label>
             </div>
@@ -117,7 +117,7 @@
             <button type="button" @click="validate" v-if="serviceChoice">
                 Sauvegarder et Envoyer
             </button>
-            <button type="button" @click="$emit('step-back')">
+            <button type="button" @click="handleBack">
                 Retour
             </button>
         </div>
@@ -147,6 +147,11 @@ export default {
             },
             attendees: 1,
             isPresent: false,
+        }
+    },
+    watch: {
+        serviceChoice() {
+            errorMsg.set(null)
         }
     },
     computed: {
@@ -194,6 +199,13 @@ export default {
             }
             return true
         },
+        handleBack(){
+            if(!this.serviceChoice){
+                this.$emit('step-back')
+            } else {
+                this.serviceChoice = null
+            }
+        }
     }
 }
 </script>
