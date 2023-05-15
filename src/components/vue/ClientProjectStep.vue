@@ -128,6 +128,8 @@
 import {mapStores} from '@nanostores/vue'
 import {clientType, project, errorMsg} from '../../store/contact-form'
 import {CompanyServices, CustomerServices} from '../../class/ServicesList'
+import Project from '../../class/Project'
+import Budget from '../../class/Budget'
 
 export default {
     name: 'ClientInfoStep',
@@ -185,6 +187,7 @@ export default {
                 errorMsg.set('Merci d\'ecrire un message.')
                 return
             }
+            project.set(new Project(this.servicesSelected, this.attendees, new Budget(this.budgetData.min, this.budgetData.max), this.isPresent, this.comment))
             this.$emit('step-valid')
         },
         validateCompanyProject() {
@@ -194,6 +197,10 @@ export default {
             }
             if(!this.budgetData.min || !this.budgetData.max || this.budgetData.min > this.budgetData.max){
                 errorMsg.set('Merci d\'indiquer votre budget, pour un devis au plus proche de vos attentes.')
+                return false
+            }
+            if(this.budgetData.min > this.budgetData.max){
+                errorMsg.set('Budget incorrect, le max est plus petit que le min.')
                 return false
             }
             if(!this.attendees){

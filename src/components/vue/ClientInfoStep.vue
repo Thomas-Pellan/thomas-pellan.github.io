@@ -1,7 +1,7 @@
 <template>
     <form @submit="validate" class="m-form">
         <p  class="m-form-title">
-            Vous contacter :
+            Comment vous contacter :
         </p>
         <div class="m-form-field">
             <label for="name">Nom et Prénom *</label>
