@@ -1,12 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import Place1 from '../components/places/Place1.astro';
-import Place2 from '../components/places/Place2.astro';
-import Place3 from '../components/places/Place3.astro';
-import Place4 from '../components/places/Place4.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import Place1 from '../components/places/Place1.astro'
+import Place2 from '../components/places/Place2.astro'
+import Place3 from '../components/places/Place3.astro'
+import Place4 from '../components/places/Place4.astro'
+import Place5 from '../components/places/Place5.astro'
+import Seo from '../class/Seo'
 
 export function getStaticPaths() {
     return [
@@ -18,6 +19,9 @@ export function getStaticPaths() {
         {params: {place: 'aix-les-bains'}, props: {name: 'à Aix les bains', template: 4, region: 'Savoie'}},
         {params: {place: 'isère'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
         {params: {place: 'isere'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
+        {params: {place: 'savoie'}, props: {name: 'en Savoie', template: 4}},
+        {params: {place: 'haute-savoie'}, props: {name: 'en Haute-Savoie', template: 5}},
+        {params: {place: 'hautes-alpes'}, props: {name: 'en Hautes -Alpes', template: 5}},
         {params: {place: 'suisse'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}},
         {params: {place: 'geneve'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}}
     ];
@@ -56,6 +60,8 @@ const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, form
                         <Place3 ville={name} pays={pays}/>)}
                 {template === 4 && (
                         <Place4 ville={name} region={region}/>)}
+                {template === 5 && (
+                        <Place5 ville={name} region={region}/>)}
             </Fragment>
         </Section>
     </main>
