@@ -34,6 +34,10 @@
     margin: $space-A;
   }
 
+  &-video {
+    align-self: center;
+  }
+
   &-picture, &-video {
     width: 35rem;
   }
