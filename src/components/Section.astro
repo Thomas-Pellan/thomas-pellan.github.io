@@ -1,17 +1,15 @@
 ---
-import '../styles/m-section.scss';
-import {YouTube} from '@astro-community/astro-embed-youtube';
-import {Image} from '@astrojs/image/components';
-import SectionText from '../components/SectionText.astro';
+import '../styles/m-section.scss'
+import {YouTube} from '@astro-community/astro-embed-youtube'
+import {Image} from '@astrojs/image/components'
+import SectionText from '../components/SectionText.astro'
 
-const {subTitle, displayTextLeft, imgContent, ytbLink, actions, wide} = Astro.props;
-const width = imgContent && imgContent.width ? imgContent.width : 320
-const height = imgContent && imgContent.height ? imgContent.height : 320
+const {subTitle, displayTextLeft, imgContent, ytbLink, actions, wide} = Astro.props
 ---
 <section class="m-section">
     {imgContent && !displayTextLeft && (
             <div class="m-section-picture">
-                <Image src={imgContent.src} alt={imgContent.alt} width={width} height={height} format="webp"/>
+                <Image src={imgContent.src} alt={imgContent.alt} width={imgContent.width} height={imgContent.height} format="webp"/>
             </div>
     )}
     {ytbLink && !displayTextLeft && (
@@ -26,7 +24,7 @@ const height = imgContent && imgContent.height ? imgContent.height : 320
     </SectionText>
     {imgContent && displayTextLeft && (
             <div class="m-section-picture">
-                <Image src={imgContent.src} alt={imgContent.alt} width={width} height={height} format="webp"/>
+                <Image src={imgContent.src} alt={imgContent.alt} width={imgContent.width} height={imgContent.height} format="webp"/>
             </div>
     )}
     {ytbLink && displayTextLeft && (

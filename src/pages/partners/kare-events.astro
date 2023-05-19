@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Title from '../../components/Title.astro'
+import Section from '../../components/Section.astro'
+import Seo from '../../class/Seo'
+import ReturnAction from '../../class/ReturnAction'
+import ButtonAction from '../../class/ButtonAction'
+import Image from '../../class/Image'
+import Separator from '../../components/Separator.astro'
+
+const returnValues: ReturnAction = new ReturnAction('/partners', 'Nos partenaires')
+const image: Image = new Image('/img/kare-events-450x450.webp', 'kare events entreprise', 450, 450)
+const imageWhy: Image = new Image('/img/kare-events-why-510x510.webp', 'kare events eco responsable', 510, 510)
+const actions: ButtonAction[] = [new ButtonAction('https://kareevents.fr/', 'RDV sur KARE Events 🌏')]
+const seoData : Seo = new Seo('KARE Events', 'KARE Events, team building éco responsable pour votre entreprise.', false)
+---
+
+<Layout title="IBF Equicoaching | KARE EVENTS" seoData={seoData}>
+    <main>
+        <Title title="Kare Events" returnValues={returnValues}/>
+        <Section displayTextLeft="true" imgContent={image} wide="true">
+            <h2 slot="section-title">Pourquoi organiser un team building ?</h2>
+            <Fragment slot="section-content">
+                <p>
+                    Le team building a pour but de créer ou renforcer la cohésion d’équipe à travers des activités qui sortent du cadre professionnel.
+                </p>
+                <p>
+                    Les bénéfices des teams building ont déjà été prouvés aussi bien dans les PME que dans les grands groupes.
+                    Pourtant certains décideurs sont encore réticents à l’idée de planifier ce type d’événements par crainte d’un manque de résultat imminent.
+                </p>
+                <h3>Les bienfaits du team building : </h3>
+                <p>
+                    Les bénéfices sont nombreux :
+                </p>
+                <ul>
+                    <li>Fluidifier la communication interne et cultiver une collaboration harmonieuse au sein de l’équipe ;</li>
+                    <li>Augmenter l’implication des collaborateurs et booster la performance globale ;</li>
+                    <li>Réduire les absences et les burn-out ;</li>
+                    <li>Prendre conscience des contraintes, objectifs et enjeux de chacun ;</li>
+                    <li>Fédérer les collaborateurs et développer la culture d’entreprise ;</li>
+                    <li>Encourager la prise d’initiative ;</li>
+                    <li>Développer la créativité des collaborateurs et révéler les personnalités ;</li>
+                    <li>Créer des souvenirs communs.</li>
+                </ul>
+                <p>
+                     La plus-value d’un team building est valorisée sur le temps.
+                     Selon la récente étude de KARE EVENTS, 89% des collaborateurs estiment qu’un team building à un impact positif sur leur travail.
+                     Ce dispositif facilite l’échange entre les managers/RH et les collaborateurs.
+                </p>
+                <p>
+                     L’objectif final est différent si l’on se place du point de vue du manager, du RH ou du salarié.
+                     Le manager désire augmenter l’implication des collaborateurs et booster la performance globale.
+                     Le RH vise la diminution des absences et des burn-out. Quant à lui, le salarié souhaite créer des souvenirs communs et renforcer le sentiment d’appartenance au sein de l’équipe.
+                     L’objectif commun sera d’améliorer la qualité de vie et les conditions de travail. 
+                </p>
+                <p>
+                    En 2023, les salariés aspirent à plus d’engagement. Toujours selon l’étude de KARE EVENTS, 75% des actifs seraient plus favorables à participer à un événement responsable.
+                </p>
+            </Fragment>
+        </Section>
+        <Separator/>
+        <Section imgContent={imageWhy} wide="true">
+            <h4 slot="section-title">Pourquoi faire un évènement responsable ? </h4>
+            <Fragment slot="section-content">
+                <p>
+                    Un team building responsable va intégrer des pratiques liées au respect de l’environnement et aux
+                    enjeux sociaux.
+                    Par exemple, si l’on veut réduire son impact sur l’environnement,
+                    on peut choisir de collaborer avec un traiteur utilisant des produits bio, locaux et de saison.
+                    Cela aura également un impact social positif,
+                    par exemple sur le bien-être des collaborateurs (sur le long terme), sur la santé des sols, et sur l’économie via le recours à de petits producteurs locaux.
+                    On peut également faire le choix de travailler avec des ESAT, des entreprises solidaires, des associations, etc.
+                </p>
+                <p>
+                    La préservation du patrimoine culturel est également cruciale car c’est une source de richesse collective.
+                    Elle constitue un facteur de rapprochement, de tolérance, de liberté et de respect.
+                </p>
+                <p>
+                    La définition d’un événement responsable est donc beaucoup plus large puisqu’il s’agit d’un événement repensé dans le respect du vivant,
+                    de la planète et d’une collaboration harmonieuse au sein de l’équipe.
+                    Il privilégie des alternatives soutenables pour tendre vers l’exemplarité et la sobriété.
+                </p>
+                <p>
+                     Entre les transports, les activités et le lieu de réception, l’empreinte carbone a vite fait de s’alourdir.
+                     Un team building éco-responsable est un événement qui prend en considération la question de son impact environnemental, et ce, tout au long de son organisation comme de ses activités.
+                     On peut donc profiter de cet événement pour sensibiliser à la protection de l’environnement ou du moins pour limiter l’impact sur l’environnement que peut avoir un tel rassemblement.
+                     C’est également une façon de promouvoir des valeurs et de consolider une image de marque.
+                </p>
+            </Fragment>
+        </Section>
+        <Section actions={actions} wide="true">
+            <h5 slot="section-title">Alors pourquoi ne pas organiser votre prochain team building avec KARE EVENTS ?</h5>
+            <Fragment slot="section-content">
+                <p>
+                    KARE EVENTS organise des teams building responsables sur-mesure permettant à des collaborateurs de se rassembler,
+                    tout en tenant compte des contraintes sociales et environnementales ;
+                     Notamment afin de limiter l’empreinte carbone et favoriser l’inclusion sociale.
+                </p>
+                <p>
+                     Katell et Claire, les co-fondatrices de KARE EVENTS ont pris la décision de collaborer avec des acteurs responsables et locaux notamment pour :
+                </p>
+                <ul>
+                    <li>reverser les surplus à des associations;</li>
+                    <li>proposer des solutions de transports décarbonées;</li>
+                    <li>mettre en place un upcycling des déchets évènementiels;</li>
+                    <li>travailler avec un outil d’analyse du bien-être professionnel;</li>
+                    <li>participer à des projets sociaux et/ou environnementaux;</li>
+                    <li>louer du mobilier durable en bois écoresponsables;</li>
+                    <li>commander des objets publicitaires éco-conçus.</li>
+                </ul>
+                <p>
+                    Leurs événements sont vendus clé en main et organisés de A à Z à moins d’1h30 de votre entreprise sur une demi-journée comme sur deux jours.
+                </p>
+                <i>
+                    Credit : Co-écrit par Camille Marzec, fondatrice de IBF EQUICOACHING et Claire CHEVALLIER CHANTEPIE, co-fondatrice de KARE EVENTS.
+                </i>
+                <br/><br/>
+            </Fragment>
+        </Section>
+    </main>
+</Layout>
