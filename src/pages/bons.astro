@@ -3,15 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import Section from '../components/Section.astro';
 import Seo from '../class/Seo';
+import ReturnAction from '../class/ReturnAction'
+import Image from '../class/Image'
+import ButtonAction from '../class/ButtonAction'
 
-const returnValues = {link: '/bons', title: 'Bons cadeaux'}
-const image = {src: '/img/bons-320x320.webp', alt: 'bons cadeaux equicoaching'}
-const secondSubTitle = 'Ce sont des séances encadrées par une déontologie.'
-const actions = [
-    {
-        link: '/contact',
-        text: 'Offrez de l\'équicoaching'
-    }]
+const returnValues: ReturnAction = new ReturnAction('/bons', 'Bons cadeaux')
+const image: Image = new Image('/img/bons-320x320.webp', 'bons cadeaux equicoaching', null, null)
+const actions: ButtonAction[] = [new ButtonAction
+(
+        '/contact',
+        'Offrez de l\'équicoaching'
+)]
 const seoData: Seo = new Seo('IBF Equicoaching | Chèques cadeaux', 'Offrez de l\'équicoaching en cadeau, pour une occasion ou pour les fêtes. Osez le cadeau bien être !', false);
 ---
 

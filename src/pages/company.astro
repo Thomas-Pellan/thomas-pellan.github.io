@@ -1,23 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import Separator from '../components/Separator.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import Separator from '../components/Separator.astro'
+import Seo from '../class/Seo'
+import Image from '../class/Image'
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
 
-const returnValues = {link: '/company', title: 'Entreprises'}
-const firstImage = {src: '/img/company-400x320.webp', alt: 'Camille Marzec fondatrice', width: 400, height: 320}
-const secondImage = {src: '/img/company-mouz-320x320.webp', alt: 'Camille Marzec fondatrice'}
-const firstSubTitle = 'Pour vous permettre de :'
-const secondSubTitle = ' Définissez vos leviers d\'actions'
-const actions = [{
-    link: '/pricing-training',
-    text: 'Formations'
-},
-    {
-        link: '/contact',
-        text: 'Demandez votre devis gratuit'
-    }]
+const returnValues: ReturnAction = new ReturnAction('/company', 'Entreprises')
+const firstImage: Image = new Image('/img/company-400x320.webp', 'Camille Marzec fondatrice', 400, 320)
+const secondImage: Image = new Image('/img/company-mouz-320x320.webp', 'Camille Marzec fondatrice', null, null)
+const firstSubTitle: string = 'Pour vous permettre de :'
+const secondSubTitle: string = ' Définissez vos leviers d\'actions'
+const actions: ButtonAction[] = [new ButtonAction(
+    '/pricing-training',
+    'Formations'
+    ),
+    new ButtonAction(
+        '/contact',
+        'Demandez votre devis gratuit'
+    )]
 const seoData: Seo = new Seo('IBF Equicoaching | Formations et team buidling pour entreprises\'', 'Entreprises, découvrez nos prestations de developpement personnel sur mesure entre Grenoble et Chambéry !', false);
 ---
 <Layout title="IBF Equicoaching | Entreprise" seoData={seoData}>

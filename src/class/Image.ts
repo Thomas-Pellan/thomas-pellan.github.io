@@ -5,7 +5,7 @@ class Image {
     private readonly _width: number = 320;
     private readonly _height: number = 320;
 
-    constructor(src: string, alt: string, width: number | null, height: number | null) {
+    constructor(src: string, alt: string, width: number | undefined, height: number | undefined) {
         this._src = src;
         this._alt = alt;
         if(width)
@@ -14,11 +14,11 @@ class Image {
             this._height = height;
     }
 
-    get width(): string {
+    get width(): number | null {
         return this._width;
     }
 
-    get height(): string {
+    get height(): number | null {
         return this._height;
     }
 
