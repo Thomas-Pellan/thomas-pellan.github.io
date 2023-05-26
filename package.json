@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "worker" : "astro build && astro preview",
     "astro": "astro",
     "lint": "eslint --ext .js,.astro src"
   },
@@ -23,6 +24,7 @@
     "astro-imagetools": "^0.8.1",
     "astro-seo": "^0.7.2",
     "astro-webmanifest": "^0.6.0",
+    "astrojs-service-worker": "^1.0.0",
     "nanostores": "^0.8.0",
     "svgo": "^2.8.0"
   },
