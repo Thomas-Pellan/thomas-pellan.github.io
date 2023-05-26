@@ -32,6 +32,10 @@
 
   &-content {
     margin: $space-A;
+
+    li {
+      margin: $space-Af 0;
+    }
   }
 
   &-video {
