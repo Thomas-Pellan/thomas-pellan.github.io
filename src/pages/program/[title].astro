@@ -1,11 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Title from '../../components/Title.astro';
-import Section from '../../components/Section.astro';
-import Seo from '../../class/Seo';
-import ReturnAction from '../../class/ReturnAction';
-import ButtonAction from '../../class/ButtonAction';
-import {AstroInstance} from "astro";
+import Layout from '../../layouts/Layout.astro'
+import Title from '../../components/Title.astro'
+import Section from '../../components/Section.astro'
+import Seo from '../../class/Seo'
+import ReturnAction from '../../class/ReturnAction'
+import ButtonAction from '../../class/ButtonAction'
+import {AstroInstance} from 'astro'
+import Qualiopi from '../../components/Qualiopi.astro'
 
 export function getStaticPaths() {
     return [
@@ -46,17 +47,18 @@ const actions: ButtonAction[] = [
 //@todo : watch for issue with dynamic glob behavior here : https://github.com/withastro/astro/issues/3418
 const programs: AstroInstance[] = await Astro.glob('../../components/program/*.astro')
 const program: AstroInstance[]  = programs.filter((program) => program.file.includes(blogComponentName))
-const seoData : Seo = new Seo(name, subTitle, true);
+const seoData : Seo = new Seo(name, subTitle, false);
 ---
 <Layout title={name} seoData={seoData}>
     <main>
         <Title title={name} returnValues={returnValues}/>
+        <Qualiopi />
         <Section actions={actions} wide="true">
             <h2 slot="section-title">{subTitle}</h2>
             <Fragment slot="section-content">
                 {program && program[0] && (<program[0].default/>)}
                 <p>
-                    <i>v1.0 - dernière modification le 17/03/2023</i>
+                    <i>v1.1 - dernière modification le 26/05/2023</i>
                 </p>
             </Fragment>
         </Section>

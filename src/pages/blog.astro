@@ -1,12 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Tile from '../components/Tile.astro';
-import '../styles/m-main.scss';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Tile from '../components/Tile.astro'
+import '../styles/m-main.scss'
+import Seo from '../class/Seo'
 
 const returnValues = {link: '/blog', title: 'Faq'}
 const tileContent = [
+    {
+        title: 'Certification Qualiopi et IBF Equicoaching',
+        link: '/blog/certification-qualiopi',
+        html: '<p>Qualiopi, qu\'est ce que c\'est ? Que représente cette certification pour nos formations ?</p>',
+        imgSrc: '/img/formation-320x320.webp',
+    },
     {
         title: 'L\’intelligence émotionnelle et l’equicoaching',
         link: '/blog/intelligence-emotionnelle',

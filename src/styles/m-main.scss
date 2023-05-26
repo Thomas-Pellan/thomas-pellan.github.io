@@ -9,7 +9,12 @@
   margin: $space-B;
 
   &-sub-title {
-    color: $color-primary
+    color: $color-primary;
+    text-align: center;
+  }
+
+  &-sub-image {
+    margin: $space-B 0;
   }
 
   &-title, &-empty {

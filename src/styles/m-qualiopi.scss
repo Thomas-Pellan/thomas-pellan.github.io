@@ -1,0 +1,9 @@
+@import 'src/styles/common/_spaces';
+
+.m-qualiopi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: $space-B;
+}

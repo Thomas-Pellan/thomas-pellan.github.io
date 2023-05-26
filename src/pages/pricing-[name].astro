@@ -1,10 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import PriceTile from '../components/PriceTile.astro';
-import '../styles/m-main.scss';
-import Seo from '../class/Seo';
-import ReturnAction from '../class/ReturnAction';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import PriceTile from '../components/PriceTile.astro'
+import '../styles/m-main.scss'
+import Seo from '../class/Seo'
+import ReturnAction from '../class/ReturnAction'
+import Qualiopi from '../components/Qualiopi.astro'
 export function getStaticPaths() {
     return [
         {
@@ -133,6 +134,9 @@ const seoData : Seo = new Seo(titleStr, seoDescription, false);
         <div class="m-main">
             <h2 class="m-main-title">{subTitle}</h2>
             <span class="m-main-sub-title">Quels que soit vos objectifs et vos besoins.</span>
+            {title === 'Formations' && (
+                <Qualiopi />
+            )}
             <div class="m-main-wrapper">
                 {descriptions && descriptions.map(description => (
                         <PriceTile data={description}/>))}
