@@ -4,13 +4,14 @@ import image from '@astrojs/image';
 import { astroImageTools } from "astro-imagetools";
 import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
-import webmanifest from "astro-webmanifest";
+import webmanifest from 'astro-webmanifest';
+import serviceWorker from 'astrojs-service-worker';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://thomas-pellan.github.io',
   base: '/ibf-front',
-  integrations: [vue(), image(), astroImageTools, compress(), sitemap({
+  integrations: [vue(), image(), astroImageTools, compress(), serviceWorker(), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
       item.lastmod = new Date();
@@ -36,5 +37,8 @@ export default defineConfig({
     theme_color: '#fff',
     background_color: '#86071f',
     display: 'standalone',
+    config: {
+      iconPurpose: ['maskable', 'any'],
+    },
   })]
 });

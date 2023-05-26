@@ -11,6 +11,7 @@ const { title, lang, seoData } = Astro.props;
 	<body class="body">
 	    <slot />
 		<script>
+			import '../scripts/worker-pwa.js';
            import '../scripts/menu-mobile.js';
            import '../scripts/sub-menu.js';
         </script>
