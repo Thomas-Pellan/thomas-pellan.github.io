@@ -1,5 +1,5 @@
 import {atom, map, MapStore, WritableAtom} from 'nanostores'
-import ExtendedProspect from '../class/ExtendedProspect'
+import type ExtendedProspect from '../class/ExtendedProspect'
 import {EmailJsServices, EmailJsTemplates} from '../class/EmailJsServices'
 import type Project from '../class/Project'
 import {sendEmailJsData} from '../pages/helper/emailjs'

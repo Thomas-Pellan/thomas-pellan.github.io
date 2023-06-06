@@ -10,13 +10,19 @@ module.exports = {
                 parser: "@typescript-eslint/parser",
                 extraFileExtensions: [".astro"],
             },
-            rules: {
-            },
         },
         {
             files: ["*.js"],
             env: {
                 es6: true,
+            }
+        },
+        {
+            files: ["*.ts"],
+            parser: "@typescript-eslint/parser",
+            parserOptions: {
+                ecmaVersion: "latest",
+                sourceType: "module",
             }
         }
     ],

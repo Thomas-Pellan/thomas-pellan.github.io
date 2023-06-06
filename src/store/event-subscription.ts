@@ -2,7 +2,7 @@ import {atom, map, MapStore, WritableAtom} from 'nanostores'
 import type Prospect from '../class/Prospect'
 import type EventSubscription from '../class/EventSubscription'
 import { EmailJsTemplates, EmailJsServices } from '../class/EmailJsServices'
-import {sendEmailJsData} from '../pages/helper/emailjs';
+import {sendEmailJsData} from '../pages/helper/emailjs'
 export const errorMsg: WritableAtom<unknown> & {} = atom('')
 export const prospect: MapStore<Record<string, Prospect>> & {} = map<Record<string, Prospect>>({});
 export const event: MapStore<Record<string, EventSubscription>> & {} = map<Record<string, EventSubscription>>({});
