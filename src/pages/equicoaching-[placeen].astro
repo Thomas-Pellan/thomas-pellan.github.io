@@ -12,15 +12,14 @@ export function getStaticPaths() {
     ];
 }
 
-const {placeen} = Astro.params;
 const {name} = Astro.props;
 const returnValues = {link: '/', title: 'Find Me'}
 const actions = [{
     link: '/contact',
     text: 'Contact me'
 }]
-const titleStr: string = `Equicoaching ${name} | Horse Coaching`
-const h1Str: string = `Equicoaching ${name}`
+const titleStr = `Equicoaching ${name} | Horse Coaching`
+const h1Str = `Equicoaching ${name}`
 const seoData : Seo = new Seo(titleStr,  `${name} | Horse Coaching, training for managers, teams and individuals`, false);
 ---
 <Layout title={titleStr} lang="en" seoData={seoData}>

@@ -1,7 +1,7 @@
 class EventSubscription {
     private _date: Date;
-    private _number: Number;
-    constructor(date: Date, number: Number) {
+    private _number: number;
+    constructor(date: Date, number: number) {
         this._date = date;
         this._number = number;
     }
@@ -14,11 +14,11 @@ class EventSubscription {
         this._date = value;
     }
 
-    get number(): Number {
+    get number(): number {
         return this._number;
     }
 
-    set number(value: Number) {
+    set number(value: number) {
         this._number = value;
     }
 }

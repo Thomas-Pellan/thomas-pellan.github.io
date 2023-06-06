@@ -37,7 +37,7 @@ events.forEach((event: Event): void => {
                     </p>
             )}
             {futureEvents.map(event => {
-                let eventFullName: string = ''
+                let eventFullName = ''
                 if(event.isDiscover){
                     eventFullName += `Atelier découverte #${event.id} - `
                 }
@@ -56,7 +56,7 @@ events.forEach((event: Event): void => {
             {(futureEvents && futureEvents.length > 0) && (<EventFormWrapper events={futureEvents} />)}
             <h3>Evenements passés</h3>
             {pastEvents.map(event => {
-                let eventFullName: string = ''
+                let eventFullName = ''
                 if(event.isDiscover){
                     eventFullName += `Atelier découverte #${event.id} - `
                 }

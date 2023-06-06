@@ -27,7 +27,6 @@ export function getStaticPaths() {
     ];
 }
 
-const {place} = Astro.params;
 const {name, template, region, bassin, pays} = Astro.props;
 const returnValues = {link: '/', title: 'Me retrouver'}
 const actions = [{
@@ -42,8 +41,8 @@ const actions = [{
         link: '/about',
         text: 'En savoir plus'
     }]
-const titleStr: string = `Equicoaching ${name} | Coaching Par Le Cheval`
-const h1Str: string = `Equicoaching ${name}`
+const titleStr = `Equicoaching ${name} | Coaching Par Le Cheval`
+const h1Str = `Equicoaching ${name}`
 const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false);
 ---
 <Layout title={titleStr} seoData={seoData}>

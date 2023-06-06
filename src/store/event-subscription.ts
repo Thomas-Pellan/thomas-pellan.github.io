@@ -3,13 +3,13 @@ import type Prospect from '../class/Prospect'
 import type EventSubscription from '../class/EventSubscription'
 import { EmailJsTemplates, EmailJsServices } from '../class/EmailJsServices'
 import {sendEmailJsData} from '../pages/helper/emailjs'
-export const errorMsg: WritableAtom<unknown> & {} = atom('')
-export const prospect: MapStore<Record<string, Prospect>> & {} = map<Record<string, Prospect>>({});
-export const event: MapStore<Record<string, EventSubscription>> & {} = map<Record<string, EventSubscription>>({});
+export const errorMsg: WritableAtom<unknown> & object = atom('')
+export const prospect: MapStore<Record<string, Prospect>> & object = map<Record<string, Prospect>>({});
+export const event: MapStore<Record<string, EventSubscription>> & object = map<Record<string, EventSubscription>>({});
 
 export async function subscribe(): Promise<boolean> {
     errorMsg.set('')
-    const data: { prospect: Record<string, Prospect>; event: Record<string, EventSubscription> } = {
+    const data: Record<string, unknown> = {
         prospect: prospect.get(),
         event: event.get()
     }

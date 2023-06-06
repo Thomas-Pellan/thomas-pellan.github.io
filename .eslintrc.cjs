@@ -1,6 +1,8 @@
 module.exports = {
     extends: [
         "plugin:astro/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     overrides: [
         {
