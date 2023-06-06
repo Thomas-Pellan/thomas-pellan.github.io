@@ -15,7 +15,7 @@ jobs:
       - name: Install modules
         run: npm install
       - name: Run ESLint
-        run: eslint . --ext .js,.astro,.ts
+        run: npm run lint
 
   build:
     needs: linter
