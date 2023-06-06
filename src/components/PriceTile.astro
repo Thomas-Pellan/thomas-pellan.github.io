@@ -10,5 +10,5 @@ const {data} = Astro.props;
         {data.points.map((point) => (<li>{point}</li>))}
     </ul>
     {data.price && <span class="m-price-tile-price">{data.price}</span>}
-    {data.actions && data.actions.map((action) => (<a href={action.link}>{action.title}</>))}
+    {data.actions && data.actions.map(action => <a href={action.link}>{action.title}</a>)}
 </div>

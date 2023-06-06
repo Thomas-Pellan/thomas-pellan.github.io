@@ -1,6 +1,5 @@
 
-const icons = document.querySelectorAll('.m-header-icon')
-
+const icons = document.querySelectorAll('.m-header-icon');
 icons.forEach((icon) => {
   if (!icon) {
     return

@@ -13,5 +13,11 @@ module.exports = {
             rules: {
             },
         },
+        {
+            files: ["*.js"],
+            env: {
+                es6: true,
+            }
+        }
     ],
 }

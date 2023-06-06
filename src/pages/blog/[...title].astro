@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Title from '../../components/Title.astro'
+import Section from '../../components/Section.astro'
+import Seo from '../../class/Seo'
+import ReturnAction from '../../class/ReturnAction'
+import ButtonAction from '../../class/ButtonAction'
+import Qualiopi from '../../components/Qualiopi.astro'
+
+export async function getStaticPaths() {
+    const programs = await getCollection('blog')
+    return programs.map(entry => ({
+        params: {
+            title: entry.slug,
+        },
+        props: {
+            entry
+        },
+    }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+const seoData : Seo = new Seo(entry.data.title, entry.data.subTitle, false)
+const returnValues: ReturnAction = new ReturnAction('/blog', 'Faq')
+const actions: ButtonAction[] = [new ButtonAction('/contact', 'Une question ? Contactez moi !')]
+const isQualiopi : boolean = entry.slug === 'certification-qualiopi'
+---
+<Layout title={entry.data.title} seoData={seoData}>
+    <main>
+        <Title title={entry.data.title} returnValues={returnValues}/>
+        <Section actions={actions} wide="true">
+            <h2 slot="section-title">{entry.data.subTitle}</h2>
+            {!isQualiopi && <Content slot="section-content" />}
+            {isQualiopi && (
+                <div slot="section-content">
+                    <Qualiopi />
+                    <Content />
+                </div>
+            )}
+        </Section>
+    </main>
+</Layout>

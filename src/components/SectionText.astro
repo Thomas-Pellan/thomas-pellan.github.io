@@ -3,8 +3,7 @@ import '../styles/m-section.scss';
 
 const {subTitle, actions, alone, wide} = Astro.props;
 ---
-<div class={alone ? wide ? 'm-section-text m-section-text-wide' : 'm-section-text' : 'm-section-text m-section-text-full'}
-     ">
+<div class={alone ? wide ? 'm-section-text m-section-text-wide' : 'm-section-text' : 'm-section-text m-section-text-full'}>
     <slot name="section-title"/>
     {subTitle && (<span class="m-section-subtitle">{subTitle}</span>)}
     <div class="m-section-content">

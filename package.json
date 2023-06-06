@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "worker" : "astro build && astro preview",
+    "worker": "astro build && astro preview",
     "astro": "astro",
     "lint": "eslint --ext .js,.astro src"
   },
@@ -29,10 +29,9 @@
     "svgo": "^2.8.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.57.0",
-    "eslint": "^8.38.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-astro": "^0.26.1",
+    "@typescript-eslint/parser": "^5.59.8",
+    "eslint": "^8.42.0",
+    "eslint-plugin-astro": "^0.27.1",
     "sass": "^1.59.3"
   }
 }
