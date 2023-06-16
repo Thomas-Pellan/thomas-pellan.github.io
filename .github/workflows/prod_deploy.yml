@@ -1,4 +1,4 @@
-name: Deploy IBF to GitHub Pages
+name: Deploy IBF to GitHub Pages - PROD
 on:
   push:
     branches: [ prod ]
