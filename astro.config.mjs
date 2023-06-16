@@ -10,7 +10,6 @@ import serviceWorker from 'astrojs-service-worker';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://thomas-pellan.github.io',
-  base: '/ibf-front',
   integrations: [vue(), image(), astroImageTools, compress(), serviceWorker(), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
