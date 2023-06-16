@@ -19,6 +19,7 @@
 
 - 0.0.x : project start, minimal version with external scripts
 - 1.0.0 : first functionnal version
+- 1.1.0 : going live, creating prod branch and workflow
 
 ### Local installation and startup
 
