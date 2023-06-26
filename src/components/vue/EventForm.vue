@@ -92,10 +92,13 @@
             </button>
         </form>
         <div v-else-if="isCompleted" class="m-form-success">
-            <p class="m-form-success-msg">
+            <p v-if="isSuccess" class="m-form-success-msg">
                 Merci, Votre pré inscription a bien été prise en compte, je vous contacterai prochainement pour
                 confirmer
                 votre participation !
+            </p>
+            <p else class="m-form-success-msg-error">
+              Une erreur s'est produite, merci de rééssayer plus tard ou de me contacter par téléphone au 06.10.83.37.88.
             </p>
             <button type="button" @click="resetForm">
                 M'inscrire à un autre évènement
@@ -130,6 +133,7 @@ export default {
             selectDate: null,
             subNumber: 1,
             isValidating: false,
+            isSuccess: true,
         }
     },
     computed: {
