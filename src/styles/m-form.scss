@@ -113,6 +113,10 @@
       margin: $space-Ae;
       color: $color-success;
       font-weight: 700;
+
+      &-error {
+        color: $color-primary !important;
+      }
     }
   }
 

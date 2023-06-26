@@ -10,8 +10,11 @@
             Envoi de vos informations, veuillez patienter...
         </p>
         <div v-else-if="isCompleted" class="m-form-success">
-            <p class="m-form-success-msg">
+            <p v-if="isSuccess" class="m-form-success-msg">
                 Merci ! Vos informations ont bien été envoyées, je vous contacterai dans les prochains jours.
+            </p>
+            <p v-else class="m-form-success-msg-error">
+              Une erreur s'est produite, merci de rééssayer plus tard ou de me contacter par téléphone au 06.10.83.37.88.
             </p>
         </div>
     </div>
@@ -36,6 +39,7 @@ export default {
         return {
             isValidating: false,
             isCompleted: false,
+            isSuccess: true,
         }
     },
     computed: {
@@ -56,7 +60,8 @@ export default {
         async sendData(){
             window.scrollTo(0,0)
             this.isValidating = true
-            await sendContact().then((value) => this.isCompleted = value)
+            this.isSuccess = await sendContact()
+            this.isCompleted = true
             this.isValidating = false
         }
     }

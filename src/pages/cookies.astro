@@ -1,19 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import Seo from '../class/Seo'
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
 
-const returnValues = {link: '/cookies', title: 'Gestion des données'}
-const actions = [{
-    link: '/',
-    text: 'Retour à l\'accueil'
-},
-    {
-        link: '/contact',
-        text: 'Me contacter'
-    }]
-const seoData: Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion de vos données personnelles', false);
+const returnValues: ReturnAction = new ReturnAction('/cookies', 'Gestion des données')
+const actions: ButtonAction[] = [new ButtonAction('/', 'Retour à l\'accueil'), new ButtonAction('/contact', 'Me contacter')]
+const seoData: Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion de vos données personnelles', false)
 ---
 <Layout title="IBF Equicoaching | Cookies" seoData={seoData}>
     <main>
@@ -27,22 +22,16 @@ const seoData: Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion
                     par ce site à savoir :
                 </p>
                 <ul>
-                    <li>l'hébergeur OVH</li>
+                    <li>l'hébergeur GitHub Pages</li>
                     <li>la billetterie en ligne Yurplan</li>
-                    <li>les divers widgets implémentés sur le site</li>
+                    <li>l'outil de transfert de messages EmailJS</li>
                 </ul>
                 <h3>Stockage des données par des applications tierces</h3>
                 <p>
-                    Ce site web utilise des widget tiers pour envoyer vos informations à IBF Equicoaching, ci dessosu
+                    Ce site web utilise des widget tiers pour envoyer vos informations à IBF Equicoaching, ci dessous
                     des informations sur le stockage pour ces widgets :
                 </p>
                 <ul>
-                    <li>Jotform : utilisé par le formulaire de contact, les données sont effacées automatiquement au
-                        bout d'une heure, <a href="https://www.jotform.com/privacy/">gestion des données
-                            jotform</a><br/>
-                        Les données peuvent faire l'objet d'un stockage hors EU, IBF Equicoaching et Jotform ont signé
-                        un avenant respectant la RGPD.
-                    </li>
                     <li>
                         EmailJS : utilisé sur la page évènement comme intermédiaire de l'envoi de votre demande à IBF
                         Equicoaching, les données sont conservées en adéquation avec le reglement RGPD et sont
@@ -59,6 +48,9 @@ const seoData: Seo = new Seo('IBF Equicoaching | Cookies', 'Politique de gestion
                     Il vous est possible de demander la modification ou l'effacement de vos coordonnées et de toute
                     donnée vous concernant en
                     nous contactant via le formulaire de contact, par mail ou par téléphone.
+                </p>
+                <p>
+                    Dans un soucis de transparence, ce site est developpé en open source, le code est disponible ici : <a href="https://github.com/Thomas-Pellan/thomas-pellan.github.io">Dépot du site internet</a>
                 </p>
             </Fragment>
         </Section>

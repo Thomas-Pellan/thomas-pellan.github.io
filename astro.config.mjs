@@ -32,7 +32,6 @@ export default defineConfig({
     icon: 'public/img/logo-50x50.webp',
     short_name: 'IBF',
     description: 'Equicoaching et Horse Coaching, Formations',
-    start_url: '',
     theme_color: '#fff',
     background_color: '#86071f',
     display: 'standalone',

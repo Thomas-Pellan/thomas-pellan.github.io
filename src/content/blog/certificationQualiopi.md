@@ -15,7 +15,7 @@ Cette certfication favorise l'amélioration continue des formations en équicoac
 
 En résumé, la certification Qualiopi est un label de qualité qui atteste que nos formations en équicoaching répondent à des **critères de qualité élevés.** Elle offre des garanties aux apprenants et facilite l'accès aux financements. Cette certification est un gage de professionnalisme et de confiance attribué à IBF Equicoaching.
 
-[Découvrez nos formations certifiées !](/pricing-training)
+[Découvrez nos formations !](/pricing-training)
 
 *Credit : Camille Marzec*
 
