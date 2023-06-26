@@ -29,12 +29,6 @@
   background: $color-gray-light;
 }
 
-@include mobile {
-  .m-header-icon {
-    top: $space-Be;
-  }
-}
-
 @include tablet {
   .m-header-icon {
     top: $space-Be !important;
