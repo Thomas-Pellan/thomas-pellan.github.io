@@ -1,7 +1,7 @@
 ---
 slug: cohesion-communication
-title: Developper ses Soft Skills
-subTitle: Programme de Formation Developper ses Soft Skills
+title: Cohésion et Communication
+subTitle: Programme de Formation Cohésion et Communication
 ---
 
 **Durée :**
