@@ -6,7 +6,6 @@ import Section from '../../components/Section.astro'
 import Seo from '../../class/Seo'
 import ReturnAction from '../../class/ReturnAction'
 import ButtonAction from '../../class/ButtonAction'
-import Qualiopi from '../../components/Qualiopi.astro'
 
 export async function getStaticPaths() {
     const programs = await getCollection('program')
@@ -32,7 +31,6 @@ new ButtonAction('/pricing-training', 'Retour aux formations')
 <Layout title={entry.data.title} seoData={seoData}>
     <main>
         <Title title={entry.data.title} returnValues={returnValues}/>
-        <Qualiopi />
         <Section actions={actions} wide="true">
             <h2 slot="section-title">{entry.data.subTitle}</h2>
             <Content slot="section-content" />
