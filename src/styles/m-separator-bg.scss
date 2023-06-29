@@ -26,7 +26,7 @@
   }
 
   @include mobile {
-    padding: 0;
+    margin: 0;
 
     p {
       margin: $space-B;
