@@ -31,4 +31,8 @@ npm run dev
 
 The website should be visible at http://localhost:3000 
 
-
+You can also run if you have docker :
+```
+docker build -t astro-ibf .
+docker run -p 3000:3000 astro-ibf
+```
