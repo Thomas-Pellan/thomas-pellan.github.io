@@ -34,6 +34,7 @@ export default defineConfig({
   }), webmanifest({
     name: 'IBf Equicoaching',
     icon: 'public/img/logo-50x50.webp',
+    start_url: '/',
     short_name: 'IBF',
     description: 'Equicoaching et Horse Coaching, Formations',
     theme_color: '#fff',
