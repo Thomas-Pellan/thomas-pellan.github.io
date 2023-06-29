@@ -25,6 +25,10 @@ export default defineConfig({
         item.lastmod = new Date();
         item.priority = 0.7;
       }
+      //Removing trailling slash from sitemap urls
+      if(item.url.slice(-1) === '/'){
+        item.url = item.url.slice(0, -1)
+      }
       return item;
     }
   }), webmanifest({
