@@ -6,7 +6,7 @@ import Seo from '../../class/Seo'
 import ReturnAction from '../../class/ReturnAction'
 import ButtonAction from '../../class/ButtonAction'
 import Image from '../../class/Image'
-import Separator from '../../components/Separator.astro'
+import SeparatorBg from '../../components/SeparatorBg.astro'
 
 const returnValues: ReturnAction = new ReturnAction('/partners', 'Nos partenaires')
 const image: Image = new Image('/img/kare-events-450x450.webp', 'kare events entreprise', 450, 450)
@@ -58,7 +58,7 @@ const seoData : Seo = new Seo('KARE Events', 'KARE Events, team building éco re
                 </p>
             </Fragment>
         </Section>
-        <Separator/>
+        <SeparatorBg/>
         <Section imgContent={imageWhy} wide="true">
             <h4 slot="section-title">Pourquoi faire un évènement responsable ? </h4>
             <Fragment slot="section-content">

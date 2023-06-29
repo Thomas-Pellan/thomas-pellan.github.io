@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
 import Section from '../components/Section.astro'
-import Separator from '../components/Separator.astro'
+import SeparatorBg from '../components/SeparatorBg.astro'
 import Seo from '../class/Seo'
 import Image from '../class/Image'
 import ReturnAction from '../class/ReturnAction'
@@ -42,7 +42,7 @@ const seoData: Seo = new Seo('IBF Equicoaching | Formations et team building pou
                 </li>
             </ul>
         </Section>
-        <Separator/>
+        <SeparatorBg/>
         <Section subTitle={secondSubTitle} imgContent={secondImage} actions={actions}>
             <h3 slot="section-title">Actions possibles </h3>
             <ul slot="section-content">
