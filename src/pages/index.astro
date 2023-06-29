@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
 import Section from '../components/Section.astro'
-import SeparatorValues from '../components/SeparatorValues.astro'
+import SeparatorBgValues from '../components/SeparatorBgValues.astro'
 import Seo from '../class/Seo'
 import ButtonAction from '../class/ButtonAction'
 import Image from '../class/Image'
@@ -30,7 +30,7 @@ const seoData : Seo = new Seo('IBF Equicoaching | Coaching et Formations', 'Déc
                     le cheval va jouer le rôle de catalyseur lors des séances de coaching.</p>
             </Fragment>
         </Section>
-        <SeparatorValues/>
+        <SeparatorBgValues/>
         <Section subTitle={secondSubTitle} imgContent={image} actions={actionsSecond}>
             <h3 slot="section-title">A qui s'adresse l'équicoaching ?</h3>
             <Fragment slot="section-content">

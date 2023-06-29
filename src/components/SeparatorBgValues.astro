@@ -1,0 +1,32 @@
+---
+import '../styles/m-separator-bg.scss'
+import {BackgroundImage, ImageSupportDetection} from 'astro-imagetools/components'
+---
+<section class="m-separator-bg">
+    <BackgroundImage
+            src="/img/header-main-1200x320.webp"
+            alt="valeurs de ibf equicoaching"
+            preload="webp"
+            backgroundSize="cover"
+            brightness={0.5}
+    >
+        <div class="m-separator-content">
+            <p>
+                <span class="m-separator-feature">Respect</span><br/>
+                de soi, de l’autre, des chevaux.
+            </p>
+            <p>
+                <span class="m-separator-feature">Bienveillance</span><br/>
+                Accepter l’autre dans son intégralité.
+            </p>
+            <p>
+                <span class="m-separator-feature">Liberté</span><br/>
+                Laisser libre cours à sa créativité.
+            </p>
+            <p>
+                <span class="m-separator-feature">Confiance</span><br/>
+                Se laisser guider.
+            </p>
+        </div>
+    </BackgroundImage>
+</section>
