@@ -9,7 +9,7 @@ import serviceWorker from 'astrojs-service-worker';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://thomas-pellan.github.io',
+  site: 'https://www.ibf-equicoaching.com',
   integrations: [vue(), image(), astroImageTools, compress(), serviceWorker(), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
@@ -24,6 +24,10 @@ export default defineConfig({
         item.changefreq = 'monthly';
         item.lastmod = new Date();
         item.priority = 0.7;
+      }
+      //Removing trailling slash from sitemap urls
+      if(item.url.slice(-1) === '/'){
+        item.url = item.url.slice(0, -1)
       }
       return item;
     }
