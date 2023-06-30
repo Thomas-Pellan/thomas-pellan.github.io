@@ -1,7 +1,7 @@
 ---
-slug: etre-coach-26-ans
-title: Coach à 26 ans, C'est possible ?
-subTitle: Voilà une question que vous êtes en droit de vous poser !
+slug: equicoaching-quest-ce-que-cest
+title: L'Equicoaching ? Qu'est ce que c'est ?
+subTitle: Définition de cette pratique
 ---
 Le coaching c’est accompagner les personnes d’un point A « état présent » c’est-à-dire comment êtes-vous aujourd’hui dans votre vie ?
 
