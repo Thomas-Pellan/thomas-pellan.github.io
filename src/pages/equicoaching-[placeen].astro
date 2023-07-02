@@ -1,9 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Title from '../components/Title.astro';
-import Section from '../components/Section.astro';
-import PlaceEn from '../components/places/PlaceEn.astro';
-import Seo from '../class/Seo';
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import PlaceEn from '../components/places/PlaceEn.astro'
+import Seo from '../class/Seo'
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
 
 export function getStaticPaths() {
     return [
@@ -13,14 +15,11 @@ export function getStaticPaths() {
 }
 
 const {name} = Astro.props;
-const returnValues = {link: '/', title: 'Find Me'}
-const actions = [{
-    link: '/contact',
-    text: 'Contact me'
-}]
+const returnValues: ReturnAction = new ReturnAction('/', 'Find Me')
+const actions: ButtonAction[] = [new ButtonAction('/contact', 'Contact me')]
 const titleStr = `Equicoaching ${name} | Horse Coaching`
 const h1Str = `Equicoaching ${name}`
-const seoData : Seo = new Seo(titleStr,  `${name} | Horse Coaching, training for managers, teams and individuals`, false);
+const seoData : Seo = new Seo(titleStr,  `${name} | Horse Coaching, training for managers, teams and individuals`, false)
 ---
 <Layout title={titleStr} lang="en" seoData={seoData}>
     <main>

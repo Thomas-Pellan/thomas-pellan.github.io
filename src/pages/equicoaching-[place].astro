@@ -8,8 +8,8 @@ import Place3 from '../components/places/Place3.astro'
 import Place4 from '../components/places/Place4.astro'
 import Place5 from '../components/places/Place5.astro'
 import Seo from '../class/Seo'
-import ReturnAction from "../class/ReturnAction";
-import ButtonAction from "../class/ButtonAction";
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
 
 export function getStaticPaths() {
     return [
@@ -36,8 +36,8 @@ const actions: ButtonAction[] = [
     new ButtonAction('/pricing-equicoaching', 'Particuliers'),
     new ButtonAction('/about', 'En savoir plus')
 ]
-const titleStr: string = `Equicoaching ${name || pays} | Coaching Par Le Cheval`
-const h1Str: string = `Equicoaching ${name || pays}`
+const titleStr = `Equicoaching ${name || pays} | Coaching Par Le Cheval`
+const h1Str = `Equicoaching ${name || pays}`
 const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false)
 ---
 <Layout title={titleStr} seoData={seoData}>
