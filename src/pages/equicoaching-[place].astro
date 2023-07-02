@@ -8,6 +8,8 @@ import Place3 from '../components/places/Place3.astro'
 import Place4 from '../components/places/Place4.astro'
 import Place5 from '../components/places/Place5.astro'
 import Seo from '../class/Seo'
+import ReturnAction from "../class/ReturnAction";
+import ButtonAction from "../class/ButtonAction";
 
 export function getStaticPaths() {
     return [
@@ -15,7 +17,7 @@ export function getStaticPaths() {
         {params: {place: 'lyon'}, props: {name: 'à Lyon', template: 1, region: 'Lyonnaise'}},
         {params: {place: 'chambery'}, props: {name: 'à Chambéry', template: 2, bassin: 'Chambérien'}},
         {params: {place: 'annecy'}, props: {name: 'à Annecy', template: 2, bassin: 'Annécien'}},
-        {params: {place: 'albertville'}, props: {name: 'à Albertville', template: 3}},
+        {params: {place: 'albertville'}, props: {name: 'Albertville', template: 3}},
         {params: {place: 'aix-les-bains'}, props: {name: 'à Aix les bains', template: 4, region: 'Savoie'}},
         {params: {place: 'isère'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
         {params: {place: 'isere'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
@@ -23,33 +25,26 @@ export function getStaticPaths() {
         {params: {place: 'haute-savoie'}, props: {name: 'en Haute-Savoie', template: 5}},
         {params: {place: 'hautes-alpes'}, props: {name: 'en Hautes-Alpes', template: 5}},
         {params: {place: 'suisse'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}},
-        {params: {place: 'geneve'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}}
+        {params: {place: 'geneve'}, props: {name: 'Genève', template: 3, pays: 'Suisse'}}
     ];
 }
 
 const {name, template, region, bassin, pays} = Astro.props;
-const returnValues = {link: '/', title: 'Me retrouver'}
-const actions = [{
-    link: '/company',
-    text: 'Entreprises'
-},
-    {
-        link: '/pricing-equicoaching',
-        text: 'Particuliers'
-    },
-    {
-        link: '/about',
-        text: 'En savoir plus'
-    }]
-const titleStr = `Equicoaching ${name} | Coaching Par Le Cheval`
-const h1Str = `Equicoaching ${name}`
-const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false);
+const returnValues: ReturnAction = new ReturnAction('/', 'Me retrouver')
+const actions: ButtonAction[] = [
+    new ButtonAction('/company', 'Entreprises'),
+    new ButtonAction('/pricing-equicoaching', 'Particuliers'),
+    new ButtonAction('/about', 'En savoir plus')
+]
+const titleStr: string = `Equicoaching ${name || pays} | Coaching Par Le Cheval`
+const h1Str: string = `Equicoaching ${name || pays}`
+const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false)
 ---
 <Layout title={titleStr} seoData={seoData}>
     <main>
         <Title title={h1Str} returnValues={returnValues}/>
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actions} wide="true">
-            <h2 slot="section-title">Equicoaching : Nos prestations {name}</h2>
+            <h2 slot="section-title">Equicoaching : Nos prestations {name ? `${name}` : ''}</h2>
             <Fragment slot="section-content">
                 {template === 1 && (
                         <Place1 ville={name} region={region}/>)}
