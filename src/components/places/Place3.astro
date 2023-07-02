@@ -5,29 +5,29 @@ const {ville, pays} = Astro.props;
     Entreprises, particuliers, associations...
 </h3>
 <p>
-    Nous organisons des prestations sur mesure pour avancer vers vos objectifs {ville ? `${ville}` : `en ${pays}`}.
+    Nous organisons des <strong>prestations sur mesure</strong> pour avancer vers vos objectifs {ville && !pays ? `à ${ville}` : ''} {pays ? `en ${pays}` : ''}.
 </p>
 <ul>
-    <li>séances individuelles</li>
-    <li>formations</li>
-    <li>team-building et séminaires</li>
-    <li>ateliers découverte collectifs</li>
-    <li>coaching d’équipe</li>
+    <li><strong>séances individuelles</strong></li>
+    <li><strong>formations</strong></li>
+    <li><strong>team-building et séminaires</strong></li>
+    <li><strong>ateliers découverte collectifs</strong></li>
+    <li><strong>coaching d’équipe</strong></li>
 </ul>
 <p>
-    Les séances se déroulent à pied et ne demandent aucune connaissance équestre.
+    Les séances se déroulent à pied et ne demandent <strong>aucune connaissance équestre</strong>.
 </p>
 <p>
-    Venez découvrir une nouvelle approche du coaching avec la
-    médiation du cheval comme révélateur de comportements et
-    d’émotions.
+    Venez découvrir une <strong>nouvelle approche du coaching</strong> avec la
+    <strong>médiation du cheval</strong> comme <strong>révélateur de comportements et
+    d’émotions</strong>.
 </p>
 <p>
     IBF Equicoaching, ce sont des séances encadrées par une
-    ou des Equicoachs formées et certifiées.
+    ou des Equicoachs <strong>formées et certifiées</strong>.
 </p>
 <p>
     Les séances de coaching sont encadrées
     par une déontologie et des contrats pour que vous puissiez avancer
-    vers vos objectifs en toute confiance et en sécurité.
+    vers vos objectifs en toute <strong>confiance et en sécurité</strong>.
 </p>
