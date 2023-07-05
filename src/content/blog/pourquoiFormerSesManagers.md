@@ -12,7 +12,7 @@ callToAction: [
 Je ne vous l'apprends surement pas, mais le manager à un poste clé au sein de l'entreprise.
 
 Cela demande des hardskills pour savoir comment fonctionne le produit et l'entreprise et savoir relever les défis techniques, mais également beaucoup de soft-skills !
-Beaucoup de managers se retrouvent à la tête d'une équipe, pleins de bonne volonté avec leur savoirs techniques, mais on ne les a pas forcément formés à travailler avec une composante essentielle, l'humain.
+Beaucoup de managers se retrouvent à la tête d'une équipe, pleins de bonne volonté avec leur savoirs techniques, mais ils ne sont pas forcément formés à travailler avec une composante essentielle, l'humain.
 
 Comment faire face aux différents profils présents dans une équipe ? Comment bien fixer un objectif ? Comment être un bon leader ?
 
@@ -25,7 +25,7 @@ Comment faire face aux différents profils présents dans une équipe ? Comment 
 **La communication :** Le cheval est un animal qui **communique 90% du temps par le  langage non verbal !** Par conséquent, il lit très bien notre non verbal. Il va vous falloir développer une bonne conscience de vous-même pour prendre conscience et corriger si nécessaire votre langage non verbal.
   Les chevaux sont des animaux d'environ 500kg aux tempéraments très différents. Il vous sera donc nécessaire de savoir poser vos limites et de vous adapter aux différents profils.
 
-**Les compétences relationelles: Ecoute, empathie, respect, bienveillance, gestion des émotions et du stress**, sont autant de compétences qui sont possibles à développer auprès des chevaux.
+**Les compétences relationelles: Ecoute, empathie, respect, bienveillance, gestion des émotions et du stress**, sont autant de compétences qu'il est possible de développer auprès des chevaux.
   Les chevaux possèdent une grande **intelligence émotionelle.**
   Ils perçoivent toutes nos émotions (même celles que vous voulez cacher !) Ils peuvent repérer notre rythme cardiaque à plusieurs mètres.
   La communication non verbale du cheval va développer vos capacités d'écoute et d'observation.
