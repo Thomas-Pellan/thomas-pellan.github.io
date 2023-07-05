@@ -8,6 +8,7 @@ class Seo {
         this._description = description;
         this._noindex = noindex;
     }
+
     get title(): string {
         return this._title;
     }
