@@ -32,9 +32,7 @@ export function getStaticPaths() {
 const {name, template, region, bassin, pays, canonical} = Astro.props;
 const returnValues: ReturnAction = new ReturnAction('/', 'Me retrouver')
 const actions: ButtonAction[] = [
-    new ButtonAction('/company', 'Entreprises'),
-    new ButtonAction('/pricing-equicoaching', 'Particuliers'),
-    new ButtonAction('/about', 'En savoir plus')
+    new ButtonAction('/service', 'En savoir plus sur nos prestations')
 ]
 const titleStr = `Equicoaching ${name || pays} | Coaching Par Le Cheval`
 const h1Str = `Equicoaching ${name || pays}`

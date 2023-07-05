@@ -10,6 +10,7 @@ const blogCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         subTitle: z.string(),
+        callToAction: z.array(),
     })
 });
 
