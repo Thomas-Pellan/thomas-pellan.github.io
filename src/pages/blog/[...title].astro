@@ -25,8 +25,7 @@ const { Content } = await entry.render()
 const seoData : Seo = new Seo(entry.data.title, entry.data.subTitle, false)
 const returnValues: ReturnAction = new ReturnAction('/blog', 'Faq')
 const actions: ButtonAction[] = []
-console.log(entry.data.callToAction)
-if(entry.data.callToAction) {
+if(entry.data?.callToAction) {
     entry.data.callToAction.forEach((item) => {
         actions.push(new ButtonAction(item.link, item.label))
     })
