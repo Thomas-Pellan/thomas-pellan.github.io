@@ -7,7 +7,8 @@ import Place2 from '../components/places/Place2.astro'
 import Place3 from '../components/places/Place3.astro'
 import Place4 from '../components/places/Place4.astro'
 import Place5 from '../components/places/Place5.astro'
-import Seo from '../class/Seo'
+import Place6 from '../components/places/Place6.astro'
+import Canonical from '../class/Canonical'
 import ReturnAction from '../class/ReturnAction'
 import ButtonAction from '../class/ButtonAction'
 
@@ -19,17 +20,16 @@ export function getStaticPaths() {
         {params: {place: 'annecy'}, props: {name: 'à Annecy', template: 2, bassin: 'Annécien'}},
         {params: {place: 'albertville'}, props: {name: 'Albertville', template: 3}},
         {params: {place: 'aix-les-bains'}, props: {name: 'à Aix les bains', template: 4, region: 'Savoie'}},
-        {params: {place: 'isère'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
         {params: {place: 'isere'}, props: {name: 'en Isère', template: 4, region: 'Isèroise'}},
         {params: {place: 'savoie'}, props: {name: 'en Savoie', template: 4}},
         {params: {place: 'haute-savoie'}, props: {name: 'en Haute-Savoie', template: 5}},
         {params: {place: 'hautes-alpes'}, props: {name: 'en Hautes-Alpes', template: 5}},
         {params: {place: 'suisse'}, props: {name: 'en Suisse', template: 3, pays: 'Suisse'}},
-        {params: {place: 'geneve'}, props: {name: 'Genève', template: 3, pays: 'Suisse'}}
+        {params: {place: 'geneve'}, props: {name: 'près de Genève', template: 6, pays: 'Suisse'}}
     ];
 }
 
-const {name, template, region, bassin, pays} = Astro.props;
+const {name, template, region, bassin, pays, canonical} = Astro.props;
 const returnValues: ReturnAction = new ReturnAction('/', 'Me retrouver')
 const actions: ButtonAction[] = [
     new ButtonAction('/company', 'Entreprises'),
@@ -38,7 +38,7 @@ const actions: ButtonAction[] = [
 ]
 const titleStr = `Equicoaching ${name || pays} | Coaching Par Le Cheval`
 const h1Str = `Equicoaching ${name || pays}`
-const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false)
+const seoData : Canonical = new Canonical(titleStr, `${h1Str} | Coaching par le cheval, formations et team building pour entreprises, séances individuelles`, false, canonical)
 ---
 <Layout title={titleStr} seoData={seoData}>
     <main>
@@ -56,6 +56,8 @@ const seoData : Seo = new Seo(titleStr, `${h1Str} | Coaching par le cheval, form
                         <Place4 ville={name} region={region}/>)}
                 {template === 5 && (
                         <Place5 ville={name} region={region}/>)}
+                {template === 6 && (
+                        <Place6 ville={name} region={pays}/>)}
             </Fragment>
         </Section>
     </main>

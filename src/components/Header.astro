@@ -3,10 +3,16 @@ import {Image} from '@astrojs/image/components';//Do not Remove that !
 import Menu from '../components/Menu.astro';
 import Icons from '../components/Icons.astro';
 import Icon from 'astro-icon'
-import {SEO} from "astro-seo";
+import {SEO} from 'astro-seo'
 import '../styles/m-header.scss';
 
 const {title, seoData} = Astro.props;
+
+//Handling trailing slash in canonicals
+let canonical = seoData.canonical ? seoData.canonical : Astro.request.url.href
+if(canonical && canonical.slice(-1) === '/'){
+    canonical = canonical.slice(0, -1)
+}
 ---
 <head class="m-header">
     <meta charset="UTF-8"/>
@@ -14,6 +20,7 @@ const {title, seoData} = Astro.props;
     <Icons/>
     {seoData && (
             <SEO
+                    canonical={canonical}
                     title={seoData.title}
                     description={seoData.description}
                     noindex={seoData.noindex}/>)}

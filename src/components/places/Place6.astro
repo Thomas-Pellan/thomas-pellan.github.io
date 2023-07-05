@@ -1,0 +1,53 @@
+---
+const {ville, pays} = Astro.props;
+---
+<h3>
+    Que vous soyez un particulier, une entreprise, une association :
+</h3>
+<p>
+    Nous organisons des <strong>prestations sur mesure</strong> pour avancer vers vos objectifs {ville && !pays ? `${ville}` : ''} {pays ? `en ${pays}` : ''}.
+</p>
+<ul>
+    <li><strong>séances individuelles</strong></li>
+    <li><strong>formations</strong></li>
+    <li><strong>team-building et séminaires</strong></li>
+    <li><strong>coaching d’équipe</strong></li>
+    <li><strong>ateliers découverte collectifs</strong></li>
+</ul>
+<p>
+    Les séances se déroulent à pied et ne demandent <strong>aucune connaissance équestre</strong>.
+</p>
+<p>
+    Venez découvrir une <strong>nouvelle approche du coaching</strong> avec la
+    <strong>médiation du cheval</strong> comme <strong>révélateur de comportements et
+    d’émotions</strong>.
+</p>
+<p>
+    Enregistrez-vous à l'un de nos <a href="/events">ateliers découverte</a> pour explorer notre approche, ou réservez votre <a href="/contact">séance personnelle dès maintenant</a>.
+</p>
+<p>
+    Accordez votre confiance à un <a href="/blog/certification-qualiopi"><strong>centre de formation certifié Qualiopi</strong></a> et suivez une formation couvrant divers thèmes :
+</p>
+<ul>
+    <li>
+        <a href="/program/manager-leadership">Gestion du leadership et leadership</a>
+    </li>
+    <li>
+        <a href="/program/cohesion-communication">Cohésion et compétences en communication</a>
+    </li>
+    <li>
+        <a href="/program/soft-skills">Soft Skills</a>
+    </li>
+</ul>
+<p>
+    Pour les cavaliers : reprenez confiance en montant à cheval après une chute, ou perfectionnez vos compétences équestres <a href="/pricing-equitation">grâce à nos prestations en équitation</a>
+</p>
+<p>
+    IBF Equicoaching, ce sont des séances encadrées par une
+    ou des Equicoachs <strong>formées et certifiées</strong>.
+</p>
+<p>
+    Les séances de coaching sont encadrées
+    par une déontologie et des contrats pour que vous puissiez avancer
+    vers vos objectifs en toute <strong>confiance et en sécurité</strong>.
+</p>
