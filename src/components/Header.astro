@@ -8,7 +8,10 @@ import '../styles/m-header.scss';
 
 const {title, seoData} = Astro.props;
 
-let canonical = seoData.canonical ? seoData.canonical : Astro.request.url.href
+let canonical = seoData.canonical ? seoData.canonical : Astro.request.url
+if(canonical){
+    canonical = canonical.replace(/\.[^/.]+$/, '')
+}
 ---
 <head class="m-header">
     <meta charset="UTF-8"/>
