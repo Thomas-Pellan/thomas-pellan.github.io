@@ -8,15 +8,24 @@ import Seo from '../class/Seo'
 import ReturnAction from '../class/ReturnAction'
 import Event from '../class/Event'
 
-const returnValues : ReturnAction = new ReturnAction('/events', 'Nos évènements')
-const seoData : Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false)
+const returnValues: ReturnAction = new ReturnAction('/events', 'Nos évènements')
+const seoData: Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false)
 
 const events: Event[] = [
-    new Event(12, 'Reconnexion à soi', true, new Date('2023-05-18')),
-    new Event(11, 'Mon projet professionnel', true, new Date('2023-05-15')),
-    new Event(10, 'Developper sa confiance en soi', true, new Date('2023-04-22')),
-    new Event(9, 'Reconnexion à soi', true, new Date('2022-09-24')),
-    new Event(8, 'Confiance en soi', true, new Date('2022-09-10')),
+    new Event(13, 'Confiance en soi', false, new Date('2024-04-20'), false),
+    new Event(14, 'Reconnexion à soi', false, new Date('2024-05-04'), false),
+    new Event(15, 'Spécial Ados (12/17 ans) - Confiance en soi', false, new Date('2024-05-15'), true),
+    new Event(16, 'Mon projet professionnel', false, new Date('2024-05-25'), false),
+    new Event(17, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-05-29'), true),
+    new Event(18, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-06-08'), false),
+    new Event(19, 'Spécial Ados : Mieux communiquer', false, new Date('2024-06-12'), true),
+    new Event(20, 'Confiance en soi', false, new Date('2024-06-19'), true),
+    new Event(21, 'Gestion des émotions et du stress', false, new Date('2024-06-22'), false),
+    new Event(22, 'Prendre sa place', false, new Date('2024-07-06'), false),
+    new Event(23, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-07-27'), false),
+    new Event(24, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-08-03'), false),
+    new Event(12, 'Reconnexion à soi', true, new Date('2023-05-18'), false),
+    new Event(11, 'Mon projet professionnel', true, new Date('2023-05-15'), false),
 ]
 const pastEvents: Event[] = []
 const futureEvents: Event[] = []
@@ -32,35 +41,51 @@ events.forEach((event: Event): void => {
             <h2 class="m-main-title">Inscrivez vous à mes prochains évènements</h2>
             {(!futureEvents || futureEvents.length <= 0) && (
                     <p class="m-main-empty">
-                        Aucun évènenement n'est prévu pour le moment. <a href="/contact">Contactez moi pour plus d'informations
+                        Aucun évènenement n'est prévu pour le moment. <a href="/contact">Contactez moi pour plus
+                        d'informations
                         sur les suivants !</a>
                     </p>
             )}
             {futureEvents.map(event => {
                 let eventFullName = ''
-                if(event.isDiscover){
+                if (event.isDiscover) {
                     eventFullName += `Atelier découverte #${event.id} - `
                 }
-                eventFullName += `${event.name} - ${event.date.toLocaleDateString('fr-FR')} - 9h/12h`
+                eventFullName += `${event.name} - ${event.date.toLocaleDateString('fr-FR')} - ${event.isAfternoon ? '14/17h' : '9h/12h'}`
                 return (
                         <PanelEvent title={eventFullName}
                                     id={event.id}>
                             <Fragment slot="panel-content">
                                 <p>
-                                    Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com ou par le formulaire ci dessous.
+                                    <a href="/blog/deroulement-atelier-decouverte">Comment se déroule un atelier en équicoaching ?</a>
+                                </p>
+                                <p>
+                                    <a href="/blog/equicoaching-quest-ce-que-cest">Qu'est ce que l'équicoaching ?</a>
+                                </p>
+                                <p>
+                                    Une autre question ? <a href="/blog">Accédez a la faq</a>
+                                </p>
+                                <p>
+                                    Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le
+                                    formulaire ci dessous.
+                                </p>
+                                <p>
+                                    Pour toute autre demande ou question : <a href="/contact">utilisez le formulaire de contact</a>
                                 </p>
                             </Fragment>
                         </PanelEvent>
                 )
             })}
-            {(futureEvents && futureEvents.length > 0) && (<EventFormWrapper events={futureEvents} />)}
+            {(futureEvents && futureEvents.length > 0) && (
+                    <EventFormWrapper events={futureEvents}/>
+            )}
             <h3>Evenements passés</h3>
             {pastEvents.map(event => {
                 let eventFullName = ''
-                if(event.isDiscover){
+                if (event.isDiscover) {
                     eventFullName += `Atelier découverte #${event.id} - `
                 }
-                eventFullName += `${event.name} - ${event.date.toLocaleDateString('fr-FR')} - 9h/12h`
+                eventFullName += `${event.name} - ${event.date.toLocaleDateString('fr-FR')} - ${event.isAfternoon ? '14/17h' : '9h/12h'}`
                 return (
                         <PanelEvent title={eventFullName}
                                     id={event.id}>

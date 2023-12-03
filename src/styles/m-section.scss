@@ -14,7 +14,7 @@
     max-width: 30rem;
 
     &-full {
-      max-width: 80%;
+      max-width: 60%;
     }
 
     &-wide {
@@ -84,6 +84,10 @@
       width: 20rem;
     }
 
+    &-text-full {
+      max-width: 90%;
+    }
+
     &-picture {
       display: flex;
       flex-direction: column;
@@ -97,10 +101,16 @@
 }
 
 @include tablet-and-mobile {
-  .m-section-picture {
-    img {
-      width: 320px;
-      height: 320px;
+  .m-section {
+    &-picture {
+      img {
+        width: 320px;
+        height: 320px;
+      }
+    }
+
+    &-text-full {
+      max-width: 90%;
     }
   }
 }

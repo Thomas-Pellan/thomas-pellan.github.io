@@ -23,7 +23,7 @@
                         v-bind:value="event._date"
                         :selected="event._date === selectDate"
                     >
-                        {{ event._date.toLocaleDateString('fr-FR') }} - {{ event._name }}
+                        {{ event._date.toLocaleDateString('fr-FR') }} - {{event._isAfternoon ? '14h/17h' : '9h/12h'}} - {{ event._name }}
                     </option>
                 </select>
             </div>
@@ -40,7 +40,7 @@
                 />
             </div>
             <div class="m-form-field">
-                <label for="name">Nom et Prénom *</label>
+                <label for="name">Nom et Prénom du ou des participants *</label>
                 <input
                     name="name"
                     id="name"
@@ -81,7 +81,7 @@
                 />
                 <label for="consent">
                     En cochant cette case, j'accepte que IBF-Equicoaching conserve mes données personnelles remplies
-                    ci-dessus pour me recontacter. <a href="/mentions-legales">Mentions légales</a>
+                    ci-dessus pour me recontacter. <a href="/cookies">Gestion des données</a>
                 </label>
             </div>
             <p class="m-form-error" v-if="errorMsgs">
