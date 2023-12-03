@@ -95,10 +95,9 @@
         <div v-else-if="isCompleted" class="m-form-success">
             <p v-if="isSuccess" class="m-form-success-msg">
                 Merci, Votre pré inscription a bien été prise en compte, je vous contacterai prochainement pour
-                confirmer
-                votre participation !
+                confirmer votre participation !
             </p>
-            <p else class="m-form-success-msg-error">
+            <p v-else class="m-form-success-msg-error">
               Une erreur s'est produite, merci de rééssayer plus tard ou de me contacter par téléphone au 06.10.83.37.88.
             </p>
             <button type="button" @click="resetForm">
@@ -117,7 +116,7 @@ export default {
     name: 'EventForm',
     props: {
         events: {
-            type: [],
+            type: Array,
             required: true,
         }
     },
@@ -150,7 +149,7 @@ export default {
         async validateForm(e) {
             e.preventDefault()
             this.msg = ''
-            prospect.set(new Prospect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent))
+            prospect.set(new Prospect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, false))
             event.set(new EventSubscription(this.selectDate, this.subNumber))
             this.isValidating = true
             await subscribe().then((value) => this.isCompleted = value)

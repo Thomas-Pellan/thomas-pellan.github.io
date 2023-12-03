@@ -1,4 +1,5 @@
-import {atom, map, MapStore, WritableAtom} from 'nanostores'
+import {atom, map} from 'nanostores'
+import type { WritableAtom, MapStore } from 'nanostores'
 import type ExtendedProspect from '../class/ExtendedProspect'
 import {EmailJsServices, EmailJsTemplates} from '../class/EmailJsServices'
 import type Project from '../class/Project'
