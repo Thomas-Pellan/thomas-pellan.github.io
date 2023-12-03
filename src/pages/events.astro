@@ -12,20 +12,20 @@ const returnValues: ReturnAction = new ReturnAction('/events', 'Nos évènements
 const seoData: Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false)
 
 const events: Event[] = [
-    new Event(13, 'Confiance en soi', false, new Date('2024-04-20'), false),
-    new Event(14, 'Reconnexion à soi', false, new Date('2024-05-04'), false),
-    new Event(15, 'Spécial Ados (12/17 ans) - Confiance en soi', false, new Date('2024-05-15'), true),
-    new Event(16, 'Mon projet professionnel', false, new Date('2024-05-25'), false),
-    new Event(17, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-05-29'), true),
-    new Event(18, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-06-08'), false),
-    new Event(19, 'Spécial Ados : Mieux communiquer', false, new Date('2024-06-12'), true),
+    new Event(13, 'Confiance en soi', false, new Date('2024-04-20'), false, 55),
+    new Event(14, 'Reconnexion à soi', false, new Date('2024-05-04'), false, 55),
+    new Event(15, 'Spécial Ados (12/17 ans) - Confiance en soi', false, new Date('2024-05-15'), true, 55),
+    new Event(16, 'Mon projet professionnel', false, new Date('2024-05-25'), false, 55),
+    new Event(17, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-05-29'), true, 55),
+    new Event(18, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-06-08'), false, 55),
+    new Event(19, 'Spécial Ados : Mieux communiquer', false, new Date('2024-06-12'), true, 55),
     new Event(20, 'Confiance en soi', false, new Date('2024-06-19'), true),
-    new Event(21, 'Gestion des émotions et du stress', false, new Date('2024-06-22'), false),
-    new Event(22, 'Prendre sa place', false, new Date('2024-07-06'), false),
-    new Event(23, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-07-27'), false),
-    new Event(24, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-08-03'), false),
-    new Event(12, 'Reconnexion à soi', true, new Date('2023-05-18'), false),
-    new Event(11, 'Mon projet professionnel', true, new Date('2023-05-15'), false),
+    new Event(21, 'Gestion des émotions et du stress', false, new Date('2024-06-22'), false, 55),
+    new Event(22, 'Prendre sa place', false, new Date('2024-07-06'), false, 55),
+    new Event(23, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-07-27'), false, 55),
+    new Event(24, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-08-03'), false, 55),
+    new Event(12, 'Reconnexion à soi', true, new Date('2023-05-18'), false, 55),
+    new Event(11, 'Mon projet professionnel', true, new Date('2023-05-15'), false, 55),
 ]
 const pastEvents: Event[] = []
 const futureEvents: Event[] = []
@@ -56,6 +56,11 @@ events.forEach((event: Event): void => {
                         <PanelEvent title={eventFullName}
                                     id={event.id}>
                             <Fragment slot="panel-content">
+                                <p>Tarif : ${event.price > 0 ? event.price + '€/pers' : 'Gratuit'}</p>
+                                <p>
+                                    Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le
+                                    formulaire ci dessous.
+                                </p>
                                 <p>
                                     <a href="/blog/deroulement-atelier-decouverte">Comment se déroule un atelier en équicoaching ?</a>
                                 </p>
@@ -64,10 +69,6 @@ events.forEach((event: Event): void => {
                                 </p>
                                 <p>
                                     Une autre question ? <a href="/blog">Accédez a la faq</a>
-                                </p>
-                                <p>
-                                    Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le
-                                    formulaire ci dessous.
                                 </p>
                                 <p>
                                     Pour toute autre demande ou question : <a href="/contact">utilisez le formulaire de contact</a>
