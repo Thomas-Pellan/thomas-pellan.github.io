@@ -23,7 +23,8 @@
                         v-bind:value="event._date"
                         :selected="event._date === selectDate"
                     >
-                        {{ event._date.toLocaleDateString('fr-FR') }} - {{event._isAfternoon ? '14h/17h' : '9h/12h'}} - {{ event._name }}
+                        {{ event._date.toLocaleDateString('fr-FR') }} - {{event._isAfternoon ? '14h/17h' : '9h/12h'}}
+                      - {{ event._name }} - {{event._price > 0 ? event._price + '€/pers' : 'Gratuit'}}
                     </option>
                 </select>
             </div>
