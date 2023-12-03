@@ -56,7 +56,7 @@ events.forEach((event: Event): void => {
                         <PanelEvent title={eventFullName}
                                     id={event.id}>
                             <Fragment slot="panel-content">
-                                <p>Tarif : ${event.price > 0 ? event.price + '€/pers' : 'Gratuit'}</p>
+                                <p>Tarif : {event.price > 0 ? event.price + '€/pers' : 'Gratuit'}</p>
                                 <p>
                                     Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le
                                     formulaire ci dessous.
