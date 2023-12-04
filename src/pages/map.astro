@@ -13,7 +13,7 @@ const actions: ButtonAction[] = [
 ]
 const seoData : Seo = new Seo('IBF Equicoaching | Plan du site', 'Plan du site et liens divers', false)
 ---
-<Layout title="IBF Equicoaching | Plan du site" seoData={seoData}>
+<Layout title="IBF Equicoventaching | Plan du site" seoData={seoData}>
     <main>
         <Title title="Plan du site" returnValues={returnValues}/>
         <Section actions={actions}>
@@ -26,11 +26,18 @@ const seoData : Seo = new Seo('IBF Equicoaching | Plan du site', 'Plan du site e
                     <a href="/company">Prestations pour entreprises</a><br>
                     <a href="/events">Evènements</a><br>
                     <a href="/pricing-equitation">Tarifs équitation</a><br>
-                    <a href="/pricing-training">Tarifs des formations pour entreprises et particuliers</a><br>
                     <a href="/pricing-equicoaching">Tarifs équicoaching</a><br>
                     <a href="/bons">Chèques cadeaux</a><br>
                 </p>
-                <h3>Me retrouver</h3>
+                <h3>Formations</h3>
+                <p>
+                    <a href="/blog/certification-qualiopi">Certification Qualiopi et IBF Equicoaching</a><br>
+                    <a href="/pricing-training">Index de nos formations</a><br>
+                    <a href="/program/manager-leadership">Formation - Posture Managériale et Leadership</a><br>
+                    <a href="/program/cohesion-communication">Formation - Cohésion et Communication</a><br>
+                    <a href="/program/soft-skills">Formation - Developper ses Soft Skills</a><br>
+                </p>
+                <h4>Me retrouver</h4>
                 <p>
                     <a href="/equicoaching-grenoble">Grenoble et bassin Grenoblois</a><br>
                     <a href="/equicoaching-chambery">Chambéry et bassin Chambérien</a><br>
@@ -40,9 +47,9 @@ const seoData : Seo = new Seo('IBF Equicoaching | Plan du site', 'Plan du site e
                     <a href="/equicoaching-geneva">Geneva</a>/<a href="/equicoaching-geneve">Genève</a><br>
                     <a href="/equicoaching-switzerland">Switzerland</a>/<a href="/equicoaching-suisse">Suisse</a><br>
                 </p>
-                <h4>
+                <h5>
                     Le blog / Faq
-                </h4>
+                </h5>
                 <p>
                     <a href="/blog/index">Index</a><br>
                     <a href="/blog/certification-qualiopi">Qualiopi, qu'est ce que c'est ?</a><br>
@@ -58,23 +65,23 @@ const seoData : Seo = new Seo('IBF Equicoaching | Plan du site', 'Plan du site e
                     <a href="/blog/objectifs-resolutions">Comment atteindre ses objectifs ?</a><br>
                     <a href="/blog/pourquoi-former-ses-managers">Pourquoi former ses managers grâce à l'equicoaching ?</a><br>
                 </p>
-                <h5>
+                <h6>
                     Partenaires
-                </h5>
+                </h6>
                 <p>
                     <a href="https://www.coachingrhe.fr/">Coaching RHE</a><br>
                     <a href="https://kareevents.fr/">KARE Events</a><br>
                 </p>
-                <h6>
+                <h7>
                     Légal
-                </h6>
+                </h7>
                 <p>
                     <a href="/contact">Contact</a><br>
                     <a href="/mentions-legales">Mentions légales</a><br>
                     <a href="/charte-accessibilite">Charte pour l'accueil en formation de personnes en situation de
                         handicap </a><br>
-                    <a href="cookies">Gestion des données personnelles</a><br>
-                    <a href="map">Plan du site</a>
+                    <a href="/cookies">Gestion des données personnelles</a><br>
+                    <a href="/map">Plan du site</a>
                 </p>
             </Fragment>
         </Section>

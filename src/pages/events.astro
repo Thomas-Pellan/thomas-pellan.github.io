@@ -19,7 +19,7 @@ const events: Event[] = [
     new Event(17, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-05-29'), true, 55),
     new Event(18, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-06-08'), false, 55),
     new Event(19, 'Spécial Ados : Mieux communiquer', false, new Date('2024-06-12'), true, 55),
-    new Event(20, 'Confiance en soi', false, new Date('2024-06-19'), true),
+    new Event(20, 'Confiance en soi', false, new Date('2024-06-19'), true, 55),
     new Event(21, 'Gestion des émotions et du stress', false, new Date('2024-06-22'), false, 55),
     new Event(22, 'Prendre sa place', false, new Date('2024-07-06'), false, 55),
     new Event(23, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-07-27'), false, 55),
@@ -29,12 +29,144 @@ const events: Event[] = [
 ]
 const pastEvents: Event[] = []
 const futureEvents: Event[] = []
+const futureEventsSeo: [] = []
+
 events.forEach((event: Event): void => {
-    event.date > new Date() ? futureEvents.push(event) : pastEvents.push(event)
+    if(event.date > new Date()) {
+        futureEvents.push(event)
+        futureEventsSeo.push({
+            "@context" : "https://schema.org",
+            "@type" : "Event",
+            "@id" : `https://ibf-equicoaching.com/#events-${event.id}`,
+            "name" : event.name,
+            "duration" : "3H",
+            "startDate" : event.date.toLocaleDateString('en-EN'),
+            "endDate" : event.date.toLocaleDateString('en-EN'),
+            "superEvent" : "https://ibf-equicoaching.com/#events",
+            "offers": {
+                "@type": "Offer",
+                "price": 55,
+                "priceCurrency": "EUR",
+            },
+        })
+    } else {
+        pastEvents.push(event)
+    }
 })
+
+let seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/events",
+            "url":"https://ibf-equicoaching.com/events",
+            "name":"IBF Equicoaching : évenements",
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#events"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"IBF Equicoaching : évenements et ateliers, inscrivez vous !",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching pour entreprises et particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "EventSeries",
+            "@id":"https://ibf-equicoaching.com/#events",
+            "name" : "Tous mes évenements équicoaching",
+            subEvent: []
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Entreprises et particuliers",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        }
+    ]
+}
+
+if(futureEventsSeo && futureEventsSeo.length > 0){
+    futureEventsSeo.forEach((event) => {
+        if(seoSchema["@graph"][2]["subEvent"]){
+            seoSchema["@graph"][2]["subEvent"].push({
+                "@id": event["@id"],
+            })
+        }
+        seoSchema["@graph"].push(event)
+    })
+}
 ---
 
-<LayoutPanels title="IBF Equicoaching | Evenements" seoData={seoData}>
+<LayoutPanels title="IBF Equicoaching | Evenements" seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title="Evenements" returnValues={returnValues}/>
         <div class="m-main">
@@ -53,28 +185,31 @@ events.forEach((event: Event): void => {
                 }
                 eventFullName += `${event.name} - ${event.date.toLocaleDateString('fr-FR')} - ${event.isAfternoon ? '14/17h' : '9h/12h'}`
                 return (
-                        <PanelEvent title={eventFullName}
-                                    id={event.id}>
-                            <Fragment slot="panel-content">
-                                <p>Tarif : {event.price > 0 ? event.price + '€/pers' : 'Gratuit'}</p>
-                                <p>
-                                    Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le
-                                    formulaire ci dessous.
-                                </p>
-                                <p>
-                                    <a href="/blog/deroulement-atelier-decouverte">Comment se déroule un atelier en équicoaching ?</a>
-                                </p>
-                                <p>
-                                    <a href="/blog/equicoaching-quest-ce-que-cest">Qu'est ce que l'équicoaching ?</a>
-                                </p>
-                                <p>
-                                    Une autre question ? <a href="/blog">Accédez a la faq</a>
-                                </p>
-                                <p>
-                                    Pour toute autre demande ou question : <a href="/contact">utilisez le formulaire de contact</a>
-                                </p>
-                            </Fragment>
-                        </PanelEvent>
+                    <PanelEvent title={eventFullName}
+                                id={event.id}
+                    >
+                        <Fragment slot="panel-content">
+                            <p>Tarif : {event.price > 0 ? event.price + '€/pers' : 'Gratuit'}</p>
+                            <p>
+                                Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le
+                                formulaire ci dessous.
+                            </p>
+                            <p>
+                                <a href="/blog/deroulement-atelier-decouverte">Comment se déroule un atelier en
+                                    équicoaching ?</a>
+                            </p>
+                            <p>
+                                <a href="/blog/equicoaching-quest-ce-que-cest">Qu'est ce que l'équicoaching ?</a>
+                            </p>
+                            <p>
+                                Une autre question ? <a href="/blog">Accédez a la faq</a>
+                            </p>
+                            <p>
+                                Pour toute autre demande ou question : <a href="/contact">utilisez le formulaire de
+                                contact</a>
+                            </p>
+                        </Fragment>
+                    </PanelEvent>
                 )
             })}
             {(futureEvents && futureEvents.length > 0) && (
