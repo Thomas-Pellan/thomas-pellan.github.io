@@ -1,4 +1,5 @@
-import emailjs, {EmailJSResponseStatus} from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
+import type EmailJSResponseStatus from '@emailjs/browser';
 import {EmailJsServices, EmailJsTemplates} from '../../class/EmailJsServices';
 
 export async function sendEmailJsData(service : EmailJsServices, template : EmailJsTemplates, data: Record<string, unknown>): Promise<boolean> {
