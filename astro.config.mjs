@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
-import image from '@astrojs/image';
 import { astroImageTools } from "astro-imagetools";
 import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
@@ -14,7 +13,7 @@ export default defineConfig({
   build: {
     format: 'file'
   },
-  integrations: [vue(), image(), astroImageTools, compress(), serviceWorker(), sitemap({
+  integrations: [vue(), astroImageTools, compress(), serviceWorker(), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
       item.lastmod = new Date();
