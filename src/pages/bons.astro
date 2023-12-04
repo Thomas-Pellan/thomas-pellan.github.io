@@ -15,9 +15,128 @@ const actions: ButtonAction[] = [new ButtonAction
         'Offrez de l\'équicoaching'
 )]
 const seoData: Seo = new Seo('IBF Equicoaching | Chèques cadeaux', 'Offrez de l\'équicoaching en cadeau, pour une occasion ou pour les fêtes. Osez le cadeau bien être !', false);
+
+const seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/bons",
+            "url":"https://ibf-equicoaching.com/bons",
+            "name":"IBF Equicoaching : Bons cadeaux",
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"IBF Equicoaching : Offrez de l'équicoaching",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+            offers : {
+                "@id":"https://ibf-equicoaching.com/#offer"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching pour entreprises et particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ]
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Entreprises et particuliers",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        },
+        {
+            "@type": "Offer",
+            "@id":"https://ibf-equicoaching.com/#offer",
+            "availability": "https://schema.org/InStock",
+            "description": "Bon cadeau IBF Equicoaching, pour une séance, un suivi ou un atelier",
+            "seller" : {
+                "@id":"https://ibf-equicoaching.com/#organization",
+            },
+            "name":"Bon cadeau IBF Equicoaching",
+            "image": "https://www.ibf-equicoaching.com/img/bons-320x320.webp",
+            "acceptedPaymentMethod" : [
+                {
+                    "@type" : "PaymentMethod",
+                    "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                },
+                {
+                    "@type" : "PaymentMethod",
+                    "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                }
+            ],
+            "priceCurrency": "EUR",
+        }
+    ]
+}
 ---
 
-<Layout title="IBF Equicoaching | Chèques cadeaux" seoData={seoData}>
+<Layout title="IBF Equicoaching | Chèques cadeaux" seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title="Bons Cadeaux" returnValues={returnValues}/>
         <Section displayTextLeft="true" subTitle="Chèques cadeaux IBF équicoaching" imgContent={image}

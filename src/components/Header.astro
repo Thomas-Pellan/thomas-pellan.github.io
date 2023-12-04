@@ -1,12 +1,13 @@
 ---
 import {Image} from 'astro:assets';//Do not Remove that !
 import Menu from '../components/Menu.astro';
+import { Schema } from "astro-seo-schema"
 import Icons from '../components/Icons.astro';
 import Icon from 'astro-icon'
 import {SEO} from 'astro-seo'
 import '../styles/m-header.scss';
 
-const {title, seoData} = Astro.props;
+const {title, seoData, seoSchema} = Astro.props;
 
 let canonical = seoData.canonical ? seoData.canonical : Astro.request.url
 if(canonical){
@@ -25,6 +26,8 @@ if(canonical){
                     noindex={seoData.noindex}/>)}
     <link rel="sitemap" href="/sitemap-index.xml">
     <meta name="generator" content={Astro.generator}/>
+    <Schema item={seoSchema}/>
+
     <title>{title}</title>
 
     <a href="/" class="m-header-title">
