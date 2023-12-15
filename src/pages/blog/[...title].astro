@@ -34,7 +34,7 @@ if(entry.data?.callToAction) {
 }
 const isQualiopi : boolean = entry.slug === 'certification-qualiopi'
 
-let seoSchema = {
+const seoSchema = {
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -52,7 +52,7 @@ let seoSchema = {
                 "@id":"https://ibf-equicoaching.com/#audience",
             },
             datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
-            "description":"IBF Equicoaching : évenements et ateliers, inscrivez vous !",
+            "description": entry.data.subTitle,
             "inLanguage":"fr-FR",
             author : {
                 "@id":"https://ibf-equicoaching.com/#person"

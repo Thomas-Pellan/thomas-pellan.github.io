@@ -2,6 +2,7 @@
 slug: cohesion-communication
 title: Cohésion et Communication
 subTitle: Programme de Formation Cohésion et Communication
+audience: Equipes, comités de direction, associations, collectivités, familles, groupe de personnes ayant à fonctionner ensemble
 ---
 
 **Durée :**

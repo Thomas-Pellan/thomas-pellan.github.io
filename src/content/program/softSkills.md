@@ -2,6 +2,7 @@
 slug: soft-skills
 title: Developper ses Soft Skills
 subTitle: Programme de Formation Developper ses Soft Skills
+audience: Tout public
 ---
 
 **Durée :**
