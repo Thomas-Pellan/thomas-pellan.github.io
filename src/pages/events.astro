@@ -43,10 +43,24 @@ events.forEach((event: Event): void => {
             "startDate" : event.date.toLocaleDateString('en-EN'),
             "endDate" : event.date.toLocaleDateString('en-EN'),
             "superEvent" : "https://ibf-equicoaching.com/#events",
-            "offers": {
+            location: {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            performer : {
+                "@id":"https://ibf-equicoaching.com/#organization",
+            },
+            organizer : {
+                "@id":"https://ibf-equicoaching.com/#organization",
+            },
+            "description" : "Equicoaching : " + event.name,
+            "image": "https://www.ibf-equicoaching.com/img/seminaire-320x320.webp",
+            "eventAttendanceMode" : "https://schema.org/OfflineEventAttendanceMode",
+            offers: {
                 "@type": "Offer",
                 "price": 55,
                 "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "validFrom": event.date.toISOString(),
             },
         })
     } else {
@@ -103,6 +117,17 @@ let seoSchema = {
             "@type": "EventSeries",
             "@id":"https://ibf-equicoaching.com/#events",
             "name" : "Tous mes évenements équicoaching",
+            "startDate" : "2024-01-01T00:00:00+01:00",
+            performer : {
+                "@id":"https://ibf-equicoaching.com/#organization",
+            },
+            organizer : {
+                "@id":"https://ibf-equicoaching.com/#organization",
+            },
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "description" : "Inscrivez vous à un de nos ateliers de l'année 2024",
             subEvent: []
         },
         {
