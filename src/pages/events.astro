@@ -42,9 +42,13 @@ events.forEach((event: Event): void => {
             "duration" : "3H",
             "startDate" : event.date.toLocaleDateString('en-EN'),
             "endDate" : event.date.toLocaleDateString('en-EN'),
-            "superEvent" : "https://ibf-equicoaching.com/#events",
+            "eventStatus": "https://schema.org/EventScheduled",
             location: {
-                "@id":"https://ibf-equicoaching.com/#address"
+                "@type": "Place",
+                "name": "IBF Equicoaching Theys",
+                "address": {
+                    "@id":"https://ibf-equicoaching.com/#address"
+                }
             },
             performer : {
                 "@id":"https://ibf-equicoaching.com/#organization",
@@ -114,26 +118,10 @@ let seoSchema = {
             },
         },
         {
-            "@type": "EventSeries",
-            "@id":"https://ibf-equicoaching.com/#events",
-            "name" : "Tous mes évenements équicoaching",
-            "startDate" : "2024-01-01",
-            performer : {
-                "@id":"https://ibf-equicoaching.com/#organization",
-            },
-            organizer : {
-                "@id":"https://ibf-equicoaching.com/#organization",
-            },
-            location : {
-                "@id":"https://ibf-equicoaching.com/#address"
-            },
-            "description" : "Inscrivez vous à un de nos ateliers de l'année 2024",
-            subEvent: []
-        },
-        {
             "@type": "Organization",
             "@id":"https://ibf-equicoaching.com/#organization",
             "name": "IBF Equicoaching",
+            "url": "https://ibf-equicoaching.com",
             "slogan" : "Vers vos objectifs, Ensemble",
             "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
             "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
@@ -181,11 +169,6 @@ let seoSchema = {
 
 if(futureEventsSeo && futureEventsSeo.length > 0){
     futureEventsSeo.forEach((event) => {
-        if(seoSchema["@graph"][2]["subEvent"]){
-            seoSchema["@graph"][2]["subEvent"].push({
-                "@id": event["@id"],
-            })
-        }
         seoSchema["@graph"].push(event)
     })
 }
