@@ -2,6 +2,7 @@
 slug: manager-leadership
 title: Posture Managériale et Leadership
 subTitle: Programme de Formation Posture managériale et leadership
+audience: Managers / chef(fe)s d’équipe juniors, séniors ou en formation, dirigeants, comité de direction. Particuliers, salariés, indépendants ou inter-entreprise.
 ---
 
 **Durée :** 1 journée (7h)

@@ -27,8 +27,150 @@ const actions: ButtonAction[] = [
 new ButtonAction('/contact', 'Une question ? Contactez moi !'),
 new ButtonAction('/pricing-training', 'Retour aux formations')
 ]
+
+const seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/blog/" + entry.slug,
+            "url":"https://ibf-equicoaching.com/blog/" + entry.slug,
+            "name":"IBF Equicoaching : évenements",
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#course"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"IBF Equicoaching : évenements et ateliers, inscrivez vous !",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching pour entreprises et particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "Course",
+            "@id":"https://ibf-equicoaching.com/#course",
+            availableLanguage: "fr-FR",
+            courseCode: entry.data.title,
+            name: entry.data.title,
+            description: entry.data.subTitle,
+            provider: {
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            hasCourseInstance: {
+                "@type": "CourseInstance",
+                "courseMode": ["Onsite"],
+                "courseWorkload": "P1D",
+                "endDate": "2024-01-01",
+                "startDate": "2024-01-01"
+            },
+            financialAidEligible: "Qualiopi",
+            totalHistoricalEnrollment: 0,
+            educationalUse: "Formation d'équipes",
+            learningResourceType: "Ateliers avec des chevaux",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            offers: {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "description": entry.data.title,
+                "seller" : {
+                    "@id":"https://ibf-equicoaching.com/#organization",
+                },
+                "name":entry.data.title,
+                "acceptedPaymentMethod" : [
+                    {
+                        "@type" : "PaymentMethod",
+                        "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                    },
+                    {
+                        "@type" : "PaymentMethod",
+                        "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                    },
+                ],
+                "price" : 800,
+                "priceCurrency": "EUR",
+                category: "Formation"
+            }
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "url": "https://ibf-equicoaching.com",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : entry.data.audience,
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        }
+    ]
+}
 ---
-<Layout title={entry.data.title} seoData={seoData}>
+<Layout title={entry.data.title} seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title={entry.data.title} returnValues={returnValues}/>
         <Section actions={actions} wide="true">

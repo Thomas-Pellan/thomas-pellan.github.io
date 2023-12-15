@@ -8,6 +8,8 @@ callToAction: [
     link: /program/manager-leadership
   }
 ]
+keywords: equicoaching, formation, qualiopi, certification, manager, leadership
+image: https://www.ibf-equicoaching.com/img/manager-320x320.webp
 ---
 Je ne vous l'apprends surement pas, mais le manager à un poste clé au sein de l'entreprise.
 

@@ -1,7 +1,9 @@
 ---
 slug: intelligence-emotionnelle
-title: L’intelligence émotionnelle et l'equicoaching
-subTitle: Qu’est-ce que l’on appelle intelligence émotionnelle ?
+title: Qu’est-ce que l’on appelle intelligence émotionnelle ?
+subTitle: L’intelligence émotionnelle et son lien avec l'equicoaching
+keywords: equicoaching, intelligence émotionnelle, émotions, intelligence
+image: https://www.ibf-equicoaching.com/img/img-jack-320x320.webp
 ---
 
 Une bonne question pour commencer cet article.

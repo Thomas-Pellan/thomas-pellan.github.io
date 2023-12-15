@@ -2,6 +2,8 @@
 slug: objectifs-resolutions
 title: Objectifs et résolutions, comment les atteindre ?
 subTitle: Ça y est, une nouvelle année vient de commencer. Et avec elle, le traditionnel florilège de bonnes résolutions.
+keywords: equicoaching, bonnes résolutions, changement, nouvelle année
+image: https://www.ibf-equicoaching.com/img/resolution-320x320.webp
 ---
 
 Résolutions ou objectifs, cela revient au même, on veut changer quelque chose dans notre vie. Le problème c’est que
