@@ -33,8 +33,134 @@ if(entry.data?.callToAction) {
     actions.push(new ButtonAction('/contact', 'Une question ? Contactez moi !'))
 }
 const isQualiopi : boolean = entry.slug === 'certification-qualiopi'
+
+let seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/blog/" + entry.slug,
+            "url":"https://ibf-equicoaching.com/blog/" + entry.slug,
+            "name":"IBF Equicoaching : évenements",
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#faq-page"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"IBF Equicoaching : évenements et ateliers, inscrivez vous !",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching pour entreprises et particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "FAQPage",
+            "@id":"https://ibf-equicoaching.com/#faq-page",
+            reviewedBy: {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+            "abstract": "",
+            "name": entry.data.title,
+            "headline": entry.data.title,
+            "keywords": "" + entry.data.keywords,
+            "image": entry.data.image,
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+            mainEntity:{
+                "@type": "Question",
+                "name": isQualiopi ? entry.data.subTitle : entry.data.title,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": isQualiopi ? entry.data.title : entry.data.subTitle
+                }
+            },
+            speakable: {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [".m-section-content > p"]
+            },
+            mainContentOfPage: {
+                "@type": "WebPageElement",
+                "cssSelector": [".m-section-content"]
+            }
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "url": "https://ibf-equicoaching.com",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Entreprises et particuliers",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        }
+    ]
+}
 ---
-<Layout title={entry.data.title} seoData={seoData}>
+<Layout title={entry.data.title} seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title={entry.data.title} returnValues={returnValues}/>
         <Section actions={actions} wide="true">

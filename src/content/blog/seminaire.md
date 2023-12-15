@@ -1,7 +1,9 @@
 ---
 slug: deroulement-seminaire
 title: Comment se déroule un séminaire / team building Equicoaching ?
-subTitle: 
+subTitle: Comment s'organiser pour faire passer un moment mémorable à ses collègues !
+keywords: equicoaching, team building, équipe, fun, solution
+image: https://www.ibf-equicoaching.com/img/seminaire-320x320.webp
 ---
 
 **1 – L’approche :**

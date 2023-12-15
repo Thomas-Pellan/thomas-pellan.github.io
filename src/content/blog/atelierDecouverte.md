@@ -2,6 +2,8 @@
 slug: deroulement-atelier-decouverte
 title: Comment se déroule un atelier découverte collectif en equicoaching ?
 subTitle: Ces ateliers se déroulent sur 3h par petits groupes jusqu’à 6 personnes.
+keywords: equicoaching, atelier, découverte, déroulement
+image: https://www.ibf-equicoaching.com/img/atelier-decouverte-2-320x320.webp
 ---
 Ouvert aux familles ou aux groupes [sur demande](/contact) (3 pers minimum) ou [sur inscription sur notre site internet rubrique « événements »](/events).
 

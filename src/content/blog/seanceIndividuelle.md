@@ -2,6 +2,8 @@
 slug: deroulement-seance-individuelle
 title: Comment se déroule une séance d’equicoaching individuelle ?
 subTitle: La première chose à savoir, c’est que l’equicoaching se base sur un processus de coaching.
+keywords: equicoaching, processus, coaching, séance, individuel, suivi
+image: https://www.ibf-equicoaching.com/img/img-jack-seance-320x320.webp
 ---
 
 C’est-à-dire un accompagnement au changement d’un point A à un point B, point B qui sera mis sous forme d’**objectif
