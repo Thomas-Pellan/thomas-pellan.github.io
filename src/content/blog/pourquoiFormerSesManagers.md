@@ -8,6 +8,7 @@ callToAction: [
     link: /program/manager-leadership
   }
 ]
+response: Pour faire face aux différents profils présents dans une équipe. Pour mieux fixer un objectif cohérent et le tenir. Pour être un meilleur leader.
 keywords: equicoaching, formation, qualiopi, certification, manager, leadership
 image: https://www.ibf-equicoaching.com/img/manager-320x320.webp
 ---
