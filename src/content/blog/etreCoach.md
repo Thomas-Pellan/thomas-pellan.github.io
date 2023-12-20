@@ -2,6 +2,7 @@
 slug: etre-coach-26-ans
 title: Coach à 26 ans, C'est possible ?
 subTitle: Voilà une question que vous êtes en droit de vous poser !
+response: Je ne dis pas que je sais tout, loin de là, un bon coach ne sait rien ! J’accompagne simplement les personnes à se poser des questions profondes qu’elles ne se poseraient pas seules pour faire émerger des prises de conscience. Et s’il en est une phrase d’apparence ordinaire qui peut résumer mon expérience, « L’âge, c’est que dans la tête !».
 keywords: equicoaching, jeune, expérience, reconversion, burnout, présentation
 image: https://www.ibf-equicoaching.com/img/img-camille-320x320.webp
 ---

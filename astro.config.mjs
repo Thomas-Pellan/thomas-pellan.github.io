@@ -46,5 +46,32 @@ export default defineConfig({
     config: {
       iconPurpose: ['maskable', 'any'],
     },
-  })]
+  })],
+  redirects: {
+    '/map/service': '/service',
+    '/map/map/blog/etre-coach-26-ans': '/blog/etre-coach-26-ans',
+    '/map/map/blog/deroulement-seance-individuelle': '/blog/deroulement-seance-individuelle',
+    '/map/equicoaching-grenoble': '/equicoaching-grenoble',
+    '/map/equicoaching-switzerland': '/equicoaching-switzerland',
+    '/map/equicoaching-aix-les-bains': '/equicoaching-aix-les-bains',
+    '/map/equicoaching-albertville': '/equicoaching-albertville',
+    '/map/equicoaching-suisse': '/equicoaching-suisse',
+    '/map/equicoaching-annecy': '/equicoaching-annecy',
+    '/map/equicoaching-chambery': '/equicoaching-chambery',
+    '/map/blog/intelligence-emotionnelle': '/blog/intelligence-emotionnelle',
+    '/map/blog/equicoaching-quest-ce-que-cest': '/blog/equicoaching-quest-ce-que-cest',
+    '/map/contact': '/contact',
+    '/map/charte-accessibilite': '/charte-accessibilite',
+    '/map/company': '/company',
+    '/map/events': '/events',
+    '/map/map': '/map',
+    '/map/about': '/about',
+    '/map/pricing-training': '/pricing-training',
+    '/map/pricing-equitation': '/pricing-equitation',
+    '/mecgv': '/cgv',
+    '/map/bons': '/bons',
+    '/map/mentions-legales': '/mentions-legales',
+    '/map/cookies': '/cookies',
+    '/blog/index' : '/blog',
+  }
 });

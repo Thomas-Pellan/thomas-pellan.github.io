@@ -2,6 +2,7 @@
 slug: equicoaching-quest-ce-que-cest
 title: L'Equicoaching ? Qu'est ce que c'est ?
 subTitle: Définition de cette pratique
+response: Le coaching c’est accompagner les personnes d’un point A « état présent » à un point B « état désiré ». A ce processus, en equicoaching, on intègre le cheval. Il réagit à son environnement à un instant T. Il vit toujours dans le présent et il va nous inviter à faire de même.
 keywords: equicoaching, définition, pratique, coaching, accompagnement, changement
 image: https://www.ibf-equicoaching.com/img/img-jack-sunset-320x320.webp
 ---
