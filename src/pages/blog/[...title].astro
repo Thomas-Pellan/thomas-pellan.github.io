@@ -41,7 +41,10 @@ const seoSchema = {
             "@type": "Webpage",
             "@id":"https://ibf-equicoaching.com/blog/" + entry.slug,
             "url":"https://ibf-equicoaching.com/blog/" + entry.slug,
-            "name":"IBF Equicoaching : évenements",
+            "name": entry.data.title,
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
             isPartOf: {
                 "@id":"https://ibf-equicoaching.com/#website"
             },
@@ -156,6 +159,40 @@ const seoSchema = {
             "@id":"https://ibf-equicoaching.com/#person",
             "givenName" : "Camille",
             "familyName" : "Marzec"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/blog",
+                            "name": "Faq"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/blog/" + entry.slug,
+                            "name": entry.data.title
+                        }
+                }
+            ],
         }
     ]
 }
