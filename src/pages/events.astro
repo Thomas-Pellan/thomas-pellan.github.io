@@ -83,6 +83,9 @@ let seoSchema = {
             isPartOf: {
                 "@id":"https://ibf-equicoaching.com/#website"
             },
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
             about: {
                 "@id":"https://ibf-equicoaching.com/#events"
             },
@@ -163,6 +166,31 @@ let seoSchema = {
             "@id":"https://ibf-equicoaching.com/#person",
             "givenName" : "Camille",
             "familyName" : "Marzec"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/events",
+                            "name": "Mes évènements"
+                        }
+                },
+            ],
         }
     ]
 }
