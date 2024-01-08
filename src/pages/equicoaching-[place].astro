@@ -46,6 +46,9 @@ const seoSchema = {
             "@id":`https://ibf-equicoaching.com/equicoaching-${place}`,
             "url":`https://ibf-equicoaching.com/equicoaching-${place}`,
             "name": titleStr,
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
             isPartOf: {
                 "@id":"https://ibf-equicoaching.com/#website"
             },
@@ -387,6 +390,31 @@ const seoSchema = {
             "@type": "AdministrativeArea",
             "@id":"https://ibf-equicoaching.com/#area",
             "name": place,
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": `https://ibf-equicoaching.com/equicoaching-${place}`,
+                            "name": "Mes prestations, me retrouver " + name
+                        }
+                },
+            ],
         }
     ]
 }

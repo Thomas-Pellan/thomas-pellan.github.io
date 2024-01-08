@@ -27,8 +27,11 @@ const seoSchema = {
             isPartOf: {
                 "@id":"https://ibf-equicoaching.com/#website"
             },
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
             about: {
-                "@id":"https://ibf-equicoaching.com/#organization"
+                "@id":"https://ibf-equicoaching.com/#product"
             },
             audience : {
                 "@id":"https://ibf-equicoaching.com/#audience",
@@ -111,6 +114,91 @@ const seoSchema = {
             "familyName" : "Marzec"
         },
         {
+            "@type": "Product",
+            "@id":"https://ibf-equicoaching.com/#product",
+            "name": "Bon cadeau IBF Equicoaching",
+            "description": "Bon cadeau pour une prestation IBF Equicoaching",
+            "image": "https://www.ibf-equicoaching.com/img/bons-320x320.webp",
+            offers : {
+                "@id":"https://ibf-equicoaching.com/#offer",
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "4"
+            },
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name" :"Lucie D.",
+                        "givenName" :"Lucie D."
+                    },
+                    "datePublished": "2019-12-01",
+                    "reviewBody": "Une séance m'a été offerte en cadeau, quel beau cadeau ! J'ai pu laisser libre cours à mes émotions avec l'aide de Camille, et j'essayais d'entrer en lien avec le cheval, je voyais comment il réagissait. C'était un ressenti très puissant, et dans un lieu vraiment superbe. Je recommande vivement ! ",
+                    "name": "Un beau cadeau",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "bestRating": "5",
+                        "ratingValue": "1",
+                        "worstRating": "1"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name" :"Céline L.",
+                        "givenName" :"Céline L."
+                    },
+                    "datePublished": "2020-03-12",
+                    "reviewBody": "Merci pour cet accompagnement original et puissant pendant cette période si difficile de ma vie. ",
+                    "name": "Accompagnement puissant",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "bestRating": "5",
+                        "ratingValue": "5",
+                        "worstRating": "1"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name" :"Céline G.",
+                        "givenName" :"Céline G."
+                    },
+                    "datePublished": "2020-03-12",
+                    "reviewBody": "Camille est la personne qui réveillera l'instinct qui est en vous. Etant quelqu'un de très mental, elle a su me faire lâcher prise et me connecter à moi et à mon environnement, avec une douceur et facilité impressionnante. Un moment ressourçant de pur bonheur, si simple et pourtant si difficile à atteindre. Merci Camille. ",
+                    "name": "Une super expérience",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "bestRating": "5",
+                        "ratingValue": "5",
+                        "worstRating": "1"
+                    }
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name" :"Nathalie B.",
+                        "givenName" :"Nathalie B."
+                    },
+                    "datePublished": "2020-05-10",
+                    "reviewBody": "L'equicoaching, une belle expérience à vivre, je vous invite à tester avec une super equicoach : Camille. Elle saura trouver les bonnes questions pour vous faire prendre conscience de vos besoins en toute bienveillance. Merci Camille ",
+                    "name": "Une super coach !",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "bestRating": "5",
+                        "ratingValue": "5",
+                        "worstRating": "1"
+                    }
+                },
+            ]
+        },
+        {
             "@type": "Offer",
             "@id":"https://ibf-equicoaching.com/#offer",
             "availability": "https://schema.org/InStock",
@@ -131,6 +219,91 @@ const seoSchema = {
                 }
             ],
             "priceCurrency": "EUR",
+            "highPrice": "350",
+            "lowPrice": "55",
+            "price": "55",
+            "priceValidUntil": "2026-01-01T12:00:00+00:00 UTC+00:00",
+            hasMerchantReturnPolicy: {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "FR",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 180,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn"
+            },
+            shippingDetails: {
+                "@id":"https://ibf-equicoaching.com/#offershippingdetails",
+            }
+        },
+        {
+            "@type": "OfferShippingDetails",
+            "@id":"https://ibf-equicoaching.com/#offershippingdetails",
+            shippingDestination: {
+                "@type": "DefinedRegion",
+                "addressCountry": "FR",
+                "postalCodeRange": {
+                    "@type": "PostalCodeRangeSpecification",
+                    "postalCodeBegin": "0",
+                    "postalCodeEnd": "99999"
+                }
+            },
+            "deliveryTime": {
+                "@type": "ShippingDeliveryTime",
+                "businessDays": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "https://schema.org/Monday",
+                        "https://schema.org/Tuesday",
+                        "https://schema.org/Wednesday",
+                        "https://schema.org/Thursday",
+                        "https://schema.org/Friday",
+                        "https://schema.org/Saturday"
+                    ]
+                },
+                "cutoffTime": "12:00:00Z",
+                "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 3,
+                    "unitCode": "d"
+                },
+                "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 2,
+                    "maxValue": 7,
+                    "unitCode": "d"
+                }
+            },
+            "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "EUR"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/bons",
+                            "name": "Bons cadeaux IBF Equicoaching"
+                        }
+                },
+            ],
         }
     ]
 }

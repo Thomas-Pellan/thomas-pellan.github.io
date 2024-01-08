@@ -14,14 +14,394 @@ export function getStaticPaths() {
     ];
 }
 
-const {name} = Astro.props;
+const {placeen, name} = Astro.props;
 const returnValues: ReturnAction = new ReturnAction('/', 'Find Me')
 const actions: ButtonAction[] = [new ButtonAction('/contact', 'Contact me')]
 const titleStr = `Equicoaching ${name} | Horse Coaching`
 const h1Str = `Equicoaching ${name}`
 const seoData : Seo = new Seo(titleStr,  `${name} | Horse Coaching, training for managers, teams and individuals`, false)
+const seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":`https://ibf-equicoaching.com/equicoaching-${placeen}`,
+            "url":`https://ibf-equicoaching.com/equicoaching-${placeen}`,
+            "name": titleStr,
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#offerCatalog"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description": `IBF Equicoaching : Find me in ${name}`,
+            "inLanguage":"en-EN",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Coaching training for companies and individuals",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching and Training",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "slogan" : "Towards your goals, Together",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching and Training",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+            hasOfferCatalog: {
+                "@id":"https://ibf-equicoaching.com/#offerCatalog",
+            },
+        },
+        {
+            "@type": "OfferCatalog",
+            "@id":"https://ibf-equicoaching.com/#offerCatalog",
+            "name": "Training",
+            "description" : "Training for managers, teams or individuals",
+            "itemListElement": [
+                {
+                    "@id":"https://ibf-equicoaching.com/#offerCatalogEquicoaching",
+                },
+                {
+                    "@id":"https://ibf-equicoaching.com/#offerCatalogEquitation",
+                },
+                {
+                    "@id":"https://ibf-equicoaching.com/#offerFormation",
+                }
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "@id":"https://ibf-equicoaching.com/#offerFormation",
+            "name": "Training",
+            "description" : "Training for managers, teams or individuals",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Managerial Posture & Leadership",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Managerial Posture & Leadership",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                    ],
+                    "price" : 800,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Cohesion & Communication",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Cohesion & Communication",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                    ],
+                    "price" : 800,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Soft Skills",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Soft Skills",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                    ],
+                    "price" : 800,
+                    "priceCurrency": "EUR",
+                }
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "@id":"https://ibf-equicoaching.com/#offerCatalogEquitation",
+            "name": "Horse riding services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Horse riding classes, 4ppl max",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Horse riding group classes",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 35,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Private lesson, horse riding",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Private lesson, horse riding",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 50,
+                    "priceCurrency": "EUR",
+                }
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "@id":"https://ibf-equicoaching.com/#offerCatalogEquicoaching",
+            "name": "Equicoaching services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Discover Equicoaching, 6ppl max",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Discover Equicoaching",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 55,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Individual Session Equicoaching",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Individual Session Equicoaching",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 80,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "5 Sessions Equicoaching",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"5 Sessions Equicoaching",
+                    areaServed : {
+                        "@id":"https://ibf-equicoaching.com/#area",
+                    },
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 350,
+                    "priceCurrency": "EUR",
+                }
+            ]
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Companies and individuals",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        },
+        {
+            "@type": "AdministrativeArea",
+            "@id":"https://ibf-equicoaching.com/#area",
+            "name": placeen,
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": `https://ibf-equicoaching.com/equicoaching-${placeen}`,
+                            "name": "Services in " + name
+                        }
+                },
+            ],
+        }
+    ]
+}
 ---
-<Layout title={titleStr} lang="en" seoData={seoData}>
+<Layout title={titleStr} lang="en" seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title={h1Str} returnValues={returnValues}/>
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actions} wide="true">

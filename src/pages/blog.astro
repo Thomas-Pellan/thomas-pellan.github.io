@@ -65,10 +65,311 @@ const tileContent = [
     },
 ]
 
-const seoData : Seo = new Seo('IBF Equicoaching | Foire aux questions et Blog', 'Faq, Foire aux questions sur coaching et la médiation du cheval', false);
+const seoData : Seo = new Seo('IBF Equicoaching | Foire aux questions et Blog', 'Faq, Foire aux questions sur coaching et la médiation du cheval', false)
+const seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/blog",
+            "url":"https://ibf-equicoaching.com/blog",
+            "name": "Foire aux questions sur l'équicoaching",
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#itemlist"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"IBF Equicoaching : réponses à vos questions",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching pour entreprises et particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "url": "https://ibf-equicoaching.com",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Entreprises et particuliers",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/blog",
+                            "name": "Liste des articles de Faq"
+                        }
+                },
+            ],
+        },
+        {
+            "@type": "ItemList",
+            "url": "https://ibf-equicoaching.com/blog",
+            "numberOfItems": "9",
+            "name": "Liste de nos articles de FAQ",
+            "itemListElement": [
+                {
+                    "@type": "Webpage",
+                    "position": 6,
+                    "@id":"https://ibf-equicoaching.com/blog/deroulement-atelier-decouverte",
+                    "url":"https://ibf-equicoaching.com/blog/deroulement-atelier-decouverte",
+                    "name": "Comment se déroule un atelier découverte collectif en equicoaching ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Ces ateliers se déroulent sur 3h par petits groupes jusqu’à 6 personnes.",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 2,
+                    "@id":"https://ibf-equicoaching.com/blog/certification-qualiopi",
+                    "url":"https://ibf-equicoaching.com/blog/certification-qualiopi",
+                    "name": "Certification Qualiopi et IBF Equicoaching",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Qualiopi, qu'est ce que c'est ? Que représente cette certification pour nos formations ?",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 4,
+                    "@id":"https://ibf-equicoaching.com/blog/equicoaching-quest-ce-que-cest",
+                    "url":"https://ibf-equicoaching.com/blog/equicoaching-quest-ce-que-cest",
+                    "name": "L'Equicoaching ? Qu'est ce que c'est ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Définition de cette pratique",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 9,
+                    "@id":"https://ibf-equicoaching.com/blog/etre-coach-26-ans",
+                    "url":"https://ibf-equicoaching.com/blog/etre-coach-26-ans",
+                    "name": "Coach à 26 ans, C'est possible ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Je ne dis pas que je sais tout, loin de là, un bon coach ne sait rien ! J’accompagne simplement les personnes à se poser des questions profondes qu’elles ne se poseraient pas seules pour faire émerger des prises de conscience. Et s’il en est une phrase d’apparence ordinaire qui peut résumer mon expérience, « L’âge, c’est que dans la tête !».",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 3,
+                    "@id":"https://ibf-equicoaching.com/blog/intelligence-emotionnelle",
+                    "url":"https://ibf-equicoaching.com/blog/intelligence-emotionnelle",
+                    "name": "Qu’est-ce que l’on appelle intelligence émotionnelle ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "L’intelligence émotionnelle et son lien avec l'equicoaching",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 5,
+                    "@id":"https://ibf-equicoaching.com/blog/objectifs-resolutions",
+                    "url":"https://ibf-equicoaching.com/blog/objectifs-resolutions",
+                    "name": "Objectifs et résolutions, comment les atteindre ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Ça y est, une nouvelle année vient de commencer. Et avec elle, le traditionnel florilège de bonnes résolutions.",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 1,
+                    "@id":"https://ibf-equicoaching.com/blog/pourquoi-former-ses-managers",
+                    "url":"https://ibf-equicoaching.com/blog/pourquoi-former-ses-managers",
+                    "name": "Pourquoi former ses managers grâce à l'equicoaching ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Pour faire face aux différents profils présents dans une équipe. Pour mieux fixer un objectif cohérent et le tenir. Pour être un meilleur leader.",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 8,
+                    "@id":"https://ibf-equicoaching.com/blog/deroulement-seance-individuelle",
+                    "url":"https://ibf-equicoaching.com/blog/deroulement-seance-individuelle",
+                    "name": "Comment se déroule une séance d’equicoaching individuelle ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "La première chose à savoir, c’est que l’equicoaching se base sur un processus de coaching.",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                },
+                {
+                    "@type": "Webpage",
+                    "position": 7,
+                    "@id":"https://ibf-equicoaching.com/blog/deroulement-seminaire",
+                    "url":"https://ibf-equicoaching.com/blog/deroulement-seminaire",
+                    "name": "Comment se déroule un séminaire / team building Equicoaching ?",
+                    isPartOf: {
+                        "@id":"https://ibf-equicoaching.com/#website"
+                    },
+                    audience : {
+                        "@id":"https://ibf-equicoaching.com/#audience",
+                    },
+                    datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+                    "description": "Comment s'organiser pour faire passer un moment mémorable à ses collègues !",
+                    "inLanguage":"fr-FR",
+                    author : {
+                        "@id":"https://ibf-equicoaching.com/#person"
+                    }
+                }
+            ],
+        },
+    ]
+}
 ---
 
-<Layout title="IBF Equicoaching | Faq" seoData={seoData}>
+<Layout title="IBF Equicoaching | Faq" seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title="Foire aux questions" returnValues={returnValues}/>
         <div class="m-main">
