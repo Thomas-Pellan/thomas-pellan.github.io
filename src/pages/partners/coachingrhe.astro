@@ -10,10 +10,180 @@ import Image from '../../class/Image';
 const returnValues: ReturnAction = new ReturnAction('/partners', 'Nos partenaires')
 const image: Image = new Image('/img/coaching-rhe-320x320.webp', 'coaching rhe entreprise')
 const actions: ButtonAction[] = [new ButtonAction('https://www.coachingrhe.fr/', 'Pour plus d\'informations, contactez moi 👍')]
-const seoData : Seo = new Seo('Coaching RHE', 'Coaching RHE, notre partenaire coaching et physiothérapie.', false);
+const seoData : Seo = new Seo('Coaching RHE', 'Coaching RHE, notre partenaire coaching et physiothérapie.', false)
+const seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/map",
+            "url":"https://ibf-equicoaching.com/map",
+            "name": "Plan du site",
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#organizationrhe"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"Plan du site",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching pour entreprises et particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organizationrhe",
+            "name": "Coaching RHE",
+            "url": "https://www.coachingrhe.fr/",
+            "logo" : "https://static.wixstatic.com/media/4077c3_61199196723646b281cb97204090edbd~mv2.png/v1/fill/w_168,h_159,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4077c3_61199196723646b281cb97204090edbd~mv2.png",
+            "image" : "https://static.wixstatic.com/media/4077c3_61199196723646b281cb97204090edbd~mv2.png/v1/fill/w_168,h_159,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/4077c3_61199196723646b281cb97204090edbd~mv2.png",
+            "alternateName":"Coaching RHE",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#addressrhe"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#personrhe",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#addressrhe"
+            },
+            "email" : "coachingrhe@gmail.com",
+            "telephone" : "06 43 41 19 06",
+            "sameAs":[
+                "https://www.facebook.com/CoachingRHE",
+                "https://www.instagram.com/coachingrhe/",
+            ],
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#addressrhe",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "69250",
+            "addressLocality" : "Fleurieu sur Saône",
+            "streetAddress" : "11, avenue Philibert Gaillard"
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#personrhe",
+            "givenName" : "Nathalie",
+            "familyName" : "Barraud"
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "url": "https://ibf-equicoaching.com",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Entreprises et particuliers",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/partners",
+                            "name": "Partenaires"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/partners/coachingrhe",
+                            "name": "Coaching RHE"
+                        }
+                }
+            ],
+        }
+    ]
+}
 ---
 
-<Layout title="IBF Equicoaching | Coaching RHE" seoData={seoData}>
+<Layout title="IBF Equicoaching | Coaching RHE" seoData={seoData} seoSchema={seoSchema}>
     <main>
         <Title title="Coaching RHE" returnValues={returnValues}/>
         <Section displayTextLeft="true" imgContent={image} actions={actions}>
