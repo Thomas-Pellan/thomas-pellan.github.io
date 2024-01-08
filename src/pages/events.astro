@@ -7,26 +7,12 @@ import '../styles/m-main.scss'
 import Seo from '../class/Seo'
 import ReturnAction from '../class/ReturnAction'
 import Event from '../class/Event'
+import {eventList} from '../content/data/EventList'
 
 const returnValues: ReturnAction = new ReturnAction('/events', 'Nos évènements')
 const seoData: Seo = new Seo('IBF Equicoaching | Nos Evenements et Ateliers', 'Réservez votre place pour un atelier ou un évènement équestre ou équicoaching.', false)
 
-const events: Event[] = [
-    new Event(13, 'Confiance en soi', false, new Date('2024-04-20'), false, 55),
-    new Event(14, 'Reconnexion à soi', false, new Date('2024-05-04'), false, 55),
-    new Event(15, 'Spécial Ados (12/17 ans) - Confiance en soi', false, new Date('2024-05-15'), true, 55),
-    new Event(16, 'Mon projet professionnel', false, new Date('2024-05-25'), false, 55),
-    new Event(17, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-05-29'), true, 55),
-    new Event(18, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-06-08'), false, 55),
-    new Event(19, 'Spécial Ados : Mieux communiquer', false, new Date('2024-06-12'), true, 55),
-    new Event(20, 'Confiance en soi', false, new Date('2024-06-19'), true, 55),
-    new Event(21, 'Gestion des émotions et du stress', false, new Date('2024-06-22'), false, 55),
-    new Event(22, 'Prendre sa place', false, new Date('2024-07-06'), false, 55),
-    new Event(23, 'Parents/Enfants - Confiance, communication et émotions', false, new Date('2024-07-27'), false, 55),
-    new Event(24, 'Cultiver sa différence (Spécial TSA, HPI, TDAH, Dys)', false, new Date('2024-08-03'), false, 55),
-    new Event(12, 'Reconnexion à soi', true, new Date('2023-05-18'), false, 55),
-    new Event(11, 'Mon projet professionnel', true, new Date('2023-05-15'), false, 55),
-]
+const events: Event[] = eventList;
 const pastEvents: Event[] = []
 const futureEvents: Event[] = []
 const futureEventsSeo: [] = []
@@ -56,7 +42,7 @@ events.forEach((event: Event): void => {
             organizer : {
                 "@id":"https://ibf-equicoaching.com/#organization",
             },
-            "description" : "Equicoaching : " + event.name,
+            "description" : event.descr,
             "image": "https://www.ibf-equicoaching.com/img/seminaire-320x320.webp",
             "eventAttendanceMode" : "https://schema.org/OfflineEventAttendanceMode",
             offers: {
@@ -224,7 +210,12 @@ if(futureEventsSeo && futureEventsSeo.length > 0){
                     <PanelEvent title={eventFullName}
                                 id={event.id}
                     >
-                        <Fragment slot="panel-content">
+                        <Fragment slot="panel-content-1">
+                            <p>
+                                {event.descr}
+                            </p>
+                        </Fragment>
+                        <Fragment slot="panel-content-2">
                             <p>Tarif : {event.price > 0 ? event.price + '€/pers' : 'Gratuit'}</p>
                             <p>
                                 Inscriptions au 06.10.83.37.88, par mail via ibf.equicoaching@gmail.com, ou par le

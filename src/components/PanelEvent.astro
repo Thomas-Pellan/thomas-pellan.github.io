@@ -14,7 +14,10 @@ const {id, title} = Astro.props;
     <div class="m-panel-content" id=`panel-content${id ? '-' + id : ''}`>
         <div class="m-panel-content-event">
             <div class="m-panel-content-slot">
-                <slot name="panel-content" />
+                <slot name="panel-content-1" />
+            </div>
+            <div class="m-panel-content-slot">
+                <slot name="panel-content-2" />
             </div>
         </div>
     </div>
