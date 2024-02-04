@@ -5,6 +5,7 @@ subTitle: Qualiopi, qu'est ce que c'est ? Que représente cette certification po
 response: L'obtention de la certification Qualiopi pour nos formations IBF Equicoaching, signifie que ces formations répondent à un ensemble de critères de qualité définis par les autorités compétentes.
 keywords: equicoaching, certification, qualiopi, opco, financement, formation, qualité, amélioration continue
 image: https://www.ibf-equicoaching.com/img/formation-320x320.webp
+word: 294
 ---
 **La certification Qualiopi** est un **label de qualité** introduit en France dans le cadre de la réforme de la formation professionnelle. Elle a été mise en place pour garantir la qualité des formations proposées par les organismes de formation. La certification Qualiopi vise à évaluer et à reconnaître les compétences des prestataires de formation, en particulier leur capacité à dispenser des formations de qualité.
 

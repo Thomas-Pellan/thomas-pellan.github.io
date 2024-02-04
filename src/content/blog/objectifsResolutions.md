@@ -5,6 +5,7 @@ subTitle: Ça y est, une nouvelle année vient de commencer. Et avec elle, le tr
 response: 1 - La formulation positive / 2 - Savoir pourquoi / 3 - Bien définir son Objectif / 4 - Ne pas voir trop grand tout de suite / 5 - Se motiver en se projetant / 6 - Pas tout à la fois
 keywords: equicoaching, bonnes résolutions, changement, nouvelle année
 image: https://www.ibf-equicoaching.com/img/resolution-320x320.webp
+word: 693
 ---
 
 Résolutions ou objectifs, cela revient au même, on veut changer quelque chose dans notre vie. Le problème c’est que

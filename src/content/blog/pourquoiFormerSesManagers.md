@@ -11,6 +11,7 @@ callToAction: [
 response: Pour faire face aux différents profils présents dans une équipe. Pour mieux fixer un objectif cohérent et le tenir. Pour être un meilleur leader.
 keywords: equicoaching, formation, qualiopi, certification, manager, leadership
 image: https://www.ibf-equicoaching.com/img/manager-320x320.webp
+word: 679
 ---
 Je ne vous l'apprends surement pas, mais le manager à un poste clé au sein de l'entreprise.
 

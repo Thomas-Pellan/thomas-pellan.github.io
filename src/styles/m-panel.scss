@@ -38,8 +38,10 @@
 
     &-event {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       line-height: 1.5rem;
 
       div {

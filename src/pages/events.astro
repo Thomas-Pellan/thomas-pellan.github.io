@@ -200,7 +200,7 @@ if(futureEventsSeo && futureEventsSeo.length > 0){
                         sur les suivants !</a>
                     </p>
             )}
-            {futureEvents.map(event => {
+            {futureEvents.map((event, index) => {
                 let eventFullName = ''
                 if (event.isDiscover) {
                     eventFullName += `Atelier découverte #${event.id} - `
@@ -222,18 +222,12 @@ if(futureEventsSeo && futureEventsSeo.length > 0){
                                 formulaire ci dessous.
                             </p>
                             <p>
-                                <a href="/blog/deroulement-atelier-decouverte">Comment se déroule un atelier en
-                                    équicoaching ?</a>
-                            </p>
-                            <p>
-                                <a href="/blog/equicoaching-quest-ce-que-cest">Qu'est ce que l'équicoaching ?</a>
-                            </p>
-                            <p>
-                                Une autre question ? <a href="/blog">Accédez a la faq</a>
-                            </p>
-                            <p>
+                                <a href="/blog/equicoaching-quest-ce-que-cest">Qu'est ce que l'équicoaching ?</a><br/>
+                                Une autre question ? <a href="/blog">Accédez a la faq</a><br/>
                                 Pour toute autre demande ou question : <a href="/contact">utilisez le formulaire de
-                                contact</a>
+                                contact</a><br/>
+                                <a href="/blog/deroulement-atelier-decouverte">Comment se déroule un atelier en
+                                    équicoaching ?</a><br/>
                             </p>
                         </Fragment>
                     </PanelEvent>

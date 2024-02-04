@@ -5,6 +5,7 @@ subTitle: Ces ateliers se déroulent sur 3h par petits groupes jusqu’à 6 pers
 response: Nous commençons l’atelier par un temps de présentation, d’échange, afin de savoir comment tout le monde se sent. Mais également pour poser un cadre dont nous décidons ensemble les contours, afin que tout le monde puisse évoluer en sécurité, tant par rapport aux chevaux qu’aux autres membres du groupe (confidentialité, confiance etc…).
 keywords: equicoaching, atelier, découverte, déroulement
 image: https://www.ibf-equicoaching.com/img/atelier-decouverte-2-320x320.webp
+word: 175
 ---
 Ouvert aux familles ou aux groupes [sur demande](/contact) (3 pers minimum) ou [sur inscription sur notre site internet rubrique « événements »](/events).
 

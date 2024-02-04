@@ -5,6 +5,7 @@ subTitle: Comment s'organiser pour faire passer un moment mémorable à ses coll
 response: Nous laissons place à 3h d’ateliers avec les chevaux jusqu’à la pause du midi et une reprise à 14h pour 3h d’ateliers l’après-midi
 keywords: equicoaching, team building, équipe, fun, solution
 image: https://www.ibf-equicoaching.com/img/seminaire-320x320.webp
+word: 493
 ---
 
 **1 – L’approche :**

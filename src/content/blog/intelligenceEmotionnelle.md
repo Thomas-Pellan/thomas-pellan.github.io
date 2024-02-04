@@ -5,6 +5,7 @@ subTitle: L’intelligence émotionnelle et son lien avec l'equicoaching
 response: L’intelligence émotionnelle c’est la capacité à percevoir, ressentir et identifier les émotions chez soi et chez les autres. Quel est le message qu’elles veulent faire passer ? Si nous l’écoutons notre émotion là tout de suite, que peut-elle vouloir nous dire sur nous, sur notre rapport au monde ?
 keywords: equicoaching, intelligence émotionnelle, émotions, intelligence
 image: https://www.ibf-equicoaching.com/img/img-jack-320x320.webp
+word: 485
 ---
 
 Une bonne question pour commencer cet article.
