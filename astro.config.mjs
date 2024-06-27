@@ -5,15 +5,16 @@ import compress from "astro-compress";
 import sitemap from '@astrojs/sitemap';
 import webmanifest from 'astro-webmanifest';
 import serviceWorker from 'astrojs-service-worker';
+import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.ibf-equicoaching.com',
+  site: 'https://www.ibf-equicoaching.com/',
   trailingSlash: 'never',
   build: {
     format: 'file'
   },
-  integrations: [vue(), astroImageTools, compress(), serviceWorker(), sitemap({
+  integrations: [vue(), astroImageTools, compress(), serviceWorker(), robotsTxt(), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
       item.lastmod = new Date();
