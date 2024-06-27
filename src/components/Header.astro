@@ -20,7 +20,7 @@ if(canonical){
 		if(url && url.includes('.html')) {
 			window.location.href = url.replace('.html', '');
 		}
-		if(url && url.length > 1 && url.charAt(url.length -1) === '/') {
+		if(url && url !== (window?.location?.origin + '/') && url.length > 1 && url.charAt(url.length -1) === '/') {
 			window.location.href = url.slice(0, -1); 
 		}
 	</script>
