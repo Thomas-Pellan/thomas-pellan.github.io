@@ -11,13 +11,19 @@ import SeparatorBg from "../components/SeparatorBg.astro";
 const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
 const image: Image = new Image('/img/what-is-equicoaching-550x550.webp', 'A qui s\adresse l\'équicoaching')
 const imageFormation: Image = new Image('/img/mouz-550x550.webp', 'En savoir plus sur nos formations')
-const actionsFirst: ButtonAction[] = [new ButtonAction('/blog', 'En savoir plus')]
+const actionsFirst: ButtonAction[] = [
+	new ButtonAction('/blog', 'En savoir plus'),
+	new ButtonAction('/about', 'A propos d\'IBF'),
+]
 const actionsSecond: ButtonAction[] = [
     new ButtonAction('/company', 'Entreprises'),
     new ButtonAction('/pricing-equicoaching', 'Particuliers')
 ]
-const actionsThird: ButtonAction[] = [new ButtonAction('/pricing-training', 'Plus d\'informations')]
-const seoData: Seo = new Seo('IBF Equicoaching | Coaching et Formations', 'Découvrez le développement personnel autrement. Envie d\'une relation différente avec le cheval ? Séances proches de Grenoble et Chambéry.', false)
+const actionsThird: ButtonAction[] = [new ButtonAction('/pricing-training', 'Renseignements et programmes de formations')]
+const seoData: Seo = new Seo(
+'IBF Equicoaching | Coaching et Formations', 
+'Formations et séances équicoaching pour entreprises et particuliers', 
+false)
 
 const seoSchema = {
     "@context": "https://schema.org",
@@ -350,22 +356,52 @@ const seoSchema = {
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actionsFirst}>
             <h2 slot="section-title">Qu'est ce que l'équicoaching ?</h2>
             <Fragment slot="section-content">
-                <p>L’equicoaching se base sur un <strong>processus de coaching</strong>, c’est à dire d’accompagnement
-                    au changement vers un objectif défini.</p>
-                <p> Le cheval est intégré à ce processus en tant que partenaire et médiateur.</p>
-                <p> Doté d’une grande intelligence émotionnelle et étant un excellent révélateur de nos comportements,
-                    le cheval va jouer le rôle de catalyseur lors des séances de coaching.</p>
+                <p>
+                	L’equicoaching se base sur un <strong>processus de coaching</strong>, c’est à dire d’accompagnement
+                    	au changement vers un objectif défini.
+                </p>
+                <p> 
+                	Le cheval est intégré à ce processus en tant que partenaire et médiateur.
+                </p>
+                <p> 
+                	Doté d’une grande intelligence émotionnelle et étant un excellent révélateur de nos comportements,
+                    	le cheval va jouer le rôle de catalyseur lors des séances de coaching. 
+                    	Mirroir de nos émotions et de nos comportements, le cheval sert d'accompagnant dans le processus de prise de conscience et va faire travailler le coaché sur sa congruence.
+                </p>
+                <p>
+                	L'équicoaching ou <strong>coaching équin</strong> prend ses racines dans <strong>l'éthologie équine</strong>. 
+                	Cet ensemble de savoirs découle de l'observation des chevaux et de leurs comportements à l'état sauvage et domestiquee.<br/>Effectués à partir des années 1970 par des "chuchoteurs" 
+                	aux Etats Unis en réaction aux anciennes techniques de dressage violentes, 
+                	ces apprentissages visant à acquerir la confiance des animaux vont déboucher sur <strong>une meilleure connaissance de l'humain et de sa manière de se présenter à l'autre (communication non verbale)</strong>.
+                </p>
+                <p>
+                Dans les années 1990, la rencontre de dirigeants d'entreprises et de chuchoteurs donne lieu a des expérimentations comme au sein du groupe Wolkswagen. 
+                	Importée en Europe dans les années 2010, ces techniques sont depuis utilisés par de nombreuses entreprises pour former leurs cadres à des eujeux de l'entreprise et de la gestion d'équipes.
+                </p>
+                <p>
+                	<strong>Depuis 2021, cette compétence est reconnue par <a href="https://www.francecompetences.fr/recherche/rs/6638/" target="_blank">l'état</a>. </strong>
+                </p>
             </Fragment>
         </Section>
         <SeparatorBgValues/>
         <Section subTitle={secondSubTitle} imgContent={image} actions={actionsSecond}>
             <h3 slot="section-title">A qui s'adresse l'équicoaching ?</h3>
             <Fragment slot="section-content">
-                <p>Vous voulez aller de l’avant ? Avoir plus confiance en vous ? Mieux gérer vos émotions ? Mieux
+                <p>
+                	Vous voulez aller de l’avant ? Avoir plus confiance en vous ? Mieux gérer vos émotions ? Mieux
                     communiquer ? Développer votre puissance personnelle ?
-                    Vous lancer dans un nouveau projet ? Ou tout simplement prendre un temps pour vous ? </p>
-                <p>Entreprises, vous souhaitez développer la cohésion dans votre équipe ? Mieux communiquer ? Développer
-                    votre leadership ? </p>
+                    Vous lancer dans un nouveau projet ? Ou tout simplement prendre un temps pour vous ? 
+                </p>
+                <p>
+                	L'équicoaching est un outil puissant qui vous aidera à mieux vous connaitre.
+                </p>
+                <p>
+                	Entreprises, vous souhaitez développer la cohésion dans votre équipe ? Mieux communiquer ? Développer
+                    votre leadership ? 
+                </p>
+                <p>
+                	EDF, AXA, Kenzo, L’Oréal... de nombreux groupes Français et internationaux utilisent déjà l'équicoaching pour former leurs collaborateurs. Tentez l'expérience ! 
+                </p>
             </Fragment>
         </Section>
         <SeparatorBg></SeparatorBg>
@@ -378,13 +414,25 @@ const seoSchema = {
                      d'épanouissement professionnel.
                 </p>
                 <p>
-                    3 formations sont disponibles :
+                    Nos trois programmes de formations vous permettrons d'augmenter le bien être et la puissance de votre équipe ou de vos collaborateurs : 
                 </p>
-                <ul>
-                    <li>Posture Managériale et Leadership</li>
-                    <li>Cohésion et Communication</li>
-                    <li>Developper ses Soft Skills</li>
-                </ul>
+                <p>
+                	<strong>Posture Managériale et Leadership :</strong> 
+                	Apprenez à manager une équipe avec assertivité, prenez conscience de votre leadership sur cette journée de formation pour mieux vous adapter aux situations et profils rencontrés dans votre quotidien.
+                	Découvrez ou redécouvrez comment fixer des objectifs et accompagner vos équipes vers leur réalisation.
+                </p>
+                <p>
+                	<strong>Cohésion et Communication :</strong> 
+                	Prenez ou affirmez votre place ou les places de vos collaborateurs au sein de votre équipe. 
+                	Cette journée de formation est centrée sur le mode de fonctionnement de votre équipe et de ses membres. 
+                	Augmentez votre connaissance du groupe et adaptez votre comportement et vos décisions au collectif.
+                	Apprenez
+                </p>
+                <p>
+                	<strong>Developper ses Soft Skills :</strong> 
+                	Appliquée à un ou plusieurs collaborateurs ou a des particuliers, 
+                	cette formation vise à mieux comprendre et prendre en compte ses besoins et ses émotions pour augmenter leur confiance personnelle et mieux prendre des décisions au quotidien. 
+                </p>
             </Fragment>
         </Section>
     </main>
