@@ -15,7 +15,7 @@ const willRedirect = !!(origin.length > 0 && origin !== '/' && (origin.includes(
 	{!willRedirect && (
 		<body class="body">
 		    <slot />
-			<script>
+			<script type="module">
 				import '../scripts/worker-pwa.js';
 		   import '../scripts/menu-mobile.js';
 		   import '../scripts/sub-menu.js';
