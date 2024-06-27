@@ -15,15 +15,15 @@ const willRedirect = !!(origin.length > 0 && origin !== '/' && (origin.includes(
 	{!willRedirect && (
 		<body class="body">
 		    <slot />
-			<script type="module">
-				import '../scripts/worker-pwa.js';
-		   import '../scripts/menu-mobile.js';
-		   import '../scripts/sub-menu.js';
-		   import '../scripts/panel.js';
-		</script>
 		</body>
 		<Footer />
 	)}
+	<script>
+		import '../scripts/worker-pwa.js';
+	   	import '../scripts/menu-mobile.js';
+	   	import '../scripts/sub-menu.js';
+	   	import '../scripts/panel.js';
+	</script>
 </html>
 <style is:global>
 	:root {
