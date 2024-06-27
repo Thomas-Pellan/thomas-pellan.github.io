@@ -21,7 +21,7 @@ En résumé, la certification Qualiopi est un label de qualité qui atteste que 
 
 **Mise à jour - 06/2024**
 
-Faute de formés sur l'année 2023/2024, IBF Equicoaching n'a pas été en mesure de concerver sa certification Qualiopi et ne la renouvellera pas de par la lourdeur administrative et finanicère du processus de labélisation. 
+Faute de formés sur l'année 2023/2024, IBF Equicoaching n'a pas été en mesure de conserver sa certification Qualiopi et ne la renouvellera pas de par la lourdeur administrative et finanicère du processus de labélisation. 
  
 La qualité de nos formations et leur contenu reste inchangé. De même, je reste toujours soucieuse de respecter les directives fixées par Qualiopi afin que nos formations restent le plus qualitatives possible.
 

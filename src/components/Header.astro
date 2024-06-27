@@ -15,6 +15,15 @@ if(canonical){
 }
 ---
 <head class="m-header">
+	<script type="text/javascript" >
+		var url = window?.location?.href
+		if(url && url.includes('.html')) {
+			window.location.href = url.replace('.html', '');
+		}
+		if(url && url.length > 1 && url.charAt(url.length -1) === '/') {
+			window.location.href = url.slice(0, -1); 
+		}
+	</script>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width"/>
 	<Icons/>

@@ -1,5 +1,5 @@
 ---
-import HeaderWithRedirect from '../components/HeaderWithRedirect.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const { title, lang, seoData, seoSchema } = Astro.props;
@@ -7,7 +7,7 @@ const { title, lang, seoData, seoSchema } = Astro.props;
 
 <!DOCTYPE html>
 <html lang={lang ? lang : 'fr'}>
-	<HeaderWithRedirect title={title} seoData={seoData} seoSchema={seoSchema}/>
+	<Header title={title} seoData={seoData} seoSchema={seoSchema}/>
 	<body class="body">
 	    <slot />
 	</body>
