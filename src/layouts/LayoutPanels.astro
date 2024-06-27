@@ -12,7 +12,7 @@ const willRedirect = !!(origin.length > 0 && origin !== '/' && (origin.includes(
 <!DOCTYPE html>
 <html lang={lang ? lang : 'fr'}>
 	<HeaderWithRedirect title={title} seoData={seoData} seoSchema={seoSchema}/>
-	{!willRedirect === 'false' && (
+	{!willRedirect && (
 		<body class="body">
 		    <slot />
 			<script>
