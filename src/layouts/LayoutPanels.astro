@@ -6,7 +6,7 @@ const { title, lang, seoData, seoSchema } = Astro.props;
 
 //Workaround to force redirect and not load any content on .html or trailing slash paths to avoid duplicate google content
 const origin: string = Astro.url.pathname;
-const willRedirect: boolean = !!(origin.length > 0 && origin !== '/' && (origin.includes('.html') || origin.charAt(origin.length - 1) === '/'));
+const willRedirect = !!(origin.length > 0 && origin !== '/' && (origin.includes('.html') || origin.charAt(origin.length - 1) === '/'));
 ---
 
 <!DOCTYPE html>
