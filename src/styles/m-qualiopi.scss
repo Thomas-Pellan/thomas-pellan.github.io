@@ -1,4 +1,6 @@
 @import 'src/styles/common/_spaces';
+@import 'src/styles/common/_colors';
+
 
 .m-qualiopi {
   display: flex;
@@ -6,4 +8,13 @@
   justify-content: center;
   align-items: center;
   margin: $space-B;
+  
+  &-link {
+  	font-size: 0.8rem;
+  	color: $color-primary;
+  }
+  
+  &-link:hover {
+  	color: $color-light-red;
+  }
 }

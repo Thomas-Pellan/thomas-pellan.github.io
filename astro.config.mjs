@@ -8,7 +8,7 @@ import serviceWorker from 'astrojs-service-worker';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.ibf-equicoaching.com',
+  site: 'https://www.ibf-equicoaching.com/',
   trailingSlash: 'never',
   build: {
     format: 'file'
@@ -84,6 +84,8 @@ export default defineConfig({
     '/map/charte-accessibilite': '/charte-accessibilite',
     '/map/company': '/company',
     '/map/events': '/events',
+    '/avis': '/',
+    '/partners/index': '/partners',
     '/map/map': '/map',
     '/map/about': '/about',
     '/map/pricing-training': '/pricing-training',

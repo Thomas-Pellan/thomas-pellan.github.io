@@ -15,36 +15,37 @@ if(canonical){
 }
 ---
 <head class="m-header">
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <Icons/>
-    {seoData && (
-            <SEO
-                    canonical={canonical}
-                    title={seoData.title}
-                    description={seoData.description}
-                    noindex={seoData.noindex}/>)}
-    <link rel="sitemap" href="/sitemap-index.xml">
-    <meta name="generator" content={Astro.generator}/>
-    <Schema item={seoSchema}/>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width"/>
+	<Icons/>
+	{seoData && (
+	    <SEO
+		    canonical={canonical}
+		    title={seoData.title}
+		    description={seoData.description}
+		    noindex={seoData.noindex}/>
+	)}
+	<link rel="sitemap" href="/sitemap-index.xml">
+	<meta name="generator" content={Astro.generator}/>
+	<Schema item={seoSchema}/>
 
-    <title>{title}</title>
+	<title>{title}</title>
 
-    <a href="/" class="m-header-title">
-        <Image
-                src="/img/logo-50x50.webp"
-                format="webp"
-                width="50"
-                height="50"
-                alt="logo-ibf-equicoaching"
-        />
-        <p class="m-header-title-text">IBF Equicoaching</p>
-    </a>
-    <div class="m-header-line"/>
-    <Icon class="m-header-icon hidden" name="ic:baseline-close"/>
-    <Icon class="m-header-icon" name="ic:round-menu"/>
-    <nav class="m-header-menu">
-        <Menu/>
-    </nav>
-    <div class="m-header-mobile-overlay hidden"/>
+	<a href="/" class="m-header-title">
+	<Image
+		src="/img/logo-50x50.webp"
+		format="webp"
+		width="50"
+		height="50"
+		alt="logo-ibf-equicoaching"
+	/>
+	<p class="m-header-title-text">IBF Equicoaching</p>
+	</a>
+	<div class="m-header-line"/>
+	<Icon class="m-header-icon hidden" name="ic:baseline-close"/>
+	<Icon class="m-header-icon" name="ic:round-menu"/>
+	<nav class="m-header-menu">
+	<Menu/>
+	</nav>
+	<div class="m-header-mobile-overlay hidden"/>
 </head>

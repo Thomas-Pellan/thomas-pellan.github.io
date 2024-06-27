@@ -1,0 +1,26 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/m-header.scss';
+
+const {title, seoData, seoSchema} = Astro.props;
+
+//Redirect on .html and trailing slash routes for google bot
+const origin: string = Astro.url.pathname;
+let path: string = Astro.url.pathname;
+if(path && path.length > 1) {
+	if(path.includes('.html')) {
+		path = path.replace('.html', '');
+	}
+	if(path.charAt(path.length - 1) === '/') {
+		path = path.slice(0, -1); 
+	}
+}
+---
+{path !== origin && (
+	<head class="m-header">
+		<meta http-equiv="refresh" content=`0;url=${path}` />
+	</head>
+)}
+{path === origin && (
+	<Header title={title} seoData={seoData} seoSchema={seoSchema}/>
+)}
