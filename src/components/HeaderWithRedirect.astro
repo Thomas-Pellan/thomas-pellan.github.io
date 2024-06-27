@@ -16,11 +16,6 @@ if(path && path.length > 1) {
 	}
 }
 ---
-{path !== origin && (
-	<head class="m-header">
-		<meta http-equiv="refresh" content=`0;url=${path}` />
-	</head>
-)}
 {path === origin && (
 	<Header title={title} seoData={seoData} seoSchema={seoSchema}/>
 )}
