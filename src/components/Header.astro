@@ -17,10 +17,20 @@ if(canonical){
 <head class="m-header">
 	<script type="text/javascript" >
 		var url = window?.location?.href;
-		if(url && url.includes('.html')) {
+		const hasHtmlExtension = !!(url && url.includes('.html'));
+		const hasSlashTrailing = !!(url && url !== (window?.location?.origin + '/') && url.length > 1 && url.charAt(url.length -1) === '/');
+		if(hasHtmlExtension || hasSlashTrailing) {
+			const metaRobots = document.createElement('meta');
+			metaRobots.name = 'robots';
+			metaRobots.content = 'noindex';
+			document.head.appendChild(metaRobots);
+		}
+	</script>
+	<script type="text/javascript">
+		if(hasHtmlExtension) {
 			window.location.href = url.replace('.html', '');
 		}
-		if(url && url !== (window?.location?.origin + '/') && url.length > 1 && url.charAt(url.length -1) === '/') {
+		if(hasSlashTrailing) {
 			window.location.href = url.slice(0, -1); 
 		}
 	</script>
