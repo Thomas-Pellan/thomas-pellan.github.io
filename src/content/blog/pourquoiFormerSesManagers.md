@@ -9,7 +9,7 @@ callToAction: [
   }
 ]
 response: Pour faire face aux différents profils présents dans une équipe. Pour mieux fixer un objectif cohérent et le tenir. Pour être un meilleur leader.
-keywords: equicoaching, formation, qualiopi, certification, manager, leadership
+keywords: equicoaching, formation, manager, leadership
 image: https://www.ibf-equicoaching.com/img/manager-320x320.webp
 word: 679
 ---
@@ -47,7 +47,5 @@ Comment faire face aux différents profils présents dans une équipe ? Comment 
   Grâce à la partie *"Savoir fixer des objectifs."* présente dans nos formations *Posture managériale et leadership* vous pourrez répondre à ces questions avec le feedback direct du cheval.
 
 Alors, envie de vous former au management autrement ?
-
-*Notre centre de formation  IBF Equicoaching est [certifié Qualiopi](/blog/certification-qualiopi) !*
 
 *Crédit: Camille MARZEC*

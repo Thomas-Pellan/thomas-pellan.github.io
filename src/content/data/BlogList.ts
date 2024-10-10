@@ -12,9 +12,9 @@ export const blogList = [
         imgSrc: '/img/manager-320x320.webp',
     },
     {
-        title: 'Certification Qualiopi et IBF Equicoaching',
+        title: 'Certification Qualiopi',
         link: '/blog/certification-qualiopi',
-        html: '<p>Qualiopi, qu\'est ce que c\'est ? Que représente cette certification pour nos formations ?</p>',
+        html: '<p>Qualiopi, qu\'est ce que c\'est ?</p>',
         imgSrc: '/img/formation-320x320.webp',
     },
     {

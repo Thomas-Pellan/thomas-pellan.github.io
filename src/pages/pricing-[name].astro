@@ -5,7 +5,6 @@ import PriceTile from '../components/PriceTile.astro'
 import '../styles/m-main.scss'
 import Seo from '../class/Seo'
 import ReturnAction from '../class/ReturnAction'
-import Qualiopi from '../components/Qualiopi.astro'
 export function getStaticPaths() {
     return [
         {
@@ -18,7 +17,7 @@ export function getStaticPaths() {
                         number: 1,
                         title: 'Posture Managériale et Leadership',
                         points: ['Managers et responsables', 'Seniors, Juniors ou en formation', 'Equipes ou inter entreprises'],
-                        actions: [{link: '/program/manager-leadership', title: 'En savoir plus'}, {
+                        actions: [{
                             link: '/contact',
                             title: 'Reservez'
                         }]
@@ -27,7 +26,7 @@ export function getStaticPaths() {
                         number: 2,
                         title: 'Cohésion et Communication',
                         points: ['Equipes', 'Apprenez à communiquer autrement', 'Developpez la cohésion de vos équipes'],
-                        actions: [{link: '/program/cohesion-communication', title: 'En savoir plus'}, {
+                        actions: [{
                             link: '/contact',
                             title: 'Reservez'
                         }]
@@ -36,7 +35,7 @@ export function getStaticPaths() {
                         number: 3,
                         title: 'Developper ses Soft Skills',
                         points: ['Equipes ou en individuel', 'Intelligence émotionnelle', 'Gestion des émotions'],
-                        actions: [{link: '/program/soft-skills', title: 'En savoir plus'}, {
+                        actions: [{
                             link: '/contact',
                             title: 'Reservez'
                         }]
@@ -486,9 +485,6 @@ const seoSchema = {
         <div class="m-main">
             <h2 class="m-main-title">{subTitle}</h2>
             <span class="m-main-sub-title">Quels que soit vos objectifs et vos besoins.</span>
-            {title === 'Formations' && (
-                <Qualiopi />
-            )}
             <div class="m-main-wrapper">
                 {descriptions && descriptions.map(description => (
                         <PriceTile data={description}/>))}

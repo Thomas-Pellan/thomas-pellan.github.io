@@ -1,9 +1,9 @@
 ---
 slug: certification-qualiopi
-title: Certification Qualiopi et IBF Equicoaching
-subTitle: Qualiopi, qu'est ce que c'est ? Que représente cette certification pour nos formations ?
-response: L'obtention de la certification Qualiopi pour nos formations IBF Equicoaching, signifie que ces formations répondent à un ensemble de critères de qualité définis par les autorités compétentes.
-keywords: equicoaching, certification, qualiopi, opco, financement, formation, qualité, amélioration continue
+title: Certification Qualiopi
+subTitle: Qualiopi, qu'est ce que c'est ? Que représente cette certification ?
+response: Cela signifie que ces formations répondent à un ensemble de critères de qualité définis par les autorités compétentes.
+keywords: equicoaching, certification, financement, formation, qualité, amélioration continue
 image: https://www.ibf-equicoaching.com/img/formation-320x320.webp
 word: 294
 ---
@@ -11,7 +11,7 @@ word: 294
 
 **Dans le contexte spécifique de l'équicoaching, la certification Qualiopi est particulièrement pertinente.** L'équicoaching et son approche combinant l'utilisation des chevaux et des techniques de coaching, présente des **avantages uniques en termes d'apprentissage et de croissance personnelle ou professionnelle.**
 
-L'obtention de la certification Qualiopi pour nos formations IBF Equicoaching, signifie que ces formations répondent à un ensemble de critères de qualité définis par les autorités compétentes. Ces critères portent notamment sur l'adéquation des programmes de formation aux **besoins des apprenants, la qualification du ou des formateurs, les moyens pédagogiques mis en œuvre, l'évaluation des acquis, la satisfaction des personnes formées,** etc...
+L'obtention de la certification Qualiopi pour une ou des formations signifie que ces formations répondent à un ensemble de critères de qualité définis par les autorités compétentes. Ces critères portent notamment sur l'adéquation des programmes de formation aux **besoins des apprenants, la qualification du ou des formateurs, les moyens pédagogiques mis en œuvre, l'évaluation des acquis, la satisfaction des personnes formées,** etc...
 
 Cette certification est également un gage de qualité obligatoire pour certains **[organismes de financements](https://www.opco.fr/info/definition-dun-opco)** de formations professionnelles.
 
@@ -26,14 +26,6 @@ Faute de formés sur l'année 2023/2024, IBF Equicoaching n'a pas été en mesur
 La qualité de nos formations et leur contenu reste inchangé. De même, je reste toujours soucieuse de respecter les directives fixées par Qualiopi afin que nos formations restent le plus qualitatives possible.
 
 [Découvrez nos formations !](/pricing-training)
-
-**Contenu de nos formations :**
-
-[Posture Managériale et Leadership](/program/manager-leadership)
-
-[Cohésion et Communication](/program/cohesion-communication)
-
-[Developper ses Soft Skills](/program/soft-skills)
 
 *Credit : Camille Marzec*
 
