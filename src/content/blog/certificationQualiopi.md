@@ -15,13 +15,13 @@ L'obtention de la certification Qualiopi pour une ou des formations signifie que
 
 Cette certification est également un gage de qualité obligatoire pour certains **[organismes de financements](https://www.opco.fr/info/definition-dun-opco)** de formations professionnelles.
 
-Cette certification favorise l'amélioration continue des formations en équicoaching. En tant que certifié, IBF Equicoaching doit régulièrement se soumettre à des audits et à des évaluations pour maintenir cette certification. Cela nous pousse à améliorer constamment nos pratiques pédagogiques, à rester à jour par rapport aux nouvelles méthodes et découvertes dans le domaine de l'équicoaching, et à nous adapter aux besoins changeants des apprenants.
+Cette certification favorise l'amélioration continue des formations en équicoaching. En tant que certifié, un centre de formation doit régulièrement se soumettre à des audits et à des évaluations pour maintenir cette certification. Cela pousse à améliorer constamment les pratiques pédagogiques, à rester à jour par rapport aux nouvelles méthodes et découvertes dans le domaine de formation du centre, et à s'adapter aux besoins changeants des apprenants.
 
-En résumé, la certification Qualiopi est un label de qualité qui atteste que nos formations en équicoaching répondent à des **critères de qualité élevés.** Elle offre des garanties aux apprenants et facilite l'accès aux financements. Cette certification est un gage de professionnalisme et de confiance attribué à IBF Equicoaching.
+En résumé, la certification Qualiopi est un label de qualité qui atteste que les formations répondent à des **critères de qualité élevés.** Elle offre des garanties aux apprenants et facilite l'accès aux financements. Cette certification est un gage de professionnalisme et de confiance attribué aux organismes certifiés.
 
 **Mise à jour - 06/2024**
 
-Faute de formés sur l'année 2023/2024, IBF Equicoaching n'a pas été en mesure de conserver sa certification Qualiopi et ne la renouvellera pas de par la lourdeur administrative et finanicère du processus de labélisation. 
+IBF Equicoaching ne renouvellera pas sa certification Qualiopi post année 2023/2024 de par la lourdeur administrative et finanicère du processus de labélisation. 
  
 La qualité de nos formations et leur contenu reste inchangé. De même, je reste toujours soucieuse de respecter les directives fixées par Qualiopi afin que nos formations restent le plus qualitatives possible.
 
