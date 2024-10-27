@@ -74,4 +74,6 @@ sur vos relations aux autres et vous mettre face à vous-même.
 En cela le cheval est un excellent professeur en ce qui concerne l’intelligence émotionnelle en plus de tous les autres
 apprentissages qu’il peut nous apporter.
 
+[Découvrez nos prestations !](/service)
+
 *Credit : Camille Marzec*

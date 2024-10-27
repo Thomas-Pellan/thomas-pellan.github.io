@@ -2,12 +2,6 @@
 slug: pourquoi-former-ses-managers
 title: Pourquoi former ses managers grâce à l'equicoaching ?
 subTitle: Tout d'abord, pourquoi former ses managers ?
-callToAction: [
-  {
-    label: Je me forme !,
-    link: /program/manager-leadership
-  }
-]
 response: Pour faire face aux différents profils présents dans une équipe. Pour mieux fixer un objectif cohérent et le tenir. Pour être un meilleur leader.
 keywords: equicoaching, formation, manager, leadership
 image: https://www.ibf-equicoaching.com/img/manager-320x320.webp
@@ -47,5 +41,7 @@ Comment faire face aux différents profils présents dans une équipe ? Comment 
   Grâce à la partie *"Savoir fixer des objectifs."* présente dans nos formations *Posture managériale et leadership* vous pourrez répondre à ces questions avec le feedback direct du cheval.
 
 Alors, envie de vous former au management autrement ?
+
+[Découvrez nos prestations !](/service)
 
 *Crédit: Camille MARZEC*

@@ -10,19 +10,18 @@ import SeparatorBg from "../components/SeparatorBg.astro";
 
 const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
 const image: Image = new Image('/img/what-is-equicoaching-550x550.webp', 'A qui s\adresse l\'équicoaching')
-const imageFormation: Image = new Image('/img/mouz-550x550.webp', 'En savoir plus sur nos formations')
+const imageThird: Image = new Image('/img/mouz-550x550.webp', 'Exhale')
 const actionsFirst: ButtonAction[] = [
 	new ButtonAction('/blog', 'En savoir plus'),
 	new ButtonAction('/about', 'A propos d\'IBF'),
 ]
 const actionsSecond: ButtonAction[] = [
-    new ButtonAction('/company', 'Entreprises'),
     new ButtonAction('/pricing-equicoaching', 'Particuliers')
 ]
-const actionsThird: ButtonAction[] = [new ButtonAction('/pricing-training', 'Renseignements et programmes de formations')]
+const actionsThird: ButtonAction[] = [new ButtonAction('/exhale-program', 'En savoir plus')]
 const seoData: Seo = new Seo(
 'IBF Equicoaching | Coaching et Formations', 
-'Formations et séances équicoaching pour entreprises et particuliers', 
+'Séances équicoaching et coaching pour particuliers',
 false)
 
 const seoSchema = {
@@ -56,12 +55,12 @@ const seoSchema = {
             about: {
                 "name": "IBF Equicoaching"
             },
-            "description": "Formations et séances d'équicoaching pour entreprises et particuliers",
+            "description": "Formations et séances d'équicoaching et de coaching pour particuliers",
             audience: {
                 "@id": "https://ibf-equicoaching.com/#audience",
             },
             datePublished: "2019-01-01T10:30:52+00:00 UTC+00:00",
-            "alternateName": "Equicoaching et Formations",
+            "alternateName": "Equicoaching et Coaching",
             isFamilyFriendly: true,
             publisher: {
                 "@id": "https://ibf-equicoaching.com/#organization"
@@ -102,161 +101,16 @@ const seoSchema = {
         {
             "@type": "OfferCatalog",
             "@id": "https://ibf-equicoaching.com/#offerCatalog",
-            "name": "Prestations et Formations",
-            "description": "Formations pour managers, équipes ou en individuel. Prestation et séances d'équicoaching sur mesure.",
-            "itemListElement": [
-                {
-                    "@id": "https://ibf-equicoaching.com/#offerCatalogEquicoaching",
-                },
-                {
-                    "@id": "https://ibf-equicoaching.com/#offerCatalogEquitation",
-                },
-                {
-                    "@id": "https://ibf-equicoaching.com/#offerFormation",
-                }
-            ]
-        },
-        {
-            "@type": "OfferCatalog",
-            "@id": "https://ibf-equicoaching.com/#offerFormation",
-            "name": "Formations",
-            "description": "Formations pour managers, équipes ou en individuel",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Posture Managériale et Leadership",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Posture Managériale et Leadership",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                    ],
-                    "price": 800,
-                    "priceCurrency": "EUR",
-                },
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Cohésion et Communication",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Cohésion et Communication",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                    ],
-                    "price": 800,
-                    "priceCurrency": "EUR",
-                },
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Developper ses Soft Skills",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Developper ses Soft Skills",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                    ],
-                    "price": 800,
-                    "priceCurrency": "EUR",
-                }
-            ]
-        },
-        {
-            "@type": "OfferCatalog",
-            "@id": "https://ibf-equicoaching.com/#offerCatalogEquitation",
-            "name": "Prestations Equitation",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Cours Collectif Equitation, 4 personnes max, en centre équestre uniquement",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Cours Collectif Equitation",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#Cash"
-                        }
-                    ],
-                    "price": 35,
-                    "priceCurrency": "EUR",
-                },
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Cours Particulier Equitation, en centre équestre uniquement",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Cours Particulier Equitation",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#Cash"
-                        }
-                    ],
-                    "price": 50,
-                    "priceCurrency": "EUR",
-                }
-            ]
-        },
-        {
-            "@type": "OfferCatalog",
-            "@id": "https://ibf-equicoaching.com/#offerCatalogEquicoaching",
             "name": "Prestations Equicoaching",
             "itemListElement": [
                 {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "description": "Atelier découverte Equicoaching, 6 personnes max",
+                    "description": "Séance Individuelle sur des thématiques de coaching",
                     "seller": {
                         "@id": "https://ibf-equicoaching.com/#organization",
                     },
-                    "name": "Atelier découverte Equicoaching",
+                    "name": "Séance Individuelle Coaching",
                     "acceptedPaymentMethod": [
                         {
                             "@type": "PaymentMethod",
@@ -271,13 +125,13 @@ const seoSchema = {
                             "@id": "http://purl.org/goodrelations/v1#Cash"
                         }
                     ],
-                    "price": 55,
+                    "price": 120,
                     "priceCurrency": "EUR",
                 },
                 {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "description": "Séance Individuelle Equicoaching",
+                    "description": "Séance Individuelle sur des thématiques Equicoaching",
                     "seller": {
                         "@id": "https://ibf-equicoaching.com/#organization",
                     },
@@ -296,17 +150,17 @@ const seoSchema = {
                             "@id": "http://purl.org/goodrelations/v1#Cash"
                         }
                     ],
-                    "price": 80,
+                    "price": 120,
                     "priceCurrency": "EUR",
                 },
                 {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "description": "Forfait 5 séances Equicoaching",
+                    "description": "Programme de suivi pour les personnes souffrant d'épuisement professionnel ou de burn out",
                     "seller": {
                         "@id": "https://ibf-equicoaching.com/#organization",
                     },
-                    "name": "Forfait 5 séances Equicoaching",
+                    "name": "Programme Exhale",
                     "acceptedPaymentMethod": [
                         {
                             "@type": "PaymentMethod",
@@ -321,7 +175,7 @@ const seoSchema = {
                             "@id": "http://purl.org/goodrelations/v1#Cash"
                         }
                     ],
-                    "price": 350,
+                    "price": 1200,
                     "priceCurrency": "EUR",
                 }
             ]
@@ -352,7 +206,7 @@ const seoSchema = {
 
 <Layout title="Equicoaching | Coaching Par Le Cheval | Grenoble et Chambéry" seoData={seoData} seoSchema={seoSchema}>
     <main>
-        <Title title="Equicoaching et Formations"/>
+        <Title title="Coaching et Equicoaching"/>
         <Section displayTextLeft="true" ytbLink="https://youtu.be/pgN6-mk2y4A" actions={actionsFirst}>
             <h2 slot="section-title">Qu'est ce que l'équicoaching ?</h2>
             <Fragment slot="section-content">
@@ -405,33 +259,28 @@ const seoSchema = {
             </Fragment>
         </Section>
         <SeparatorBg></SeparatorBg>
-        <Section displayTextLeft="true" imgContent={imageFormation} actions={actionsThird}>
-            <h3 slot="section-title">Nos formations</h3>
+        <Section displayTextLeft="true" imgContent={imageThird} actions={actionsThird}>
+            <h3 slot="section-title">Le programme Exhale</h3>
             <Fragment slot="section-content">
                 <p>
-                    Combinant techniques de coaching et l'utilisation des chevaux, nos formations offrent des benefices inédits,
-                    que ce soit en termes d’apprentissage et de croissance personnelle ou
-                     d'épanouissement professionnel.
+                    Vous faites partie de ces personnes qui sont actives ? Vous n'arrivez pas ou vous avez du mal à dire non ou à déléguer ? Votre coté perfectionniste vous pousse sans cesse à faire plus ?
+                    Prendre du temps pour vous est compliqué ?
                 </p>
                 <p>
-                    Nos trois programmes de formations vous permettrons d'augmenter le bien être et la puissance de votre équipe ou de vos collaborateurs : 
+                    <strong>Et si vous ne vous écoutiez pas assez ?</strong>
                 </p>
                 <p>
-                	<strong>Posture Managériale et Leadership :</strong> 
-                	Apprenez à manager une équipe avec assertivité, prenez conscience de votre leadership sur cette journée de formation pour mieux vous adapter aux situations et profils rencontrés dans votre quotidien.
-                	Découvrez ou redécouvrez comment fixer des objectifs et accompagner vos équipes vers leur réalisation.
+                	Vous etes souvent fatigués sans raison apparente, parfois dès le matin. La motivation vous manque et l'anxiété vous gagne.
+                    Vous avez la boule au ventre en allant au travail...
                 </p>
                 <p>
-                	<strong>Cohésion et Communication :</strong> 
-                	Prenez ou affirmez votre place ou les places de vos collaborateurs au sein de votre équipe. 
-                	Cette journée de formation est centrée sur le mode de fonctionnement de votre équipe et de ses membres. 
-                	Augmentez votre connaissance du groupe et adaptez votre comportement et vos décisions au collectif.
-                	Apprenez
+                    Maux de tête, migraines, douleurs.... Ces symptômes vous parlent ? <strong>Ce sont les signes d'un épuisement professionnel ou burn-out.</strong>
                 </p>
                 <p>
-                	<strong>Developper ses Soft Skills :</strong> 
-                	Appliquée à un ou plusieurs collaborateurs ou a des particuliers, 
-                	cette formation vise à mieux comprendre et prendre en compte ses besoins et ses émotions pour augmenter leur confiance personnelle et mieux prendre des décisions au quotidien. 
+                    Forte de mon expérience et aidée d'outils en coaching et équicoaching, je vous propose de bénéficier d'un programme unique en France : <strong>le programme Exhale</strong>
+                </p>
+                <p>
+                    Exhale, c'est un programme d'accompagnement sur 4 à 6 mois alliant coaching et équicoaching, à destination des personnes en burn-out, en surmenage ou en prévention des risques d'épuisement professionnel.
                 </p>
             </Fragment>
         </Section>

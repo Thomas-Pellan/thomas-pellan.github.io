@@ -42,5 +42,7 @@ ayant été défini au préalable, il y a moins de temps consacré à la problé
 Nous clôturons la séance par de nouveau un temps d’échange de 10min afin de mettre des mots sur ce qui a été vécu et de
 repartir si besoin avec un petit objectif à atteindre entre deux séances.
 
+[Découvrez nos prestations !](/service)
+
 *Credit : Camille Marzec*
 

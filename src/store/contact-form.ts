@@ -7,8 +7,6 @@ import {sendEmailJsData} from '../pages/helper/emailjs'
 
 export const errorMsg: WritableAtom<unknown> & object = atom(null);
 
-export const clientType: WritableAtom<unknown> & object
-    = atom(null);
 export const currentStep: WritableAtom<unknown> & object = atom(0);
 
 export const prospect: MapStore<Record<string, ExtendedProspect>> & object = map<Record<string, ExtendedProspect>>({});

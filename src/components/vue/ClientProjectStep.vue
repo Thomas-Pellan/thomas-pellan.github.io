@@ -39,59 +39,6 @@
                     {{service}}
                 </label>
             </div>
-            <div v-if="isCompany">
-                <p class="m-form-title">
-                    Votre Evènement :
-                </p>
-                <div class="m-form-line">
-                    <label for="phone">Nombre de participants *</label>
-                    <input
-                        name="attendees"
-                        id="attendees"
-                        v-model="attendees"
-                        maxlength="10"
-                        required
-                    />
-                </div>
-                <p class="m-form-title">
-                    Votre budget :
-                </p>
-                <div class="m-form-line">
-                    <label for="budgetMin">Min *</label>
-                    <input
-                        type="number"
-                        name="budgetMin"
-                        id="budgetMin"
-                        v-model="budgetData.min"
-                        maxlength="5"
-                        required
-                    />
-                    <label for="budgetMax">Max *</label>
-                    <input
-                        type="number"
-                        name="budgetMax"
-                        id="budgetMax"
-                        v-model="budgetData.max"
-                        maxlength="5"
-                        required
-                    />
-                </div>
-                <p>
-                    Ces informations nous permettent de vous proposer un évènement le plus proche de vos besoins.
-                </p>
-            </div>
-            <div v-else class="m-form-checkbox">
-                <input
-                    type="checkbox"
-                    name="present"
-                    id="present"
-                    required
-                    v-model="isPresent"
-                />
-                <label for="present">
-                    Je souhaite faire un cadeau (cocher également les prestations souhaitées)
-                </label>
-            </div>
         </div>
         <div v-if="serviceChoice" class="m-form-field">
             <label for="otherText" class="m-form-title">
@@ -126,8 +73,8 @@
 <script>
 
 import {mapStores} from '@nanostores/vue'
-import {clientType, project, errorMsg} from '../../store/contact-form'
-import {CompanyServices, CustomerServices} from '../../class/ServicesList'
+import {project, errorMsg} from '../../store/contact-form'
+import {CustomerServices} from '../../class/ServicesList'
 import Project from '../../class/Project'
 import Budget from '../../class/Budget'
 
@@ -135,7 +82,7 @@ export default {
     name: 'ClientInfoStep',
     setup() {
         return {
-            ...mapStores({clientType, project, errorMsg})
+            ...mapStores({project, errorMsg})
         }
     },
     data() {
@@ -143,12 +90,6 @@ export default {
             serviceChoice: null,
             servicesSelected: [],
             comment: '',
-            budgetData: {
-                min: 0,
-                max: 0
-            },
-            attendees: 1,
-            isPresent: false,
         }
     },
     watch: {
@@ -160,13 +101,7 @@ export default {
         window.scrollTo(0,0)
     },
     computed: {
-        isCompany() {
-            return clientType.get() === 'company'
-        },
         serviceList(){
-            if(this.isCompany){
-                return CompanyServices
-            }
             return CustomerServices
         },
         isOtherDemand() {
@@ -180,34 +115,12 @@ export default {
                 errorMsg.set('Merci de cocher au moins un service, ou de passer par la case \'autre demande\'.')
                 return
             }
-            if(this.clientType === 'company' && !this.validateCompanyProject()){
-                return
-            }
             if(this.serviceChoice === 'other' && (!this.comment || this.comment.trim().length <= 0)){
                 errorMsg.set('Merci d\'ecrire un message.')
                 return
             }
-            project.set(new Project(this.servicesSelected, this.attendees, new Budget(this.budgetData.min, this.budgetData.max), this.isPresent, this.comment))
+            project.set(new Project(this.servicesSelected, this.attendees, new Budget(this.budgetData.min, this.budgetData.max), null, this.comment))
             this.$emit('step-valid')
-        },
-        validateCompanyProject() {
-            //Only validate for services, not for other
-            if(this.serviceChoice === 'other'){
-                return true
-            }
-            if(!this.budgetData.min || !this.budgetData.max || this.budgetData.min > this.budgetData.max){
-                errorMsg.set('Merci d\'indiquer votre budget, pour un devis au plus proche de vos attentes.')
-                return false
-            }
-            if(this.budgetData.min > this.budgetData.max){
-                errorMsg.set('Budget incorrect, le max est plus petit que le min.')
-                return false
-            }
-            if(!this.attendees){
-                errorMsg.set('Merci d\'indiquer un nombre de participants approximatif.')
-                return false
-            }
-            return true
         },
         handleBack(){
             if(!this.serviceChoice){

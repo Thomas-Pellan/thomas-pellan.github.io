@@ -35,27 +35,6 @@
                 required
             />
         </div>
-        <div v-if="isCompany">
-            <div class="m-form-field">
-                <label for="phone">Nom de l'entreprise *</label>
-                <input
-                    name="company"
-                    id="company"
-                    v-model="prospectData.companyName"
-                    maxlength="60"
-                    required
-                />
-            </div>
-            <div class="m-form-field">
-                <label for="phone">Poste Occupé</label>
-                <input
-                    name="poste"
-                    id="poste"
-                    v-model="prospectData.title"
-                    maxlength="60"
-                />
-            </div>
-        </div>
         <div class="m-form-checkbox">
             <input
                 type="checkbox"
@@ -84,23 +63,20 @@
             <button>
                 Suivant
             </button>
-            <button type="button" @click="backToType">
-                Retour
-            </button>
         </div>
     </form>
 </template>
 <script>
 
 import {mapStores} from '@nanostores/vue'
-import {clientType, prospect} from '../../store/contact-form'
+import {prospect} from '../../store/contact-form'
 import ExtendedProspect from '../../class/ExtendedProspect'
 
 export default {
     name: 'ClientInfoStep',
     setup() {
         return {
-            ...mapStores({clientType, prospect})
+            ...mapStores({prospect})
         }
     },
     data() {
@@ -114,16 +90,7 @@ export default {
       }
       window.scrollTo(0,0)
     },
-    computed: {
-        isCompany() {
-            return clientType.get() === 'company'
-        }
-    },
     methods: {
-        backToType() {
-            clientType.set(null)
-            this.$emit('step-back')
-        },
         async validate(e){
             e.preventDefault()
             prospect.set(new ExtendedProspect(this.prospectData.name, this.prospectData.mail, this.prospectData.phone, this.prospectData.consent, this.prospectData.companyName, this.prospectData.title, this.prospectData.news))

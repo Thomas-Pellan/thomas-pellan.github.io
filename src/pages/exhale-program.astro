@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Title from '../components/Title.astro'
+import Section from '../components/Section.astro'
+import SeparatorBg from '../components/SeparatorBg.astro'
+import Seo from '../class/Seo'
+import Image from '../class/Image'
+import ReturnAction from '../class/ReturnAction'
+import ButtonAction from '../class/ButtonAction'
+
+const returnValues: ReturnAction = new ReturnAction('/service', 'Prestations')
+const firstImage: Image = new Image('/img/company-400x320.webp', 'Camille Marzec fondatrice', 400, 320)
+const secondImage: Image = new Image('/img/company-mouz-320x320.webp', 'Camille Marzec fondatrice', null, null)
+const imageThird: Image = new Image('/img/mouz-550x550.webp', 'Exhale')
+const seoData: Seo = new Seo('IBF Equicoaching | Programme Exhale',
+    'Découvrez le premier suivi complet du burn out en France, utilisant l\'équicoaching et le coaching en prévention ou traitement de l\'épuisement professionnel', false);
+const seoSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Webpage",
+            "@id":"https://ibf-equicoaching.com/exhale-program",
+            "url":"https://ibf-equicoaching.com/exhale-program",
+            "name":"IBF Equicoaching : Programme Exhale",
+            isPartOf: {
+                "@id":"https://ibf-equicoaching.com/#website"
+            },
+            breadcrumb: {
+                "@id":"https://ibf-equicoaching.com/#breadcrumblist"
+            },
+            about: {
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "description":"IBF Equicoaching : Programme de suivi sur mesure pour personnes souffrant de burn-out ou d'épuisement professionnel",
+            "inLanguage":"fr-FR",
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            }
+        },
+        {
+            "@type": "Website",
+            "@id":"https://ibf-equicoaching.com/#website",
+            "url": "https://ibf-equicoaching.com/",
+            about: {
+                "name" : "IBF Equicoaching"
+            },
+            "description" : "Formations et séances d'équicoaching et de coaching pour particuliers",
+            audience : {
+                "@id":"https://ibf-equicoaching.com/#audience",
+            },
+            datePublished : "2019-01-01T10:30:52+00:00 UTC+00:00",
+            "alternateName" : "Equicoaching et Formations",
+            isFamilyFriendly: true,
+            publisher:{
+                "@id":"https://ibf-equicoaching.com/#organization"
+            },
+            author : {
+                "@id":"https://ibf-equicoaching.com/#person"
+            },
+        },
+        {
+            "@type": "Organization",
+            "@id":"https://ibf-equicoaching.com/#organization",
+            "name": "IBF Equicoaching",
+            "slogan" : "Vers vos objectifs, Ensemble",
+            "logo" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "image" : "https://www.ibf-equicoaching.com/img/logo-50x50.webp",
+            "alternateName":"Equicoaching et Formations",
+            location : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            founder : {
+                "@id":"https://ibf-equicoaching.com/#person",
+            },
+            address : {
+                "@id":"https://ibf-equicoaching.com/#address"
+            },
+            "email" : "ibf.equicoaching@gmail.com",
+            "telephone" : "(+33)6 10 83 37 88",
+            "sameAs":[
+                "https://www.linkedin.com/company/ibf-equicoaching/",
+                "https://www.instagram.com/ibf_equicoaching/",
+                "https://www.facebook.com/ibfequicoaching",
+                "https://youtube.com/@IBFEquicoaching"
+            ],
+            hasOfferCatalog: {
+                "@id":"https://ibf-equicoaching.com/#offerCatalog",
+            },
+        },
+        {
+            "@type": "OfferCatalog",
+            "@id":"https://ibf-equicoaching.com/#offerCatalog",
+            "name": "Prestations",
+            "description" : "Prestation et séances d'équicoaching et de coaching sur mesure.",
+            "itemListElement": [
+                {
+                    "@id":"https://ibf-equicoaching.com/#offerCatalog",
+                },
+            ]
+        },
+        {
+            "@type": "OfferCatalog",
+            "@id":"https://ibf-equicoaching.com/#offerCatalog",
+            "name": "Prestations Equicoaching",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Séance Individuelle Equicoaching",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Séance Individuelle Equicoaching",
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 120,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Séance Individuelle Coaching",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Séance Individuelle Coaching",
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 120,
+                    "priceCurrency": "EUR",
+                },
+                {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "description": "Programme exhale, suivi personnalisé en coaching et équicoaching pour personnes souffrant de burn-out ou d'épuisement professionnel",
+                    "seller" : {
+                        "@id":"https://ibf-equicoaching.com/#organization",
+                    },
+                    "name":"Programme exhale - coaching et équicoaching",
+                    "acceptedPaymentMethod" : [
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
+                        },
+                        {
+                            "@type" : "PaymentMethod",
+                            "@id": "http://purl.org/goodrelations/v1#Cash"
+                        }
+                    ],
+                    "price" : 1200,
+                    "priceCurrency": "EUR",
+                }
+            ]
+        },
+        {
+            "@type": "PostalAddress",
+            "@id":"https://ibf-equicoaching.com/#address",
+            "addressCountry" : "FR",
+            "addressRegion" : "Rhône-Alpes",
+            "postalCode" : "38570",
+            "addressLocality" : "Theys",
+            "streetAddress" : "358 route d'Hurtieres"
+        },
+        {
+            "@type": "Audience",
+            "@id":"https://ibf-equicoaching.com/#audience",
+            "audienceType" : "Entreprises et particuliers",
+        },
+        {
+            "@type": "Person",
+            "@id":"https://ibf-equicoaching.com/#person",
+            "givenName" : "Camille",
+            "familyName" : "Marzec"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id":"https://ibf-equicoaching.com/#breadcrumblist",
+            "name": "Fil d'Ariane",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com",
+                            "name": "Home"
+                        }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item":
+                        {
+                            "@id": "https://ibf-equicoaching.com/company",
+                            "name": "IBF Equicoaching - Programme Exhale"
+                        }
+                },
+            ],
+        }
+    ]
+}
+---
+<Layout title="IBF Equicoaching | Programme Exhale" seoData={seoData} seoSchema={seoSchema}>
+    <main>
+        <Title title="Programme Exhale" returnValues={returnValues}/>
+        <Section displayTextLeft="true" imgContent={firstImage}>
+            <h2 slot="section-title">Est ce pour moi ?</h2>
+            <Fragment slot="section-content">
+                <p>
+                    Vous faites partie de ces personnes qui sont actives, voir trés actives ?
+                    Vous n'arrivez pas ou vous avez du mal à dire non ou à déléguer ?
+                    Votre coté perfectionniste vous pousse sans cesse à faire mieux, à faire plus ?
+                    Prendre du temps pour vous est compliqué, et quand vous y arrivez vous culpabilisez ?
+                </p>
+                <p>
+                    Et si vous ne vous écoutiez pas assez ?
+                </p>
+                <p>
+                    Vous etes souvent fatigués sans raison apparente, parfois dès le matin. La motivation vous manque et l'anxiété vous gagne.
+                    Vous avez la boule au ventre en allant au travail. Peut etre que le simple fait de penser au travail suffit à déclencher cette sensation.
+                </p>
+                <p>
+                    Maux de tête, migraines, douleurs.... Ces symptômes vous parlent ? <strong>Ce sont les signes d'un épuisement professionnel, ou burn-out.</strong>
+                </p>
+                <p>
+                    Je connais bien ces symptomes, car je suis passée par là moi aussi. Plusieurs fois même !
+                </p>
+                <p>
+                    Aujourd'hui je m'en suis sortie grâce à tout un tas d'outils que j'ai à ma disposition.
+                </p>
+                <p>
+                    Aujourd'hui, Coach et Equicoach depuis 4 ans, ayant acompagné de nombreuses personnes dans la même situation,
+                    j'ai fait le choix de vous faire bénéficier de ces outils qui m'ont tant aidée, à travers un programme uniquement en France
+                </p>
+            </Fragment>
+        </Section>
+        <SeparatorBg/>
+        <Section imgContent={secondImage}>
+            <h3 slot="section-title">Exhale ? Qu'est ce que c'est</h3>
+            <Fragment slot="section-content">
+                <p>
+                    C'est un programme d'accompagnement sur 4 à 6 mois.
+                    Alliant coaching et équicoaching à destinations des personnes en burn-out, en surmenage ou en prévention des risques d'épuisement professionnel.
+                </p>
+                <p>
+                    Aprés un premier rendez vous téléphonique afin d'établir si cet accompagnement vous correspond,
+                    nous entamerons un suivi <strong>en présentiel</strong>, alternant sécances de coaching et d'équicoaching.
+                </p>
+                <p>
+                    Nous allons avencer ensemble, main dans la main, pour que vous repreniez pied et que vous retrouviez votre énergie, votre sérénité et votre qualité de vie.
+                    Afin de profiter pleinement de vos proches et de ce qui vous fait vibrer au quotidien.
+                </p>
+                <p>
+                    Vous bénéficiez de séances de coaching, qui seront des moments d'échanges et d'excercices sur table, pour vous permettre de mettre en lumière vos freins personnels et les causes de votre mal être.
+                    Mais également d'exercices à faire chez vous entre deux séances, pour avancer pas à pas vers votre rémission.
+                </p>
+                <p>
+                    Ces séances seront complétées par de l'équicoaching (coaching assisté par le cheval), ou des mises en situation intégrant les chevaux.
+                    Pour vous permettre d'expérimenter un language de coeur a coeur, et vous mettre progressiment en action vers de nouveaux schémas, pour les ancrer dans votre vie quotidienne.
+                </p>
+                <p>
+                    Pas besoin d'etre familier avec les chevaux, les exercises se font à pied.
+                </p>
+            </Fragment>
+        </Section>
+        <SeparatorBg/>
+        <Section displayTextLeft="true" imgContent={imageThird}>
+            <h4 slot="section-title">Quels sont les objectifs d'Exhale ?</h4>
+            <Fragment slot="section-content">
+                <p>
+                    Exhale, c'est un accompagnement visant à obtenir des résultats rapides, mais toujours en respectant votre rythme. Car chaque situation, chaque personne est différente.
+                </p>
+                <p>
+                    Ce programme à pour objectifs :
+                </p>
+                <ul>
+                    <li>De se recentrer sur soi et d'apprendre à s'ancrer</li>
+                    <li>De mieux gérer son stress et ses émotions</li>
+                    <li>De retrouver sa confiance et son estime de soi</li>
+                    <li>De se sentir aligné avec ce que l'on est, ce que l'on fait</li>
+                    <li>De se libérer de ses freins</li>
+                    <li>D'appendre à dire non et à poser ses limites</li>
+                    <li>De construire un projet futur qui vous ressemble</li>
+                </ul>
+                <p>
+                    Avec Exhale, je vous garantis de vous donner tout le temps l'écoute dont vous aurez besoin pour avancer.
+                </p>
+                <p>
+                    <strong>C'est petit pas par petit pas que se font les grands changements, et le premier pas commence ici !</strong>
+                </p>
+            </Fragment>
+        </Section>
+    </main>
+</Layout>
