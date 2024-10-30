@@ -9,7 +9,7 @@ import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost/4321',
+  site: 'https://www.ibf-equicoaching.com',
   trailingSlash: 'never',
   build: {
     format: 'file'
