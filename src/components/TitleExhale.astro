@@ -1,0 +1,13 @@
+---
+import '../styles/m-title.scss';
+import '../styles/m-exhale-program.scss';
+import {Image} from "astro:assets";
+
+const {title, imgContent} = Astro.props;
+---
+<section>
+    <div class="m-title">
+        <h1 class="m-title-alone">{title}</h1>
+        <Image class="m-title-exhale" src={imgContent.src} alt={imgContent.alt} width={imgContent.width} height={imgContent.height} format="webp"/>
+    </div>
+</section>

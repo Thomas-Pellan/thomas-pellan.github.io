@@ -110,4 +110,6 @@ Et s’il en est une phrase d’apparence ordinaire qui peut résumer mon expér
 
 *Alors je dis oui Coach à 26 ans, c’est possible !*
 
+[Découvrez nos prestations !](/service)
+
 *Credit : Camille Marzec*

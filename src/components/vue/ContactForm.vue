@@ -1,6 +1,5 @@
 <template>
     <div id="contact-form">
-        <ClientTypeStep v-if="display && currentStep === ContactFormSteps.CLIENT_TYPE" @stepValid="nextStep" />
         <ClientInfoStep v-if="display && currentStep === ContactFormSteps.CLIENT_INFO" @stepValid="nextStep" @stepBack="previousStep"/>
         <ClientProjectStep v-if="display && currentStep === ContactFormSteps.PROJECT" @stepValid="sendData" @stepBack="previousStep"/>
         <p v-if="errorMsg" class="m-form-error">
@@ -20,7 +19,6 @@
     </div>
 </template>
 <script>
-import ClientTypeStep from './ClientTypeStep.vue'
 import ClientInfoStep from './ClientInfoStep.vue'
 import ClientProjectStep from './ClientProjectStep.vue'
 import {mapStores} from '@nanostores/vue'
@@ -29,7 +27,7 @@ import {ContactFormSteps} from '../../class/ContactFormSteps'
 
 export default {
     name: 'ContactForm',
-    components: {ClientTypeStep, ClientInfoStep, ClientProjectStep},
+    components: {ClientInfoStep, ClientProjectStep},
     setup() {
         return {
             ...mapStores({currentStep, errorMsg})

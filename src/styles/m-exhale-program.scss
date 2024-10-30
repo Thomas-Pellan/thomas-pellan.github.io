@@ -1,0 +1,56 @@
+@import 'src/styles/common/_colors';
+@import 'src/styles/common/_spaces';
+@import 'src/styles/common/_media';
+
+.m-title, .m-footer-separator, button {
+  background-color: $color-blue-light !important;
+}
+
+.m-title-exhale, .m-title-alone {
+    margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: $color-white !important;
+  border: solid $color-blue-light 0.1rem !important;
+}
+
+.m-footer-info, .m-footer-social-icon, a:hover, .m-spinner-icon, button:hover  {
+  color: $color-blue-light !important;
+}
+
+.m-from-wrapper {
+  margin-bottom: 1rem;
+}
+
+.m-form-exhale {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  &-field {
+    max-width: 25rem;
+  }
+
+  &-button{
+    margin-top: $space-Ce !important;
+  }
+
+  &-text {
+    margin-top: $space-Ce !important;
+  }
+}
+
+.m-exhale-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &-wrapper {
+    width: 100% !important;
+  }
+}

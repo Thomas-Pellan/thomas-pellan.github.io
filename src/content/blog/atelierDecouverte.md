@@ -7,7 +7,7 @@ keywords: equicoaching, atelier, découverte, déroulement
 image: https://www.ibf-equicoaching.com/img/atelier-decouverte-2-320x320.webp
 word: 175
 ---
-Ouvert aux familles ou aux groupes [sur demande](/contact) (3 pers minimum) ou [sur inscription sur notre site internet rubrique « événements »](/events).
+Ouvert aux familles ou aux groupes [sur demande](/contact) (3 pers minimum).
 
 Nous commençons l’atelier par un temps de présentation, d’échange, afin de savoir comment tout le monde se sent. Mais également pour poser un cadre dont nous décidons ensemble les contours, afin que tout le monde puisse évoluer **en sécurité**, tant par rapport aux chevaux qu’aux autres membres du groupe (confidentialité, confiance etc…).
 
@@ -16,5 +16,7 @@ Nous commençons l’atelier par un temps de présentation, d’échange, afin d
 Nous terminons l’atelier de nouveau avec 30min déchange sur ce qui a été vécu, sur vos ressentis et ce que vous pouvez mettre en place dans votre quotidien pour avancer.
 
 **Ces ateliers sont idéals si vous souhaitez découvrir l’equicoaching avec un petit budget.** Ils vous permettent de mettre le doigt sur certaines choses qui vous bloquent mais ne rentrent pas autant dans le détail qu’un suivi individuel.
+
+[Découvrez nos prestations !](/service)
 
 *Credit : Camille Marzec*

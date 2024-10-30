@@ -1,0 +1,9 @@
+---
+import ExhaleForm from '../components/vue/ExhaleForm.vue';
+import Spinner from '../components/Spinner.astro';
+import '../styles/m-form.scss';
+---
+<div class="m-exhale-form-wrapper">
+    <Spinner text="Chargement du formulaire de contact..." listenerSelector="exhale-form"/>
+    <ExhaleForm client:only="vue" />
+</div>

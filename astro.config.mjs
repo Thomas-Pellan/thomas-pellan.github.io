@@ -9,7 +9,7 @@ import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.ibf-equicoaching.com/',
+  site: 'http://localhost/4321',
   trailingSlash: 'never',
   build: {
     format: 'file'
@@ -60,7 +60,7 @@ export default defineConfig({
     icon: 'public/img/logo-50x50.webp',
     start_url: '/',
     short_name: 'IBF',
-    description: 'Equicoaching et Horse Coaching, Formations',
+    description: 'Equicoaching, Coaching et Horse Coaching',
     theme_color: '#fff',
     background_color: '#86071f',
     display: 'standalone',
@@ -83,18 +83,22 @@ export default defineConfig({
     '/map/blog/equicoaching-quest-ce-que-cest': '/blog/equicoaching-quest-ce-que-cest',
     '/map/contact': '/contact',
     '/map/charte-accessibilite': '/charte-accessibilite',
-    '/map/company': '/company',
-    '/map/events': '/events',
+    '/map/company': '/service',
+    '/map/events': '/service',
     '/avis': '/',
     '/partners/index': '/partners',
     '/map/map': '/map',
     '/map/about': '/about',
-    '/map/pricing-training': '/pricing-training',
-    '/map/pricing-equitation': '/pricing-equitation',
+    '/map/pricing-training': '/service',
+    '/map/pricing-equitation': '/service',
     '/mecgv': '/cgv',
     '/map/bons': '/bons',
     '/map/mentions-legales': '/mentions-legales',
     '/map/cookies': '/cookies',
     '/blog/index' : '/blog',
+    '/pricing-equitation' : '/service',
+    '/pricing-equicoaching' : '/service',
+    '/pricing-training' : '/service',
+    '/company' : '/service',
   }
 });

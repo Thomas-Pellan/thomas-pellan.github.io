@@ -1,15 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
-import Tile from '../components/Tile.astro'
 import '../styles/m-main.scss'
 import Seo from '../class/Seo'
 import ReturnAction from '../class/ReturnAction'
-import {serviceList} from "../content/data/ServiceList";
+import PriceTile from "../components/PriceTile.astro";
 
 const returnValues: ReturnAction = new ReturnAction('/service', 'Prestations')
 
-const seoData: Seo = new Seo('IBF Equicoaching | Services et prestations', 'Découvrez nos différents services et leurs tarifs, pour entreprises, particuliers et associations', false)
+const seoData: Seo = new Seo('IBF Equicoaching | Services et prestations', 'Découvrez nos différents services et leurs tarifs, pour particuliers.', false)
 const seoSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -90,161 +89,27 @@ const seoSchema = {
         {
             "@type": "OfferCatalog",
             "@id": "https://ibf-equicoaching.com/#offerCatalog",
-            "name": "Prestations et Formations",
-            "description": "Formations pour managers, équipes ou en individuel. Prestation et séances d'équicoaching sur mesure.",
+            "name": "Prestations",
+            "description": "Séances de coaching et d'équicoaching, suivi sur mesure pour les personnes souffrant de burn-out ou d'épuisement professionnel",
             "itemListElement": [
                 {
-                    "@id": "https://ibf-equicoaching.com/#offerCatalogEquicoaching",
+                    "@id": "https://ibf-equicoaching.com/#offerCatalog",
                 },
-                {
-                    "@id": "https://ibf-equicoaching.com/#offerCatalogEquitation",
-                },
-                {
-                    "@id": "https://ibf-equicoaching.com/#offerFormation",
-                }
             ]
         },
         {
             "@type": "OfferCatalog",
-            "@id": "https://ibf-equicoaching.com/#offerFormation",
-            "name": "Formations",
-            "description": "Formations pour managers, équipes ou en individuel",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Posture Managériale et Leadership",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Posture Managériale et Leadership",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                    ],
-                    "price": 800,
-                    "priceCurrency": "EUR",
-                },
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Cohésion et Communication",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Cohésion et Communication",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                    ],
-                    "price": 800,
-                    "priceCurrency": "EUR",
-                },
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Developper ses Soft Skills",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Developper ses Soft Skills",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                    ],
-                    "price": 800,
-                    "priceCurrency": "EUR",
-                }
-            ]
-        },
-        {
-            "@type": "OfferCatalog",
-            "@id": "https://ibf-equicoaching.com/#offerCatalogEquitation",
-            "name": "Prestations Equitation",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Cours Collectif Equitation, 4 personnes max, en centre équestre uniquement",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Cours Collectif Equitation",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#Cash"
-                        }
-                    ],
-                    "price": 35,
-                    "priceCurrency": "EUR",
-                },
-                {
-                    "@type": "Offer",
-                    "availability": "https://schema.org/InStock",
-                    "description": "Cours Particulier Equitation, en centre équestre uniquement",
-                    "seller": {
-                        "@id": "https://ibf-equicoaching.com/#organization",
-                    },
-                    "name": "Cours Particulier Equitation",
-                    "acceptedPaymentMethod": [
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#ByBankTransferInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#CheckInAdvance"
-                        },
-                        {
-                            "@type": "PaymentMethod",
-                            "@id": "http://purl.org/goodrelations/v1#Cash"
-                        }
-                    ],
-                    "price": 50,
-                    "priceCurrency": "EUR",
-                }
-            ]
-        },
-        {
-            "@type": "OfferCatalog",
-            "@id": "https://ibf-equicoaching.com/#offerCatalogEquicoaching",
+            "@id": "https://ibf-equicoaching.com/#offerCatalog",
             "name": "Prestations Equicoaching",
             "itemListElement": [
                 {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "description": "Atelier découverte Equicoaching, 6 personnes max",
+                    "description": "Séance Individuelle sur des thématiques de coaching",
                     "seller": {
                         "@id": "https://ibf-equicoaching.com/#organization",
                     },
-                    "name": "Atelier découverte Equicoaching",
+                    "name": "Séance Individuelle Coaching",
                     "acceptedPaymentMethod": [
                         {
                             "@type": "PaymentMethod",
@@ -259,13 +124,13 @@ const seoSchema = {
                             "@id": "http://purl.org/goodrelations/v1#Cash"
                         }
                     ],
-                    "price": 55,
+                    "price": 120,
                     "priceCurrency": "EUR",
                 },
                 {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "description": "Séance Individuelle Equicoaching",
+                    "description": "Séance Individuelle sur des thématiques Equicoaching",
                     "seller": {
                         "@id": "https://ibf-equicoaching.com/#organization",
                     },
@@ -284,17 +149,17 @@ const seoSchema = {
                             "@id": "http://purl.org/goodrelations/v1#Cash"
                         }
                     ],
-                    "price": 80,
+                    "price": 120,
                     "priceCurrency": "EUR",
                 },
                 {
                     "@type": "Offer",
                     "availability": "https://schema.org/InStock",
-                    "description": "Forfait 5 séances Equicoaching",
+                    "description": "Programme de suivi pour les personnes souffrant d'épuisement professionnel ou de burn out",
                     "seller": {
                         "@id": "https://ibf-equicoaching.com/#organization",
                     },
-                    "name": "Forfait 5 séances Equicoaching",
+                    "name": "Programme Exhale",
                     "acceptedPaymentMethod": [
                         {
                             "@type": "PaymentMethod",
@@ -309,7 +174,7 @@ const seoSchema = {
                             "@id": "http://purl.org/goodrelations/v1#Cash"
                         }
                     ],
-                    "price": 350,
+                    "price": 1200,
                     "priceCurrency": "EUR",
                 }
             ]
@@ -361,6 +226,29 @@ const seoSchema = {
         }
     ]
 }
+
+const descriptions: [] = [
+    {
+        number: 1,
+        title: 'Séance Individuelle Equicoaching\n',
+        points: ['1h30m', 'Idéal pour la découverte de l\'équicoaching', 'Prenez conscience de la puissance de l\'accompagnement par le cheval'],
+        price: '120 €',
+        actions: [{link: '/contact', title: 'Réservez'}]
+    },
+    {
+        number: 2,
+        title: 'Séance Individuelle Coaching\n',
+        points: ['1h30m', 'Accompagnement au changement, accompagnement personnalisé', 'Développez, en conscience, vos ressources personnelles'],
+        price: '120 €',
+        actions: [{link: '/contact', title: 'Réservez'}]
+    },
+    {
+        number: 3,
+        title: 'Programme Exhale',
+        points: ['4 à 6 mois', 'Accompagnement complet en coaching et équicoaching', 'Destinée aux personnes souffrant de burn-out, ou en prévention de l\'épuisement professionnel', '18h30 de présentiel minimum'],
+        actions: [{link: '/exhale-program', title: 'En savoir plus'}]
+    }
+]
 ---
 
 <Layout title="IBF Equicoaching | Prestations" seoData={seoData} seoSchema={seoSchema}>
@@ -371,11 +259,8 @@ const seoSchema = {
             <h3 class="m-main-title">Je pars du principe que nous avons tous en nous un trésor insoupçonné ; Ma mission
                 au travers d’IBF Equicoaching est d’aider les gens à trouver le leur.</h3>
             <div class="m-main-wrapper">
-                {serviceList.map((service) => (
-                    <Tile tileData={service}>
-                        <Fragment set:html={service.html} slot="tile-content"/>
-                    </Tile>
-                ))}
+                {descriptions && descriptions.map(description => (
+                        <PriceTile data={description}/>))}
             </div>
         </div>
     </main>

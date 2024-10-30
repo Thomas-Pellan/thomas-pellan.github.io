@@ -53,4 +53,6 @@ Les thématiques que l’ont peut aborder en equicoaching sont très variées !
 - Développer les softskills
 - Et bien d’autres en fonction de vos besoins !
 
+[Découvrez nos prestations !](/service)
+
 *Credit : Camille Marzec*

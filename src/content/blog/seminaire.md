@@ -58,4 +58,6 @@ l’équipe, ainsi que les changements à mettre en place.
 
 Si cette approche vous intéresse, n’hésitez pas à me contacter !
 
+[Découvrez nos prestations !](/service)
+
 *Credit: Camille Marzec*
