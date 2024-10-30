@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
-import Tile from '../components/Tile.astro'
 import '../styles/m-main.scss'
 import Seo from '../class/Seo'
 import ReturnAction from '../class/ReturnAction'
-import {serviceList} from "../content/data/ServiceList";
 import PriceTile from "../components/PriceTile.astro";
 
 const returnValues: ReturnAction = new ReturnAction('/service', 'Prestations')
@@ -240,16 +238,15 @@ const descriptions: [] = [
     {
         number: 2,
         title: 'Séance Individuelle Coaching\n',
-        points: ['1h30m', 'Thématiques liées au coaching et à l\'accompagnement personnel', 'Développez, en conscience, vos ressources personnelles'],
+        points: ['1h30m', 'Accompagnement au changement, accompagnement personnalisé', 'Développez, en conscience, vos ressources personnelles'],
         price: '120 €',
         actions: [{link: '/contact', title: 'Réservez'}]
     },
     {
         number: 3,
         title: 'Programme Exhale',
-        points: ['4 à 6 mois', 'Accompagnement complet en coaching et équicoaching', 'Destinée aux personnes souffrant de burn-out, ou en prévention de l\'épuisement professionnel'],
-        price: '1200 €',
-        actions: [{link: '/contact', title: 'En savoir plus'}]
+        points: ['4 à 6 mois', 'Accompagnement complet en coaching et équicoaching', 'Destinée aux personnes souffrant de burn-out, ou en prévention de l\'épuisement professionnel', '18h30 de présentiel minimum'],
+        actions: [{link: '/exhale-program', title: 'En savoir plus'}]
     }
 ]
 ---

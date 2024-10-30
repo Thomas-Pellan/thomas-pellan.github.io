@@ -1,17 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Title from '../components/Title.astro'
+import TitleExhale from '../components/TitleExhale.astro'
 import Section from '../components/Section.astro'
-import SeparatorBg from '../components/SeparatorBg.astro'
 import Seo from '../class/Seo'
 import Image from '../class/Image'
-import ReturnAction from '../class/ReturnAction'
-import ButtonAction from '../class/ButtonAction'
+import '../styles/m-exhale-program.scss';
+import ExhaleFormWrapper from "../components/ExhaleFormWrapper.astro";
 
-const returnValues: ReturnAction = new ReturnAction('/service', 'Prestations')
-const firstImage: Image = new Image('/img/company-400x320.webp', 'Camille Marzec fondatrice', 400, 320)
-const secondImage: Image = new Image('/img/company-mouz-320x320.webp', 'Camille Marzec fondatrice', null, null)
-const imageThird: Image = new Image('/img/mouz-550x550.webp', 'Exhale')
+const logo: Image = new Image('/img/exhale-377x265.webp', 'Programme Exhale', 377, 265)
+const firstImage: Image = new Image('/img/exhale-image1-500x500.webp', 'Est ce pour moi ?', 500, 500)
+const secondImage: Image = new Image('/img/exhale-image2-500x500.webp', 'Le programme en détail, pour qui ?', 500, 500)
+const imageThird: Image = new Image('/img/exhale-image3-500x500.webp',  'Osez le pas', 500, 500)
 const seoData: Seo = new Seo('IBF Equicoaching | Programme Exhale',
     'Découvrez le premier suivi complet du burn out en France, utilisant l\'équicoaching et le coaching en prévention ou traitement de l\'épuisement professionnel', false);
 const seoSchema = {
@@ -234,18 +233,15 @@ const seoSchema = {
 ---
 <Layout title="IBF Equicoaching | Programme Exhale" seoData={seoData} seoSchema={seoSchema}>
     <main>
-        <Title title="Programme Exhale" returnValues={returnValues}/>
+        <TitleExhale title="Programme Exhale" imgContent={logo}/>
         <Section displayTextLeft="true" imgContent={firstImage}>
-            <h2 slot="section-title">Est ce pour moi ?</h2>
+            <h2 slot="section-title">Et si vous ne vous écoutiez pas assez ?</h2>
             <Fragment slot="section-content">
                 <p>
                     Vous faites partie de ces personnes qui sont actives, voir trés actives ?
                     Vous n'arrivez pas ou vous avez du mal à dire non ou à déléguer ?
                     Votre coté perfectionniste vous pousse sans cesse à faire mieux, à faire plus ?
                     Prendre du temps pour vous est compliqué, et quand vous y arrivez vous culpabilisez ?
-                </p>
-                <p>
-                    Et si vous ne vous écoutiez pas assez ?
                 </p>
                 <p>
                     Vous etes souvent fatigués sans raison apparente, parfois dès le matin. La motivation vous manque et l'anxiété vous gagne.
@@ -262,40 +258,38 @@ const seoSchema = {
                 </p>
                 <p>
                     Aujourd'hui, Coach et Equicoach depuis 4 ans, ayant acompagné de nombreuses personnes dans la même situation,
-                    j'ai fait le choix de vous faire bénéficier de ces outils qui m'ont tant aidée, à travers un programme uniquement en France
+                    j'ai fait le choix de vous faire bénéficier de ces outils qui m'ont tant aidée, à travers un programme unique en France
                 </p>
             </Fragment>
         </Section>
-        <SeparatorBg/>
         <Section imgContent={secondImage}>
             <h3 slot="section-title">Exhale ? Qu'est ce que c'est</h3>
             <Fragment slot="section-content">
                 <p>
                     C'est un programme d'accompagnement sur 4 à 6 mois.
-                    Alliant coaching et équicoaching à destinations des personnes en burn-out, en surmenage ou en prévention des risques d'épuisement professionnel.
+                    Alliant coaching et équicoaching à destination des personnes en burn-out, en surmenage ou en prévention des risques d'épuisement professionnel.
                 </p>
                 <p>
                     Aprés un premier rendez vous téléphonique afin d'établir si cet accompagnement vous correspond,
                     nous entamerons un suivi <strong>en présentiel</strong>, alternant sécances de coaching et d'équicoaching.
                 </p>
                 <p>
-                    Nous allons avencer ensemble, main dans la main, pour que vous repreniez pied et que vous retrouviez votre énergie, votre sérénité et votre qualité de vie.
+                    Nous allons avancer ensemble, main dans la main, pour que vous repreniez pied et que vous retrouviez votre énergie, votre sérénité et votre qualité de vie.
                     Afin de profiter pleinement de vos proches et de ce qui vous fait vibrer au quotidien.
                 </p>
                 <p>
-                    Vous bénéficiez de séances de coaching, qui seront des moments d'échanges et d'excercices sur table, pour vous permettre de mettre en lumière vos freins personnels et les causes de votre mal être.
+                    Vous bénéficirez de séances de coaching, qui seront des moments d'échanges et d'excercices sur table, pour vous permettre de mettre en lumière vos freins personnels et les causes de votre mal être.
                     Mais également d'exercices à faire chez vous entre deux séances, pour avancer pas à pas vers votre rémission.
                 </p>
                 <p>
-                    Ces séances seront complétées par de l'équicoaching (coaching assisté par le cheval), ou des mises en situation intégrant les chevaux.
+                    Ces séances seront complétées par de l'<a href="/blog/equicoaching-quest-ce-que-cest">équicoaching</a> (coaching assisté par le cheval), ou des mises en situation intégrant les chevaux.
                     Pour vous permettre d'expérimenter un language de coeur a coeur, et vous mettre progressiment en action vers de nouveaux schémas, pour les ancrer dans votre vie quotidienne.
                 </p>
                 <p>
-                    Pas besoin d'etre familier avec les chevaux, les exercises se font à pied.
+                    Pas besoin d'etre familier avec les chevaux, les exercices se font à pied.
                 </p>
             </Fragment>
         </Section>
-        <SeparatorBg/>
         <Section displayTextLeft="true" imgContent={imageThird}>
             <h4 slot="section-title">Quels sont les objectifs d'Exhale ?</h4>
             <Fragment slot="section-content">
@@ -320,7 +314,25 @@ const seoSchema = {
                 <p>
                     <strong>C'est petit pas par petit pas que se font les grands changements, et le premier pas commence ici !</strong>
                 </p>
+                <p>
+                    <small>
+                        <i>
+                            Durée de 4 à 6 mois indicative, mais pouvant varier selon les personnes. 18h30 de suivi en présentiel minimum.
+                            Cet accompagnement ne se substitue pas à un suivi thérapeutique mais peut tout à fait être complémentaire.
+                        </i>
+                    </small>
+                </p>
+                <p>
+                    <small>
+                        <i>
+                            1200 euros TTC, paiement possible en 3X.
+                        </i>
+                    </small>
+                </p>
             </Fragment>
         </Section>
+        <div class="m-exhale-form">
+            <ExhaleFormWrapper/>
+        </div>
     </main>
 </Layout>

@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
 import Section from '../components/Section.astro'
-import SeparatorBg from '../components/SeparatorBg.astro'
 import Seo from '../class/Seo'
 
 const returnValues = {link: '/about', title: 'A propos'}
@@ -169,7 +168,6 @@ const seoSchema = {
                 </p>
             </Fragment>
         </Section>
-        <SeparatorBg/>
         <Section subTitle={secondSubTitle} ytbLink="https://youtu.be/qZ4Y1D2HMi4?t=23" actions={actions}>
             <h3 slot="section-title">IBF Equicoaching, qu’est-ce que c’est ? </h3>
             <ul slot="section-content">
