@@ -11,6 +11,7 @@
           id="phone"
           v-model="prospectData.phone"
           maxlength="60"
+          @click="reset"
           required
       />
     </div>
@@ -19,6 +20,9 @@
     </button>
     <p v-if="isSuccess" class="m-form-exhale-text">
       Merci, je vous recontacterai prochainement.
+    </p>
+    <p v-if="isWarn" class="m-form-exhale-text">
+      Merci de rentrer un numero de téléphone valide.
     </p>
   </div>
 </template>
@@ -41,6 +45,7 @@ export default {
       prospectData: {},
       msg: '',
       isSuccess: false,
+      isWarn: false,
     }
   },
   computed: {
@@ -50,8 +55,17 @@ export default {
     this.prospectData = this.prospect.value ? this.prospect.value : {}
   },
   methods: {
+    reset() {
+      this.isSuccess = false;
+      this.isWarn = false;
+    },
     async sendData(e){
       e.preventDefault()
+      this.reset();
+      if(!this.prospectData.phone || this.prospectData.phone.length < 10) {
+        this.isWarn = true;
+        return;
+      }
       prospect.set(new Prospect(null, null, this.prospectData.phone, null, null, null))
       this.isSuccess = await sendContact();
     }
