@@ -76,7 +76,6 @@ import {mapStores} from '@nanostores/vue'
 import {project, errorMsg} from '../../store/contact-form'
 import {CustomerServices} from '../../class/ServicesList'
 import Project from '../../class/Project'
-import Budget from '../../class/Budget'
 
 export default {
     name: 'ClientInfoStep',
@@ -119,7 +118,7 @@ export default {
                 errorMsg.set('Merci d\'ecrire un message.')
                 return
             }
-            project.set(new Project(this.servicesSelected, this.attendees, new Budget(this.budgetData.min, this.budgetData.max), null, this.comment))
+            project.set(new Project(this.servicesSelected, this.attendees, null, null, this.comment))
             this.$emit('step-valid')
         },
         handleBack(){
