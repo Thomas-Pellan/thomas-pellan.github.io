@@ -16,7 +16,7 @@
       />
     </div>
     <button v-if="!isSuccess" class="m-form-exhale-button" @click="sendData">
-      Suivant
+      Envoyer
     </button>
     <p v-if="isSuccess" class="m-form-exhale-text">
       Merci, je vous recontacterai prochainement.
