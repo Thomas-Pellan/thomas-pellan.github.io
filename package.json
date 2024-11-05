@@ -28,7 +28,7 @@
     "astrojs-service-worker": "^2.0.0",
     "nanostores": "^0.11.3",
     "schema-dts": "^1.1.2",
-    "svgo": "^2.8.0"
+    "svgo": "^3.3.2"
   },
   "devDependencies": {
     "@kindspells/astro-shield": "^1.7.1",
