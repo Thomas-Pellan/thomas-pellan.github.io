@@ -8,9 +8,9 @@ import ButtonAction from '../class/ButtonAction'
 import Image from '../class/Image'
 import SeparatorBg from "../components/SeparatorBg.astro";
 
-const secondSubTitle = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
-const image: Image = new Image('/img/what-is-equicoaching-550x550.webp', 'A qui s\adresse l\'équicoaching')
-const imageThird: Image = new Image('/img/mouz-550x550.webp', 'Exhale')
+const secondSubTitle: string = 'A tous ! Aucune compétence équestre n’est nécessaire puisque les exercices se font à pied.'
+const image: Image = new Image('/img/what-is-equicoaching-550x550.webp', 'A qui s\adresse l\'équicoaching', 550, 550);
+const imageThird: Image = new Image('/img/mouz-550x550.webp', 'Exhale', 550, 550);
 const actionsFirst: ButtonAction[] = [
 	new ButtonAction('/blog', 'En savoir plus'),
 	new ButtonAction('/about', 'A propos d\'IBF'),
@@ -20,9 +20,9 @@ const actionsSecond: ButtonAction[] = [
 ]
 const actionsThird: ButtonAction[] = [new ButtonAction('/exhale-program', 'En savoir plus')]
 const seoData: Seo = new Seo(
-'IBF Equicoaching | Coaching et Formations', 
-'Séances équicoaching et coaching pour particuliers',
-false)
+'IBF Equicoaching | Coaching et Formations | Horse Coaching',
+'Séances équicoaching et coaching pour particuliers. Médiation du cheval, accompagnement et prévention du burnout. Equicoach formée via une formation en équicoaching.',
+false);
 
 const seoSchema = {
     "@context": "https://schema.org",
@@ -42,7 +42,7 @@ const seoSchema = {
                 "@id": "https://ibf-equicoaching.com/#audience",
             },
             datePublished: "2019-01-01T10:30:52+00:00 UTC+00:00",
-            "description": "IBF Equicoaching : Formations pour vos équipes,  vos managers ou pour particuliers",
+            "description": "IBF Equicoaching : Coaching et accompagnement au changement à l'aide de la médiation du cheval",
             "inLanguage": "fr-FR",
             author: {
                 "@id": "https://ibf-equicoaching.com/#person"
