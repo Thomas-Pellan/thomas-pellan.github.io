@@ -7,6 +7,7 @@ import webmanifest from 'astro-webmanifest';
 import serviceWorker from 'astrojs-service-worker';
 import robotsTxt from 'astro-robots-txt';
 import shield from "@kindspells/astro-shield";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +16,7 @@ export default defineConfig({
   build: {
     format: 'file'
   },
-  integrations: [vue(), astroImageTools, compress(), serviceWorker(), robotsTxt(), shield({}), sitemap({
+  integrations: [vue(), icon(), astroImageTools, compress(), serviceWorker(), robotsTxt(), shield({}), sitemap({
     serialize(item) {
       item.changefreq = 'weekly';
       item.lastmod = new Date();

@@ -1,11 +1,11 @@
 ---
-import Icon from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import '../styles/m-spinner.scss';
 
 const {text, listenerSelector} = Astro.props;
 ---
 <div class="m-spinner">
-    <Icon class="m-spinner-icon" name="icomoon-free:spinner2"/>
+    <Icon class="m-spinner-icon" name="mdi:loading"/>
     <p>
         {text}
     </p>

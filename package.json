@@ -16,6 +16,8 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vue": "^4.5.2",
     "@emailjs/browser": "^4.4.1",
+    "@iconify-json/ic": "^1.2.1",
+    "@iconify-json/mdi": "^1.2.1",
     "@nanostores/vue": "^0.10.0",
     "astro": "^4.16.9",
     "astro-compress": "^2.3.5",
@@ -27,8 +29,7 @@
     "astro-webmanifest": "^1.0.0",
     "astrojs-service-worker": "^2.0.0",
     "nanostores": "^0.11.3",
-    "schema-dts": "^1.1.2",
-    "svgo": "^3.3.2"
+    "schema-dts": "^1.1.2"
   },
   "devDependencies": {
     "@kindspells/astro-shield": "^1.7.1",
